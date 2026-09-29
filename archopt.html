@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARCHOPT Multi-Objective Building Optimization Software</title>
-<meta name="description" content="ARCHOPT combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III optimization to deliver Pareto-optimal building designs. Download for Windows.">
+<title>PareVia Multi-Objective Building Optimization Software</title>
+<meta name="description" content="PareVia combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III optimization to deliver Pareto-optimal building designs. Download for Windows.">
+<meta name="keywords" content="PareVia, ARCHOPT, ArchOpt Technologies, EnergyPlus optimization, NSGA-III, XGBoost surrogate, building design optimization">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
   --ink:#111318; --ink2:#404655; --ink3:#7a8092;
@@ -33,6 +34,13 @@ body{font-family:'Instrument Sans',sans-serif;background:var(--surface);color:va
 .topbar-in{max-width:1100px;margin:0 auto;padding:0.85rem 2rem;display:flex;align-items:center;justify-content:space-between}
 .brand{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--accent);display:flex;align-items:flex-end;gap:5px;text-decoration:none}
 .brand-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);margin-bottom:6px}
+/* ── brand wordmarks: Pare/Arch in white, Via/Opt in brand blue ── */
+:root{--wm-white:#ffffff;--wm-blue:#4f8ef7;--wm-chip:#0b1020}
+.wm{font-family:'Sora','Instrument Sans',sans-serif;font-weight:700;letter-spacing:-0.01em;white-space:nowrap}
+.wm-a{color:var(--wm-white)} .wm-b{color:var(--wm-blue)}
+.wm-chip{display:inline-flex;align-items:center;gap:0.5rem;background:var(--wm-chip);border-radius:8px;padding:0.38rem 0.8rem;text-decoration:none;font-size:1.05rem;line-height:1.2}
+.wm-chip small{font-family:'Instrument Sans',sans-serif;font-size:0.68rem;font-weight:500;color:rgba(255,255,255,0.55);letter-spacing:0.02em}
+.hero-wm{font-size:clamp(2.2rem,4vw,2.9rem);display:block;margin-bottom:0.6rem;line-height:1}
 .topnav{display:flex;gap:1.6rem;align-items:center}
 .topnav a{font-size:0.82rem;font-weight:500;color:var(--ink2);text-decoration:none;transition:color .2s}
 .topnav a:hover{color:var(--accent)}
@@ -166,7 +174,7 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
 <!-- ════════ TOP BAR ════════ -->
 <div class="topbar">
   <div class="topbar-in">
-    <a class="brand" href="#top">ARCHOPT<span class="brand-dot"></span></a>
+    <a class="wm-chip" href="#top" aria-label="PareVia"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span><small>by <span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</small></a>
     <nav class="topnav">
       <a href="#workflow">Workflow</a>
       <a href="#features">Capabilities</a>
@@ -182,9 +190,10 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
 <section class="hero" id="top">
   <div class="hero-in">
     <div>
-      <div class="eyebrow">ARCHOPT · Building Optimization Software</div>
+      <span class="hero-wm"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span></span>
+      <div class="eyebrow">Building Optimization Software · formerly ARCHOPT · by ArchOpt Technologies</div>
       <h1 class="display">The building optimization tool.<br><em>Built for practitioners.</em></h1>
-      <p class="lead">ARCHOPT combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization — delivering Pareto-optimal building designs in hours, not weeks. One desktop application. No coding required.</p>
+      <p class="lead">PareVia combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization — delivering Pareto-optimal building designs in hours, not weeks. One desktop application. No coding required.</p>
       <div class="hero-ctas">
         <a class="btn btn-gold" href="#download">⬇ Download for Windows</a>
         <a class="btn btn-ghost-dark" href="#buy">Buy a license key</a>
@@ -239,14 +248,14 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
     <div class="dl-grid">
       <div>
         <div class="eyebrow">Download</div>
-        <h2 class="display">Get ARCHOPT for Windows</h2>
-        <p class="lead" style="margin-top:0.6rem">The download is free. ARCHOPT runs once activated with a license key — purchase a key below, and it arrives by email within 24 hours.</p>
+        <h2 class="display">Get PareVia for Windows</h2>
+        <p class="lead" style="margin-top:0.6rem">The download is free. PareVia runs once activated with a license key — purchase a key below, and it arrives by email within 24 hours.</p>
         <div style="margin-top:2rem;display:flex;gap:0.85rem;flex-wrap:wrap">
           <!-- ▼▼ REPLACE href WITH YOUR GITHUB RELEASES ASSET URL ▼▼ -->
-          <button class="btn btn-blue" onclick="openTerms(true)">⬇ Download ARCHOPT v2.0</button>
+          <button class="btn btn-blue" onclick="openTerms(true)">⬇ Download PareVia v2.0</button>
           <a class="btn" style="border:1px solid var(--border-md);color:var(--ink2)" href="#buy">I need a license key →</a>
         </div>
-        <div class="dl-meta">ARCHOPT-Setup-v2.0.zip · ~500 MB · Windows 10 / 11 (64-bit)</div>
+        <div class="dl-meta">PareVia v2.0 installer (.zip) · ~500 MB · Windows 10 / 11 (64-bit)</div>
         <div class="dl-note"><strong>Why is the download free?</strong> The installer is fully functional but requires a one-time activation with a license key. This lets you verify the software installs and opens on your machine before purchasing.</div>
       </div>
       <div class="dl-card">
@@ -270,8 +279,8 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
   <h2 class="display">From download to first run</h2>
   <div class="how-grid">
     <div class="how"><span class="how-n">STEP 1</span><h3>Download &amp; install</h3><p>Get the installer above, unzip, and run setup. The application opens to an activation screen.</p></div>
-    <div class="how"><span class="how-n">STEP 2</span><h3>Purchase a license</h3><p>Pay securely via PayPal. Your personal license key is delivered to your email address within 24 hours.</p></div>
-    <div class="how"><span class="how-n">STEP 3</span><h3>Activate &amp; optimize</h3><p>Enter the key on the activation screen. The license binds to your machine, and ARCHOPT unlocks — for one full year.</p></div>
+    <div class="how"><span class="how-n">STEP 2</span><h3>Purchase a license</h3><p>Choose a Student or Commercial license and pay securely online. Your personal license key is delivered to your email address within 24 hours.</p></div>
+    <div class="how"><span class="how-n">STEP 3</span><h3>Activate &amp; optimize</h3><p>Enter the key on the activation screen. The license binds to your machine, and PareVia unlocks for the full term of your license.</p></div>
   </div>
 </section>
 
@@ -280,15 +289,14 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
   <div class="buy-in">
     <div>
       <div class="buy-eyebrow">Direct Purchase — Email Delivery</div>
-      <div class="buy-title">Buy your ARCHOPT<br>license key</div>
-      <p class="buy-desc">ARCHOPT is sold directly — no resellers, no subscription. <strong style="color:#fff">$20 USD, one-time</strong>. Pay via PayPal and receive your license key by email within 24 hours. Each key activates on one machine and is valid for one year.</p>
-      <a href="https://net-zero-gcc.github.io/optimization.github.io/buy.html" target="_blank" rel="noopener" class="btn btn-gold">🔑 Buy ARCHOPT — Pay with PayPal</a>
+      <div class="buy-title">Buy your <span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span><br>license key</div>
+      <p class="buy-desc">PareVia is sold directly by ArchOpt Technologies, with two separate license categories. <strong style="color:#fff">Student licenses</strong> start at $20 for the first 3 months (proof of student status required). <strong style="color:#fff">Commercial licenses</strong> start at $50 for the first 3 months, with monthly, annual, and 10-year options. Your license key arrives by email within 24 hours and activates on one machine.</p>
+      <a href="buy.html" target="_blank" rel="noopener" class="btn btn-gold">🔑 See Student &amp; Commercial licenses</a>
       <div class="trust">
-        <span>Secure PayPal payment</span>
+        <span>Secure online checkout</span>
         <span>Email delivery within 24h</span>
         <span>1 device per license</span>
-        <span>1 year license</span>
-        <span>One-time fee — no subscription</span>
+        <span>Student and Commercial pricing</span>
       </div>
     </div>
   </div>
@@ -300,28 +308,28 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
   <h2 class="display" style="margin-bottom:1.5rem">Common questions</h2>
   <div class="faq">
     <details>
-      <summary>Can I try ARCHOPT before buying?</summary>
+      <summary>Can I try PareVia before buying?</summary>
       <p>The installer is free to download, so you can confirm it installs and launches on your machine. Running optimizations requires an activated license key.</p>
     </details>
     <details>
       <summary>How is the license key delivered?</summary>
-      <p>After your PayPal payment is confirmed, your license key is sent to the email address associated with your PayPal account — within 24 hours, usually much sooner. If it doesn't arrive, check your spam folder, then email <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a> with your PayPal transaction ID.</p>
+      <p>After your payment is confirmed, your license key is sent to the email address you used at checkout, within 24 hours and usually much sooner. If it doesn't arrive, check your spam folder, then email <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a> with your order or transaction ID.</p>
     </details>
     <details>
       <summary>Can I move my license to a new computer?</summary>
       <p>Each key activates on one machine. If you replace your computer, email <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a> with your license key and the license can be reset for activation on the new machine.</p>
     </details>
     <details>
-      <summary>What happens after one year?</summary>
-      <p>The license is valid for one year from activation. After expiry, the software prompts for a new key — renewing is the same one-time purchase, with no automatic billing.</p>
+      <summary>What happens when my license period ends?</summary>
+      <p>Each license is valid for the period you purchased (for example 3 months, 1 month, 1 year, or 10 years). When it ends, the software prompts for a new key. Renewal prices for Student and Commercial licenses are listed on the <a href="buy.html">license page</a>.</p>
     </details>
     <details>
-      <summary>Does ARCHOPT need an internet connection?</summary>
+      <summary>Does PareVia need an internet connection?</summary>
       <p>Only briefly: once for activation, and occasionally to re-verify the license. All simulations and optimizations run entirely on your own machine — your models never leave your computer.</p>
     </details>
     <details>
       <summary>Do I need to know how to code?</summary>
-      <p>No. ARCHOPT is a desktop application with a full graphical interface. You define variables, ranges, and objectives in the GUI; the EnergyPlus runs, surrogate training, and NSGA-III optimization are fully automated.</p>
+      <p>No. PareVia is a desktop application with a full graphical interface. You define variables, ranges, and objectives in the GUI; the EnergyPlus runs, surrogate training, and NSGA-III optimization are fully automated.</p>
     </details>
   </div>
 </section>
@@ -333,22 +341,22 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
       <h2 id="termsTitle">License Terms &amp; Conditions</h2>
       <button class="modal-x" onclick="closeTerms()" aria-label="Close">✕</button>
     </div>
-    <p class="modal-intro">By downloading, installing, purchasing, or using ARCHOPT, you agree to these terms. Please read before downloading.</p>
+    <p class="modal-intro">By downloading, installing, purchasing, or using PareVia, you agree to these terms. Please read before downloading.</p>
     <div class="modal-body" id="termsBody">
 <h3 style="font-size:0.95rem;font-weight:600;color:var(--ink);margin:1.6rem 0 0.5rem">1. Copyright &amp; ownership</h3>
-    <p>ARCHOPT, including all software, code, algorithms, documentation, design, and content on this page, is © 2026 ARCHOPT. All rights reserved. The software is licensed, not sold. Purchasing a license key grants you a limited right to use the software — it does not transfer ownership of the software or any intellectual property rights to you.</p>
+    <p>PareVia, including all software, code, algorithms, documentation, design, and content on this page, is © 2026 ArchOpt Technologies. All rights reserved. The software is licensed, not sold. Purchasing a license key grants you a limited right to use the software — it does not transfer ownership of the software or any intellectual property rights to you.</p>
 
     <h3 style="font-size:0.95rem;font-weight:600;color:var(--ink);margin:1.6rem 0 0.5rem">2. License grant &amp; restrictions</h3>
-    <p>Each license key permits installation and activation of ARCHOPT on <strong>one (1) machine</strong> for a period of <strong>one (1) year</strong> from activation. The license is personal and non-transferable. You may <strong>not</strong>: (a) share, resell, rent, lease, or redistribute the software or your license key; (b) reverse engineer, decompile, disassemble, or attempt to extract the source code; (c) modify, adapt, or create derivative works of the software; (d) circumvent, disable, or interfere with the license activation system; or (e) use the software to provide it as a service to third parties. Violation of these restrictions terminates your license immediately and without refund.</p>
+    <p>Each license key permits installation and activation of PareVia on <strong>one (1) machine</strong> for the <strong>license period purchased</strong> (for example 3 months, 1 month, 1 year, or 10 years) from activation. Student licenses are limited to non-commercial academic use by verified students. The license is personal and non-transferable. You may <strong>not</strong>: (a) share, resell, rent, lease, or redistribute the software or your license key; (b) reverse engineer, decompile, disassemble, or attempt to extract the source code; (c) modify, adapt, or create derivative works of the software; (d) circumvent, disable, or interfere with the license activation system; or (e) use the software to provide it as a service to third parties. Violation of these restrictions terminates your license immediately and without refund.</p>
 
     <h3 style="font-size:0.95rem;font-weight:600;color:var(--ink);margin:1.6rem 0 0.5rem">3. No warranty — software provided "as is"</h3>
-    <p>ARCHOPT IS PROVIDED <strong>"AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND</strong>, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, RELIABILITY, OR NON-INFRINGEMENT. We do not warrant that the software will be error-free, uninterrupted, compatible with your system, or that defects will be corrected. You assume the entire risk arising from the download, installation, and use of the software.</p>
+    <p>PareVia IS PROVIDED <strong>"AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND</strong>, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, RELIABILITY, OR NON-INFRINGEMENT. We do not warrant that the software will be error-free, uninterrupted, compatible with your system, or that defects will be corrected. You assume the entire risk arising from the download, installation, and use of the software.</p>
 
     <h3 style="font-size:0.95rem;font-weight:600;color:var(--ink);margin:1.6rem 0 0.5rem">4. Results are estimates — professional responsibility</h3>
-    <p>ARCHOPT produces simulation-based estimates and optimization results that depend on user inputs, third-party tools (including EnergyPlus), assumptions, and statistical models. <strong>Outputs are decision-support information only — they are not engineering advice, not a certification, and not a guarantee of real-world building performance.</strong> You are solely responsible for independently verifying all results and for any design, construction, financial, or regulatory decision made using the software. We accept no responsibility for decisions, designs, or projects based on ARCHOPT outputs.</p>
+    <p>PareVia produces simulation-based estimates and optimization results that depend on user inputs, third-party tools (including EnergyPlus), assumptions, and statistical models. <strong>Outputs are decision-support information only — they are not engineering advice, not a certification, and not a guarantee of real-world building performance.</strong> You are solely responsible for independently verifying all results and for any design, construction, financial, or regulatory decision made using the software. We accept no responsibility for decisions, designs, or projects based on PareVia outputs.</p>
 
     <h3 style="font-size:0.95rem;font-weight:600;color:var(--ink);margin:1.6rem 0 0.5rem">5. Limitation of liability</h3>
-    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL ARCHOPT OR ITS DEVELOPER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES — INCLUDING, WITHOUT LIMITATION, LOSS OF PROFITS, DATA, BUSINESS, GOODWILL, PROJECT DELAYS, CONSTRUCTION COSTS, OR ENERGY-PERFORMANCE SHORTFALLS — ARISING OUT OF OR RELATED TO THE USE OF, OR INABILITY TO USE, THE SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN ALL CASES, TOTAL AGGREGATE LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR YOUR LICENSE KEY.</p>
+    <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL ARCHOPT TECHNOLOGIES OR THE DEVELOPER OF PAREVIA BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES — INCLUDING, WITHOUT LIMITATION, LOSS OF PROFITS, DATA, BUSINESS, GOODWILL, PROJECT DELAYS, CONSTRUCTION COSTS, OR ENERGY-PERFORMANCE SHORTFALLS — ARISING OUT OF OR RELATED TO THE USE OF, OR INABILITY TO USE, THE SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. IN ALL CASES, TOTAL AGGREGATE LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR YOUR LICENSE KEY.</p>
 
     <h3 style="font-size:0.95rem;font-weight:600;color:var(--ink);margin:1.6rem 0 0.5rem">6. Refund policy — all sales final</h3>
     <p>Because the installer is <strong>free to download and test before purchase</strong>, and because license keys are digital goods delivered immediately and cannot be returned, <strong>all sales are final and non-refundable once a license key has been issued</strong>. By purchasing, you expressly consent to immediate delivery of digital content and acknowledge that you thereby waive any statutory withdrawal/cooling-off right to the extent permitted by law. If a valid key fails to activate on a compatible system and our support cannot resolve it, a replacement key or — at our sole discretion — a refund may be provided.</p>
@@ -357,7 +365,7 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
     <p>Activation requires a brief internet connection, and the software may periodically re-verify the license. We may suspend or revoke keys obtained fraudulently, charged back, shared, or used in breach of these terms, without refund. We are not liable for temporary unavailability of the activation service. We may update or discontinue the software at any time; these terms apply to all versions and updates.</p>
 
     <h3 style="font-size:0.95rem;font-weight:600;color:var(--ink);margin:1.6rem 0 0.5rem">8. Third-party software</h3>
-    <p>ARCHOPT interoperates with third-party tools such as EnergyPlus, which are governed by their own licenses. We are not responsible for the availability, accuracy, or behavior of third-party software.</p>
+    <p>PareVia interoperates with third-party tools such as EnergyPlus, which are governed by their own licenses. We are not responsible for the availability, accuracy, or behavior of third-party software.</p>
 
     <h3 style="font-size:0.95rem;font-weight:600;color:var(--ink);margin:1.6rem 0 0.5rem">9. Governing law &amp; changes</h3>
     <p>These terms are governed by the laws of the United Arab Emirates, without regard to conflict-of-law rules. We may update these terms at any time; the version published on this page at the time of your purchase applies to that purchase. If any provision is held unenforceable, the remaining provisions remain in full force.</p>
@@ -406,7 +414,7 @@ document.addEventListener('keydown', e => { if(e.key === 'Escape') closeTerms();
 <!-- ════════ FOOTER ════════ -->
 <footer>
   <div class="foot-in">
-    <p>© 2026 ARCHOPT. All rights reserved. Use of this software is subject to the <a href="#" onclick="openTerms(false);return false" style="color:var(--accent)">License Terms</a>.</p>
+    <p>© 2026 ArchOpt Technologies. PareVia is a product of ArchOpt Technologies. All rights reserved. Use of this software is subject to the <a href="#" onclick="openTerms(false);return false" style="color:var(--accent)">License Terms</a>.</p>
     <nav>
       <a href="#download">Download</a>
       <a href="#buy">Buy license</a>
