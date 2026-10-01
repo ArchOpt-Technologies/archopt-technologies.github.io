@@ -7,7 +7,7 @@
 <meta name="description" content="Buy a PareVia license from ArchOpt Technologies. Separate Student and Commercial pricing for EnergyPlus-based multi-objective building design optimization software."/>
 <meta name="author" content="ArchOpt Technologies"/>
 <meta property="og:title" content="Buy PareVia | Student &amp; Commercial Licenses"/>
-<meta property="og:description" content="Student licenses from $20 for the first 3 months. Commercial licenses from $50 for the first 3 months, with monthly, annual and 10-year options."/>
+<meta property="og:description" content="Student licenses from $20/month for the first 3 months. Commercial licenses from $50/month for the first 3 months, with monthly, annual and 10-year options."/>
 <meta property="og:type" content="website"/>
 <link rel="icon" href="favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -234,14 +234,14 @@
     <div class="choose-kicker">Category 1</div>
     <h2>Student License</h2>
     <p>For currently enrolled students. Non-commercial academic and research use. Proof of student status required.</p>
-    <div class="choose-from">From <b>$20</b> for the first 3 months</div>
+    <div class="choose-from">From <b>$20</b>/month for the first 3 months</div>
     <div class="choose-go">View student pricing ↓</div>
   </a>
   <a class="choose-card com" href="#commercial">
     <div class="choose-kicker">Category 2</div>
     <h2>Commercial License</h2>
     <p>For practitioners, consultancies, companies, and any project work carried out for clients or for profit.</p>
-    <div class="choose-from">From <b>$50</b> for the first 3 months</div>
+    <div class="choose-from">From <b>$50</b>/month for the first 3 months</div>
     <div class="choose-go">View commercial pricing ↓</div>
   </a>
 </div>
@@ -262,7 +262,7 @@
       <div class="plan">
         <div class="plan-top">
           <div class="plan-name">Student · Flexible start</div>
-          <div class="price"><sup>$</sup>20</div>
+          <div class="price"><sup>$</sup>20<span style="font-size:1rem;font-weight:600;letter-spacing:0;margin-left:.3rem;color:var(--muted)">/month</span></div>
           <div class="price-for">for the first 3 months</div>
           <div class="then"><span class="lbl">After the first 3 months</span><b>$40</b> per month</div>
         </div>
@@ -272,8 +272,9 @@
           <div>Move to the annual plan at any time</div>
         </div>
         <div class="plan-cta">
-          <a class="buy-btn" href="#" data-student="Student Flexible: $20 for the first 3 months, then $40/month">Apply for this plan</a>
-          <p class="cta-note">Proof of student status required before the key is issued</p>
+          <a class="buy-btn" href="#" data-checkout="student_monthly">Buy Student Monthly</a>
+          <a class="buy-btn ghost" href="#" data-student="Student Flexible: $20/month for the first 3 months, then $40/month" style="margin-top:.55rem">Send proof of student status</a>
+          <p class="cta-note">Your key is issued after your student status is verified</p>
         </div>
       </div>
 
@@ -292,8 +293,9 @@
           <div>Renew each year while you remain a student</div>
         </div>
         <div class="plan-cta">
-          <a class="buy-btn" href="#" data-student="Student Annual: $150 for the first year, then $300/year">Apply for this plan</a>
-          <p class="cta-note">Proof of student status required before the key is issued</p>
+          <a class="buy-btn" href="#" data-checkout="student_annual">Buy Student Annual</a>
+          <a class="buy-btn ghost" href="#" data-student="Student Annual: $150 for the first year, then $300/year" style="margin-top:.55rem">Send proof of student status</a>
+          <p class="cta-note">Your key is issued after your student status is verified</p>
         </div>
       </div>
     </div>
@@ -315,7 +317,7 @@
     <div class="info-grid">
       <div class="info req">
         <h3>🎓 Proof of student status (required)</h3>
-        <p>Student licenses are issued only to currently enrolled students. With your application, please send an
+        <p>Student licenses are issued only to currently enrolled students. After purchase, please send an
         <strong>official confirmation from your university or your supervisor</strong> stating that you are currently a student. For example:</p>
         <ul>
           <li>An enrollment or status letter issued by your university, or</li>
@@ -332,9 +334,9 @@
     </div>
 
     <div class="flow">
-      <div class="flow-step"><span class="flow-n">1</span><b>Apply with proof</b>Click "Apply for this plan", then attach your university or supervisor confirmation to the email.</div>
-      <div class="flow-step"><span class="flow-n">2</span><b>Verification and payment</b>We confirm your student status and reply with a secure payment link for the plan you chose.</div>
-      <div class="flow-step"><span class="flow-n">3</span><b>Receive your key</b>After payment, your license key is emailed to you. Activate it once on your machine.</div>
+      <div class="flow-step"><span class="flow-n">1</span><b>Buy your plan</b>Click "Buy Student Monthly" or "Buy Student Annual" and pay securely through Gumroad.</div>
+      <div class="flow-step"><span class="flow-n">2</span><b>Send proof of status</b>Click "Send proof of student status" and attach your university or supervisor confirmation to the email.</div>
+      <div class="flow-step"><span class="flow-n">3</span><b>Receive your key</b>Once your student status is verified, your license key is emailed to you. Activate it once on your machine.</div>
     </div>
   </div>
 </section>
@@ -355,7 +357,7 @@
       <div class="plan">
         <div class="plan-top">
           <div class="plan-name">Commercial · Flexible start</div>
-          <div class="price"><sup>$</sup>50</div>
+          <div class="price"><sup>$</sup>50<span style="font-size:1rem;font-weight:600;letter-spacing:0;margin-left:.3rem;color:var(--muted)">/month</span></div>
           <div class="price-for">for the first 3 months</div>
           <div class="then"><span class="lbl">After the first 3 months</span><b>$100</b> per month</div>
         </div>
@@ -365,7 +367,7 @@
           <div>Move to an annual or 10-year plan at any time</div>
         </div>
         <div class="plan-cta">
-          <a class="buy-btn" href="#" data-commercial="commercial_intro3m" data-label="Commercial Flexible: $50 for the first 3 months, then $100/month">Buy this plan</a>
+          <a class="buy-btn" href="#" data-checkout="commercial_monthly" data-label="Commercial Flexible: $50/month for the first 3 months, then $100/month">Buy this plan</a>
           <p class="cta-note">License key by email within 24 hours</p>
         </div>
       </div>
@@ -385,7 +387,7 @@
           <div>Renew annually at the standard rate</div>
         </div>
         <div class="plan-cta">
-          <a class="buy-btn" href="#" data-commercial="commercial_year1" data-label="Commercial Annual: $500 for the first year, then $1,000/year">Buy this plan</a>
+          <a class="buy-btn" href="#" data-checkout="commercial_annual" data-label="Commercial Annual: $500 for the first year, then $1,000/year">Buy this plan</a>
           <p class="cta-note">License key by email within 24 hours</p>
         </div>
       </div>
@@ -404,7 +406,7 @@
           <div>Predictable budgeting for organisations</div>
         </div>
         <div class="plan-cta">
-          <a class="buy-btn" href="#" data-commercial="commercial_10yr" data-label="Commercial 10-year: $5,000 one payment">Buy this plan</a>
+          <a class="buy-btn" href="#" data-checkout="commercial_10yr" data-label="Commercial 10-year: $5,000 one payment">Buy this plan</a>
           <p class="cta-note">License key by email within 24 hours</p>
         </div>
       </div>
@@ -440,7 +442,7 @@
 
     <div class="flow">
       <div class="flow-step"><span class="flow-n">1</span><b>Choose a plan</b>Select the flexible, annual, or 10-year plan above.</div>
-      <div class="flow-step"><span class="flow-n">2</span><b>Pay securely</b>Complete payment through the secure checkout, or request an invoice by email.</div>
+      <div class="flow-step"><span class="flow-n">2</span><b>Pay securely</b>Complete payment through Gumroad, or request an invoice by email.</div>
       <div class="flow-step"><span class="flow-n">3</span><b>Receive your key</b>Your license key is emailed within 24 hours. Activate it once on your machine.</div>
     </div>
   </div>
@@ -490,7 +492,7 @@
 
   <div class="faq-item">
     <button class="faq-q" onclick="toggleFaq(this)">How quickly will I receive my key? <span>+</span></button>
-    <div class="faq-a">Commercial keys are emailed after payment is confirmed, normally within 24 hours. Student keys are issued after your student status has been verified and payment is complete.</div>
+    <div class="faq-a">Commercial keys are emailed after payment is confirmed, normally within 24 hours. Student keys are issued after payment is complete and your student status has been verified.</div>
   </div>
 
   <div class="faq-item">
@@ -509,23 +511,16 @@
 
 <script>
 /* ───────────────────────────────────────────────────────────────
-   CHECKOUT LINKS (edit here only)
-   Paste the checkout URL of each commercial product (e.g. a Gumroad
-   product link) between the quotes. While a value is empty, the
-   button opens a pre-filled order email instead, so no button is
-   ever broken.
-
-   Legacy links from the previous buy page (old prices, NOT matching
-   the new plans; kept here for reference only):
-     $20/month  -> https://archioptimize.gumroad.com/l/axyoac
-     $150/year  -> https://archioptimize.gumroad.com/l/hcxws
-   The $150/year product matches the new Student Annual price and can
-   be sent to verified students as their payment link.
+   CHECKOUT LINKS (Gumroad) - edit here only
+   If a value is left empty, the button opens a pre-filled order
+   email instead, so no button is ever broken.
    ─────────────────────────────────────────────────────────────── */
 const CHECKOUT = {
-  commercial_intro3m: "",   // $50 for the first 3 months, then $100/month
-  commercial_year1:   "",   // $500 first year, then $1,000/year
-  commercial_10yr:    ""    // $5,000 one payment, 10 years
+  student_monthly:    "https://archioptimize.gumroad.com/l/tqkhg",   // Student: $20/month first 3 months, then $40/month
+  student_annual:     "https://archioptimize.gumroad.com/l/ehgqwj",  // Student: $150 first year, then $300/year
+  commercial_monthly: "https://archioptimize.gumroad.com/l/wraast",  // Commercial: $50/month first 3 months, then $100/month
+  commercial_annual:  "https://archioptimize.gumroad.com/l/xgzjwr",  // Commercial: $500 first year, then $1,000/year
+  commercial_10yr:    "https://archioptimize.gumroad.com/l/dhkjyu"   // Commercial: $5,000 one payment, 10 years
 };
 const SALES_EMAIL = "architecture.optimization@gmail.com";
 
@@ -537,23 +532,24 @@ function mailto(subject, body) {
 document.querySelectorAll("[data-student]").forEach(function (btn) {
   const plan = btn.getAttribute("data-student");
   btn.href = mailto(
-    "PareVia Student License application - " + plan,
-    "Hello,\n\nI would like to apply for a PareVia Student License.\n\n" +
+    "PareVia Student License - proof of student status - " + plan,
+    "Hello,\n\nPlease find attached my proof of student status for my PareVia Student License.\n\n" +
     "Selected plan: " + plan + "\n" +
     "Full name: \n" +
     "University: \n" +
     "Programme / degree and current year: \n" +
     "Supervisor name and email: \n" +
+    "Gumroad order email / receipt number: \n" +
     "Research topic (optional, for possible collaboration): \n\n" +
-    "Proof of student status: I have ATTACHED an official confirmation from my university or supervisor stating that I am currently a student.\n\n" +
+    "ATTACHED: an official confirmation from my university or supervisor stating that I am currently a student.\n\n" +
     "Thank you."
   );
 });
 
-/* Commercial buttons: checkout link if configured, otherwise a pre-filled order email */
-document.querySelectorAll("[data-commercial]").forEach(function (btn) {
-  const key = btn.getAttribute("data-commercial");
-  const label = btn.getAttribute("data-label");
+/* Buy buttons: Gumroad checkout if configured, otherwise a pre-filled order email */
+document.querySelectorAll("[data-checkout]").forEach(function (btn) {
+  const key = btn.getAttribute("data-checkout");
+  const label = btn.getAttribute("data-label") || btn.textContent.trim();
   const url = (CHECKOUT[key] || "").trim();
   if (url) {
     btn.href = url;
@@ -561,11 +557,11 @@ document.querySelectorAll("[data-commercial]").forEach(function (btn) {
     btn.rel = "noopener";
   } else {
     btn.href = mailto(
-      "PareVia Commercial License order - " + label,
-      "Hello,\n\nI would like to purchase a PareVia Commercial License.\n\n" +
+      "PareVia License order - " + label,
+      "Hello,\n\nI would like to purchase a PareVia license.\n\n" +
       "Selected plan: " + label + "\n" +
       "Full name: \n" +
-      "Company / organisation: \n" +
+      "Company / organisation / university: \n" +
       "Country: \n" +
       "Number of machines: 1\n" +
       "Invoice required (yes/no): \n\n" +
