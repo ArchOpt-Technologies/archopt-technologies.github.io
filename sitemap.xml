@@ -1,24 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://sitemaps.org">
-  <!-- الصفحة الرئيسية -->
-  <url>
-    <loc>https://net-zero-gcc.github.io/archopt-technologies.github.io/</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <!-- صفحة epcalibration -->
-  <url>
-    <loc>https://github.io</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <!-- صفحة buy -->
-  <url>
-    <loc>https://github.io</loc>
-    <lastmod>2026-10-01</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+
+    <!-- الصفحة الرئيسية -->
+    <url>
+        <loc>https://net-zero-gcc.github.io/archopt-technologies.github.io/</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>1.0</priority>
+    </url>
+
+    <!-- صفحة ARCHOPT -->
+    <url>
+        <loc>https://net-zero-gcc.github.io/archopt-technologies.github.io/archopt.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- صفحة EP Calibration -->
+    <url>
+        <loc>https://net-zero-gcc.github.io/archopt-technologies.github.io/epcalibration.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- صفحة الشراء العامة -->
+    <url>
+        <loc>https://net-zero-gcc.github.io/archopt-technologies.github.io/buy.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- صفحة شراء EP Calibration -->
+    <url>
+        <loc>https://net-zero-gcc.github.io/archopt-technologies.github.io/buy_epcalibration.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
 </urlset>
