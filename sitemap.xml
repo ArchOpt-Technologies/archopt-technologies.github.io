@@ -34,4 +34,12 @@
         <priority>0.8</priority>
     </url>
 
+    <!-- صفحة شراء EP Calibration -->
+    <url>
+        <loc>https://net-zero-gcc.github.io/archopt-technologies.github.io/buy_epcalibration.html</loc>
+        <lastmod>2026-10-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
 </urlset>
