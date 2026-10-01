@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ARCHOPT Technologies | Building Performance, EnergyPlus & Optimization Software</title>
-<meta name="description" content="ARCHOPT Technologies develops building performance software for EnergyPlus simulation, building energy calibration, multi-objective design optimization, and sustainability analysis."> 
-<meta name="keywords" content="ARCHOPT Technologies, ARCHOPT, EPCalibration, building performance software, building energy optimization, EnergyPlus software, EnergyPlus calibration, building energy simulation, building performance optimization, building design optimization, multi-objective building optimization, NSGA-III, NSGA-II, XGBoost surrogate model, ASHRAE Guideline 14, building energy calibration, embodied carbon optimization, sustainable building design, building performance, EnergyPlus, building optimization, building performance"> 
-<meta name="author" content="ARCHOPT Technologies"> 
-<meta property="og:title" content="ARCHOPT Technologies | Building Performance & Optimization Software"> 
+<title>ArchOpt Technologies | Building Performance, EnergyPlus & Optimization Software</title>
+<meta name="description" content="ArchOpt Technologies develops building performance software for EnergyPlus simulation, building energy calibration, multi-objective design optimization, and sustainability analysis."> 
+<meta name="keywords" content="ArchOpt Technologies, PareVia, PareVia software, ARCHOPT (former name of PareVia), EPCalibration, building performance software, building energy optimization, EnergyPlus software, EnergyPlus calibration, building energy simulation, building performance optimization, building design optimization, multi-objective building optimization, NSGA-III, NSGA-II, XGBoost surrogate model, ASHRAE Guideline 14, building energy calibration, embodied carbon optimization, sustainable building design, building performance, EnergyPlus, building optimization, building performance"> 
+<meta name="author" content="ArchOpt Technologies"> 
+<meta property="og:title" content="ArchOpt Technologies | Building Performance & Optimization Software"> 
 <meta property="og:description" content="Building performance software for EnergyPlus simulation, calibration, multi-objective optimization, and sustainable building design."> 
 <meta property="og:type" content="website"> 
 
@@ -42,7 +42,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(251,250,255,.85);backdrop-
 .brand-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--primary) 0%,#7c72f0 55%,var(--archopt) 100%);position:relative;flex-shrink:0;box-shadow:0 4px 14px -4px rgba(79,70,229,.55)}
 .brand-mark::before{content:'';position:absolute;inset:9px;border-radius:4px;background:rgba(255,255,255,.92)}
 .brand-name{font-family:'Sora',sans-serif;font-weight:700;font-size:1.08rem;letter-spacing:-.01em;line-height:1.15}
-.brand-name span{font-weight:500;color:var(--ink3);font-size:.72rem;display:block;letter-spacing:.02em;margin-top:1px;font-family:'Inter',sans-serif}
+.brand-name .sub{font-weight:500;color:var(--ink3);font-size:.72rem;display:block;letter-spacing:.02em;margin-top:4px;font-family:'Inter',sans-serif}
 .nav-links{display:flex;gap:.2rem;list-style:none}
 .nav-links button{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;color:var(--ink2);background:none;border:none;cursor:pointer;padding:8px 14px;border-radius:var(--r-pill);transition:background .18s,color .18s}
 .nav-links button:hover{background:var(--primary-light);color:var(--primary-d)}
@@ -176,6 +176,14 @@ h1.display .accent{background:linear-gradient(135deg,var(--primary),var(--archop
 .buy-badge-icon{font-size:2.1rem;margin-bottom:.6rem}
 .buy-badge p{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.6rem;line-height:1.55}
 
+/* BRAND WORDMARKS: Arch / Pare in white, Opt / Via in brand blue */
+:root{--wm-white:#ffffff;--wm-blue:#4f8ef7;--wm-chip:#0b1020}
+.wm{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.wm-a{color:var(--wm-white)}.wm-b{color:var(--wm-blue)}
+.wm-chip{display:inline-flex;align-items:center;gap:.4em;background:var(--wm-chip);border-radius:9px;padding:.32em .75em;line-height:1.2}
+.wm-chip .t{font-family:'Sora',sans-serif;font-weight:600;color:rgba(255,255,255,.85)}
+.wm-chip .v{font-family:'Inter',sans-serif;font-size:.78em;font-weight:600;color:rgba(255,255,255,.55)}
+
 /* AUTHOR STRIP */
 .author-strip{display:flex;align-items:center;gap:1.5rem;padding:2.5rem 3rem;background:var(--bg2)}
 .author-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--archopt));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;flex-shrink:0}
@@ -267,7 +275,7 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
         <label>Regarding</label>
         <select id="f-type">
           <option value="">Select…</option>
-          <option>ARCHOPT license</option>
+          <option>PareVia license</option>
           <option>EPCalibration license</option>
           <option>Enterprise / multi-seat</option>
           <option>Technical question before purchase</option>
@@ -289,12 +297,11 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
 <!-- NAV -->
 <nav>
   <a class="brand" onclick="showPage('home')">
-    <span class="brand-mark"></span>
-    <span class="brand-name">ARCHOPT Technologies<span>Building performance software</span></span>
+    <span class="brand-name"><span class="wm-chip"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="t">Technologies</span></span><span class="sub">Building performance software</span></span>
   </a>
   <ul class="nav-links">
     <li><button id="nav-home" onclick="showPage('home')">Suite</button></li>
-    <li><button id="nav-archopt" onclick="showPage('archopt')">ARCHOPT</button></li>
+    <li><button id="nav-archopt" onclick="showPage('archopt')">PareVia</button></li>
     <li><button id="nav-epcal" onclick="showPage('epcal')">EPCalibration</button></li>
     <li><button id="nav-pricing" onclick="showPage('pricing')">Pricing</button></li>
   </ul>
@@ -308,7 +315,7 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
       <span class="badge"><span class="dot"></span>A growing suite of building-performance tools</span>
       <h1 class="display">Software that makes buildings <span class="accent">perform</span> and keeps growing.</h1>
       <p class="lead">
-      ARCHOPT Technologies develops building performance software for EnergyPlus
+      ArchOpt Technologies develops building performance software for EnergyPlus
       simulation, building energy calibration, multi-objective building design
       optimization, and sustainability analysis. Our tools help architects,
       engineers, researchers, and building-performance professionals evaluate,
@@ -324,9 +331,9 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
       </div>
     </div>
     <div class="hero-fig">
-      <img src="ARCHOPT Technologies.png" alt="ARCHOPT Technologies logo">
+      <img src="ARCHOPT Technologies.png" alt="ArchOpt Technologies logo">
       <div class="hero-fig-cap">
-        <span class="badge amber">ARCHOPT</span>
+        <span class="wm-chip" style="font-size:.9rem"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span></span>
         <span style="font-size:.85rem;color:var(--ink3)">NSGA-III · Pareto front</span>
       </div>
     </div>
@@ -334,7 +341,7 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
   <h2>Building Energy Optimization Software for EnergyPlus</h2>
 
   <p class="lead">
-  ARCHOPT is a building design optimization software that uses EnergyPlus,
+  PareVia is a building design optimization software that uses EnergyPlus,
   XGBoost surrogate modelling, and NSGA-III multi-objective optimization to
   identify high-performance building designs based on energy use, embodied
   carbon, cost, and other performance objectives.
@@ -350,9 +357,9 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
     <div class="suite-grid">
       <div class="suite-card amber" onclick="showPage('archopt')">
         <div class="suite-icon">🎯</div>
-        <h3>ARCHOPT</h3>
+        <h3><span class="wm-chip" style="font-size:1.05rem"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span></span></h3>
         <p>Multi-objective optimization for new building designs, Pareto-optimal trade-offs between energy, embodied carbon, and cost.</p>
-        <div class="go">Explore ARCHOPT →</div>
+        <div class="go">Explore PareVia →</div>
       </div>
       <div class="suite-card teal" onclick="showPage('epcal')">
         <div class="suite-icon">📈</div>
@@ -371,7 +378,7 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
 
   <div class="author-strip">
     <div class="author-avatar">FB</div>
-    <div class="who">Built by <b>Dr. Fuad Baba</b>, Assistant Professor at the British University in Dubai, building energy simulation, multi-objective optimization, and net-zero research. ARCHOPT Technologies is the software side of that work; consulting is offered separately through <a href="https://net-zero-gcc.github.io/optimization.github.io/" target="_blank" style="color:var(--primary-d);font-weight:600">NetZero Gulf</a>.</div>
+    <div class="who">Built by <b>Dr. Fuad Baba</b>, Assistant Professor at the British University in Dubai, building energy simulation, multi-objective optimization, and net-zero research. ArchOpt Technologies is the software side of that work; consulting is offered separately through <a href="https://net-zero-gcc.github.io/optimization.github.io/" target="_blank" style="color:var(--primary-d);font-weight:600">NetZero Gulf</a>.</div>
   </div>
 
   <div class="site-cta">
@@ -383,8 +390,8 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
     </div>
   </div>
   <footer>
-    <span class="footer-brand" onclick="showPage('home')">ARCHOPT TECHNOLOGIES</span>
-    <span class="footer-copy">© 2026 ARCHOPT Technologies · Dr. Fuad Baba</span>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies · Dr. Fuad Baba</span>
     <div class="footer-legal">
       <button onclick="showPage('terms')">Terms of Service</button>
       <button onclick="showPage('privacy')">Privacy Policy</button>
@@ -394,20 +401,20 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
   </footer>
 </div>
 
-<!-- ══════════════ ARCHOPT ══════════════ -->
+<!-- ══════════════ PareVia ══════════════ -->
 <div class="page" id="page-archopt">
   <section class="tool-banner tool-section amber">
     <div>
-      <span class="badge amber">ARCHOPT · v2.0</span>
+      <span class="wm-chip" style="font-size:1.1rem"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span><span class="v">v2.0 · formerly ARCHOPT</span></span>
       <h2>The building optimization tool. Built for practitioners.</h2>
       <p class="lead">EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization - Pareto-optimal building designs in hours, not weeks. No coding required.</p>
       <div class="tool-btns">
-        <a href="https://net-zero-gcc.github.io/optimization.github.io/archopt.html" target="_blank" class="btn btn-amber">Buy ARCHOPT →</a>
-        <a href="archopt.html" target="_blank" class="btn btn-line">⬇ Download installer (free)</a>
+        <a href="buy.html" target="_blank" class="btn btn-amber">Buy PareVia →</a>
+        <a href="archopt.html#download" target="_blank" class="btn btn-line">⬇ Download installer (free)</a>
       </div>
     </div>
     <div class="spec-fig amber">
-      <img src="Pictures%20-%20ARCHOPT%20Cover.png" alt="ARCHOPT interface">
+      <img src="Pictures%20-%20ARCHOPT%20Cover.png" alt="PareVia interface">
       <div class="spec-fig-meta">
         <div class="spec-stat"><div class="spec-stat-label">Energy Use Intensity</div><div class="spec-stat-val">142.3 kWh/m²</div></div>
         <div class="spec-stat"><div class="spec-stat-label">Embodied Carbon</div><div class="spec-stat-val">318 kgCO₂/m²</div></div>
@@ -430,12 +437,12 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
 
   <section class="shots tool-section amber">
     <div class="shots-frame" id="archopt-shots">
-      <img class="slide active" src="ARCHOPT%20tool%20pictures/Setup.png" alt="ARCHOPT setup screen" data-caption="Setup: project, weather file and EnergyPlus paths">
-      <img class="slide" src="ARCHOPT%20tool%20pictures/IDF.png" alt="ARCHOPT IDF editor" data-caption="IDF Editor: tag-based parametric substitution">
-      <img class="slide" src="ARCHOPT%20tool%20pictures/Variables.png" alt="ARCHOPT variables screen" data-caption="Variables: design parameters, ranges and constraints">
-      <img class="slide" src="ARCHOPT%20tool%20pictures/Embodied.png" alt="ARCHOPT embodied carbon screen" data-caption="Embodied &amp; Cost: material take-off and CO₂ accounting">
-      <img class="slide" src="ARCHOPT%20tool%20pictures/Script.png" alt="ARCHOPT script screen" data-caption="Scripts: custom objective and post-processing hooks">
-      <img class="slide" src="ARCHOPT%20tool%20pictures/GA.png" alt="ARCHOPT optimization screen" data-caption="Optimize: NSGA-III run and live Pareto front">
+      <img class="slide active" src="ARCHOPT%20tool%20pictures/Setup.png" alt="PareVia setup screen" data-caption="Setup: project, weather file and EnergyPlus paths">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/IDF.png" alt="PareVia IDF editor" data-caption="IDF Editor: tag-based parametric substitution">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/Variables.png" alt="PareVia variables screen" data-caption="Variables: design parameters, ranges and constraints">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/Embodied.png" alt="PareVia embodied carbon screen" data-caption="Embodied &amp; Cost: material take-off and CO₂ accounting">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/Script.png" alt="PareVia script screen" data-caption="Scripts: custom objective and post-processing hooks">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/GA.png" alt="PareVia optimization screen" data-caption="Optimize: NSGA-III run and live Pareto front">
     </div>
     <div class="shots-bar">
       <div class="shots-caption" id="archopt-cap">Setup — project, weather file and EnergyPlus paths</div>
@@ -446,7 +453,7 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
     </div>
   </section>
   <section class="tool-section amber" style="padding:3rem">
-    <h2 style="margin-bottom:1rem">ARCHOPT Tutorial Videos</h2>
+    <h2 style="margin-bottom:1rem">PareVia Tutorial Videos</h2>
   
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
       
@@ -482,26 +489,26 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
   <div class="buy-band tool-section amber">
     <div class="buy-text">
       <span class="badge amber" style="background:rgba(255,255,255,.12);color:#fff">DIRECT PURCHASE · INSTANT DELIVERY</span>
-      <div class="buy-title">Buy ARCHOPT directly</div>
-      <div class="buy-desc">Pay via PayPal — your license key arrives by email within 24 hours. Each key activates on one machine.</div>
-      <a href="https://net-zero-gcc.github.io/optimization.github.io/archopt.html" target="_blank" class="btn btn-white">Buy ARCHOPT →</a>
+      <div class="buy-title">Buy <span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span> directly</div>
+      <div class="buy-desc">Two license categories. Student: from $20 for the first 3 months, with proof of student status. Commercial: from $50 for the first 3 months, plus monthly, annual, and 10-year options. Your license key arrives by email and activates on one machine.</div>
+      <a href="buy.html" target="_blank" class="btn btn-white">See Student &amp; Commercial licenses →</a>
       <div class="buy-trust">
-        <span class="buy-trust-item">Secure PayPal payment</span>
+        <span class="buy-trust-item">Secure online checkout</span>
         <span class="buy-trust-item">Email delivery within 24h</span>
-        <span class="buy-trust-item">1 device · 1 year license</span>
-        <span class="buy-trust-item">No subscription</span>
+        <span class="buy-trust-item">1 device per license</span>
+        <span class="buy-trust-item">Student &amp; Commercial pricing</span>
       </div>
     </div>
     <div class="buy-badge">
       <div class="buy-badge-icon">🔑</div>
       <div style="color:#fff;font-size:.88rem;font-weight:700">License Key</div>
-      <p>Windows 10 / 11<br>1 machine · 1 year</p>
+      <p>Windows 10 / 11<br>1 machine per license</p>
     </div>
   </div>
 
   <footer>
-    <span class="footer-brand" onclick="showPage('home')">ARCHOPT TECHNOLOGIES</span>
-    <span class="footer-copy">© 2026 ARCHOPT Technologies · Dr. Fuad Baba</span>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies · Dr. Fuad Baba</span>
     <div class="footer-legal">
       <button onclick="showPage('terms')">Terms of Service</button>
       <button onclick="showPage('privacy')">Privacy Policy</button>
@@ -587,8 +594,8 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
   </div>
 
   <footer>
-    <span class="footer-brand" onclick="showPage('home')">ARCHOPT TECHNOLOGIES</span>
-    <span class="footer-copy">© 2026 ARCHOPT Technologies · Dr. Fuad Baba</span>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies · Dr. Fuad Baba</span>
     <div class="footer-legal">
       <button onclick="showPage('terms')">Terms of Service</button>
       <button onclick="showPage('privacy')">Privacy Policy</button>
@@ -604,19 +611,23 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
     <button class="legal-back" onclick="showPage('home')">← Back</button>
     <span class="badge">PRICING</span>
     <h1 style="margin-top:.9rem">License tiers</h1>
-    <div class="legal-meta">Both tools sold directly through this site · PayPal checkout · license key by email within 24h</div>
+    <div class="legal-meta">Both tools sold directly through this site · secure online checkout · license key by email within 24h</div>
 
-    <h2>ARCHOPT Building Design Optimization Software</h2> 
-    <p> ARCHOPT is a building performance optimization software developed for EnergyPlus-based building energy simulation. It combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization to explore high-performance building designs. </p> 
+    <h2>PareVia Building Design Optimization Software</h2> 
+    <p> PareVia is a building performance optimization software developed for EnergyPlus-based building energy simulation. It combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization to explore high-performance building designs. </p> 
     <p> The software can evaluate building energy use, embodied carbon, cost, and other performance objectives and identify Pareto-optimal building design solutions. </p>
     <table class="pricing-table">
-      <tr><th>Feature</th><th>Student / Academic</th><th>Professional</th><th>Enterprise</th></tr>
-      <tr><td>Price</td><td>$40 USD</td><td>$400 USD</td><td>Custom</td></tr>
-      <tr><td>License duration</td><td>1 month</td><td>1 year</td><td>Custom</td></tr>
-      <tr><td>Devices</td><td>1 computer</td><td>1 computer</td><td>Multi-seat</td></tr>
-      <tr><td>Full application + EnergyPlus, XGBoost, NSGA-III</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
-      <tr><td>Commercial project use</td><td class="no">Academic only</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+      <tr><th>PareVia license</th><th>Student License</th><th>Commercial License</th></tr>
+      <tr><td>First 3 months</td><td>$20 (one payment)</td><td>$50 (one payment)</td></tr>
+      <tr><td>Monthly, after the first 3 months</td><td>$40 / month</td><td>$100 / month</td></tr>
+      <tr><td>Annual, first year</td><td>$150</td><td>$500</td></tr>
+      <tr><td>Annual, from the second year</td><td>$300 / year</td><td>$1,000 / year</td></tr>
+      <tr><td>10-year license</td><td class="no">Not applicable</td><td>$5,000 (one payment)</td></tr>
+      <tr><td>Devices</td><td>1 computer</td><td>1 computer (multi-seat on request)</td></tr>
+      <tr><td>Eligibility</td><td>Proof of current student status required</td><td class="ok">Open to all</td></tr>
+      <tr><td>Commercial project use</td><td class="no">Academic only</td><td class="ok">✓</td></tr>
     </table>
+    <p><a href="buy.html" target="_blank" style="color:var(--primary-d);font-weight:700">Full PareVia license details and purchase →</a></p>
 
     <h2>EnergyPlus Calibration Software</h2> 
     <p> EPCalibration is an EnergyPlus calibration software tool designed to support building energy model calibration using measured building data. It uses NSGA-II optimization and ASHRAE Guideline 14 performance metrics to identify calibrated building model parameters. </p> 
@@ -631,25 +642,25 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
     </table>
     <div class="legal-highlight" style="background:var(--archopt-light);border-radius:14px;padding:1.3rem 1.5rem;margin:1.8rem 0">
       <h3 style="margin:0 0 .6rem 0;color:var(--archopt-d);font-weight:800;font-size:1.15rem">
-        Student Discount
+        PareVia Student License
       </h3>
       <p style="margin:0;color:var(--ink2);font-size:1.02rem;line-height:1.6">
-        Students receive <strong>50% off the monthly license</strong> and over 
-        <strong>60% off the annual license</strong> — only <strong>$150/year</strong>.
-        Valid for university students and academic researchers.
+        Students pay <strong>$20 for the first 3 months</strong> or <strong>$150 for the first year</strong>,
+        then $40/month or $300/year. An official confirmation from the university or supervisor stating current
+        student status is required. Students may also have opportunities for academic or research collaboration.
       </p>
     </div>
 
     <div class="legal-highlight"><p>All sales are final once a license key has been delivered. We recommend contacting us with any questions before purchasing — <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>.</p></div>
 
     <div style="display:flex;gap:.75rem;margin-top:2rem;flex-wrap:wrap">
-      <a href="https://net-zero-gcc.github.io/optimization.github.io/archopt.html" target="_blank" class="btn btn-amber">Buy ARCHOPT →</a>
+      <a href="buy.html" target="_blank" class="btn btn-amber">Buy PareVia →</a>
       <a href="epcalibration.html" target="_blank" class="btn btn-teal">Buy EPCalibration →</a>
     </div>
   </div>
   <footer>
-    <span class="footer-brand" onclick="showPage('home')">ARCHOPT TECHNOLOGIES</span>
-    <span class="footer-copy">© 2026 ARCHOPT Technologies · Dr. Fuad Baba</span>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies · Dr. Fuad Baba</span>
     <div class="footer-legal">
       <button onclick="showPage('terms')">Terms of Service</button>
       <button onclick="showPage('privacy')">Privacy Policy</button>
@@ -664,14 +675,14 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
   <div class="legal-page">
     <button class="legal-back" onclick="showPage('home')">← Back</button>
     <h1>Terms of Service</h1>
-    <div class="legal-meta">Effective date: 1 May 2026 · ARCHOPT v2.0 &amp; EPCalibration · ARCHOPT Technologies · Dr. Fuad Baba</div>
-    <div class="legal-highlight"><p><strong>Important:</strong> by purchasing, downloading, or using ARCHOPT or EPCalibration, you agree to these terms in full.</p></div>
+    <div class="legal-meta">Effective date: 1 May 2026 · PareVia v2.0 &amp; EPCalibration · ArchOpt Technologies · Dr. Fuad Baba</div>
+    <div class="legal-highlight"><p><strong>Important:</strong> by purchasing, downloading, or using PareVia or EPCalibration, you agree to these terms in full.</p></div>
     <h2>1. License grant</h2>
-    <p>Subject to full payment, you are granted a non-exclusive, non-transferable, revocable license to install and use the purchased software on <strong>one (1) computer</strong> for <strong>12 months</strong> from the date of purchase.</p>
+    <p>Subject to full payment, you are granted a non-exclusive, non-transferable, revocable license to install and use the purchased software on <strong>one (1) computer</strong> for the <strong>license period purchased</strong> (for example 3 months, 1 month, 1 year, or 10 years) from the date of purchase.</p>
     <h2>2. Permitted use</h2>
     <ul>
-      <li><strong>Student / Academic license:</strong> non-commercial academic and research use only.</li>
-      <li><strong>Professional license:</strong> commercial use within your own organisation.</li>
+      <li><strong>Student / Academic license:</strong> non-commercial academic and research use only, by students who have provided proof of current student status.</li>
+      <li><strong>Commercial / Professional license:</strong> commercial use within your own organisation.</li>
       <li><strong>Enterprise license:</strong> as defined in a separate written agreement.</li>
     </ul>
     <h2>3. Restrictions</h2>
@@ -684,9 +695,9 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
     </ul>
     <p>Violation results in immediate termination with no refund.</p>
     <h2>4. Software provided "as is" — no warranty</h2>
-    <p>THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. Results from ARCHOPT or EPCalibration are for research and decision-support only and must be independently verified by a qualified professional engineer before use in any real building design, construction, calibration submission, or policy decision.</p>
+    <p>THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. Results from PareVia or EPCalibration are for research and decision-support only and must be independently verified by a qualified professional engineer before use in any real building design, construction, calibration submission, or policy decision.</p>
     <h2>5. No liability</h2>
-    <p>To the maximum extent permitted by law, ARCHOPT Technologies and Dr. Fuad Baba are not liable for any loss, damage, or expense arising from use of the software, including engineering errors or decisions made based on its outputs.</p>
+    <p>To the maximum extent permitted by law, ArchOpt Technologies and Dr. Fuad Baba are not liable for any loss, damage, or expense arising from use of the software, including engineering errors or decisions made based on its outputs.</p>
     <h2>6. No refunds</h2>
     <p>All sales are final once a license key has been delivered.</p>
     <h2>7. Governing law</h2>
@@ -695,8 +706,8 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
     <p><a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a></p>
   </div>
   <footer>
-    <span class="footer-brand" onclick="showPage('home')">ARCHOPT TECHNOLOGIES</span>
-    <span class="footer-copy">© 2026 ARCHOPT Technologies · Dr. Fuad Baba</span>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies · Dr. Fuad Baba</span>
     <div class="footer-legal">
       <button onclick="showPage('terms')">Terms of Service</button>
       <button onclick="showPage('privacy')">Privacy Policy</button>
@@ -711,7 +722,7 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
   <div class="legal-page">
     <button class="legal-back" onclick="showPage('home')">← Back</button>
     <h1>Privacy Policy</h1>
-    <div class="legal-meta">Effective date: 1 May 2026 · ARCHOPT Technologies · Dr. Fuad Baba</div>
+    <div class="legal-meta">Effective date: 1 May 2026 · ArchOpt Technologies · Dr. Fuad Baba</div>
     <h2>1. Payment data</h2>
     <p>Payments are processed by <strong>PayPal</strong>, which collects your name, email, and payment details to deliver your receipt and license key. We never see your card or account details.</p>
     <h2>2. Data collected by the software</h2>
@@ -727,8 +738,8 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
     <p><a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a></p>
   </div>
   <footer>
-    <span class="footer-brand" onclick="showPage('home')">ARCHOPT TECHNOLOGIES</span>
-    <span class="footer-copy">© 2026 ARCHOPT Technologies · Dr. Fuad Baba</span>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies · Dr. Fuad Baba</span>
     <div class="footer-legal">
       <button onclick="showPage('terms')">Terms of Service</button>
       <button onclick="showPage('privacy')">Privacy Policy</button>
@@ -743,13 +754,13 @@ footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:ce
   <div class="legal-page">
     <button class="legal-back" onclick="showPage('home')">← Back</button>
     <h1>Refund Policy</h1>
-    <div class="legal-meta">Effective date: 1 May 2026 · ARCHOPT Technologies · Dr. Fuad Baba</div>
+    <div class="legal-meta">Effective date: 1 May 2026 · ArchOpt Technologies · Dr. Fuad Baba</div>
     <div class="legal-highlight"><p>All refund requests must be submitted within 7 days of purchase to <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>, including your PayPal transaction ID, the email used at purchase, and a description of the issue.</p></div>
     <p>All sales are final once a license key has been delivered; requests are reviewed case by case. Software is provided as-is — results must be independently verified before use in any real project. If the Terms of Service are breached (sharing a key, multi-device activation, tampering), the license is revoked immediately and refund eligibility is at our discretion.</p>
   </div>
   <footer>
-    <span class="footer-brand" onclick="showPage('home')">ARCHOPT TECHNOLOGIES</span>
-    <span class="footer-copy">© 2026 ARCHOPT Technologies · Dr. Fuad Baba</span>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies · Dr. Fuad Baba</span>
     <div class="footer-legal">
       <button onclick="showPage('terms')">Terms of Service</button>
       <button onclick="showPage('privacy')">Privacy Policy</button>
@@ -781,7 +792,7 @@ async function submitForm(){
   const org=document.getElementById('f-org').value.trim();
   const msg=document.getElementById('f-msg').value.trim();
   if(!name||!email||!msg){alert('Please fill in your name, email, and message.');return;}
-  const subject=encodeURIComponent('ARCHOPT Technologies Enquiry - '+type+' - '+name);
+  const subject=encodeURIComponent('ArchOpt Technologies Enquiry - '+type+' - '+name);
   const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nOrganisation: '+(org||'Not provided')+'\nRegarding: '+type+'\n\nMessage:\n'+msg);
   window.location.href='mailto:architecture.optimization@gmail.com?subject='+subject+'&body='+body;
   document.getElementById('contactForm').style.display='none';
