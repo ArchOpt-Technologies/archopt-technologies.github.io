@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArchOpt Technologies | Building Performance, EnergyPlus & Optimization Software</title>
+<meta name="description" content="ArchOpt Technologies develops building performance software for EnergyPlus simulation, building energy calibration, multi-objective design optimization, and sustainability analysis."> 
+<meta name="keywords" content="ArchOpt Technologies, EnergyFront, EnergyFront software, EnergyPlus IDF generator, PareVia, PareVia software, ARCHOPT (former name of PareVia), EPCalibration, building performance software, building energy optimization, EnergyPlus software, EnergyPlus calibration, building energy simulation, building performance optimization, building design optimization, multi-objective building optimization, NSGA-III, NSGA-II, XGBoost surrogate model, ASHRAE Guideline 14, building energy calibration, embodied carbon optimization, sustainable building design, building performance, EnergyPlus, building optimization, building performance"> 
+<meta name="author" content="ArchOpt Technologies"> 
+<meta property="og:title" content="ArchOpt Technologies | Building Performance & Optimization Software"> 
+<meta property="og:description" content="Building performance software for EnergyPlus simulation, calibration, multi-objective optimization, and sustainable building design."> 
+<meta property="og:type" content="website"> 
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<meta property="og:site_name" content="ArchOpt Technologies">
+<meta property="og:url" content="https://archopt-technologies.github.io/">
+<link rel="canonical" href="https://archopt-technologies.github.io/">
+
+<!-- FAVICON (square, multiples of 48px, as required by Google Search) -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<!-- SITE NAME shown by Google Search -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ArchOpt Technologies",
+  "alternateName": ["ArchOpt", "PareVia", "EnergyFront"],
+  "url": "https://archopt-technologies.github.io/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ArchOpt Technologies",
+  "url": "https://archopt-technologies.github.io/",
+  "logo": "https://archopt-technologies.github.io/favicon-512.png",
+  "email": "architecture.optimization@gmail.com"
+}
+</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#fbfaff; --bg2:#f3f1fc; --card:#ffffff;
+  --ink:#1c1b2e; --ink2:#524f6b; --ink3:#8b88a3;
+  --line:rgba(28,27,46,0.09); --line-strong:rgba(28,27,46,0.16);
+  --primary:#4f46e5; --primary-d:#3c33c9; --primary-light:#eeecfe;
+  --archopt:#ff6b4a; --archopt-d:#e3502f; --archopt-light:#ffece5;
+  --epcal:#0ea5a0; --epcal-d:#0a7f7b; --epcal-light:#e3f8f6;
+  --ink-panel:#191830; --ink-panel2:#232145;
+  --r:16px; --r-sm:10px; --r-pill:100px;
+  --shadow:0 1px 2px rgba(28,27,46,0.04),0 10px 30px -12px rgba(28,27,46,0.14);
+  --shadow-lg:0 20px 60px -20px rgba(79,70,229,0.35);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--ink);font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;letter-spacing:-0.015em}
+.page{display:none}
+.page.active{display:block;animation:rise .4s ease both}
+@keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+a{color:inherit}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:200;background:rgba(251,250,255,.85);backdrop-filter:blur(16px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 3rem;height:68px}
+.brand{display:flex;align-items:center;gap:11px;cursor:pointer;text-decoration:none;color:var(--ink)}
+.brand-mark{width:34px;height:34px;border-radius:10px;background:linear-gradient(135deg,var(--primary) 0%,#7c72f0 55%,var(--archopt) 100%);position:relative;flex-shrink:0;box-shadow:0 4px 14px -4px rgba(79,70,229,.55)}
+.brand-mark::before{content:'';position:absolute;inset:9px;border-radius:4px;background:rgba(255,255,255,.92)}
+.brand-name{font-family:'Sora',sans-serif;font-weight:700;font-size:1.08rem;letter-spacing:-.01em;line-height:1.15}
+.brand-name .sub{font-weight:500;color:var(--ink3);font-size:.72rem;display:block;letter-spacing:.02em;margin-top:4px;font-family:'Inter',sans-serif}
+.nav-links{display:flex;gap:.2rem;list-style:none}
+.nav-links button{font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;color:var(--ink2);background:none;border:none;cursor:pointer;padding:8px 14px;border-radius:var(--r-pill);transition:background .18s,color .18s}
+.nav-links button:hover{background:var(--primary-light);color:var(--primary-d)}
+.nav-links button.active{background:var(--primary-light);color:var(--primary-d)}
+.nav-cta{font-family:'Inter',sans-serif;font-size:.9rem;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--primary),#7c72f0);padding:10px 20px;border-radius:var(--r-pill);border:none;cursor:pointer;box-shadow:0 6px 16px -6px rgba(79,70,229,.5);transition:transform .15s,box-shadow .15s}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 10px 22px -6px rgba(79,70,229,.6)}
+
+.wrap{padding:5.5rem 3rem}
+.wrap.tight{padding:4rem 3rem}
+.badge{display:inline-flex;align-items:center;gap:7px;font-size:.82rem;font-weight:600;padding:6px 14px;border-radius:var(--r-pill);background:var(--primary-light);color:var(--primary-d)}
+.badge .dot{width:6px;height:6px;border-radius:50%;background:var(--primary)}
+.badge.amber{background:var(--archopt-light);color:var(--archopt-d)}
+.badge.amber .dot{background:var(--archopt)}
+.badge.teal{background:var(--epcal-light);color:var(--epcal-d)}
+.badge.teal .dot{background:var(--epcal)}
+
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:var(--r-pill);font-family:'Inter',sans-serif;font-size:.94rem;font-weight:700;text-decoration:none;border:none;cursor:pointer;transition:transform .15s,box-shadow .15s,background .15s}
+.btn-primary{background:linear-gradient(135deg,var(--primary),#6a60ef);color:#fff;box-shadow:0 10px 24px -8px rgba(79,70,229,.55)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 28px -8px rgba(79,70,229,.6)}
+.btn-line{background:#fff;border:1.5px solid var(--line-strong);color:var(--ink)}
+.btn-line:hover{border-color:var(--primary);color:var(--primary-d)}
+.btn-white{background:#fff;color:var(--ink)}
+.btn-white:hover{transform:translateY(-2px)}
+.btn-ghost-dark{background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18);color:rgba(255,255,255,.9)}
+.btn-ghost-dark:hover{background:rgba(255,255,255,.15)}
+.btn-amber{background:linear-gradient(135deg,var(--archopt),#ff8a6e);color:#fff;box-shadow:0 10px 24px -8px rgba(255,107,74,.5)}
+.btn-amber:hover{transform:translateY(-2px)}
+.btn-teal{background:linear-gradient(135deg,var(--epcal),#2fd4c8);color:#fff;box-shadow:0 10px 24px -8px rgba(14,165,160,.45)}
+.btn-teal:hover{transform:translateY(-2px)}
+
+/* HERO */
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:4rem;padding:5.5rem 3rem 5rem;align-items:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-160px;width:600px;height:600px;background:radial-gradient(circle,rgba(79,70,229,.14) 0%,transparent 65%);pointer-events:none}
+.hero::after{content:'';position:absolute;bottom:-220px;left:-160px;width:500px;height:500px;background:radial-gradient(circle,rgba(255,107,74,.10) 0%,transparent 65%);pointer-events:none}
+.hero > *{position:relative;z-index:1}
+h1.display{font-size:clamp(2.5rem,4.6vw,3.7rem);font-weight:800;line-height:1.08;margin:1.4rem 0 1.4rem}
+h1.display .accent{background:linear-gradient(135deg,var(--primary),var(--archopt));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.16rem;color:var(--ink2);line-height:1.7;max-width:500px;margin-bottom:2.2rem}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;margin-bottom:1.75rem}
+.hero-note{font-size:.88rem;color:var(--ink3);display:flex;align-items:center;gap:8px}
+.hero-note .avatars{display:flex}
+.hero-note .avatars span{width:22px;height:22px;border-radius:50%;border:2px solid var(--bg);margin-left:-7px;display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:700;color:#fff}
+
+.hero-fig{border-radius:20px;background:var(--card);box-shadow:var(--shadow-lg);overflow:hidden;border:1px solid var(--line)}
+.hero-fig img{width:100%;display:block}
+.hero-fig-cap{padding:14px 18px;display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line)}
+
+/* SECTION HEAD */
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:2rem;margin-bottom:3rem;flex-wrap:wrap}
+.sec-head h2{font-size:clamp(1.8rem,2.6vw,2.35rem);font-weight:800}
+.sec-head p{color:var(--ink2);max-width:440px;font-size:1.03rem;line-height:1.65}
+
+/* SUITE GRID (product directory, deliberately open-ended) */
+.suite-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem;margin-top:2.5rem}
+.suite-card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:2rem;display:flex;flex-direction:column;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;cursor:pointer}
+.suite-card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -20px rgba(28,27,46,.18)}
+.suite-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;margin-bottom:1.4rem}
+.suite-card.amber .suite-icon{background:var(--archopt-light)}
+.suite-card.teal .suite-icon{background:var(--epcal-light)}
+.suite-card h3{font-size:1.2rem;margin-bottom:.5rem}
+.suite-card p{color:var(--ink2);font-size:.96rem;line-height:1.6;margin-bottom:1.4rem;flex:1}
+.suite-card .go{font-size:.9rem;font-weight:700;display:flex;align-items:center;gap:6px}
+.suite-card.amber .go{color:var(--archopt-d)}
+.suite-card.teal .go{color:var(--epcal-d)}
+.suite-card.future{background:repeating-linear-gradient(135deg,var(--bg2),var(--bg2) 10px,#fff 10px,#fff 20px);border:1.5px dashed var(--line-strong);box-shadow:none;cursor:default}
+.suite-card.future:hover{transform:none;box-shadow:none}
+.suite-card.future .suite-icon{background:#fff;border:1.5px dashed var(--line-strong)}
+.suite-card.future h3{color:var(--ink2)}
+.suite-card.future p{color:var(--ink3)}
+.suite-card.future .go{color:var(--ink3)}
+
+/* TOOL SECTION */
+.tool-section{border-top:1px solid var(--line)}
+.tool-banner{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;padding:5rem 3rem}
+.tool-banner h2{font-size:clamp(2rem,3.4vw,2.7rem);margin:1.1rem 0 1.15rem}
+.tool-banner p.lead{color:var(--ink2);font-size:1.09rem;line-height:1.7;max-width:490px}
+.tool-btns{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:1.8rem}
+.spec-fig{border-radius:20px;background:var(--card);overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line)}
+.spec-fig img{width:100%;display:block;border-bottom:1px solid var(--line)}
+.spec-fig-meta{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line)}
+.spec-stat{background:#fff;padding:.95rem 1.1rem}
+.spec-stat-label{font-size:.72rem;color:var(--ink3);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-bottom:4px}
+.spec-stat-val{font-size:1.02rem;font-weight:700}
+.amber .spec-stat-val{color:var(--archopt-d)}
+.teal .spec-stat-val{color:var(--epcal-d)}
+
+/* WORKFLOW STEPS */
+.steps{padding:0 3rem 5rem}
+.steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.1rem;margin-top:2.5rem}
+.step{padding:1.75rem;border-radius:var(--r);background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+.step-n{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.92rem;margin-bottom:1rem;color:#fff}
+.amber .step-n{background:linear-gradient(135deg,var(--archopt),#ff8a6e)}
+.teal .step-n{background:linear-gradient(135deg,var(--epcal),#2fd4c8)}
+.step h4{font-size:1.04rem;font-weight:700;margin-bottom:.4rem}
+.step p{font-size:.93rem;color:var(--ink2);line-height:1.58}
+
+/* SCREENSHOT CAROUSEL */
+.shots{padding:0 3rem 5rem;max-width:1020px}
+.shots-frame{position:relative;width:100%;aspect-ratio:16/9;overflow:hidden;border-radius:20px;border:1px solid var(--line);background:var(--ink-panel);box-shadow:var(--shadow-lg)}
+.shots-frame .slide{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;opacity:0;transition:opacity .7s ease}
+.shots-frame .slide.active{opacity:1}
+.shots-bar{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin-top:1rem;flex-wrap:wrap}
+.shots-caption{font-size:.86rem;color:var(--ink2);font-weight:500}
+.shots-dots{display:flex;gap:8px}
+.shots-dots button{width:8px;height:8px;border-radius:50%;border:none;padding:0;cursor:pointer;background:var(--line-strong);transition:transform .2s,background .2s}
+.amber .shots-dots button.active{background:var(--archopt);transform:scale(1.35)}
+.teal .shots-dots button.active{background:var(--epcal);transform:scale(1.35)}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin:2.5rem 3rem 5rem}
+.feat{background:var(--card);padding:1.75rem;border-radius:var(--r);border:1px solid var(--line);box-shadow:var(--shadow)}
+.feat-icon{width:40px;height:40px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;margin-bottom:1rem}
+.amber .feat-icon{background:var(--archopt-light)}
+.teal .feat-icon{background:var(--epcal-light)}
+.feat h4{font-size:1.02rem;font-weight:700;margin-bottom:.4rem}
+.feat p{font-size:.93rem;color:var(--ink2);line-height:1.62}
+
+/* BUY BAND */
+.buy-band{background:linear-gradient(135deg,var(--ink-panel) 0%,var(--ink-panel2) 100%);margin:0 3rem 5rem;border-radius:24px;padding:3.5rem;display:flex;gap:3.5rem;align-items:center;position:relative;overflow:hidden}
+.amber .buy-band::before{content:'';position:absolute;top:-120px;right:-100px;width:340px;height:340px;background:radial-gradient(circle,rgba(255,107,74,.25),transparent 65%)}
+.teal .buy-band::before{content:'';position:absolute;top:-120px;right:-100px;width:340px;height:340px;background:radial-gradient(circle,rgba(14,165,160,.25),transparent 65%)}
+.buy-band > *{position:relative;z-index:1}
+.buy-text{flex:1}
+.buy-title{font-family:'Sora',sans-serif;font-size:1.7rem;font-weight:800;color:#fff;margin:.6rem 0 .7rem}
+.buy-desc{color:rgba(255,255,255,.6);font-size:1.02rem;line-height:1.65;max-width:460px;margin-bottom:1.6rem}
+.buy-trust{display:flex;gap:1.3rem;flex-wrap:wrap;margin-top:1.2rem}
+.buy-trust-item{font-size:.85rem;color:rgba(255,255,255,.55);display:flex;align-items:center;gap:6px}
+.buy-trust-item::before{content:'✓';color:#4ade80;font-weight:700}
+.buy-badge{flex-shrink:0;border-radius:18px;padding:1.75rem 2.25rem;text-align:center;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12)}
+.buy-badge-icon{font-size:2.1rem;margin-bottom:.6rem}
+.buy-badge p{font-size:.82rem;color:rgba(255,255,255,.45);margin-top:.6rem;line-height:1.55}
+
+/* BRAND WORDMARKS: Arch / Pare in white, Opt / Via in brand blue */
+:root{--wm-white:#ffffff;--wm-blue:#4f8ef7;--wm-chip:#0b1020}
+.wm{font-family:'Sora',sans-serif;font-weight:700;letter-spacing:-.01em;white-space:nowrap}
+.wm-a{color:var(--wm-white)}.wm-b{color:var(--wm-blue)}
+.wm-chip{display:inline-flex;align-items:center;gap:.4em;background:var(--wm-chip);border-radius:9px;padding:.32em .75em;line-height:1.2}
+.wm-chip .t{font-family:'Sora',sans-serif;font-weight:600;color:rgba(255,255,255,.85)}
+.wm-chip .v{font-family:'Inter',sans-serif;font-size:.78em;font-weight:600;color:rgba(255,255,255,.55)}
+
+/* AUTHOR STRIP */
+.author-strip{display:flex;align-items:center;gap:1.5rem;padding:2.5rem 3rem;background:var(--bg2)}
+.author-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--archopt));color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-weight:700;flex-shrink:0}
+.author-strip .who{font-size:.98rem;color:var(--ink2);line-height:1.6}
+.author-strip .who b{color:var(--ink)}
+
+/* PRICING TABLE PAGE */
+.pricing-table{width:100%;border-collapse:separate;border-spacing:0;margin:1.75rem 0 2.5rem;font-size:.98rem;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.pricing-table th{text-align:left;padding:12px 18px;background:var(--bg2);font-weight:700;font-size:.85rem;color:var(--ink2)}
+.pricing-table td{padding:12px 18px;border-top:1px solid var(--line)}
+.pricing-table td:first-child{font-weight:600}
+.ok{color:var(--epcal-d);font-weight:700}
+.no{color:var(--ink3)}
+
+/* LEGAL PAGES */
+.legal-page{max-width:740px;margin:0 auto;padding:4.5rem 2rem 6rem}
+.legal-back{display:inline-flex;align-items:center;gap:6px;font-size:.9rem;font-weight:600;color:var(--ink3);background:none;border:none;cursor:pointer;margin-bottom:2.5rem}
+.legal-back:hover{color:var(--primary-d)}
+.legal-page h1{font-size:2.1rem;margin-bottom:.4rem;font-weight:800}
+.legal-meta{font-size:.88rem;color:var(--ink3);margin-bottom:2.5rem;padding-bottom:1.25rem;border-bottom:1px solid var(--line)}
+.legal-page h2{font-size:1.05rem;font-weight:700;margin:2.2rem 0 .6rem}
+.legal-page p{color:var(--ink2);line-height:1.75;margin-bottom:.85rem;font-size:1.02rem}
+.legal-page ul{margin:.5rem 0 1rem 1.2rem}
+.legal-page ul li{color:var(--ink2);line-height:1.7;margin-bottom:.3rem}
+.legal-page a{color:var(--primary-d);font-weight:600}
+.legal-highlight{background:var(--primary-light);border-radius:14px;padding:1.1rem 1.35rem;margin:1.25rem 0}
+.legal-highlight p{color:var(--primary-d);margin:0}
+
+/* CTA */
+.site-cta{background:linear-gradient(135deg,var(--ink-panel) 0%,var(--ink-panel2) 100%);padding:5rem 3rem;text-align:center;position:relative;overflow:hidden}
+.site-cta::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:700px;height:500px;background:radial-gradient(ellipse,rgba(79,70,229,.3),transparent 65%)}
+.site-cta > *{position:relative;z-index:1}
+.site-cta h2{color:#fff;max-width:500px;margin:0 auto 1rem;font-size:2rem;font-weight:800}
+.site-cta p{color:rgba(255,255,255,.55);margin-bottom:2.1rem;font-size:1.04rem}
+.cta-btns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap}
+
+footer{background:var(--ink-panel);padding:2rem 3rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.footer-brand{font-family:'Sora',sans-serif;font-weight:700;font-size:.92rem;color:rgba(255,255,255,.7);cursor:pointer}
+.footer-copy{font-size:.84rem;color:rgba(255,255,255,.35)}
+.footer-legal{display:flex;gap:1.5rem;flex-wrap:wrap}
+.footer-legal button{font-size:.84rem;color:rgba(255,255,255,.4);background:none;border:none;cursor:pointer;font-weight:500}
+.footer-legal button:hover{color:rgba(255,255,255,.85)}
+
+/* CONTACT MODAL */
+.contact-overlay{display:none;position:fixed;inset:0;z-index:1000;background:rgba(28,27,46,.55);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:2rem}
+.contact-overlay.open{display:flex}
+.contact-modal{background:#fff;border-radius:22px;padding:2.75rem;width:100%;max-width:520px;position:relative;box-shadow:0 40px 90px -20px rgba(28,27,46,.4)}
+.contact-close{position:absolute;top:1.2rem;right:1.2rem;background:var(--bg2);border:none;cursor:pointer;width:32px;height:32px;border-radius:50%;color:var(--ink3);font-size:.95rem}
+.contact-close:hover{color:var(--ink);background:var(--line-strong)}
+.contact-modal h2{font-size:1.55rem;margin-bottom:.5rem}
+.contact-modal .lead{color:var(--ink2);font-size:1rem;margin-bottom:1.85rem}
+.form-row{margin-bottom:1.05rem}
+.form-row label{display:block;font-size:.83rem;font-weight:600;color:var(--ink2);margin-bottom:.4rem}
+.form-row input,.form-row select,.form-row textarea{width:100%;padding:11px 14px;background:var(--bg2);border:1.5px solid transparent;border-radius:var(--r-sm);font-size:1rem;font-family:'Inter',sans-serif;color:var(--ink);outline:none;transition:border-color .15s,background .15s}
+.form-row input:focus,.form-row select:focus,.form-row textarea:focus{border-color:var(--primary);background:#fff}
+.form-row textarea{resize:vertical;min-height:90px}
+.form-two{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-submit{width:100%;margin-top:.5rem;justify-content:center;padding:13px}
+.form-success{display:none;text-align:center;padding:1.5rem 0}
+.form-success h3{margin-bottom:.4rem}
+.form-success p{color:var(--ink3)}
+
+
+/* ENERGYFRONT THEME (product accent: orange) */
+:root{--front:#F58220;--front-d:#b4560a;--front-light:#fff1e3}
+.badge.front{background:var(--front-light);color:var(--front-d)}
+.badge.front .dot{background:var(--front)}
+.btn-front{background:linear-gradient(135deg,var(--front),#ffa24d);color:#fff;box-shadow:0 10px 24px -8px rgba(245,130,32,.5)}
+.btn-front:hover{transform:translateY(-2px)}
+.suite-card.front .suite-icon{background:none;padding:0;overflow:hidden}
+.suite-card.front .go{color:var(--front-d)}
+.front .spec-stat-val{color:var(--front-d)}
+.front .step-n{background:linear-gradient(135deg,var(--front),#ffa24d)}
+.front .feat-icon{background:var(--front-light)}
+.front .buy-band::before{content:'';position:absolute;top:-120px;right:-100px;width:340px;height:340px;background:radial-gradient(circle,rgba(245,130,32,.28),transparent 65%)}
+.soon-tag{display:inline-block;font-family:'Inter',sans-serif;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--front-d);background:var(--front-light);border-radius:var(--r-pill);padding:3px 9px;margin-left:8px;vertical-align:middle}
+/* nav items that are real links (separate pages) */
+.nav-links a{display:inline-block;font-family:'Inter',sans-serif;font-size:.92rem;font-weight:600;color:var(--ink2);text-decoration:none;padding:8px 14px;border-radius:var(--r-pill);transition:background .18s,color .18s}
+.nav-links a:hover,.nav-links a.active{background:var(--primary-light);color:var(--primary-d)}
+@media(min-width:901px){.suite-grid{grid-template-columns:repeat(4,1fr)}}
+@media(min-width:901px) and (max-width:1150px){.suite-grid{grid-template-columns:repeat(2,1fr)}}
+/* small screens: the menu moves to its own scrollable row so the page never scrolls sideways */
+@media(max-width:900px){
+  nav{height:auto;flex-wrap:wrap;padding:.6rem 1.25rem;row-gap:.35rem}
+  .nav-links{order:3;width:100%;overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links button,.nav-links a{white-space:nowrap;padding:6px 11px;font-size:.86rem}
+  .nav-cta{padding:8px 16px;font-size:.84rem}
+}
+@media(max-width:900px){
+  nav{padding:0 1.25rem}
+  .hero,.tool-banner{grid-template-columns:1fr;padding:3.5rem 1.25rem}
+  .wrap,.wrap.tight{padding:3.5rem 1.25rem}
+  .steps,.shots,.author-strip,.site-cta,footer{padding-left:1.25rem;padding-right:1.25rem}
+  .feat-grid,.buy-band{margin-left:1.25rem;margin-right:1.25rem}
+  .steps-grid,.feat-grid,.suite-grid{grid-template-columns:1fr}
+  .buy-band{flex-direction:column;gap:2rem;padding:2.25rem}
+}
+</style>
+</head>
+<body>
+
+<!-- CONTACT MODAL -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-modal">
+    <button class="contact-close" onclick="closeContact()">✕</button>
+    <div id="contactForm">
+      <span class="badge">GET IN TOUCH</span>
+      <h2 style="margin-top:.8rem">Talk to us about a license</h2>
+      <p class="lead">Questions before purchasing, bulk or enterprise licensing, or support — we reply within 24 hours.</p>
+      <div class="form-two">
+        <div class="form-row"><label>Name</label><input type="text" id="f-name" placeholder="Your name"></div>
+        <div class="form-row"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+      </div>
+      <div class="form-row">
+        <label>Regarding</label>
+        <select id="f-type">
+          <option value="">Select…</option>
+          <option>EnergyFront (launch notification)</option>
+          <option>PareVia license</option>
+          <option>EPCalibration license</option>
+          <option>Enterprise / multi-seat</option>
+          <option>Technical question before purchase</option>
+          <option>Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Organisation</label><input type="text" id="f-org" placeholder="Company or university"></div>
+      <div class="form-row"><label>Message</label><textarea id="f-msg" placeholder="What do you need?"></textarea></div>
+      <button class="btn btn-primary form-submit" onclick="submitForm()">Send message →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <h3>Message received 🎉</h3>
+      <p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" onclick="showPage('home')">
+    <span class="brand-name"><span class="wm-chip"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="t">Technologies</span></span><span class="sub">Building performance software</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><button id="nav-home" onclick="showPage('home')">Suite</button></li>
+    <li><a id="nav-energyfront" href="EnergyFront">EnergyFront</a></li>
+    <li><button id="nav-archopt" onclick="showPage('archopt')">PareVia</button></li>
+    <li><button id="nav-epcal" onclick="showPage('epcal')">EPCalibration</button></li>
+    <li><button id="nav-pricing" onclick="showPage('pricing')">Pricing</button></li>
+  </ul>
+  <button class="nav-cta" onclick="openContact()">Contact</button>
+</nav>
+
+<!-- ══════════════ HOME ══════════════ -->
+<div class="page active" id="page-home">
+  <section class="hero">
+    <div>
+      <span class="badge"><span class="dot"></span>A growing suite of building-performance tools</span>
+      <h1 class="display">Software that makes buildings <span class="accent">perform</span> and keeps growing.</h1>
+      <p class="lead">
+      ArchOpt Technologies develops building performance software for EnergyPlus
+      simulation, building energy calibration, multi-objective building design
+      optimization, and sustainability analysis. Our tools help architects,
+      engineers, researchers, and building-performance professionals evaluate,
+      calibrate, and optimize building designs.
+      </p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="showPage('pricing')">See pricing →</button>
+        <button class="btn btn-line" onclick="openContact()">Ask a question first</button>
+      </div>
+      <div class="hero-note">
+        <span class="avatars"><span style="background:var(--archopt)">A</span><span style="background:var(--epcal)">E</span><span style="background:var(--primary)">+</span></span>
+        2 tools live today, more in active development
+      </div>
+    </div>
+    <div class="hero-fig">
+      <img src="ARCHOPT Technologies.png" alt="ArchOpt Technologies logo">
+      <div class="hero-fig-cap">
+        <span class="wm-chip" style="font-size:.9rem"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span></span>
+        <span style="font-size:.85rem;color:var(--ink3)">NSGA-III · Pareto front</span>
+      </div>
+    </div>
+  </section>
+  <h2>Building Energy Optimization Software for EnergyPlus</h2>
+
+  <p class="lead">
+  PareVia is a building design optimization software that uses EnergyPlus,
+  XGBoost surrogate modelling, and NSGA-III multi-objective optimization to
+  identify high-performance building designs based on energy use, embodied
+  carbon, cost, and other performance objectives.
+  </p>
+  <section class="wrap tight">
+    <div class="sec-head">
+      <div>
+        <span class="badge">THE SUITE</span>
+        <h2 style="margin-top:.9rem">Pick the problem you have</h2>
+      </div>
+      <p>Build the model in EnergyFront, optimize it in PareVia, calibrate it in EPCalibration. Two tools are available today and EnergyFront is coming soon.</p>
+    </div>
+    <div class="suite-grid">
+      <a class="suite-card front" href="EnergyFront" style="text-decoration:none;color:inherit">
+        <div class="suite-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EnergyFront" width="100%" height="100%"><rect width="64" height="64" rx="14" fill="#0B1A33"/><rect x="12" y="12" width="8" height="40" fill="#fff"/><rect x="12" y="12" width="20" height="8" fill="#fff"/><rect x="12" y="28" width="16" height="8" fill="#fff"/><rect x="12" y="44" width="20" height="8" fill="#fff"/><rect x="36" y="12" width="8" height="40" fill="#4F8EF7"/><rect x="36" y="12" width="16" height="8" fill="#4F8EF7"/><rect x="36" y="28" width="12" height="8" fill="#4F8EF7"/></svg></div>
+        <h3><span class="wm-chip" style="font-size:1.05rem"><span class="wm"><span class="wm-a">Energy</span><span class="wm-b">Front</span></span></span><span class="soon-tag">Coming soon</span></h3>
+        <p>Builds a simulation-ready EnergyPlus model from building inputs, runs it, and reports energy, comfort, and overheating. The IDF is ready for PareVia.</p>
+        <div class="go">Explore EnergyFront →</div>
+      </a>
+      <div class="suite-card amber" onclick="showPage('archopt')">
+        <div class="suite-icon">🎯</div>
+        <h3><span class="wm-chip" style="font-size:1.05rem"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span></span></h3>
+        <p>Multi-objective optimization for new building designs, Pareto-optimal trade-offs between energy, embodied carbon, and cost.</p>
+        <div class="go">Explore PareVia →</div>
+      </div>
+      <div class="suite-card teal" onclick="showPage('epcal')">
+        <div class="suite-icon">📈</div>
+        <h3>EPCalibration</h3>
+        <p>Calibrates an EnergyPlus model against measured data until it clears ASHRAE Guideline 14 accuracy thresholds.</p>
+        <div class="go">Explore EPCalibration →</div>
+      </div>
+      <div class="suite-card future">
+        <div class="suite-icon">✦</div>
+        <h3>In development</h3>
+        <p>We're building the next tool in the suite. Tell us what problem you'd want it to solve — it may shape what comes next.</p>
+        <div class="go" onclick="event.stopPropagation();openContact()">Suggest a tool →</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="author-strip">
+  
+    </div>
+
+  <div class="site-cta">
+    <h2>Not sure which tool fits your project?</h2>
+    <p>Tell us what you're working on and we'll point you to the right one — or the right combination.</p>
+    <div class="cta-btns">
+      <button class="btn btn-white" onclick="openContact()">Ask us →</button>
+      <button class="btn btn-ghost-dark" onclick="showPage('pricing')">See pricing</button>
+    </div>
+  </div>
+  <footer>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies </span>
+    <div class="footer-legal">
+      <button onclick="showPage('terms')">Terms of Service</button>
+      <button onclick="showPage('privacy')">Privacy Policy</button>
+      <button onclick="showPage('refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ PareVia ══════════════ -->
+<div class="page" id="page-archopt">
+  <section class="tool-banner tool-section amber">
+    <div>
+      <span class="wm-chip" style="font-size:1.1rem"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span><span class="v">v2.0 · formerly ARCHOPT</span></span>
+      <h2>The building optimization tool. Built for practitioners.</h2>
+      <p class="lead">EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization - Pareto-optimal building designs in hours, not weeks. No coding required.</p>
+      <div class="tool-btns">
+        <a href="buy.html" target="_blank" class="btn btn-amber">Buy PareVia →</a>
+        <a href="archopt.html#download" target="_blank" class="btn btn-line">⬇ Download installer (free)</a>
+      </div>
+    </div>
+    <div class="spec-fig amber">
+      <img src="Pictures%20-%20ARCHOPT%20Cover.png?v=2" alt="PareVia interface">
+      <div class="spec-fig-meta">
+        <div class="spec-stat"><div class="spec-stat-label">Energy Use Intensity</div><div class="spec-stat-val">142.3 kWh/m²</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Embodied Carbon</div><div class="spec-stat-val">318 kgCO₂/m²</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Pareto Solutions</div><div class="spec-stat-val">47 optimal</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Variables Active</div><div class="spec-stat-val">9 / 12</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps tool-section amber">
+    <span class="badge amber">WORKFLOW</span>
+    <h2 style="margin-top:.9rem">Four steps from IDF to optimal design</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-n">1</div><h4>Define variables</h4><p>Set design parameters, such as WWR, shading depth, glazing type, orientation, with ranges and constraints.</p></div>
+      <div class="step"><div class="step-n">2</div><h4>EnergyPlus sampling</h4><p>Latin Hypercube Sampling generates diverse design combinations; each is simulated automatically.</p></div>
+      <div class="step"><div class="step-n">3</div><h4>Surrogate training</h4><p>XGBoost learns from the simulation data and evaluates thousands of candidates in seconds.</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Pareto front export</h4><p>NSGA-III finds the optimal trade-off surface. Archive, CSV, and PDF report exported automatically.</p></div>
+    </div>
+  </section>
+
+  <section class="shots tool-section amber">
+    <div class="shots-frame" id="archopt-shots">
+      <img class="slide active" src="ARCHOPT%20tool%20pictures/Setup.png" alt="PareVia setup screen" data-caption="Setup: project, weather file and EnergyPlus paths">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/IDF.png" alt="PareVia IDF editor" data-caption="IDF Editor: tag-based parametric substitution">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/Variables.png" alt="PareVia variables screen" data-caption="Variables: design parameters, ranges and constraints">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/Embodied.png" alt="PareVia embodied carbon screen" data-caption="Embodied &amp; Cost: material take-off and CO₂ accounting">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/Script.png" alt="PareVia script screen" data-caption="Scripts: custom objective and post-processing hooks">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/GA.png" alt="PareVia optimization screen" data-caption="Optimize: NSGA-III run and live Pareto front">
+    </div>
+    <div class="shots-bar">
+      <div class="shots-caption" id="archopt-cap">Setup — project, weather file and EnergyPlus paths</div>
+      <div class="shots-dots">
+        <button class="active" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button>
+        <button aria-label="4"></button><button aria-label="5"></button><button aria-label="6"></button>
+      </div>
+    </div>
+  </section>
+  <section class="tool-section amber" style="padding:3rem">
+    <h2 style="margin-bottom:1rem">PareVia Tutorial Videos</h2>
+  
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+      
+      <div>
+        <h3 style="margin-bottom:.5rem">Tutorial 1</h3>
+        <video controls style="width:100%;border-radius:12px;border:1px solid var(--line)">
+          <source src="ARCHOPT tool pictures/ARCHOPT v1.mp4" type="video/mp4">
+        </video>
+      </div>
+  
+      <div>
+        <h3 style="margin-bottom:.5rem">Tutorial 2</h3>
+        <video controls style="width:100%;border-radius:12px;border:1px solid var(--line)">
+          <source src="ARCHOPT tool pictures/ARCHOPT v2.mp4" type="video/mp4">
+        </video>
+      </div>
+  
+    </div>
+  </section>
+  <section class="wrap tight tool-section amber" style="padding-bottom:0">
+    <span class="badge amber">CAPABILITIES</span>
+    <h2 style="margin-top:.9rem">Everything you need, in one pipeline</h2>
+  </section>
+  <div class="feat-grid tool-section amber" style="margin-top:2rem">
+    <div class="feat"><div class="feat-icon">🧬</div><h4>Multi-objective NSGA-III</h4><p>Optimize energy, embodied carbon, and comfort simultaneously, handles 4+ objectives without losing solution diversity.</p></div>
+    <div class="feat"><div class="feat-icon">🏷️</div><h4>Full IDF parametric control</h4><p>Tag-based IDF substitution gives direct control over any EnergyPlus parameter, geometry, materials, HVAC.</p></div>
+    <div class="feat"><div class="feat-icon">⚡</div><h4>XGBoost surrogate model</h4><p>Orders of magnitude faster than brute-force simulation, and generalizes accurately from the sampled data.</p></div>
+    <div class="feat"><div class="feat-icon">📅</div><h4>60-year lifecycle analysis</h4><p>Scale energy and carbon results over the full building lifetime, with a user-configurable study period.</p></div>
+    <div class="feat"><div class="feat-icon">🧱</div><h4>Embodied carbon calculator</h4><p>Built-in material database with quantity take-off, tracked alongside operational energy in every run.</p></div>
+    <div class="feat"><div class="feat-icon">🔍</div><h4>Global sensitivity analysis</h4><p>See which variables drive performance most, the levers worth pulling before you commit to a design.</p></div>
+  </div>
+
+  <div class="buy-band tool-section amber">
+    <div class="buy-text">
+      <span class="badge amber" style="background:rgba(255,255,255,.12);color:#fff">DIRECT PURCHASE · INSTANT DELIVERY</span>
+      <div class="buy-title">Buy <span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span> directly</div>
+      <div class="buy-desc">Two license categories. Student: from $20 for the first 3 months, with proof of student status. Commercial: from $50 for the first 3 months, plus monthly, annual, and 10-year options. Your license key arrives by email and activates on one machine.</div>
+      <a href="buy.html" target="_blank" class="btn btn-white">See Student &amp; Commercial licenses →</a>
+      <div class="buy-trust">
+        <span class="buy-trust-item">Secure online checkout</span>
+        <span class="buy-trust-item">Email delivery within 24h</span>
+        <span class="buy-trust-item">1 device per license</span>
+        <span class="buy-trust-item">Student &amp; Commercial pricing</span>
+      </div>
+    </div>
+    <div class="buy-badge">
+      <div class="buy-badge-icon">🔑</div>
+      <div style="color:#fff;font-size:.88rem;font-weight:700">License Key</div>
+      <p>Windows 10 / 11<br>1 machine per license</p>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies</span>
+    <div class="footer-legal">
+      <button onclick="showPage('terms')">Terms of Service</button>
+      <button onclick="showPage('privacy')">Privacy Policy</button>
+      <button onclick="showPage('refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ EPCALIBRATION ══════════════ -->
+<div class="page" id="page-epcal">
+  <section class="tool-banner tool-section teal">
+    <div>
+      <span class="badge teal">EPCALIBRATION</span>
+      <h2>EnergyPlus Calibration Software for Building Performance Models</h2>
+      <p class="lead">
+      EPCalibration is EnergyPlus calibration software that calibrates building
+      energy simulation models against measured building data using automated
+      optimization and ASHRAE Guideline 14 performance metrics.
+      </p>
+      <div class="tool-btns">
+        <a href="epcalibration.html" target="_blank" class="btn btn-teal">Buy EPCalibration →</a>
+        <a href="epcalibration.html" target="_blank" class="btn btn-line">⬇ Download installer (free)</a>
+      </div>
+    </div>
+    <div class="spec-fig teal">
+      <img src="Pictures%20-EPCalibration%20cover.png" alt="EPCalibration interface">
+      <div class="spec-fig-meta">
+        <div class="spec-stat"><div class="spec-stat-label">RMSE · Objective 1</div><div class="spec-stat-val">0.42 °C</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">NMBE</div><div class="spec-stat-val">−1.8%</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">CV(RMSE)</div><div class="spec-stat-val">4.6%</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Pareto Solutions</div><div class="spec-stat-val">23 optimal</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps tool-section teal">
+    <span class="badge teal">WORKFLOW</span>
+    <h2 style="margin-top:.9rem">Four steps from measured data to a calibrated model</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-n">1</div><h4>Tag parameters</h4><p>One-click tag injection for insulation, thermal mass, windows, infiltration, occupancy, lighting, equipment.</p></div>
+      <div class="step"><div class="step-n">2</div><h4>Upload measured data</h4><p>Load measured CSVs from any monitoring system or utility bill, one dataset per objective, with a time filter.</p></div>
+      <div class="step"><div class="step-n">3</div><h4>NSGA-II search</h4><p>Halton-seeded NSGA-II explores the parameter space with step grids, caching, and parallel EnergyPlus runs.</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Pareto exploration</h4><p>Animate the front across generations, pick the balanced solution, export CSV and plots for reporting.</p></div>
+    </div>
+  </section>
+
+  <section class="shots tool-section teal">
+    <div class="shots-frame" id="epcal-shots">
+      <img class="slide active" src="EPCalibration/Setup.png" alt="EPCalibration setup screen" data-caption="Setup: IDF, weather file and run configuration">
+      <img class="slide" src="EPCalibration/Parameters.png" alt="EPCalibration parameters screen" data-caption="Parameters: tag injection, ranges and step grids">
+      <img class="slide" src="EPCalibration/Objectives.png" alt="EPCalibration objectives screen" data-caption="Objectives: measured CSVs and ASHRAE G14 metrics">
+      <img class="slide" src="EPCalibration/Run.png" alt="EPCalibration run screen" data-caption="Run — NSGA-II search with parallel EnergyPlus runs">
+      <img class="slide" src="EPCalibration/Results.png" alt="EPCalibration results screen" data-caption="Results: Pareto explorer, CSV and plot export">
+    </div>
+    <div class="shots-bar">
+      <div class="shots-caption" id="epcal-cap">Setup: IDF, weather file and run configuration</div>
+      <div class="shots-dots">
+        <button class="active" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button>
+        <button aria-label="4"></button><button aria-label="5"></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="buy-band tool-section teal">
+    <div class="buy-text">
+      <span class="badge teal" style="background:rgba(255,255,255,.12);color:#fff">DIRECT PURCHASE · INSTANT DELIVERY</span>
+      <div class="buy-title">Buy EPCalibration directly</div>
+      <div class="buy-desc">Pay via PayPal — your license key arrives by email within 24 hours. Each key activates on one machine.</div>
+      <a href="epcalibration.html" target="_blank" class="btn btn-white">Buy EPCalibration →</a>
+      <div class="buy-trust">
+        <span class="buy-trust-item">Secure PayPal payment</span>
+        <span class="buy-trust-item">Email delivery within 24h</span>
+        <span class="buy-trust-item">1 device · 1 year license</span>
+        <span class="buy-trust-item">No subscription</span>
+      </div>
+    </div>
+    <div class="buy-badge">
+      <div class="buy-badge-icon">🔑</div>
+      <div style="color:#fff;font-size:.88rem;font-weight:700">License Key</div>
+      <p>Windows 10 / 11<br>1 machine · 1 year</p>
+    </div>
+  </div>
+
+  <footer>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies</span>
+    <div class="footer-legal">
+      <button onclick="showPage('terms')">Terms of Service</button>
+      <button onclick="showPage('privacy')">Privacy Policy</button>
+      <button onclick="showPage('refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ PRICING ══════════════ -->
+<div class="page" id="page-pricing">
+  <div class="legal-page">
+    <button class="legal-back" onclick="showPage('home')">← Back</button>
+    <span class="badge">PRICING</span>
+    <h1 style="margin-top:.9rem">License tiers</h1>
+    <div class="legal-meta">Both tools sold directly through this site · secure online checkout · license key by email within 24h</div>
+
+    <h2>PareVia Building Design Optimization Software</h2> 
+    <p> PareVia is a building performance optimization software developed for EnergyPlus-based building energy simulation. It combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization to explore high-performance building designs. </p> 
+    <p> The software can evaluate building energy use, embodied carbon, cost, and other performance objectives and identify Pareto-optimal building design solutions. </p>
+    <table class="pricing-table">
+      <tr><th>PareVia license</th><th>Student License</th><th>Commercial License</th></tr>
+      <tr><td>First 3 months</td><td>$20 (one payment)</td><td>$50 (one payment)</td></tr>
+      <tr><td>Monthly, after the first 3 months</td><td>$40 / month</td><td>$100 / month</td></tr>
+      <tr><td>Annual, first year</td><td>$150</td><td>$500</td></tr>
+      <tr><td>Annual, from the second year</td><td>$300 / year</td><td>$1,000 / year</td></tr>
+      <tr><td>10-year license</td><td class="no">Not applicable</td><td>$5,000 (one payment)</td></tr>
+      <tr><td>Devices</td><td>1 computer</td><td>1 computer (multi-seat on request)</td></tr>
+      <tr><td>Eligibility</td><td>Proof of current student status required</td><td class="ok">Open to all</td></tr>
+      <tr><td>Commercial project use</td><td class="no">Academic only</td><td class="ok">✓</td></tr>
+    </table>
+    <p><a href="buy.html" target="_blank" style="color:var(--primary-d);font-weight:700">Full PareVia license details and purchase →</a></p>
+
+    <h2>EnergyPlus Calibration Software</h2> 
+    <p> EPCalibration is an EnergyPlus calibration software tool designed to support building energy model calibration using measured building data. It uses NSGA-II optimization and ASHRAE Guideline 14 performance metrics to identify calibrated building model parameters. </p> 
+    <p> The software supports building simulation calibration, EnergyPlus model calibration, and evaluation using metrics such as CV(RMSE) and NMBE. </p>
+    <table class="pricing-table">
+      <tr><th>Feature</th><th>Student / Academic</th><th>Professional</th><th>Enterprise</th></tr>
+      <tr><td>Price</td><td>$40 USD</td><td>$400 USD</td><td>Custom</td></tr>
+      <tr><td>License duration</td><td>1 Month</td><td>1 year</td><td>Custom</td></tr>
+      <tr><td>Devices</td><td>1 computer</td><td>1 computer</td><td>Multi-seat</td></tr>
+      <tr><td>Full application + EnergyPlus, NSGA-II, ASHRAE G14 metrics</td><td class="ok">✓</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+      <tr><td>Commercial project use</td><td class="no">Academic only</td><td class="ok">✓</td><td class="ok">✓</td></tr>
+    </table>
+    <div class="legal-highlight" style="background:var(--archopt-light);border-radius:14px;padding:1.3rem 1.5rem;margin:1.8rem 0">
+      <h3 style="margin:0 0 .6rem 0;color:var(--archopt-d);font-weight:800;font-size:1.15rem">
+        PareVia Student License
+      </h3>
+      <p style="margin:0;color:var(--ink2);font-size:1.02rem;line-height:1.6">
+        Students pay <strong>$20 for the first 3 months</strong> or <strong>$150 for the first year</strong>,
+        then $40/month or $300/year. An official confirmation from the university or supervisor stating current
+        student status is required. Students may also have opportunities for academic or research collaboration.
+      </p>
+    </div>
+
+    <div class="legal-highlight"><p>All sales are final once a license key has been delivered. We recommend contacting us with any questions before purchasing — <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>.</p></div>
+
+    <div style="display:flex;gap:.75rem;margin-top:2rem;flex-wrap:wrap">
+      <a href="buy.html" target="_blank" class="btn btn-amber">Buy PareVia →</a>
+      <a href="epcalibration.html" target="_blank" class="btn btn-teal">Buy EPCalibration →</a>
+    </div>
+  </div>
+  <footer>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies</span>
+    <div class="footer-legal">
+      <button onclick="showPage('terms')">Terms of Service</button>
+      <button onclick="showPage('privacy')">Privacy Policy</button>
+      <button onclick="showPage('refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ TERMS ══════════════ -->
+<div class="page" id="page-terms">
+  <div class="legal-page">
+    <button class="legal-back" onclick="showPage('home')">← Back</button>
+    <h1>Terms of Service</h1>
+    <div class="legal-meta">Effective date: 1 May 2026 · PareVia v2.0 &amp; EPCalibration · ArchOpt Technologies</div>
+    <div class="legal-highlight"><p><strong>Important:</strong> by purchasing, downloading, or using PareVia or EPCalibration, you agree to these terms in full.</p></div>
+    <h2>1. License grant</h2>
+    <p>Subject to full payment, you are granted a non-exclusive, non-transferable, revocable license to install and use the purchased software on <strong>one (1) computer</strong> for the <strong>license period purchased</strong> (for example 3 months, 1 month, 1 year, or 10 years) from the date of purchase.</p>
+    <h2>2. Permitted use</h2>
+    <ul>
+      <li><strong>Student / Academic license:</strong> non-commercial academic and research use only, by students who have provided proof of current student status.</li>
+      <li><strong>Commercial / Professional license:</strong> commercial use within your own organisation.</li>
+      <li><strong>Enterprise license:</strong> as defined in a separate written agreement.</li>
+    </ul>
+    <h2>3. Restrictions</h2>
+    <ul>
+      <li>No copying, sharing, reselling, or transferring the software or license key.</li>
+      <li>No activation on more than one computer at a time.</li>
+      <li>No reverse-engineering, decompiling, or extracting source code.</li>
+      <li>No use of an Academic license for commercial purposes.</li>
+      <li>No circumventing license verification or machine binding.</li>
+    </ul>
+    <p>Violation results in immediate termination with no refund.</p>
+    <h2>4. Software provided "as is" — no warranty</h2>
+    <p>THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. Results from PareVia or EPCalibration are for research and decision-support only and must be independently verified by a qualified professional engineer before use in any real building design, construction, calibration submission, or policy decision.</p>
+    <h2>5. No liability</h2>
+    <p>To the maximum extent permitted by law, ArchOpt Technologies are not liable for any loss, damage, or expense arising from use of the software, including engineering errors or decisions made based on its outputs.</p>
+    <h2>6. No refunds</h2>
+    <p>All sales are final once a license key has been delivered.</p>
+    <h2>7. Governing law</h2>
+    <p>These terms are governed by the laws of the United Arab Emirates; disputes fall under the exclusive jurisdiction of the courts of Dubai, UAE.</p>
+    <h2>8. Contact</h2>
+    <p><a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a></p>
+  </div>
+  <footer>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies</span>
+    <div class="footer-legal">
+      <button onclick="showPage('terms')">Terms of Service</button>
+      <button onclick="showPage('privacy')">Privacy Policy</button>
+      <button onclick="showPage('refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ PRIVACY ══════════════ -->
+<div class="page" id="page-privacy">
+  <div class="legal-page">
+    <button class="legal-back" onclick="showPage('home')">← Back</button>
+    <h1>Privacy Policy</h1>
+    <div class="legal-meta">Effective date: 1 May 2026 · ArchOpt Technologies</div>
+    <h2>1. Payment data</h2>
+    <p>Payments are processed by <strong>PayPal</strong>, which collects your name, email, and payment details to deliver your receipt and license key. We never see your card or account details.</p>
+    <h2>2. Data collected by the software</h2>
+    <ul>
+      <li>A hashed hardware fingerprint (SHA-256) used solely to bind your license to your machine — raw identifiers are never stored or transmitted.</li>
+      <li>License activation status and date, cached locally at <code>%APPDATA%</code>.</li>
+    </ul>
+    <h2>3. What we do not collect</h2>
+    <p>We do not access your project files, simulation inputs, IDF files, or results. No usage analytics, no cookies on this site, no data sold to third parties.</p>
+    <h2>4. Retention</h2>
+    <p>License activation data is retained for the license period plus 90 days.</p>
+    <h2>5. Contact</h2>
+    <p><a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a></p>
+  </div>
+  <footer>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies</span>
+    <div class="footer-legal">
+      <button onclick="showPage('terms')">Terms of Service</button>
+      <button onclick="showPage('privacy')">Privacy Policy</button>
+      <button onclick="showPage('refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<!-- ══════════════ REFUND ══════════════ -->
+<div class="page" id="page-refund">
+  <div class="legal-page">
+    <button class="legal-back" onclick="showPage('home')">← Back</button>
+    <h1>Refund Policy</h1>
+    <div class="legal-meta">Effective date: 1 May 2026 · ArchOpt Technologies</div>
+    <div class="legal-highlight"><p>All refund requests must be submitted within 7 days of purchase to <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>, including your PayPal transaction ID, the email used at purchase, and a description of the issue.</p></div>
+    <p>All sales are final once a license key has been delivered; requests are reviewed case by case. Software is provided as-is — results must be independently verified before use in any real project. If the Terms of Service are breached (sharing a key, multi-device activation, tampering), the license is revoked immediately and refund eligibility is at our discretion.</p>
+  </div>
+  <footer>
+    <span class="footer-brand" onclick="showPage('home')"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</span>
+    <span class="footer-copy">© 2026 ArchOpt Technologies</span>
+    <div class="footer-legal">
+      <button onclick="showPage('terms')">Terms of Service</button>
+      <button onclick="showPage('privacy')">Privacy Policy</button>
+      <button onclick="showPage('refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nav-links button').forEach(b=>b.classList.remove('active'));
+  const pg=document.getElementById('page-'+id);
+  if(pg)pg.classList.add('active');
+  const nb=document.getElementById('nav-'+id);
+  if(nb)nb.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function openContact(){document.getElementById('contactOverlay').classList.add('open');document.body.style.overflow='hidden';}
+function closeContact(){document.getElementById('contactOverlay').classList.remove('open');document.body.style.overflow='';}
+document.getElementById('contactOverlay').addEventListener('click',function(e){if(e.target===this)closeContact();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeContact();});
+
+async function submitForm(){
+  const name=document.getElementById('f-name').value.trim();
+  const email=document.getElementById('f-email').value.trim();
+  const type=document.getElementById('f-type').value;
+  const org=document.getElementById('f-org').value.trim();
+  const msg=document.getElementById('f-msg').value.trim();
+  if(!name||!email||!msg){alert('Please fill in your name, email, and message.');return;}
+  const subject=encodeURIComponent('ArchOpt Technologies Enquiry - '+type+' - '+name);
+  const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nOrganisation: '+(org||'Not provided')+'\nRegarding: '+type+'\n\nMessage:\n'+msg);
+  window.location.href='mailto:architecture.optimization@gmail.com?subject='+subject+'&body='+body;
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+
+function initShots(id, capId, interval){
+  const frame=document.getElementById(id);
+  if(!frame)return;
+  const slides=frame.querySelectorAll('.slide');
+  if(!slides.length)return;
+  const shell=frame.parentElement;
+  const caption=document.getElementById(capId);
+  const dots=shell.querySelectorAll('.shots-dots button');
+  let i=0,timer=null;
+  function go(n){
+    slides[i].classList.remove('active'); if(dots[i])dots[i].classList.remove('active');
+    i=(n+slides.length)%slides.length;
+    slides[i].classList.add('active'); if(dots[i])dots[i].classList.add('active');
+    if(caption)caption.textContent=slides[i].getAttribute('data-caption')||'';
+  }
+  function start(){stop();timer=setInterval(()=>go(i+1),interval||4000);}
+  function stop(){if(timer)clearInterval(timer);}
+  dots.forEach((d,n)=>d.addEventListener('click',()=>{go(n);start();}));
+  frame.addEventListener('mouseenter',stop);
+  frame.addEventListener('mouseleave',start);
+  go(0); start();
+}
+/* open a section directly from a link such as index.html#archopt, #epcal, #pricing or #contact */
+function routeFromHash(){
+  const h=location.hash.replace('#','');
+  if(!h)return;
+  if(h==='contact'){openContact();return;}
+  if(document.getElementById('page-'+h))showPage(h);
+}
+window.addEventListener('hashchange',routeFromHash);
+routeFromHash();
+initShots('archopt-shots','archopt-cap',4000);
+initShots('epcal-shots','epcal-cap',4200);
+</script>
+</body>
+</html>

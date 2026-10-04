@@ -10,6 +10,14 @@
         <priority>1.0</priority>
     </url>
 
+    <!-- EnergyFront -->
+    <url>
+        <loc>https://archopt-technologies.github.io/EnergyFront</loc>
+        <lastmod>2026-10-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
     <!-- صفحة ARCHOPT / PareVia -->
     <url>
         <loc>https://archopt-technologies.github.io/archopt.html</loc>
