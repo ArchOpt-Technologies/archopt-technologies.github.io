@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Page not found | ArchOpt Technologies</title>
+<meta name="robots" content="noindex">
+<script>
+/* send addresses typed with different letter case, a trailing slash or .html to the right page */
+(function(){
+  var pages={energyfront:'/EnergyFront',parevia:'/PareVia',epcalibration:'/EPCalibration',pricing:'/Pricing',terms:'/Terms',privacy:'/Privacy',refund:'/Refund',overview:'/',suite:'/',home:'/',index:'/'};
+  var p=window.location.pathname.toLowerCase().replace(/\/+$/,'').replace(/\.html$/,'').replace(/^\//,'');
+  if(pages[p]&&pages[p]!==window.location.pathname)window.location.replace(pages[p]+window.location.search+window.location.hash);
+})();
+</script>
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="stylesheet" href="/site.css">
+</head>
+<body>
+<div class="legal-page" style="text-align:center;padding-top:7rem">
+  <span class="badge">404</span>
+  <h1 style="margin-top:1rem">Page not found</h1>
+  <p style="margin-top:.8rem">The address may be mistyped, or the page may have moved.</p>
+  <p style="margin-top:1.6rem"><a class="btn btn-primary" href="/">Go to the Overview →</a></p>
+  <p style="margin-top:1.4rem"><a href="/EnergyFront">EnergyFront</a> · <a href="/PareVia">PareVia</a> · <a href="/EPCalibration">EPCalibration</a> · <a href="/Pricing">Pricing</a></p>
+</div>
+</body>
+</html>

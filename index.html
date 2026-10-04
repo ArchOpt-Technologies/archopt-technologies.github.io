@@ -2,11 +2,196 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>EnergyFront | ArchOpt Technologies</title>
-<link rel="canonical" href="https://archopt-technologies.github.io/EnergyFront">
-<meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="0; url=../EnergyFront">
-<script>location.replace('../EnergyFront'+location.search+location.hash);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ArchOpt Technologies | Building Performance, EnergyPlus & Optimization Software</title>
+<meta name="description" content="ArchOpt Technologies develops building performance software for EnergyPlus simulation, building energy calibration, multi-objective design optimization, and sustainability analysis."> 
+<meta name="keywords" content="ArchOpt Technologies, EnergyFront, EnergyFront software, EnergyPlus IDF generator, PareVia, PareVia software, ARCHOPT (former name of PareVia), EPCalibration, building performance software, building energy optimization, EnergyPlus software, EnergyPlus calibration, building energy simulation, building performance optimization, building design optimization, multi-objective building optimization, NSGA-III, NSGA-II, XGBoost surrogate model, ASHRAE Guideline 14, building energy calibration, embodied carbon optimization, sustainable building design, building performance, EnergyPlus, building optimization, building performance"> 
+<meta name="author" content="ArchOpt Technologies"> 
+<meta property="og:title" content="ArchOpt Technologies | Building Performance & Optimization Software"> 
+<meta property="og:description" content="Building performance software for EnergyPlus simulation, calibration, multi-objective optimization, and sustainable building design."> 
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArchOpt Technologies">
+<meta property="og:url" content="https://archopt-technologies.github.io/">
+<link rel="canonical" href="https://archopt-technologies.github.io/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "ArchOpt Technologies",
+  "alternateName": ["ArchOpt", "PareVia", "EnergyFront"],
+  "url": "https://archopt-technologies.github.io/"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "ArchOpt Technologies",
+  "url": "https://archopt-technologies.github.io/",
+  "logo": "https://archopt-technologies.github.io/favicon-512.png",
+  "email": "architecture.optimization@gmail.com"
+}
+</script>
+<link rel="stylesheet" href="site.css">
 </head>
-<body><p><a href="../EnergyFront">EnergyFront</a></p></body>
+<body data-page="home">
+
+<!-- CONTACT MODAL -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-modal">
+    <button class="contact-close" onclick="closeContact()">✕</button>
+    <div id="contactForm">
+      <span class="badge">GET IN TOUCH</span>
+      <h2 style="margin-top:.8rem">Talk to us about a license</h2>
+      <p class="lead">Questions before purchasing, bulk or enterprise licensing, or support — we reply within 24 hours.</p>
+      <div class="form-two">
+        <div class="form-row"><label>Name</label><input type="text" id="f-name" placeholder="Your name"></div>
+        <div class="form-row"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+      </div>
+      <div class="form-row">
+        <label>Regarding</label>
+        <select id="f-type">
+          <option value="">Select…</option>
+          <option>EnergyFront (launch notification)</option>
+          <option>PareVia license</option>
+          <option>EPCalibration license</option>
+          <option>Enterprise / multi-seat</option>
+          <option>Technical question before purchase</option>
+          <option>Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Organisation</label><input type="text" id="f-org" placeholder="Company or university"></div>
+      <div class="form-row"><label>Message</label><textarea id="f-msg" placeholder="What do you need?"></textarea></div>
+      <button class="btn btn-primary form-submit" onclick="submitForm()">Send message →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <h3>Message received 🎉</h3>
+      <p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="./">
+    <span class="brand-name"><span class="wm-chip"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="t">Technologies</span></span><span class="sub">Building performance software</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="./" class="active" aria-current="page">Overview</a></li>
+    <li><a href="EnergyFront">EnergyFront</a></li>
+    <li><a href="PareVia">PareVia</a></li>
+    <li><a href="EPCalibration">EPCalibration</a></li>
+    <li><a href="Pricing">Pricing</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openContact()">Contact</button>
+</nav>
+
+<div class="page" id="page-home">
+  <section class="hero">
+    <div>
+      <span class="badge"><span class="dot"></span>A growing suite of building-performance tools</span>
+      <h1 class="display">Software that makes buildings <span class="accent">perform</span> and keeps growing.</h1>
+      <p class="lead">
+      ArchOpt Technologies develops building performance software for EnergyPlus
+      simulation, building energy calibration, multi-objective building design
+      optimization, and sustainability analysis. Our tools help architects,
+      engineers, researchers, and building-performance professionals evaluate,
+      calibrate, and optimize building designs.
+      </p>
+      <div class="hero-btns">
+        <button class="btn btn-primary" onclick="go('Pricing')">See pricing →</button>
+        <button class="btn btn-line" onclick="openContact()">Ask a question first</button>
+      </div>
+      <div class="hero-note">
+        <span class="avatars"><span style="background:var(--archopt)">A</span><span style="background:var(--epcal)">E</span><span style="background:var(--primary)">+</span></span>
+        2 tools live today, more in active development
+      </div>
+    </div>
+    <div class="hero-fig">
+      <img src="ARCHOPT Technologies.png" alt="ArchOpt Technologies logo">
+      <div class="hero-fig-cap">
+        <span class="wm-chip" style="font-size:.9rem"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span></span>
+        <span style="font-size:.85rem;color:var(--ink3)">NSGA-III · Pareto front</span>
+      </div>
+    </div>
+  </section>
+  <h2>Building Energy Optimization Software for EnergyPlus</h2>
+
+  <p class="lead">
+  PareVia is a building design optimization software that uses EnergyPlus,
+  XGBoost surrogate modelling, and NSGA-III multi-objective optimization to
+  identify high-performance building designs based on energy use, embodied
+  carbon, cost, and other performance objectives.
+  </p>
+  <section class="wrap tight">
+    <div class="sec-head">
+      <div>
+        <span class="badge">THE SUITE</span>
+        <h2 style="margin-top:.9rem">Pick the problem you have</h2>
+      </div>
+      <p>Build the model in EnergyFront, optimize it in PareVia, calibrate it in EPCalibration. Two tools are available today and EnergyFront is coming soon.</p>
+    </div>
+    <div class="suite-grid">
+      <a class="suite-card front" href="EnergyFront">
+        <div class="suite-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EnergyFront" width="100%" height="100%"><rect width="64" height="64" rx="14" fill="#0B1A33"/><rect x="12" y="12" width="8" height="40" fill="#fff"/><rect x="12" y="12" width="20" height="8" fill="#fff"/><rect x="12" y="28" width="16" height="8" fill="#fff"/><rect x="12" y="44" width="20" height="8" fill="#fff"/><rect x="36" y="12" width="8" height="40" fill="#4F8EF7"/><rect x="36" y="12" width="16" height="8" fill="#4F8EF7"/><rect x="36" y="28" width="12" height="8" fill="#4F8EF7"/></svg></div>
+        <h3><span class="wm-chip" style="font-size:1.05rem"><span class="wm"><span class="wm-a">Energy</span><span class="wm-b">Front</span></span></span><span class="soon-tag">Coming soon</span></h3>
+        <p>Builds a simulation-ready EnergyPlus model from building inputs, runs it, and reports energy, comfort, and overheating. The IDF is ready for PareVia.</p>
+        <div class="go">Explore EnergyFront →</div>
+      </a>
+      <a class="suite-card amber" href="PareVia">
+        <div class="suite-icon">🎯</div>
+        <h3><span class="wm-chip" style="font-size:1.05rem"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span></span></h3>
+        <p>Multi-objective optimization for new building designs, Pareto-optimal trade-offs between energy, embodied carbon, and cost.</p>
+        <div class="go">Explore PareVia →</div>
+      </a>
+      <a class="suite-card teal" href="EPCalibration">
+        <div class="suite-icon">📈</div>
+        <h3>EPCalibration</h3>
+        <p>Calibrates an EnergyPlus model against measured data until it clears ASHRAE Guideline 14 accuracy thresholds.</p>
+        <div class="go">Explore EPCalibration →</div>
+      </a>
+      <div class="suite-card future">
+        <div class="suite-icon">✦</div>
+        <h3>In development</h3>
+        <p>We're building the next tool in the suite. Tell us what problem you'd want it to solve — it may shape what comes next.</p>
+        <div class="go" onclick="event.stopPropagation();openContact()">Suggest a tool →</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="author-strip">
+  
+    </div>
+
+  <div class="site-cta">
+    <h2>Not sure which tool fits your project?</h2>
+    <p>Tell us what you're working on and we'll point you to the right one — or the right combination.</p>
+    <div class="cta-btns">
+      <button class="btn btn-white" onclick="openContact()">Ask us →</button>
+      <button class="btn btn-ghost-dark" onclick="go('Pricing')">See pricing</button>
+    </div>
+  </div>
+
+  <footer>
+    <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
+    <span class="footer-copy">© 2026 ArchOpt Technologies </span>
+    <div class="footer-legal">
+      <button onclick="go('Terms')">Terms of Service</button>
+      <button onclick="go('Privacy')">Privacy Policy</button>
+      <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<script src="site.js"></script>
+</body>
 </html>

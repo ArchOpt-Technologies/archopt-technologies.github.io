@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy | ArchOpt Technologies</title>
+<meta name="description" content="Privacy Policy for the ArchOpt Technologies website and software.">
+<meta name="author" content="ArchOpt Technologies">
+<meta property="og:title" content="Privacy Policy | ArchOpt Technologies">
+<meta property="og:description" content="Privacy Policy for the ArchOpt Technologies website and software.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArchOpt Technologies">
+<meta property="og:url" content="https://archopt-technologies.github.io/Privacy">
+<link rel="canonical" href="https://archopt-technologies.github.io/Privacy">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-page="privacy">
+
+<!-- CONTACT MODAL -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-modal">
+    <button class="contact-close" onclick="closeContact()">✕</button>
+    <div id="contactForm">
+      <span class="badge">GET IN TOUCH</span>
+      <h2 style="margin-top:.8rem">Talk to us about a license</h2>
+      <p class="lead">Questions before purchasing, bulk or enterprise licensing, or support — we reply within 24 hours.</p>
+      <div class="form-two">
+        <div class="form-row"><label>Name</label><input type="text" id="f-name" placeholder="Your name"></div>
+        <div class="form-row"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+      </div>
+      <div class="form-row">
+        <label>Regarding</label>
+        <select id="f-type">
+          <option value="">Select…</option>
+          <option>EnergyFront (launch notification)</option>
+          <option>PareVia license</option>
+          <option>EPCalibration license</option>
+          <option>Enterprise / multi-seat</option>
+          <option>Technical question before purchase</option>
+          <option>Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Organisation</label><input type="text" id="f-org" placeholder="Company or university"></div>
+      <div class="form-row"><label>Message</label><textarea id="f-msg" placeholder="What do you need?"></textarea></div>
+      <button class="btn btn-primary form-submit" onclick="submitForm()">Send message →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <h3>Message received 🎉</h3>
+      <p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="./">
+    <span class="brand-name"><span class="wm-chip"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="t">Technologies</span></span><span class="sub">Building performance software</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="./">Overview</a></li>
+    <li><a href="EnergyFront">EnergyFront</a></li>
+    <li><a href="PareVia">PareVia</a></li>
+    <li><a href="EPCalibration">EPCalibration</a></li>
+    <li><a href="Pricing">Pricing</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openContact()">Contact</button>
+</nav>
+
+<div class="page" id="page-privacy">
+  <div class="legal-page">
+    <button class="legal-back" onclick="go('./')">← Back</button>
+    <h1>Privacy Policy</h1>
+    <div class="legal-meta">Effective date: 1 May 2026 · ArchOpt Technologies</div>
+    <h2>1. Payment data</h2>
+    <p>Payments are processed by <strong>PayPal</strong>, which collects your name, email, and payment details to deliver your receipt and license key. We never see your card or account details.</p>
+    <h2>2. Data collected by the software</h2>
+    <ul>
+      <li>A hashed hardware fingerprint (SHA-256) used solely to bind your license to your machine — raw identifiers are never stored or transmitted.</li>
+      <li>License activation status and date, cached locally at <code>%APPDATA%</code>.</li>
+    </ul>
+    <h2>3. What we do not collect</h2>
+    <p>We do not access your project files, simulation inputs, IDF files, or results. No usage analytics, no cookies on this site, no data sold to third parties.</p>
+    <h2>4. Retention</h2>
+    <p>License activation data is retained for the license period plus 90 days.</p>
+    <h2>5. Contact</h2>
+    <p><a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a></p>
+  </div>
+
+  <footer>
+    <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
+    <span class="footer-copy">© 2026 ArchOpt Technologies </span>
+    <div class="footer-legal">
+      <button onclick="go('Terms')">Terms of Service</button>
+      <button onclick="go('Privacy')">Privacy Policy</button>
+      <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EPCalibration | EnergyPlus Model Calibration Software | ArchOpt Technologies</title>
+<meta name="description" content="EPCalibration is EnergyPlus calibration software that calibrates building energy models against measured data using NSGA-II optimization and ASHRAE Guideline 14 metrics such as CV(RMSE) and NMBE.">
+<meta name="keywords" content="EPCalibration, EnergyPlus calibration, building energy model calibration, ASHRAE Guideline 14, CV(RMSE), NMBE, NSGA-II, ArchOpt Technologies">
+<meta name="author" content="ArchOpt Technologies">
+<meta property="og:title" content="EPCalibration | EnergyPlus Model Calibration Software | ArchOpt Technologies">
+<meta property="og:description" content="EPCalibration is EnergyPlus calibration software that calibrates building energy models against measured data using NSGA-II optimization and ASHRAE Guideline 14 metrics such as CV(RMSE) and NMBE.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArchOpt Technologies">
+<meta property="og:url" content="https://archopt-technologies.github.io/EPCalibration">
+<link rel="canonical" href="https://archopt-technologies.github.io/EPCalibration">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EPCalibration",
+  "applicationCategory": "EngineeringApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "EPCalibration is EnergyPlus calibration software that calibrates building energy models against measured data using NSGA-II optimization and ASHRAE Guideline 14 metrics such as CV(RMSE) and NMBE.",
+  "url": "https://archopt-technologies.github.io/EPCalibration",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ArchOpt Technologies",
+    "url": "https://archopt-technologies.github.io/"
+  }
+}
+</script>
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-page="epcal">
+
+<!-- CONTACT MODAL -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-modal">
+    <button class="contact-close" onclick="closeContact()">✕</button>
+    <div id="contactForm">
+      <span class="badge">GET IN TOUCH</span>
+      <h2 style="margin-top:.8rem">Talk to us about a license</h2>
+      <p class="lead">Questions before purchasing, bulk or enterprise licensing, or support — we reply within 24 hours.</p>
+      <div class="form-two">
+        <div class="form-row"><label>Name</label><input type="text" id="f-name" placeholder="Your name"></div>
+        <div class="form-row"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+      </div>
+      <div class="form-row">
+        <label>Regarding</label>
+        <select id="f-type">
+          <option value="">Select…</option>
+          <option>EnergyFront (launch notification)</option>
+          <option>PareVia license</option>
+          <option>EPCalibration license</option>
+          <option>Enterprise / multi-seat</option>
+          <option>Technical question before purchase</option>
+          <option>Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Organisation</label><input type="text" id="f-org" placeholder="Company or university"></div>
+      <div class="form-row"><label>Message</label><textarea id="f-msg" placeholder="What do you need?"></textarea></div>
+      <button class="btn btn-primary form-submit" onclick="submitForm()">Send message →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <h3>Message received 🎉</h3>
+      <p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="./">
+    <span class="brand-name"><span class="wm-chip"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="t">Technologies</span></span><span class="sub">Building performance software</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="./">Overview</a></li>
+    <li><a href="EnergyFront">EnergyFront</a></li>
+    <li><a href="PareVia">PareVia</a></li>
+    <li><a href="EPCalibration" class="active" aria-current="page">EPCalibration</a></li>
+    <li><a href="Pricing">Pricing</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openContact()">Contact</button>
+</nav>
+
+<div class="page" id="page-epcal">
+  <section class="tool-banner tool-section teal">
+    <div>
+      <span class="badge teal">EPCALIBRATION</span>
+      <h2>EnergyPlus Calibration Software for Building Performance Models</h2>
+      <p class="lead">
+      EPCalibration is EnergyPlus calibration software that calibrates building
+      energy simulation models against measured building data using automated
+      optimization and ASHRAE Guideline 14 performance metrics.
+      </p>
+      <div class="tool-btns">
+        <a href="epcalibration.html" class="btn btn-teal">Buy EPCalibration →</a>
+        <a href="epcalibration.html" class="btn btn-line">⬇ Download installer (free)</a>
+      </div>
+    </div>
+    <div class="spec-fig teal">
+      <img src="Pictures%20-EPCalibration%20cover.png" alt="EPCalibration interface">
+      <div class="spec-fig-meta">
+        <div class="spec-stat"><div class="spec-stat-label">RMSE · Objective 1</div><div class="spec-stat-val">0.42 °C</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">NMBE</div><div class="spec-stat-val">−1.8%</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">CV(RMSE)</div><div class="spec-stat-val">4.6%</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Pareto Solutions</div><div class="spec-stat-val">23 optimal</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps tool-section teal">
+    <span class="badge teal">WORKFLOW</span>
+    <h2 style="margin-top:.9rem">Four steps from measured data to a calibrated model</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-n">1</div><h4>Tag parameters</h4><p>One-click tag injection for insulation, thermal mass, windows, infiltration, occupancy, lighting, equipment.</p></div>
+      <div class="step"><div class="step-n">2</div><h4>Upload measured data</h4><p>Load measured CSVs from any monitoring system or utility bill, one dataset per objective, with a time filter.</p></div>
+      <div class="step"><div class="step-n">3</div><h4>NSGA-II search</h4><p>Halton-seeded NSGA-II explores the parameter space with step grids, caching, and parallel EnergyPlus runs.</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Pareto exploration</h4><p>Animate the front across generations, pick the balanced solution, export CSV and plots for reporting.</p></div>
+    </div>
+  </section>
+
+  <section class="shots tool-section teal">
+    <div class="shots-frame" id="epcal-shots">
+      <img class="slide active" src="EPCalibration/Setup.png" alt="EPCalibration setup screen" data-caption="Setup: IDF, weather file and run configuration">
+      <img class="slide" src="EPCalibration/Parameters.png" alt="EPCalibration parameters screen" data-caption="Parameters: tag injection, ranges and step grids">
+      <img class="slide" src="EPCalibration/Objectives.png" alt="EPCalibration objectives screen" data-caption="Objectives: measured CSVs and ASHRAE G14 metrics">
+      <img class="slide" src="EPCalibration/Run.png" alt="EPCalibration run screen" data-caption="Run — NSGA-II search with parallel EnergyPlus runs">
+      <img class="slide" src="EPCalibration/Results.png" alt="EPCalibration results screen" data-caption="Results: Pareto explorer, CSV and plot export">
+    </div>
+    <div class="shots-bar">
+      <div class="shots-caption" id="epcal-cap">Setup: IDF, weather file and run configuration</div>
+      <div class="shots-dots">
+        <button class="active" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button>
+        <button aria-label="4"></button><button aria-label="5"></button>
+      </div>
+    </div>
+  </section>
+
+  <div class="buy-band tool-section teal">
+    <div class="buy-text">
+      <span class="badge teal" style="background:rgba(255,255,255,.12);color:#fff">DIRECT PURCHASE · INSTANT DELIVERY</span>
+      <div class="buy-title">Buy EPCalibration directly</div>
+      <div class="buy-desc">Pay via PayPal — your license key arrives by email within 24 hours. Each key activates on one machine.</div>
+      <a href="epcalibration.html" class="btn btn-white">Buy EPCalibration →</a>
+      <div class="buy-trust">
+        <span class="buy-trust-item">Secure PayPal payment</span>
+        <span class="buy-trust-item">Email delivery within 24h</span>
+        <span class="buy-trust-item">1 device · 1 year license</span>
+        <span class="buy-trust-item">No subscription</span>
+      </div>
+    </div>
+    <div class="buy-badge">
+      <div class="buy-badge-icon">🔑</div>
+      <div style="color:#fff;font-size:.88rem;font-weight:700">License Key</div>
+      <p>Windows 10 / 11<br>1 machine · 1 year</p>
+    </div>
+  </div>
+
+
+  <footer>
+    <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
+    <span class="footer-copy">© 2026 ArchOpt Technologies </span>
+    <div class="footer-legal">
+      <button onclick="go('Terms')">Terms of Service</button>
+      <button onclick="go('Privacy')">Privacy Policy</button>
+      <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>

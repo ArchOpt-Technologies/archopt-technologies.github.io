@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PareVia | Multi-Objective Building Design Optimization for EnergyPlus | ArchOpt Technologies</title>
+<meta name="description" content="PareVia is building design optimization software that combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization to find Pareto-optimal designs for energy, embodied carbon, and cost.">
+<meta name="keywords" content="PareVia, PareVia software, ARCHOPT (former name of PareVia), building design optimization, EnergyPlus optimization, NSGA-III, XGBoost surrogate model, Pareto front, embodied carbon optimization, ArchOpt Technologies">
+<meta name="author" content="ArchOpt Technologies">
+<meta property="og:title" content="PareVia | Multi-Objective Building Design Optimization for EnergyPlus | ArchOpt Technologies">
+<meta property="og:description" content="PareVia is building design optimization software that combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization to find Pareto-optimal designs for energy, embodied carbon, and cost.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArchOpt Technologies">
+<meta property="og:url" content="https://archopt-technologies.github.io/PareVia">
+<link rel="canonical" href="https://archopt-technologies.github.io/PareVia">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "PareVia",
+  "applicationCategory": "EngineeringApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "PareVia is building design optimization software that combines EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization to find Pareto-optimal designs for energy, embodied carbon, and cost.",
+  "url": "https://archopt-technologies.github.io/PareVia",
+  "publisher": {
+    "@type": "Organization",
+    "name": "ArchOpt Technologies",
+    "url": "https://archopt-technologies.github.io/"
+  }
+}
+</script>
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-page="archopt">
+
+<!-- CONTACT MODAL -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-modal">
+    <button class="contact-close" onclick="closeContact()">✕</button>
+    <div id="contactForm">
+      <span class="badge">GET IN TOUCH</span>
+      <h2 style="margin-top:.8rem">Talk to us about a license</h2>
+      <p class="lead">Questions before purchasing, bulk or enterprise licensing, or support — we reply within 24 hours.</p>
+      <div class="form-two">
+        <div class="form-row"><label>Name</label><input type="text" id="f-name" placeholder="Your name"></div>
+        <div class="form-row"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+      </div>
+      <div class="form-row">
+        <label>Regarding</label>
+        <select id="f-type">
+          <option value="">Select…</option>
+          <option>EnergyFront (launch notification)</option>
+          <option>PareVia license</option>
+          <option>EPCalibration license</option>
+          <option>Enterprise / multi-seat</option>
+          <option>Technical question before purchase</option>
+          <option>Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Organisation</label><input type="text" id="f-org" placeholder="Company or university"></div>
+      <div class="form-row"><label>Message</label><textarea id="f-msg" placeholder="What do you need?"></textarea></div>
+      <button class="btn btn-primary form-submit" onclick="submitForm()">Send message →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <h3>Message received 🎉</h3>
+      <p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="./">
+    <span class="brand-name"><span class="wm-chip"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="t">Technologies</span></span><span class="sub">Building performance software</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="./">Overview</a></li>
+    <li><a href="EnergyFront">EnergyFront</a></li>
+    <li><a href="PareVia" class="active" aria-current="page">PareVia</a></li>
+    <li><a href="EPCalibration">EPCalibration</a></li>
+    <li><a href="Pricing">Pricing</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openContact()">Contact</button>
+</nav>
+
+<div class="page" id="page-archopt">
+  <section class="tool-banner tool-section amber">
+    <div>
+      <span class="wm-chip" style="font-size:1.1rem"><span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span><span class="v">v2.0 · formerly ARCHOPT</span></span>
+      <h2>The building optimization tool. Built for practitioners.</h2>
+      <p class="lead">EnergyPlus simulation, XGBoost surrogate modelling, and NSGA-III multi-objective optimization - Pareto-optimal building designs in hours, not weeks. No coding required.</p>
+      <div class="tool-btns">
+        <a href="buy.html" class="btn btn-amber">Buy PareVia →</a>
+        <a href="archopt.html#download" class="btn btn-line">⬇ Download installer (free)</a>
+      </div>
+    </div>
+    <div class="spec-fig amber">
+      <img src="Pictures%20-%20ARCHOPT%20Cover.png?v=2" alt="PareVia interface">
+      <div class="spec-fig-meta">
+        <div class="spec-stat"><div class="spec-stat-label">Energy Use Intensity</div><div class="spec-stat-val">142.3 kWh/m²</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Embodied Carbon</div><div class="spec-stat-val">318 kgCO₂/m²</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Pareto Solutions</div><div class="spec-stat-val">47 optimal</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Variables Active</div><div class="spec-stat-val">9 / 12</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps tool-section amber">
+    <span class="badge amber">WORKFLOW</span>
+    <h2 style="margin-top:.9rem">Four steps from IDF to optimal design</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-n">1</div><h4>Define variables</h4><p>Set design parameters, such as WWR, shading depth, glazing type, orientation, with ranges and constraints.</p></div>
+      <div class="step"><div class="step-n">2</div><h4>EnergyPlus sampling</h4><p>Latin Hypercube Sampling generates diverse design combinations; each is simulated automatically.</p></div>
+      <div class="step"><div class="step-n">3</div><h4>Surrogate training</h4><p>XGBoost learns from the simulation data and evaluates thousands of candidates in seconds.</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Pareto front export</h4><p>NSGA-III finds the optimal trade-off surface. Archive, CSV, and PDF report exported automatically.</p></div>
+    </div>
+  </section>
+
+  <section class="shots tool-section amber">
+    <div class="shots-frame" id="archopt-shots">
+      <img class="slide active" src="ARCHOPT%20tool%20pictures/Setup.png" alt="PareVia setup screen" data-caption="Setup: project, weather file and EnergyPlus paths">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/IDF.png" alt="PareVia IDF editor" data-caption="IDF Editor: tag-based parametric substitution">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/Variables.png" alt="PareVia variables screen" data-caption="Variables: design parameters, ranges and constraints">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/Embodied.png" alt="PareVia embodied carbon screen" data-caption="Embodied &amp; Cost: material take-off and CO₂ accounting">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/Script.png" alt="PareVia script screen" data-caption="Scripts: custom objective and post-processing hooks">
+      <img class="slide" src="ARCHOPT%20tool%20pictures/GA.png" alt="PareVia optimization screen" data-caption="Optimize: NSGA-III run and live Pareto front">
+    </div>
+    <div class="shots-bar">
+      <div class="shots-caption" id="archopt-cap">Setup — project, weather file and EnergyPlus paths</div>
+      <div class="shots-dots">
+        <button class="active" aria-label="1"></button><button aria-label="2"></button><button aria-label="3"></button>
+        <button aria-label="4"></button><button aria-label="5"></button><button aria-label="6"></button>
+      </div>
+    </div>
+  </section>
+  <section class="tool-section amber" style="padding:3rem">
+    <h2 style="margin-bottom:1rem">PareVia Tutorial Videos</h2>
+  
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+      
+      <div>
+        <h3 style="margin-bottom:.5rem">Tutorial 1</h3>
+        <video controls style="width:100%;border-radius:12px;border:1px solid var(--line)">
+          <source src="ARCHOPT tool pictures/ARCHOPT v1.mp4" type="video/mp4">
+        </video>
+      </div>
+  
+      <div>
+        <h3 style="margin-bottom:.5rem">Tutorial 2</h3>
+        <video controls style="width:100%;border-radius:12px;border:1px solid var(--line)">
+          <source src="ARCHOPT tool pictures/ARCHOPT v2.mp4" type="video/mp4">
+        </video>
+      </div>
+  
+    </div>
+  </section>
+  <section class="wrap tight tool-section amber" style="padding-bottom:0">
+    <span class="badge amber">CAPABILITIES</span>
+    <h2 style="margin-top:.9rem">Everything you need, in one pipeline</h2>
+  </section>
+  <div class="feat-grid tool-section amber" style="margin-top:2rem">
+    <div class="feat"><div class="feat-icon">🧬</div><h4>Multi-objective NSGA-III</h4><p>Optimize energy, embodied carbon, and comfort simultaneously, handles 4+ objectives without losing solution diversity.</p></div>
+    <div class="feat"><div class="feat-icon">🏷️</div><h4>Full IDF parametric control</h4><p>Tag-based IDF substitution gives direct control over any EnergyPlus parameter, geometry, materials, HVAC.</p></div>
+    <div class="feat"><div class="feat-icon">⚡</div><h4>XGBoost surrogate model</h4><p>Orders of magnitude faster than brute-force simulation, and generalizes accurately from the sampled data.</p></div>
+    <div class="feat"><div class="feat-icon">📅</div><h4>60-year lifecycle analysis</h4><p>Scale energy and carbon results over the full building lifetime, with a user-configurable study period.</p></div>
+    <div class="feat"><div class="feat-icon">🧱</div><h4>Embodied carbon calculator</h4><p>Built-in material database with quantity take-off, tracked alongside operational energy in every run.</p></div>
+    <div class="feat"><div class="feat-icon">🔍</div><h4>Global sensitivity analysis</h4><p>See which variables drive performance most, the levers worth pulling before you commit to a design.</p></div>
+  </div>
+
+  <div class="buy-band tool-section amber">
+    <div class="buy-text">
+      <span class="badge amber" style="background:rgba(255,255,255,.12);color:#fff">DIRECT PURCHASE · INSTANT DELIVERY</span>
+      <div class="buy-title">Buy <span class="wm"><span class="wm-a">Pare</span><span class="wm-b">Via</span></span> directly</div>
+      <div class="buy-desc">Two license categories. Student: from $20 for the first 3 months, with proof of student status. Commercial: from $50 for the first 3 months, plus monthly, annual, and 10-year options. Your license key arrives by email and activates on one machine.</div>
+      <a href="buy.html" class="btn btn-white">See Student &amp; Commercial licenses →</a>
+      <div class="buy-trust">
+        <span class="buy-trust-item">Secure online checkout</span>
+        <span class="buy-trust-item">Email delivery within 24h</span>
+        <span class="buy-trust-item">1 device per license</span>
+        <span class="buy-trust-item">Student &amp; Commercial pricing</span>
+      </div>
+    </div>
+    <div class="buy-badge">
+      <div class="buy-badge-icon">🔑</div>
+      <div style="color:#fff;font-size:.88rem;font-weight:700">License Key</div>
+      <p>Windows 10 / 11<br>1 machine per license</p>
+    </div>
+  </div>
+
+
+  <footer>
+    <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
+    <span class="footer-copy">© 2026 ArchOpt Technologies </span>
+    <div class="footer-legal">
+      <button onclick="go('Terms')">Terms of Service</button>
+      <button onclick="go('Privacy')">Privacy Policy</button>
+      <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+  </footer>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>
