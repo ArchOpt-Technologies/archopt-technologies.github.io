@@ -252,10 +252,10 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
         <p class="lead" style="margin-top:0.6rem">The download is free. PareVia runs once activated with a license key — purchase a key below, and it arrives by email within 24 hours.</p>
         <div style="margin-top:2rem;display:flex;gap:0.85rem;flex-wrap:wrap">
           <!-- ▼▼ REPLACE href WITH YOUR GITHUB RELEASES ASSET URL ▼▼ -->
-          <button class="btn btn-blue" onclick="openTerms(true)">⬇ Download PareVia v2.0</button>
+          <button class="btn btn-blue" onclick="openTerms(true)">⬇ Download PareVia v3.0</button>
           <a class="btn" style="border:1px solid var(--border-md);color:var(--ink2)" href="#buy">I need a license key →</a>
         </div>
-        <div class="dl-meta">PareVia v2.0 installer (.zip) · ~500 MB · Windows 10 / 11 (64-bit)</div>
+        <div class="dl-meta">PareVia_v3.0_Setup.exe · about 207 MB · Windows 10 / 11 (64-bit)</div>
         <div class="dl-note"><strong>Why is the download free?</strong> The installer is fully functional but requires a one-time activation with a license key. This lets you verify the software installs and opens on your machine before purchasing.</div>
       </div>
       <div class="dl-card">
@@ -384,7 +384,7 @@ footer{border-top:1px solid var(--border);background:var(--surface2)}
 
 <script>
 /* ▼▼ REPLACE WITH YOUR GITHUB RELEASES ASSET URL ▼▼ */
-const DOWNLOAD_URL = "https://github.com/ArchOpt-Technologies/archopt-releases/releases/latest";
+const DOWNLOAD_URL = "https://github.com/ArchOpt-Technologies/archopt-releases/releases/latest/download/PareVia_v3.0_Setup.exe";
 let downloadMode = false;
 
 function openTerms(forDownload){
@@ -405,7 +405,7 @@ function closeTerms(){
 }
 function agreeAndDownload(){
   closeTerms();
-  window.open(DOWNLOAD_URL, '_blank', 'noopener');
+  window.location.href = DOWNLOAD_URL;
 }
 document.getElementById('termsModal').addEventListener('click', e => { if(e.target.id === 'termsModal') closeTerms(); });
 document.addEventListener('keydown', e => { if(e.key === 'Escape') closeTerms(); });
