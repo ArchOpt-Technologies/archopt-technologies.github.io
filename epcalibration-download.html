@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="description" content="EPCalibration calibrates EnergyPlus building models against measured data using NSGA-II multi-objective optimization with ASHRAE Guideline 14 metrics (RMSE, NMBE, CV(RMSE)). Download for Windows.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EPCalibration - EnergyPlus Model Calibration Software</title>
+<title>EPCalibration - Calibration Software for EnergyPlus Models</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
@@ -162,7 +162,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
   <div class="hero-in">
     <div>
       <div class="eyebrow">EPCalibration &middot; Model Calibration Software</div>
-      <h1 class="display">The EnergyPlus calibration tool.<br><em>Measured data in, trusted model out.</em></h1>
+      <h1 class="display">The calibration tool for EnergyPlus models.<br><em>Measured data in, trusted model out.</em></h1>
       <p class="lead">EPCalibration tunes your EnergyPlus model against measured data automatically — NSGA-II multi-objective optimization with ASHRAE Guideline 14 metrics (RMSE, NMBE, CV(RMSE)) and an interactive Pareto explorer. One desktop application. No coding required.</p>
       <div class="hero-btns">
         <a class="btn btn-blue" href="#download">&#11015; Download for Windows</a>
@@ -219,9 +219,9 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
   <div class="dl-card">
     <div>
       <!-- ▼▼ REPLACE href WITH YOUR GITHUB RELEASES ASSET URL ▼▼ -->
-      <a class="btn btn-blue" href="https://github.com/net-zero-gcc/epcalibration-releases/releases/tag/v1.0" onclick="return gateDownload(this);">&#11015; Download EPCalibration v1.0</a>
+      <a class="btn btn-blue" href="https://github.com/ArchOpt-Technologies/epcalibration-releases/releases/latest/download/EPCalibration.7z" onclick="return gateDownload(this);">&#11015; Download EPCalibration v1.0</a>
       <div style="margin-top:0.9rem"><a href="#buy" style="font-size:0.86rem;color:var(--accent)">I need a license key &rarr;</a></div>
-      <p class="dl-note">EPCalibration_v1_release.7z &middot; ~300 MB &middot; Windows 10 / 11 (64-bit)</p>
+      <p class="dl-note">EPCalibration.7z &middot; about 140 MB &middot; Windows 10 / 11 (64-bit)</p>
       <p class="dl-note"><b>Why is the download free?</b> The installer is fully functional but requires a one-time activation with a license key. This lets you verify the software installs and opens on your machine before purchasing.</p>
     </div>
     <div>
@@ -231,7 +231,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
         <li><span>Processor</span><span>4+ cores recommended</span></li>
         <li><span>Memory</span><span>8 GB min &middot; 16 GB rec.</span></li>
         <li><span>Disk space</span><span>2 GB free</span></li>
-        <li><span>EnergyPlus</span><span>v9.4+ installed</span></li>
+        <li><span>EnergyPlus</span><span>version 9.4 or later</span></li>
         <li><span>Internet</span><span>Required once, for activation</span></li>
       </ul>
     </div>
@@ -256,7 +256,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
       <div class="buy-eyebrow">Direct Purchase — Email Delivery</div>
       <div class="buy-title">Buy your EPCalibration<br>license key</div>
       <p class="buy-desc">EPCalibration is sold directly and receive your license key by email. Each key activates on one machine.</p>
-      <a class="btn btn-gold gumroad-button" style="background:var(--gold);color:#fff" href="https://net-zero-gcc.github.io/optimization.github.io/buy_epcalibration.html">💳 Buy EPCalibration by card — $20</a> 
+      <a class="btn btn-gold gumroad-button" style="background:var(--gold);color:#fff" href="buy_epcalibration.html">💳 Buy EPCalibration by card — $20</a> 
       <div class="buy-trust">
         
         <span>Instant email delivery</span>
@@ -282,7 +282,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
   </details>
   <details>
     <summary>What do I need besides EPCalibration?</summary>
-    <p>A working EnergyPlus installation (free from energyplus.net, v9.4 or newer), your IDF model and weather file, and measured data as CSV — from a monitoring system, data logger, or monthly utility bills.</p>
+    <p>A working EnergyPlus installation (free from energyplus.net, version 9.4 or later), your IDF model and weather file, and measured data as CSV — from a monitoring system, data logger, or monthly utility bills.</p>
   </details>
   <details>
     <summary>How is the license key delivered?</summary>
@@ -305,8 +305,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
     <p>No. EPCalibration is a desktop application with a full graphical interface. You tag parameters, load measured data, and set objectives in the GUI; the EnergyPlus runs and NSGA-II optimization are fully automated.</p>
   </details>
   <details>
-    <summary>How is this different from ARCHOPT?</summary>
-    <p>ARCHOPT optimizes new building designs (energy, carbon, comfort). EPCalibration tunes an existing EnergyPlus model so it matches measured reality — the essential first step before retrofit studies, M&amp;V, or research. They work great together, and each has its own license.</p>
+    <summary>How is this different from PareVia?</summary>
+    <p>PareVia optimizes new building designs (energy, carbon, comfort). EPCalibration tunes an existing EnergyPlus model so it matches measured reality — the essential first step before retrofit studies, M&amp;V, or research. They work great together, and each has its own license.</p>
   </details>
 </section>
 
@@ -320,7 +320,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
     <div class="modal-body">
       <p>By downloading, installing, purchasing, or using EPCalibration, you agree to these terms. Please read before downloading.</p>
       <h4>1. Copyright &amp; ownership</h4>
-      <p>EPCalibration, including all software, code, algorithms, documentation, design, and content on this page, is &copy; 2026 EPCalibration. All rights reserved. The software is licensed, not sold. Purchasing a license key grants you a limited right to use the software — it does not transfer ownership of the software or any intellectual property rights to you.</p>
+      <p>EPCalibration, including all software, code, algorithms, documentation, design, and content on this page, is &copy; 2026 ArchOpt Technologies. EPCalibration is a product of ArchOpt Technologies. All rights reserved. The software is licensed, not sold. Purchasing a license key grants you a limited right to use the software — it does not transfer ownership of the software or any intellectual property rights to you.</p>
       <h4>2. License grant &amp; restrictions</h4>
       <p>Each license key permits installation and activation of EPCalibration on <b>one (1) machine</b> for a period of <b>one (1) year</b> from activation. The license is personal and non-transferable. You may <b>not</b>: (a) share, resell, rent, lease, or redistribute the software or your license key; (b) reverse engineer, decompile, disassemble, or attempt to extract the source code; (c) modify, adapt, or create derivative works of the software; (d) circumvent, disable, or interfere with the license activation system; or (e) use the software to provide it as a service to third parties. Violation of these restrictions terminates your license immediately and without refund.</p>
       <h4>3. No warranty — software provided "as is"</h4>
@@ -351,7 +351,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
 <!-- ════════ FOOTER ════════ -->
 <footer>
   <div class="foot-in">
-    <p>&copy; 2026 EPCalibration. All rights reserved. Use of this software is subject to the <a href="#" onclick="openTerms(false);return false;">License Terms</a>.</p>
+    <p>&copy; 2026 ArchOpt Technologies. EPCalibration is a product of ArchOpt Technologies. All rights reserved. Use of this software is subject to the <a href="#" onclick="openTerms(false);return false;">License Terms</a>.</p>
     <nav>
       <a href="#download">Download</a>
       <a href="#buy">Buy license</a>
@@ -359,6 +359,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
       <a href="mailto:architecture.optimization@gmail.com">Support</a>
     </nav>
   </div>
+  <div class="foot-in" style="padding-top:0"><p style="font-size:0.72rem;line-height:1.55;opacity:.75">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, PareVia and EPCalibration are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p></div>
 </footer>
 
 <script>
@@ -374,7 +375,7 @@ function closeTerms(){ document.getElementById('termsModal').classList.remove('o
 function agreeAndDownload(){
   if(!document.getElementById('agreeChk').checked) return false;
   closeTerms();
-  if(pendingDownload) window.open(pendingDownload, '_blank');
+  if(pendingDownload) window.location.href = pendingDownload;
   return false;
 }
 </script>

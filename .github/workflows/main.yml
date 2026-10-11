@@ -22,14 +22,14 @@ jobs:
           git clone https://github.com/Net-Zero-GCC/optimization.github.io old
 
           # Copy folders and files exactly as named
-          #cp -r "old/ARCHOPT tool pictures" ./
+          cp -r "old/ARCHOPT tool pictures" ./
           #cp -r "old/EPCalibration" ./
           #cp "old/Pictures - ARCHOPT Cover.png" ./
           #cp "old/Pictures -EPCalibration cover.png" ./
           #cp "old/ARCHOPT Technologies.png" ./
                    # Copy installer/download pages
-          cp "old/archopt.html" ./
-          cp "old/epcalibration.html" ./
+          #cp "old/archopt.html" ./
+          #cp "old/epcalibration.html" ./
 
           # Clean up
           rm -rf old

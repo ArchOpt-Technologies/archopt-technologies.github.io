@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnergyFront | Model Builder and IDF Generator for EnergyPlus | ArchOpt Technologies</title>
+<meta name="description" content="EnergyFront is desktop software that builds a simulation-ready EnergyPlus IDF from building inputs, runs the simulation, and reports energy use, thermal loads, thermal comfort, and overheating hours. Free V2 and licensed V3 editions from ArchOpt Technologies.">
+<meta name="keywords" content="EnergyFront, EnergyPlus IDF generator, EnergyPlus model builder, building energy modelling software, EnergyPlus interface, thermal comfort, overheating hours, ASHRAE 55 adaptive comfort, EN 16798-1, PMV PPD, Airflow Network, PareVia, ArchOpt Technologies">
+<meta name="author" content="ArchOpt Technologies">
+<meta property="og:site_name" content="ArchOpt Technologies">
+<meta property="og:url" content="https://archopt-technologies.github.io/EnergyFront">
+<link rel="canonical" href="https://archopt-technologies.github.io/EnergyFront">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "EnergyFront",
+  "applicationCategory": "EngineeringApplication",
+  "operatingSystem": "Windows 10, Windows 11",
+  "description": "Desktop software that builds a simulation-ready EnergyPlus IDF from building inputs, runs the simulation, and reports energy, thermal comfort, and overheating results.",
+  "url": "https://archopt-technologies.github.io/EnergyFront",
+  "publisher": { "@type": "Organization", "name": "ArchOpt Technologies", "url": "https://archopt-technologies.github.io/" }
+}
+</script>
+<link rel="stylesheet" href="site.css">
+</head>
+<body data-page="energyfront">
+
+<!-- CONTACT MODAL -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-modal">
+    <button class="contact-close" onclick="closeContact()">✕</button>
+    <div id="contactForm">
+      <span class="badge">GET IN TOUCH</span>
+      <h2 style="margin-top:.8rem">Talk to us about a license</h2>
+      <p class="lead">Questions before purchasing, bulk or enterprise licensing, or support - we reply within 24 hours.</p>
+      <div class="form-two">
+        <div class="form-row"><label>Name</label><input type="text" id="f-name" placeholder="Your name"></div>
+        <div class="form-row"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+      </div>
+      <div class="form-row">
+        <label>Regarding</label>
+        <select id="f-type">
+          <option value="">Select…</option>
+          <option>EnergyFront</option>
+          <option>PareVia license</option>
+          <option>EPCalibration license</option>
+          <option>Enterprise / multi-seat</option>
+          <option>Technical question before purchase</option>
+          <option>Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Organisation</label><input type="text" id="f-org" placeholder="Company or university"></div>
+      <div class="form-row"><label>Message</label><textarea id="f-msg" placeholder="What do you need?"></textarea></div>
+      <button class="btn btn-primary form-submit" onclick="submitForm()">Send message →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <h3>Message received 🎉</h3>
+      <p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="./">
+    <span class="brand-name"><span class="wm-chip"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="t">Technologies</span></span><span class="sub">Building performance software</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="./">Overview</a></li>
+    <li><a href="EnergyFront" class="active" aria-current="page">EnergyFront</a></li>
+    <li><a href="PareVia">PareVia</a></li>
+    <li><a href="EPCalibration">EPCalibration</a></li>
+    <li><a href="Pricing">Pricing</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openContact()">Contact</button>
+</nav>
+
+<div class="page" id="page-energyfront">
+  <!-- ══════════════ ENERGYFRONT ══════════════ -->
+  <section class="tool-banner tool-section front" style="border-top:none">
+    <div>
+      <span class="wm-chip" style="font-size:1.1rem"><span class="wm"><span class="wm-a">Energy</span><span class="wm-b">Front</span></span><span class="v">v3.0</span></span>
+      <h1 style="font-size:clamp(2rem,3.4vw,2.7rem);margin:1.1rem 0 1.15rem;line-height:1.15">From building inputs to a simulation-ready EnergyPlus model.</h1>
+      <p class="lead">EnergyFront is desktop software that turns a building description into an accurate EnergyPlus IDF, runs the simulation, and reports energy use, thermal loads, thermal comfort, and overheating hours. No manual IDF editing is required, and the generated model can be used directly in PareVia.</p>
+      <div class="tool-btns">
+        <a href="buy_energyfront.html" class="btn btn-front">Get EnergyFront V3 →</a>
+        <a href="https://github.com/ArchOpt-Technologies/energyfront-releases/releases/download/v2.0/EnergyFront_v2.0_Setup.exe" class="btn btn-line" download>⬇ Download free V2</a>
+        <a href="PareVia" class="btn btn-line">Next step: optimize in PareVia</a>
+      </div>
+    </div>
+    <div class="spec-fig front">
+      <!-- COVER IMAGE: upload a file named exactly "Pictures - EnergyFront Cover.png" next to this page.
+           Until that file exists, the illustration below is shown instead. -->
+      <img class="ef-fig-img" src="Pictures%20-%20EnergyFront%20Cover.png" alt="EnergyFront interface" onerror="this.style.display='none';document.getElementById('ef-fallback').style.display='block'">
+      <div id="ef-fallback" style="display:none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 270" role="img" aria-label="EnergyFront: a building facade drawn as a heat map of the year" style="display:block;width:100%;border-bottom:1px solid var(--line)">
+        <rect width="580" height="270" fill="#0B1A33"/>
+        <g transform="translate(60,26) scale(.72)"><rect width="64" height="64" rx="14" fill="#13264a"/><rect x="12" y="12" width="8" height="40" fill="#fff"/><rect x="12" y="12" width="20" height="8" fill="#fff"/><rect x="12" y="28" width="16" height="8" fill="#fff"/><rect x="12" y="44" width="20" height="8" fill="#fff"/><rect x="36" y="12" width="8" height="40" fill="#4F8EF7"/><rect x="36" y="12" width="16" height="8" fill="#4F8EF7"/><rect x="36" y="28" width="12" height="8" fill="#4F8EF7"/></g>
+        <text x="120" y="50" font-family="Sora,Inter,sans-serif" font-weight="700" font-size="25" fill="#fff">Energy<tspan fill="#4F8EF7">Front</tspan></text>
+        <text x="120" y="70" font-family="Inter,sans-serif" font-size="11.5" fill="#B8C4D2">From building inputs to an EnergyPlus model and results</text>
+        <rect x="60" y="96" width="17" height="15" fill="#86b6ef"/><rect x="60" y="113" width="17" height="15" fill="#86b6ef"/><rect x="60" y="130" width="17" height="15" fill="#3987e5"/><rect x="60" y="147" width="17" height="15" fill="#86b6ef"/><rect x="60" y="164" width="17" height="15" fill="#3987e5"/><rect x="60" y="181" width="17" height="15" fill="#3987e5"/><rect x="60" y="198" width="17" height="15" fill="#3987e5"/><rect x="60" y="215" width="17" height="15" fill="#1c5cab"/><rect x="79" y="96" width="17" height="15" fill="#cde2fb"/><rect x="79" y="113" width="17" height="15" fill="#86b6ef"/><rect x="79" y="130" width="17" height="15" fill="#86b6ef"/><rect x="79" y="147" width="17" height="15" fill="#cde2fb"/><rect x="79" y="164" width="17" height="15" fill="#86b6ef"/><rect x="79" y="181" width="17" height="15" fill="#86b6ef"/><rect x="79" y="198" width="17" height="15" fill="#86b6ef"/><rect x="79" y="215" width="17" height="15" fill="#3987e5"/><rect x="98" y="96" width="17" height="15" fill="#cde2fb"/><rect x="98" y="113" width="17" height="15" fill="#cde2fb"/><rect x="98" y="130" width="17" height="15" fill="#f0efec"/><rect x="98" y="147" width="17" height="15" fill="#cde2fb"/><rect x="98" y="164" width="17" height="15" fill="#cde2fb"/><rect x="98" y="181" width="17" height="15" fill="#cde2fb"/><rect x="98" y="198" width="17" height="15" fill="#86b6ef"/><rect x="98" y="215" width="17" height="15" fill="#cde2fb"/><rect x="117" y="96" width="17" height="15" fill="#f0efec"/><rect x="117" y="113" width="17" height="15" fill="#f7d3cd"/><rect x="117" y="130" width="17" height="15" fill="#f0efec"/><rect x="117" y="147" width="17" height="15" fill="#f0efec"/><rect x="117" y="164" width="17" height="15" fill="#f0efec"/><rect x="117" y="181" width="17" height="15" fill="#cde2fb"/><rect x="117" y="198" width="17" height="15" fill="#f0efec"/><rect x="117" y="215" width="17" height="15" fill="#f0efec"/><rect x="136" y="96" width="17" height="15" fill="#f7d3cd"/><rect x="136" y="113" width="17" height="15" fill="#f7d3cd"/><rect x="136" y="130" width="17" height="15" fill="#f0efec"/><rect x="136" y="147" width="17" height="15" fill="#f7d3cd"/><rect x="136" y="164" width="17" height="15" fill="#f0efec"/><rect x="136" y="181" width="17" height="15" fill="#f0efec"/><rect x="136" y="198" width="17" height="15" fill="#f7d3cd"/><rect x="136" y="215" width="17" height="15" fill="#f0efec"/><rect x="155" y="96" width="17" height="15" fill="#ef9f96"/><rect x="155" y="113" width="17" height="15" fill="#f7d3cd"/><rect x="155" y="130" width="17" height="15" fill="#ef9f96"/><rect x="155" y="147" width="17" height="15" fill="#ef9f96"/><rect x="155" y="164" width="17" height="15" fill="#f7d3cd"/><rect x="155" y="181" width="17" height="15" fill="#ef9f96"/><rect x="155" y="198" width="17" height="15" fill="#f7d3cd"/><rect x="155" y="215" width="17" height="15" fill="#f7d3cd"/><rect x="174" y="96" width="17" height="15" fill="#ef9f96"/><rect x="174" y="113" width="17" height="15" fill="#ef9f96"/><rect x="174" y="130" width="17" height="15" fill="#e34948"/><rect x="174" y="147" width="17" height="15" fill="#ef9f96"/><rect x="174" y="164" width="17" height="15" fill="#ef9f96"/><rect x="174" y="181" width="17" height="15" fill="#ef9f96"/><rect x="174" y="198" width="17" height="15" fill="#f7d3cd"/><rect x="174" y="215" width="17" height="15" fill="#ef9f96"/><rect x="193" y="96" width="17" height="15" fill="#e34948"/><rect x="193" y="113" width="17" height="15" fill="#b02f2f"/><rect x="193" y="130" width="17" height="15" fill="#e34948"/><rect x="193" y="147" width="17" height="15" fill="#e34948"/><rect x="193" y="164" width="17" height="15" fill="#e34948"/><rect x="193" y="181" width="17" height="15" fill="#ef9f96"/><rect x="193" y="198" width="17" height="15" fill="#e34948"/><rect x="193" y="215" width="17" height="15" fill="#ef9f96"/><rect x="212" y="96" width="17" height="15" fill="#b02f2f"/><rect x="212" y="113" width="17" height="15" fill="#e34948"/><rect x="212" y="130" width="17" height="15" fill="#e34948"/><rect x="212" y="147" width="17" height="15" fill="#b02f2f"/><rect x="212" y="164" width="17" height="15" fill="#e34948"/><rect x="212" y="181" width="17" height="15" fill="#e34948"/><rect x="212" y="198" width="17" height="15" fill="#e34948"/><rect x="212" y="215" width="17" height="15" fill="#ef9f96"/><rect x="231" y="96" width="17" height="15" fill="#b02f2f"/><rect x="231" y="113" width="17" height="15" fill="#e34948"/><rect x="231" y="130" width="17" height="15" fill="#b02f2f"/><rect x="231" y="147" width="17" height="15" fill="#e34948"/><rect x="231" y="164" width="17" height="15" fill="#e34948"/><rect x="231" y="181" width="17" height="15" fill="#b02f2f"/><rect x="231" y="198" width="17" height="15" fill="#e34948"/><rect x="231" y="215" width="17" height="15" fill="#e34948"/><rect x="250" y="96" width="17" height="15" fill="#b02f2f"/><rect x="250" y="113" width="17" height="15" fill="#b02f2f"/><rect x="250" y="130" width="17" height="15" fill="#b02f2f"/><rect x="250" y="147" width="17" height="15" fill="#e34948"/><rect x="250" y="164" width="17" height="15" fill="#b02f2f"/><rect x="250" y="181" width="17" height="15" fill="#e34948"/><rect x="250" y="198" width="17" height="15" fill="#e34948"/><rect x="250" y="215" width="17" height="15" fill="#b02f2f"/><rect x="269" y="96" width="17" height="15" fill="#b02f2f"/><rect x="269" y="113" width="17" height="15" fill="#7a1d1d"/><rect x="269" y="130" width="17" height="15" fill="#b02f2f"/><rect x="269" y="147" width="17" height="15" fill="#b02f2f"/><rect x="269" y="164" width="17" height="15" fill="#b02f2f"/><rect x="269" y="181" width="17" height="15" fill="#e34948"/><rect x="269" y="198" width="17" height="15" fill="#b02f2f"/><rect x="269" y="215" width="17" height="15" fill="#e34948"/><rect x="288" y="96" width="17" height="15" fill="#7a1d1d"/><rect x="288" y="113" width="17" height="15" fill="#b02f2f"/><rect x="288" y="130" width="17" height="15" fill="#b02f2f"/><rect x="288" y="147" width="17" height="15" fill="#b02f2f"/><rect x="288" y="164" width="17" height="15" fill="#e34948"/><rect x="288" y="181" width="17" height="15" fill="#b02f2f"/><rect x="288" y="198" width="17" height="15" fill="#b02f2f"/><rect x="288" y="215" width="17" height="15" fill="#e34948"/><rect x="307" y="96" width="17" height="15" fill="#b02f2f"/><rect x="307" y="113" width="17" height="15" fill="#b02f2f"/><rect x="307" y="130" width="17" height="15" fill="#b02f2f"/><rect x="307" y="147" width="17" height="15" fill="#b02f2f"/><rect x="307" y="164" width="17" height="15" fill="#b02f2f"/><rect x="307" y="181" width="17" height="15" fill="#b02f2f"/><rect x="307" y="198" width="17" height="15" fill="#e34948"/><rect x="307" y="215" width="17" height="15" fill="#b02f2f"/><rect x="326" y="96" width="17" height="15" fill="#b02f2f"/><rect x="326" y="113" width="17" height="15" fill="#b02f2f"/><rect x="326" y="130" width="17" height="15" fill="#b02f2f"/><rect x="326" y="147" width="17" height="15" fill="#e34948"/><rect x="326" y="164" width="17" height="15" fill="#b02f2f"/><rect x="326" y="181" width="17" height="15" fill="#e34948"/><rect x="326" y="198" width="17" height="15" fill="#e34948"/><rect x="326" y="215" width="17" height="15" fill="#e34948"/><rect x="345" y="96" width="17" height="15" fill="#b02f2f"/><rect x="345" y="113" width="17" height="15" fill="#b02f2f"/><rect x="345" y="130" width="17" height="15" fill="#e34948"/><rect x="345" y="147" width="17" height="15" fill="#b02f2f"/><rect x="345" y="164" width="17" height="15" fill="#e34948"/><rect x="345" y="181" width="17" height="15" fill="#e34948"/><rect x="345" y="198" width="17" height="15" fill="#e34948"/><rect x="345" y="215" width="17" height="15" fill="#ef9f96"/><rect x="364" y="96" width="17" height="15" fill="#b02f2f"/><rect x="364" y="113" width="17" height="15" fill="#e34948"/><rect x="364" y="130" width="17" height="15" fill="#e34948"/><rect x="364" y="147" width="17" height="15" fill="#e34948"/><rect x="364" y="164" width="17" height="15" fill="#ef9f96"/><rect x="364" y="181" width="17" height="15" fill="#e34948"/><rect x="364" y="198" width="17" height="15" fill="#ef9f96"/><rect x="364" y="215" width="17" height="15" fill="#ef9f96"/><rect x="383" y="96" width="17" height="15" fill="#ef9f96"/><rect x="383" y="113" width="17" height="15" fill="#ef9f96"/><rect x="383" y="130" width="17" height="15" fill="#e34948"/><rect x="383" y="147" width="17" height="15" fill="#ef9f96"/><rect x="383" y="164" width="17" height="15" fill="#ef9f96"/><rect x="383" y="181" width="17" height="15" fill="#ef9f96"/><rect x="383" y="198" width="17" height="15" fill="#f7d3cd"/><rect x="383" y="215" width="17" height="15" fill="#ef9f96"/><rect x="402" y="96" width="17" height="15" fill="#ef9f96"/><rect x="402" y="113" width="17" height="15" fill="#ef9f96"/><rect x="402" y="130" width="17" height="15" fill="#f7d3cd"/><rect x="402" y="147" width="17" height="15" fill="#f7d3cd"/><rect x="402" y="164" width="17" height="15" fill="#ef9f96"/><rect x="402" y="181" width="17" height="15" fill="#f7d3cd"/><rect x="402" y="198" width="17" height="15" fill="#f7d3cd"/><rect x="402" y="215" width="17" height="15" fill="#f7d3cd"/><rect x="421" y="96" width="17" height="15" fill="#ef9f96"/><rect x="421" y="113" width="17" height="15" fill="#f7d3cd"/><rect x="421" y="130" width="17" height="15" fill="#f7d3cd"/><rect x="421" y="147" width="17" height="15" fill="#f7d3cd"/><rect x="421" y="164" width="17" height="15" fill="#f0efec"/><rect x="421" y="181" width="17" height="15" fill="#f0efec"/><rect x="421" y="198" width="17" height="15" fill="#f7d3cd"/><rect x="421" y="215" width="17" height="15" fill="#f0efec"/><rect x="440" y="96" width="17" height="15" fill="#f7d3cd"/><rect x="440" y="113" width="17" height="15" fill="#f0efec"/><rect x="440" y="130" width="17" height="15" fill="#f0efec"/><rect x="440" y="147" width="17" height="15" fill="#f0efec"/><rect x="440" y="164" width="17" height="15" fill="#cde2fb"/><rect x="440" y="181" width="17" height="15" fill="#f0efec"/><rect x="440" y="198" width="17" height="15" fill="#cde2fb"/><rect x="440" y="215" width="17" height="15" fill="#cde2fb"/><rect x="459" y="96" width="17" height="15" fill="#cde2fb"/><rect x="459" y="113" width="17" height="15" fill="#f0efec"/><rect x="459" y="130" width="17" height="15" fill="#cde2fb"/><rect x="459" y="147" width="17" height="15" fill="#cde2fb"/><rect x="459" y="164" width="17" height="15" fill="#cde2fb"/><rect x="459" y="181" width="17" height="15" fill="#cde2fb"/><rect x="459" y="198" width="17" height="15" fill="#86b6ef"/><rect x="459" y="215" width="17" height="15" fill="#cde2fb"/><rect x="478" y="96" width="17" height="15" fill="#86b6ef"/><rect x="478" y="113" width="17" height="15" fill="#cde2fb"/><rect x="478" y="130" width="17" height="15" fill="#86b6ef"/><rect x="478" y="147" width="17" height="15" fill="#86b6ef"/><rect x="478" y="164" width="17" height="15" fill="#86b6ef"/><rect x="478" y="181" width="17" height="15" fill="#3987e5"/><rect x="478" y="198" width="17" height="15" fill="#86b6ef"/><rect x="478" y="215" width="17" height="15" fill="#86b6ef"/><rect x="497" y="96" width="17" height="15" fill="#86b6ef"/><rect x="497" y="113" width="17" height="15" fill="#3987e5"/><rect x="497" y="130" width="17" height="15" fill="#3987e5"/><rect x="497" y="147" width="17" height="15" fill="#86b6ef"/><rect x="497" y="164" width="17" height="15" fill="#3987e5"/><rect x="497" y="181" width="17" height="15" fill="#3987e5"/><rect x="497" y="198" width="17" height="15" fill="#3987e5"/><rect x="497" y="215" width="17" height="15" fill="#1c5cab"/>
+        <rect x="60" y="234" width="454" height="3" fill="#F58220"/>
+        <g font-family="Inter,sans-serif" font-size="9.5" fill="#8a99ab"><text x="78" y="248" text-anchor="middle">J</text><text x="116" y="248" text-anchor="middle">F</text><text x="154" y="248" text-anchor="middle">M</text><text x="192" y="248" text-anchor="middle">A</text><text x="230" y="248" text-anchor="middle">M</text><text x="268" y="248" text-anchor="middle">J</text><text x="306" y="248" text-anchor="middle">J</text><text x="344" y="248" text-anchor="middle">A</text><text x="382" y="248" text-anchor="middle">S</text><text x="420" y="248" text-anchor="middle">O</text><text x="458" y="248" text-anchor="middle">N</text><text x="496" y="248" text-anchor="middle">D</text></g>
+        <text x="514" y="88" text-anchor="end" font-family="Inter,sans-serif" font-size="9.5" fill="#8a99ab">Illustration: overheating heat map</text>
+      </svg>
+      </div>
+      <div class="spec-fig-meta">
+        <div class="spec-stat"><div class="spec-stat-label">Simulation engine</div><div class="spec-stat-val">EnergyPlus version 9.4</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">HVAC system types</div><div class="spec-stat-val">7 templates</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Overheating methods</div><div class="spec-stat-val">4 criteria</div></div>
+        <div class="spec-stat"><div class="spec-stat-label">Results export</div><div class="spec-stat-val">Hourly to yearly</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps tool-section front" style="padding-top:5rem">
+    <span class="badge front">WORKFLOW</span>
+    <h2 style="margin-top:.9rem">Four steps from a building description to results</h2>
+    <div class="steps-grid">
+      <div class="step"><div class="step-n">1</div><h4>Describe the building</h4><p>Choose the building type, draw or enter the floor plans, set the levels and space types. Zoning is created automatically.</p></div>
+      <div class="step"><div class="step-n">2</div><h4>Set envelope and systems</h4><p>Define constructions layer by layer, glazing, HVAC, domestic hot water, natural ventilation, and schedules.</p></div>
+      <div class="step"><div class="step-n">3</div><h4>Generate and run</h4><p>EnergyFront writes the IDF and runs EnergyPlus, with a live progress panel that reports each simulation step and any failure reason.</p></div>
+      <div class="step"><div class="step-n">4</div><h4>Review and export</h4><p>Inspect energy, loads, zone conditions, comfort, and overheating heat maps, then export the results to Excel and take the IDF into PareVia.</p></div>
+    </div>
+  </section>
+
+  <section class="wrap tight tool-section front" style="padding-bottom:0">
+    <span class="badge front">CAPABILITIES</span>
+    <h2 style="margin-top:.9rem">The inputs a detailed energy model needs, in one interface</h2>
+  </section>
+  <div class="feat-grid tool-section front" style="margin-top:2rem">
+    <div class="feat"><div class="feat-icon">📐</div><h4>Geometry and zoning</h4><p>Perimeter and core zoning, zone subdivision, freely drawn plans, and multi-level buildings where each level can have its own plan and use. Building types include Villa / Single Detached House.</p></div>
+    <div class="feat"><div class="feat-icon">🧱</div><h4>Layer-by-layer envelope</h4><p>Light, Medium, and Heavy thermal mass options with real layered constructions, layered glazing assemblies, doors, and a 3D view of the construction layers.</p></div>
+    <div class="feat"><div class="feat-icon">❄️</div><h4>HVAC and hot water</h4><p>Seven HVAC system types generated through EnergyPlus HVACTemplate objects, plus domestic hot water.</p></div>
+    <div class="feat"><div class="feat-icon">🌬️</div><h4>Natural ventilation</h4><p>Two modelling levels: a simple scheduled air change rate, or the full EnergyPlus Airflow Network.</p></div>
+    <div class="feat"><div class="feat-icon">🗓️</div><h4>Flexible schedules</h4><p>Annual, seasonal, monthly, and weekly patterns, with file import and export and a template for generating schedule files with an AI assistant.</p></div>
+    <div class="feat"><div class="feat-icon">🌡️</div><h4>Comfort and overheating</h4><p>PMV / PPD and overheating hours by static threshold, ASHRAE 55 adaptive, EN 16798-1 adaptive, and PMV / PPD criteria, shown per zone with heat maps.</p></div>
+  </div>
+
+  <section class="wrap tight tool-section" style="padding-top:0">
+    <span class="badge">THE SUITE WORKFLOW</span>
+    <h2 style="margin-top:.9rem">EnergyFront comes first</h2>
+    <p class="lead" style="color:var(--ink2);max-width:720px;margin-top:.8rem">EnergyFront builds and simulates the EnergyPlus model. <a href="PareVia" style="color:var(--primary-d);font-weight:600">PareVia</a> then optimizes the design across energy, embodied carbon, and cost, and <a href="EPCalibration" style="color:var(--primary-d);font-weight:600">EPCalibration</a> calibrates a model against measured data. EnergyFront is a separate product and does not require PareVia.</p>
+  </section>
+
+  <div class="buy-band tool-section front">
+    <div class="buy-text">
+      <span class="badge front" style="background:rgba(255,255,255,.12);color:#fff">AVAILABLE NOW</span>
+      <div class="buy-title"><span class="wm"><span class="wm-a">Energy</span><span class="wm-b">Front</span></span> V3 and free V2</div>
+      <div class="buy-desc">EnergyFront is designed for companies and for students who need detailed model inputs without writing IDF files by hand. Download V2 for free, or get the full V3 edition with a monthly ($50) or annual ($500) license.</div>
+      <div style="display:flex;gap:.6rem;flex-wrap:wrap"><a href="buy_energyfront.html" class="btn btn-white">Buy EnergyFront V3 →</a><a href="https://github.com/ArchOpt-Technologies/energyfront-releases/releases/download/v2.0/EnergyFront_v2.0_Setup.exe" class="btn btn-white" style="background:transparent;color:#fff;border:1px solid rgba(255,255,255,.45)" download>⬇ Free V2</a></div>
+      <p style="font-size:.78rem;opacity:.75;margin-top:.6rem">Windows 10 / 11 installers. By downloading, you agree to the <a href="Terms" style="color:#fff">License Terms</a>.</p>
+      <div class="buy-trust">
+        <span class="buy-trust-item">Desktop application</span>
+        <span class="buy-trust-item">EnergyPlus version 9.4</span>
+        <span class="buy-trust-item">IDF usable in PareVia</span>
+        <span class="buy-trust-item">Excel results export</span>
+      </div>
+    </div>
+    <div class="buy-badge">
+      <div style="width:56px;height:56px;margin:0 auto .6rem"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="EnergyFront" width="100%" height="100%"><rect width="64" height="64" rx="14" fill="#0B1A33"/><rect x="12" y="12" width="8" height="40" fill="#fff"/><rect x="12" y="12" width="20" height="8" fill="#fff"/><rect x="12" y="28" width="16" height="8" fill="#fff"/><rect x="12" y="44" width="20" height="8" fill="#fff"/><rect x="36" y="12" width="8" height="40" fill="#4F8EF7"/><rect x="36" y="12" width="16" height="8" fill="#4F8EF7"/><rect x="36" y="28" width="12" height="8" fill="#4F8EF7"/></svg></div>
+      <div style="color:#fff;font-size:.88rem;font-weight:700">EnergyFront</div>
+      <p>Windows 10 / 11<br>V3 from $50/month</p>
+    </div>
+  </div>
+
+
+  <footer>
+    <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
+    <span class="footer-copy">© 2026 ArchOpt Technologies </span>
+    <div class="footer-legal">
+      <button onclick="go('Terms')">Terms of Service</button>
+      <button onclick="go('Privacy')">Privacy Policy</button>
+      <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+    <p class="footer-tm">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, PareVia and EPCalibration are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p>
+  </footer>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>
