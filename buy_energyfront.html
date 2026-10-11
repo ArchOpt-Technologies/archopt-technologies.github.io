@@ -206,6 +206,15 @@
   .cmp td.no { color: var(--muted); }
   .dl-row { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:1.4rem; }
   .dl-row .buy-btn { width:auto; padding:.8rem 1.3rem; }
+  .ef-vid h3 { font-size:1rem; margin-bottom:.2rem; }
+  .ef-vid p { color:var(--muted); font-size:.85rem; margin-bottom:.7rem; }
+  .ef-vid video { width:100%; display:block; border-radius:12px; border:1px solid var(--border); background:#000; }
+  .vid-wrap { margin-top:1.6rem; }
+  .news { display:grid; grid-template-columns:repeat(3,1fr); gap:.9rem; margin-top:1rem; }
+  .news div { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem 1.1rem; font-size:.84rem; color:var(--muted); line-height:1.5; }
+  .news b { display:block; color:var(--text); font-size:.92rem; margin-bottom:.2rem; }
+  .news b::before { content:'+ '; color:var(--com); }
+  @media (max-width:860px){ .news { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -245,7 +254,7 @@
   <a class="choose-card com" href="#v3">
     <div class="choose-kicker">Full edition</div>
     <h2>EnergyFront V3</h2>
-    <p>The current edition with the full feature set, updates during the license period, and email support.</p>
+    <p>Floor-by-floor geometry, wall-by-wall windows, run-time control through the EnergyPlus API, and AI-assisted scripts.</p>
     <div class="choose-from">From <b>$50</b>/month</div>
     <div class="choose-go">View V3 licenses ↓</div>
   </a>
@@ -269,9 +278,12 @@
           <div class="price-for">free download, no time limit</div>
         </div>
         <div class="plan-feats">
-          <div>Windows 10 / 11 desktop installer</div>
-          <div>Builds and runs EnergyPlus models from building inputs</div>
-          <div>Good for learning and testing the workflow</div>
+          <div>One clear page at a time, designed for beginners</div>
+          <div>Rectangular footprint or your own drawn outline, with perimeter-core thermal zones</div>
+          <div>Layer-by-layer constructions with visible U-values</div>
+          <div>Window-to-wall ratio and external shading per facade</div>
+          <div>Readable schedules, with import from file</div>
+          <div>Ideal loads HVAC and checks that guide you before the run</div>
         </div>
         <div class="plan-cta">
           <a class="buy-btn dl-btn" href="#" data-download="v2">⬇ Download EnergyFront V2 (free)</a>
@@ -294,6 +306,10 @@
         </div>
       </div>
     </div>
+    <div class="vid-wrap"><div class="ef-vid">
+        <h3>EnergyFront V2 overview</h3><p>Building energy simulation, made simple.</p>
+        <video controls preload="metadata" playsinline poster="EnergyFront_V2_poster.jpg"><source src="ARCHOPT%20tool%20pictures/EnergyFront_V2_Simple_and_User-Friendly.mp4" type="video/mp4"></video>
+      </div></div>
   </div>
 </section>
 
@@ -306,6 +322,26 @@
         <h2>EnergyFront V3 <span class="ver">CURRENT</span></h2>
       </div>
       <p>Choose monthly or annual. After payment, your license key is emailed to you, normally within 24 hours.</p>
+    </div>
+
+    <div class="vid-wrap" style="margin:0 0 1.6rem"><div class="ef-vid">
+        <h3>EnergyFront V3 overview</h3><p>Advanced simulation, control and AI.</p>
+        <video controls preload="metadata" playsinline poster="EnergyFront_V3_poster.jpg"><source src="ARCHOPT%20tool%20pictures/EnergyFront_V3_Advanced_Simulation_Control_AI.mp4" type="video/mp4"></video>
+      </div></div>
+    <div class="summary" style="margin:0 0 1.8rem">
+      <h3>What you gain by moving from V2 to V3</h3>
+      <p style="color:var(--muted);font-size:.9rem">V3 keeps everything in V2 and adds detailed geometry, run-time control through the EnergyPlus API, and AI-assisted scripting.</p>
+      <div class="news">
+      <div><b>Floor by floor</b>Each level can have its own plan, floor count and space types, with a plan editor for every level.</div>
+      <div><b>Windows, wall by wall</b>Place windows on each individual wall and see them on the wall before the IDF is generated.</div>
+      <div><b>Advanced HVAC control</b>Operative temperature thermostat control, overcooling to dehumidify, heat recovery and free-cooling options.</div>
+      <div><b>Control logic every time step</b>Python control scripts run through the EnergyPlus API and change setpoints, schedules or actuators during the simulation.</div>
+      <div><b>Every decision logged</b>Each control action is written to a log file, so the behaviour can be checked hour by hour.</div>
+      <div><b>Read, decide, act</b>Test IoT and smart-building strategies such as adaptive EN 16798-1 setpoints or pre-cooling before occupancy.</div>
+      <div><b>AI-assisted scripts</b>Describe the control or analysis in plain words, let an AI assistant write the script, then check and run it.</div>
+      <div><b>Your own analysis</b>Custom result scripts for your own objectives, such as occupied hours above a comfort limit by month and zone.</div>
+      <div><b>Help written for engineers</b>Every page explains its inputs and how each result is calculated.</div>
+      </div>
     </div>
 
     <div class="plans two">
@@ -364,8 +400,13 @@
           <tr><th>Edition</th><th>EnergyFront V2</th><th>EnergyFront V3</th></tr>
           <tr><td>Price</td><td class="num">Free</td><td class="num">$50 / month or $500 / year</td></tr>
           <tr><td>License key</td><td class="no">Not needed</td><td>Required (1 machine)</td></tr>
-          <tr><td>Current feature set and updates</td><td class="no">Previous edition</td><td class="ok">✓</td></tr>
-          <tr><td>Email support</td><td class="no">Not included</td><td class="ok">✓</td></tr>
+          <tr><td>Geometry</td><td>Rectangle or drawn outline, same plan on every floor</td><td>Floor-by-floor plans and space types</td></tr>
+          <tr><td>Windows</td><td>Window-to-wall ratio per facade</td><td>Per facade or wall by wall, previewed on the wall</td></tr>
+          <tr><td>HVAC control</td><td>Ideal loads and standard setpoints</td><td>Operative temperature control, dehumidification, advanced options</td></tr>
+          <tr><td>Run-time control (EnergyPlus API)</td><td class="no">Not included</td><td>Python control scripts every time step, with a decision log</td></tr>
+          <tr><td>AI-assisted scripting</td><td class="no">Not included</td><td>Control and analysis scripts written from a plain-language description</td></tr>
+          <tr><td>Custom result analysis</td><td class="no">Not included</td><td>Your own result scripts and charts</td></tr>
+          <tr><td>Updates and email support</td><td class="no">Not included</td><td class="ok">✓</td></tr>
           <tr><td>IDF ready for PareVia</td><td class="ok">✓</td><td class="ok">✓</td></tr>
         </table>
       </div>
@@ -413,8 +454,8 @@
    ─────────────────────────────────────────────────────────────── */
 const RELEASES = "https://github.com/ArchOpt-Technologies/energyfront-releases/releases/download/";
 const DOWNLOAD = {
-  v2: RELEASES + "v2.0/EnergyFront_v2.0_Setup.exe",   // FREE edition
-  v3: RELEASES + "v3.0/EnergyFront_v3.0_Setup.exe"    // PAID edition (license key required)
+  v2: RELEASES + "v2.0/EnergyFront_v0.11.0_Setup.exe",   // FREE edition
+  v3: RELEASES + "v3.0/EnergyFront.V3.Setup.exe"    // PAID edition (license key required)
 };
 
 /* CHECKOUT LINKS (Gumroad) */
