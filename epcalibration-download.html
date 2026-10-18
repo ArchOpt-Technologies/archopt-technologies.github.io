@@ -30,6 +30,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(250,250,248,0.93);backdrop
 .nav-links a:hover{color:var(--accent)}
 .nav-links a.buy-link{color:var(--gold);font-weight:600}
 @media(max-width:760px){nav{padding:0 1.25rem}.nav-links{gap:0.9rem}.nav-links a{font-size:0.76rem}}
+@media(max-width:560px){nav{height:auto;flex-wrap:wrap;gap:.3rem;padding:.6rem 1rem}.nav-links{flex-wrap:wrap;gap:.2rem .8rem}}
 
 /* SHARED */
 .wrap{max-width:1080px;margin:0 auto;padding:5rem 2rem}
@@ -163,7 +164,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
     <div>
       <div class="eyebrow">EPCalibration &middot; Model Calibration Software</div>
       <h1 class="display">The calibration tool for EnergyPlus models.<br><em>Measured data in, trusted model out.</em></h1>
-      <p class="lead">EPCalibration tunes your EnergyPlus model against measured data automatically — NSGA-II multi-objective optimization with ASHRAE Guideline 14 metrics (RMSE, NMBE, CV(RMSE)) and an interactive Pareto explorer. One desktop application. No coding required.</p>
+      <p class="lead">EPCalibration tunes your EnergyPlus model against measured data automatically - NSGA-II multi-objective optimization with ASHRAE Guideline 14 metrics (RMSE, NMBE, CV(RMSE)) and an interactive Pareto explorer. One desktop application. No coding required.</p>
       <div class="hero-btns">
         <a class="btn btn-blue" href="#download">&#11015; Download for Windows</a>
         <a class="btn btn-ghost-dark" href="#buy">Buy a license key</a>
@@ -188,8 +189,8 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
   <h2 class="display">Five steps from measured data to a calibrated model</h2>
   <p class="lead" style="margin-top:0.5rem">The full calibration pipeline inside one desktop application.</p>
   <div class="steps-grid">
-    <div class="step"><div class="step-n">01</div><h3>Tag parameters</h3><p>One-click tag injection for insulation, thermal mass, windows, infiltration, occupancy, lighting and equipment — or place custom tags in the built-in IDF editor.</p></div>
-    <div class="step"><div class="step-n">02</div><h3>Upload measured data</h3><p>Load measured CSVs from any monitoring system or utility bill — one dataset per objective, with a time-period filter to align simulation and measurement.</p></div>
+    <div class="step"><div class="step-n">01</div><h3>Tag parameters</h3><p>One-click tag injection for insulation, thermal mass, windows, infiltration, occupancy, lighting and equipment - or place custom tags in the built-in IDF editor.</p></div>
+    <div class="step"><div class="step-n">02</div><h3>Upload measured data</h3><p>Load measured CSVs from any monitoring system or utility bill - one dataset per objective, with a time-period filter to align simulation and measurement.</p></div>
     <div class="step"><div class="step-n">03</div><h3>Baseline check</h3><p>Run EnergyPlus once, pick any output variable, and instantly see RMSE, NMBE and CV(RMSE) before optimization starts.</p></div>
     <div class="step"><div class="step-n">04</div><h3>NSGA-II search</h3><p>Halton-seeded NSGA-II explores the parameter space with step grids, evaluation caching and parallel EnergyPlus runs.</p></div>
     <div class="step"><div class="step-n">05</div><h3>Pareto exploration</h3><p>Animate the front across generations, pick the balanced solution, inspect any point's parameters, and export CSV and plots.</p></div>
@@ -200,14 +201,14 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
 <section class="wrap" id="features" style="border-bottom:1px solid var(--border)">
   <div class="eyebrow">Capabilities</div>
   <h2 class="display">Everything you need, in one pipeline</h2>
-  <p class="lead" style="margin-top:0.5rem">Built for real calibration studies — for practitioners, energy auditors and researchers.</p>
+  <p class="lead" style="margin-top:0.5rem">Built for real calibration studies - for practitioners, energy auditors and researchers.</p>
   <div class="feat-grid">
-    <div class="feat"><div class="feat-dot blue"></div><h3>Multi-objective NSGA-II</h3><p>Calibrate several zones or datasets at once — each objective's RMSE is minimized simultaneously along a true Pareto front.</p></div>
+    <div class="feat"><div class="feat-dot blue"></div><h3>Multi-objective NSGA-II</h3><p>Calibrate several zones or datasets at once - each objective's RMSE is minimized simultaneously along a true Pareto front.</p></div>
     <div class="feat"><div class="feat-dot gold"></div><h3>Single-dataset mode</h3><p>Only a monthly energy bill? EPCalibration automatically minimizes RMSE and |NMBE| of that dataset together, so the search stays multi-objective.</p></div>
-    <div class="feat"><div class="feat-dot green"></div><h3>Guideline 14 metrics</h3><p>RMSE, NMBE, CV(RMSE), maximum difference, and the share of hours deviating by more than 1&deg;C — reported live and logged per generation.</p></div>
+    <div class="feat"><div class="feat-dot green"></div><h3>Guideline 14 metrics</h3><p>RMSE, NMBE, CV(RMSE), maximum difference, and the share of hours deviating by more than 1&deg;C - reported live and logged per generation.</p></div>
     <div class="feat"><div class="feat-dot blue"></div><h3>Tag-based IDF control</h3><p>##tag## substitution gives direct control over any EnergyPlus parameter, with automatic injection for the ten most common calibration parameters.</p></div>
     <div class="feat"><div class="feat-dot gold"></div><h3>Two-stage refinement</h3><p>Optional second run that narrows ranges around the balanced solution (with halved steps) or re-runs seeded with the elite Pareto front.</p></div>
-    <div class="feat"><div class="feat-dot green"></div><h3>Fast &amp; reproducible</h3><p>Halton low-discrepancy sampling, parameter step grids, evaluation caching and parallel simulations — plus full CSV logs of every run.</p></div>
+    <div class="feat"><div class="feat-dot green"></div><h3>Fast &amp; reproducible</h3><p>Halton low-discrepancy sampling, parameter step grids, evaluation caching and parallel simulations - plus full CSV logs of every run.</p></div>
   </div>
 </section>
 
@@ -215,13 +216,13 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
 <section class="wrap alt" id="download" style="border-bottom:1px solid var(--border)">
   <div class="eyebrow">Download</div>
   <h2 class="display">Get EPCalibration for Windows</h2>
-  <p class="lead" style="margin-top:0.5rem">The download is free. EPCalibration runs once activated with a license key — purchase a key below, and it arrives by email within 24 hours.</p>
+  <p class="lead" style="margin-top:0.5rem">The download is free. EPCalibration runs once activated with a license key - purchase a key below, and it arrives by email within 24 hours.</p>
   <div class="dl-card">
     <div>
       <!-- ▼▼ REPLACE href WITH YOUR GITHUB RELEASES ASSET URL ▼▼ -->
-      <a class="btn btn-blue" href="https://github.com/ArchOpt-Technologies/epcalibration-releases/releases/download/v3.0/EPCalibration_v3.0.0_Setup.exe" onclick="return gateDownload(this);">&#11015; Download EPCalibration v3.0</a>
+      <a class="btn btn-blue" href="https://github.com/ArchOpt-Technologies/epcalibration-releases/releases/download/v3.0/EPCalibration_v3.5.0_Setup.exe" onclick="return gateDownload(this);">&#11015; Download EPCalibration v3.5</a>
       <div style="margin-top:0.9rem"><a href="#buy" style="font-size:0.86rem;color:var(--accent)">I need a license key &rarr;</a></div>
-      <p class="dl-note">EPCalibration.7z &middot; about 140 MB &middot; Windows 10 / 11 (64-bit)</p>
+      <p class="dl-note">EPCalibration_v3.5.0_Setup.exe &middot; Windows 10 / 11 (64-bit)</p>
       <p class="dl-note"><b>Why is the download free?</b> The installer is fully functional but requires a one-time activation with a license key. This lets you verify the software installs and opens on your machine before purchasing.</p>
     </div>
     <div>
@@ -243,9 +244,9 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
   <div class="eyebrow">How it works</div>
   <h2 class="display">From download to first calibration</h2>
   <div class="hw-grid">
-    <div class="hw"><div class="hw-step">STEP 1</div><h3>Download &amp; install</h3><p>Get the installer above, unzip, and run EPCalibrate.exe. The application opens to an activation screen.</p></div>
+    <div class="hw"><div class="hw-step">STEP 1</div><h3>Download &amp; install</h3><p>Download the installer above and run it. The application opens to an activation screen.</p></div>
     <div class="hw"><div class="hw-step">STEP 2</div><h3>Purchase a license</h3><p>Pay securely via PayPal. Your personal license key is delivered to your email address within 24 hours.</p></div>
-    <div class="hw"><div class="hw-step">STEP 3</div><h3>Activate &amp; calibrate</h3><p>Enter the key on the activation screen. The license binds to your machine, and EPCalibration unlocks — for one full year.</p></div>
+    <div class="hw"><div class="hw-step">STEP 3</div><h3>Activate &amp; calibrate</h3><p>Enter the key on the activation screen. The license binds to your machine, and EPCalibration unlocks - for one full year.</p></div>
   </div>
 </section>
 
@@ -253,10 +254,10 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
 <section class="buy-band" id="buy">
   <div class="buy-in">
     <div>
-      <div class="buy-eyebrow">Direct Purchase — Email Delivery</div>
+      <div class="buy-eyebrow">Direct Purchase - Email Delivery</div>
       <div class="buy-title">Buy your EPCalibration<br>license key</div>
       <p class="buy-desc">EPCalibration is sold directly and receive your license key by email. Each key activates on one machine.</p>
-      <a class="btn btn-gold gumroad-button" style="background:var(--gold);color:#fff" href="buy_epcalibration.html">💳 Buy EPCalibration by card — $20</a> 
+      <a class="btn btn-gold gumroad-button" style="background:var(--gold);color:#fff" href="buy_epcalibration.html">💳 Buy EPCalibration by card - $20</a> 
       <div class="buy-trust">
         
         <span>Instant email delivery</span>
@@ -282,11 +283,11 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
   </details>
   <details>
     <summary>What do I need besides EPCalibration?</summary>
-    <p>A working EnergyPlus installation (free from energyplus.net, version 9.4 or later), your IDF model and weather file, and measured data as CSV — from a monitoring system, data logger, or monthly utility bills.</p>
+    <p>A working EnergyPlus installation (free from energyplus.net, version 9.4 or later), your IDF model and weather file, and measured data as CSV - from a monitoring system, data logger, or monthly utility bills.</p>
   </details>
   <details>
     <summary>How is the license key delivered?</summary>
-    <p>After your PayPal payment is confirmed, your license key is sent to the email address associated with your PayPal account — within 24 hours, usually much sooner. If it doesn't arrive, check your spam folder, then email architecture.optimization@gmail.com with your PayPal transaction ID.</p>
+    <p>After your PayPal payment is confirmed, your license key is sent to the email address associated with your PayPal account - within 24 hours, usually much sooner. If it doesn't arrive, check your spam folder, then email architecture.optimization@gmail.com with your PayPal transaction ID.</p>
   </details>
   <details>
     <summary>Can I move my license to a new computer?</summary>
@@ -294,11 +295,11 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
   </details>
   <details>
     <summary>What happens after one year?</summary>
-    <p>The license is valid for one year from activation. After expiry, the software prompts for a new key — renewing is the same one-time purchase, with no automatic billing.</p>
+    <p>The license is valid for one year from activation. After expiry, the software prompts for a new key - renewing is the same one-time purchase, with no automatic billing.</p>
   </details>
   <details>
     <summary>Does EPCalibration need an internet connection?</summary>
-    <p>Only briefly: once for activation, and occasionally to re-verify the license. All simulations and calibrations run entirely on your own machine — your models and measured data never leave your computer.</p>
+    <p>Only briefly: once for activation, and occasionally to re-verify the license. All simulations and calibrations run entirely on your own machine - your models and measured data never leave your computer.</p>
   </details>
   <details>
     <summary>Do I need to know how to code?</summary>
@@ -306,7 +307,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
   </details>
   <details>
     <summary>How is this different from PareVia?</summary>
-    <p>PareVia optimizes new building designs (energy, carbon, comfort). EPCalibration tunes an existing EnergyPlus model so it matches measured reality — the essential first step before retrofit studies, M&amp;V, or research. They work great together, and each has its own license.</p>
+    <p>PareVia optimizes new building designs (energy, carbon, comfort). EPCalibration tunes an existing EnergyPlus model so it matches measured reality - the essential first step before retrofit studies, M&amp;V, or research. They work great together, and each has its own license.</p>
   </details>
 </section>
 
@@ -320,17 +321,17 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
     <div class="modal-body">
       <p>By downloading, installing, purchasing, or using EPCalibration, you agree to these terms. Please read before downloading.</p>
       <h4>1. Copyright &amp; ownership</h4>
-      <p>EPCalibration, including all software, code, algorithms, documentation, design, and content on this page, is &copy; 2026 ArchOpt Technologies. EPCalibration is a product of ArchOpt Technologies. All rights reserved. The software is licensed, not sold. Purchasing a license key grants you a limited right to use the software — it does not transfer ownership of the software or any intellectual property rights to you.</p>
+      <p>EPCalibration, including all software, code, algorithms, documentation, design, and content on this page, is &copy; 2026 ArchOpt Technologies. EPCalibration is a product of ArchOpt Technologies. All rights reserved. The software is licensed, not sold. Purchasing a license key grants you a limited right to use the software - it does not transfer ownership of the software or any intellectual property rights to you.</p>
       <h4>2. License grant &amp; restrictions</h4>
       <p>Each license key permits installation and activation of EPCalibration on <b>one (1) machine</b> for a period of <b>one (1) year</b> from activation. The license is personal and non-transferable. You may <b>not</b>: (a) share, resell, rent, lease, or redistribute the software or your license key; (b) reverse engineer, decompile, disassemble, or attempt to extract the source code; (c) modify, adapt, or create derivative works of the software; (d) circumvent, disable, or interfere with the license activation system; or (e) use the software to provide it as a service to third parties. Violation of these restrictions terminates your license immediately and without refund.</p>
-      <h4>3. No warranty — software provided "as is"</h4>
+      <h4>3. No warranty - software provided "as is"</h4>
       <p>EPCALIBRATION IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, RELIABILITY, OR NON-INFRINGEMENT. We do not warrant that the software will be error-free, uninterrupted, compatible with your system, or that defects will be corrected. You assume the entire risk arising from the download, installation, and use of the software.</p>
-      <h4>4. Results are estimates — professional responsibility</h4>
-      <p>EPCalibration produces simulation-based estimates and optimization results that depend on user inputs, third-party tools (including EnergyPlus), measured-data quality, assumptions, and statistical models. Outputs are decision-support information only — they are not engineering advice, not a certification, and not a guarantee of real-world building performance. You are solely responsible for independently verifying all results and for any design, retrofit, financial, or regulatory decision made using the software.</p>
+      <h4>4. Results are estimates - professional responsibility</h4>
+      <p>EPCalibration produces simulation-based estimates and optimization results that depend on user inputs, third-party tools (including EnergyPlus), measured-data quality, assumptions, and statistical models. Outputs are decision-support information only - they are not engineering advice, not a certification, and not a guarantee of real-world building performance. You are solely responsible for independently verifying all results and for any design, retrofit, financial, or regulatory decision made using the software.</p>
       <h4>5. Limitation of liability</h4>
       <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL EPCALIBRATION OR ITS DEVELOPER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO THE USE OF, OR INABILITY TO USE, THE SOFTWARE. IN ALL CASES, TOTAL AGGREGATE LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR YOUR LICENSE KEY.</p>
-      <h4>6. Refund policy — all sales final</h4>
-      <p>Because the installer is free to download and test before purchase, and because license keys are digital goods delivered immediately, all sales are final and non-refundable once a license key has been issued. If a valid key fails to activate on a compatible system and our support cannot resolve it, a replacement key or — at our sole discretion — a refund may be provided.</p>
+      <h4>6. Refund policy - all sales final</h4>
+      <p>Because the installer is free to download and test before purchase, and because license keys are digital goods delivered immediately, all sales are final and non-refundable once a license key has been issued. If a valid key fails to activate on a compatible system and our support cannot resolve it, a replacement key or - at our sole discretion - a refund may be provided.</p>
       <h4>7. Activation, license server &amp; termination</h4>
       <p>Activation requires a brief internet connection, and the software may periodically re-verify the license. We may suspend or revoke keys obtained fraudulently, charged back, shared, or used in breach of these terms, without refund. We may update or discontinue the software at any time; these terms apply to all versions and updates.</p>
       <h4>8. Third-party software</h4>
@@ -359,7 +360,7 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
       <a href="mailto:architecture.optimization@gmail.com">Support</a>
     </nav>
   </div>
-  <div class="foot-in" style="padding-top:0"><p style="font-size:0.72rem;line-height:1.55;opacity:.75">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, PareVia and EPCalibration are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p></div>
+  <div class="foot-in" style="padding-top:0"><p style="font-size:0.72rem;line-height:1.55;opacity:.75">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, EPCalibration and PareVia are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p></div>
 </footer>
 
 <script>
