@@ -3,465 +3,406 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Buy License EPCalibration</title>
+<title>Buy EPCalibration License | Monthly &amp; Yearly | ArchOpt Technologies</title>
+<meta name="description" content="Buy an EPCalibration license from ArchOpt Technologies. Automatic calibration of EnergyPlus models against measured data, ASHRAE Guideline 14 metrics. Monthly $20 or yearly $200."/>
+<meta name="author" content="ArchOpt Technologies"/>
+<meta property="og:title" content="Buy EPCalibration | Monthly &amp; Yearly Licenses"/>
+<meta property="og:description" content="Monthly $20 or yearly $200 (save $40). One machine per license. License key by email."/>
+<meta property="og:type" content="website"/>
+<link rel="canonical" href="https://archopt-technologies.github.io/buy_epcalibration.html"/>
+<link rel="icon" href="favicon.svg" type="image/svg+xml"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <style>
   :root {
     --bg:      #05070d;
     --card:    #0d1117;
+    --card2:   #111827;
     --border:  #1e2433;
-    --accent:  #3c8dbc;   /* EPCalibration blue */
-    --accent2: #f39c12;   /* EPCalibration orange */
+    --accent:  #4f8ef7;
+    --accent2: #7c5cfc;
     --green:   #22c55e;
     --gold:    #f59e0b;
     --text:    #e2e8f0;
-    --muted:   #64748b;
+    --muted:   #8391a7;
     --radius:  12px;
+    /* brand wordmarks: Pare / Arch in white, Via / Opt in brand blue */
+    --wm-white: #ffffff;
+    --wm-blue:  #4f8ef7;
+    /* customer categories */
+    --stu:      #2dd4bf;
+    --stu-bg:   rgba(45,212,191,.08);
+    --stu-line: rgba(45,212,191,.35);
+    --com:      #f59e0b;
+    --com-bg:   rgba(245,158,11,.07);
+    --com-line: rgba(245,158,11,.35);
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
   body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Inter', system-ui, sans-serif;
     min-height: 100vh;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
+  a { color: inherit; }
+  h1, h2, h3 { font-family: 'Sora', 'Inter', sans-serif; }
 
-  /* -- Hero -- */
-  .hero {
-    text-align: center;
-    padding: 5rem 1.5rem 3rem;
-    max-width: 780px;
-    margin: 0 auto;
-  }
+  /* ── Wordmarks ── */
+  .wm   { font-family: 'Sora', 'Inter', sans-serif; font-weight: 700; letter-spacing: -.01em; white-space: nowrap; }
+  .wm-a { color: var(--wm-white); -webkit-text-fill-color: var(--wm-white); }
+  .wm-b { color: var(--wm-blue);  -webkit-text-fill-color: var(--wm-blue); }
+
+  /* ── Top bar ── */
+  .topbar { position: sticky; top: 0; z-index: 50; background: rgba(5,7,13,.88); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+  .topbar-in { max-width: 1080px; margin: 0 auto; padding: .85rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+  .top-brand { text-decoration: none; font-size: 1.05rem; display: flex; align-items: baseline; gap: .4rem; }
+  .top-brand .co { font-family: 'Sora', sans-serif; font-weight: 600; color: var(--text); }
+  .topnav { display: flex; gap: 1.25rem; align-items: center; font-size: .85rem; }
+  .topnav a { color: var(--muted); text-decoration: none; font-weight: 500; }
+  .topnav a:hover { color: var(--text); }
+  @media (max-width: 640px) { .topnav a.hide-sm { display: none; } }
+
+  /* ── Hero ── */
+  .hero { text-align: center; padding: 4.5rem 1.5rem 2.5rem; max-width: 820px; margin: 0 auto; }
   .badge-pill {
-    display: inline-block;
-    background: rgba(60,141,188,.12);
-    border: 1px solid rgba(60,141,188,.35);
-    color: var(--accent);
-    border-radius: 999px;
-    padding: .3rem 1rem;
-    font-size: .75rem;
-    font-weight: 600;
-    letter-spacing: .06em;
-    text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    display: inline-block; background: rgba(79,142,247,.12); border: 1px solid rgba(79,142,247,.3);
+    color: var(--accent); border-radius: 999px; padding: .3rem 1rem; font-size: .75rem; font-weight: 600;
+    letter-spacing: .06em; text-transform: uppercase; margin-bottom: 1.5rem;
   }
-  h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 800;
-    letter-spacing: -.03em;
-    line-height: 1.1;
-    margin-bottom: 1rem;
-  }
-  h1 span {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-  .subtitle {
-    color: var(--muted);
-    font-size: 1.1rem;
-    line-height: 1.6;
-    max-width: 560px;
-    margin: 0 auto 2.5rem;
-  }
+  h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 800; letter-spacing: -.03em; line-height: 1.12; margin-bottom: 1rem; }
+  h1 .sub { display: block; font-size: .55em; font-weight: 600; color: var(--muted); letter-spacing: -.01em; margin-top: .5rem; }
+  .subtitle { color: var(--muted); font-size: 1.06rem; line-height: 1.65; max-width: 600px; margin: 0 auto; }
 
-  /* -- Pricing grid -- */
-  .pricing-wrap {
-    max-width: 780px;
-    margin: 0 auto;
-    padding: 0 1.5rem 4rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.25rem;
+  /* ── Category chooser ── */
+  .chooser { max-width: 1080px; margin: 0 auto; padding: 1rem 1.5rem 3.5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+  .choose-card {
+    display: block; text-decoration: none; border-radius: 18px; padding: 1.6rem 1.75rem;
+    background: var(--card); border: 1px solid var(--border); transition: transform .15s, border-color .15s;
   }
-  @media (max-width: 600px) {
-    .pricing-wrap { grid-template-columns: 1fr; }
-  }
-  .pricing-card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 18px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  .pricing-card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0; height: 2px;
-    background: linear-gradient(90deg, var(--accent), var(--accent2));
-  }
-  .pricing-card.popular {
-    border-color: var(--gold);
-    box-shadow: 0 0 0 1px rgba(245,158,11,.3), 0 8px 32px rgba(245,158,11,.08);
-  }
-  .pricing-card.popular::before {
-    background: linear-gradient(90deg, var(--gold), #f97316);
-  }
-  .popular-badge {
-    position: absolute;
-    top: 14px; right: 14px;
-    background: var(--gold);
-    color: #000;
-    font-size: .65rem;
-    font-weight: 800;
-    letter-spacing: .08em;
-    text-transform: uppercase;
-    border-radius: 999px;
-    padding: .2rem .65rem;
-  }
-  .pricing-top { padding: 2rem 2rem 1.5rem; }
-  .plan-name  { font-size: .7rem; font-weight: 700; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; margin-bottom: .5rem; }
-  .price      { font-size: 3rem; font-weight: 800; letter-spacing: -.04em; }
-  .price sup  { font-size: 1.2rem; vertical-align: super; font-weight: 600; }
-  .price sub  { font-size: 1rem; font-weight: 500; color: var(--muted); }
-  .price-note { color: var(--muted); font-size: .82rem; margin-top: .3rem; }
-  .save-pill  {
-    display: inline-block;
-    background: rgba(34,197,94,.12);
-    border: 1px solid rgba(34,197,94,.3);
-    color: var(--green);
-    border-radius: 999px;
-    padding: .15rem .7rem;
-    font-size: .72rem;
-    font-weight: 700;
-    margin-top: .5rem;
-  }
-  .divider { border: none; border-top: 1px solid var(--border); margin: 0; }
-  .features { padding: 1.5rem 2rem; display: flex; flex-direction: column; gap: .75rem; flex: 1; }
-  .feature   { display: flex; gap: .75rem; align-items: flex-start; font-size: .9rem; line-height: 1.4; }
-  .check     { color: var(--green); font-size: 1rem; flex-shrink: 0; margin-top: .05rem; }
-  .cta-wrap  { padding: 0 2rem 2rem; display: flex; flex-direction: column; gap: .75rem; }
+  .choose-card:hover { transform: translateY(-2px); }
+  .choose-card.stu { border-top: 3px solid var(--stu); }
+  .choose-card.stu:hover { border-color: var(--stu-line); }
+  .choose-card.com { border-top: 3px solid var(--com); }
+  .choose-card.com:hover { border-color: var(--com-line); }
+  .choose-kicker { font-size: .7rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  .stu .choose-kicker { color: var(--stu); }
+  .com .choose-kicker { color: var(--com); }
+  .choose-card h2 { font-size: 1.35rem; margin: .45rem 0 .35rem; }
+  .choose-card p { color: var(--muted); font-size: .9rem; line-height: 1.55; }
+  .choose-from { margin-top: 1rem; font-size: .9rem; font-weight: 600; }
+  .choose-from b { font-size: 1.25rem; }
+  .choose-go { margin-top: .9rem; font-size: .85rem; font-weight: 700; }
+  .stu .choose-go { color: var(--stu); }
+  .com .choose-go { color: var(--com); }
+
+  /* ── License sections ── */
+  .lic { max-width: 1080px; margin: 0 auto 3.5rem; padding: 0 1.5rem; scroll-margin-top: 80px; }
+  .lic-frame { border-radius: 22px; padding: 2.5rem 2.25rem 2.25rem; }
+  .lic.stu .lic-frame { background: var(--stu-bg); border: 1px solid var(--stu-line); }
+  .lic.com .lic-frame { background: var(--com-bg); border: 1px solid var(--com-line); }
+  .lic-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 1.75rem; }
+  .lic-num { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; }
+  .stu .lic-num { color: var(--stu); }
+  .com .lic-num { color: var(--com); }
+  .lic-head h2 { font-size: clamp(1.6rem, 3vw, 2.1rem); margin-top: .35rem; letter-spacing: -.02em; }
+  .lic-head p { color: var(--muted); max-width: 420px; font-size: .95rem; line-height: 1.6; }
+
+  /* plan cards */
+  .plans { display: grid; gap: 1.1rem; }
+  .plans.two   { grid-template-columns: repeat(2, 1fr); }
+  .plans.three { grid-template-columns: repeat(3, 1fr); }
+  .plan { background: var(--card); border: 1px solid var(--border); border-radius: 16px; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+  .plan.best { box-shadow: 0 0 0 1px var(--accent-line, rgba(255,255,255,.2)); }
+  .stu .plan.best { --accent-line: var(--stu-line); border-color: var(--stu-line); }
+  .com .plan.best { --accent-line: var(--com-line); border-color: var(--com-line); }
+  .plan-flag { position: absolute; top: 14px; right: 14px; font-size: .62rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; border-radius: 999px; padding: .2rem .6rem; color: #000; }
+  .stu .plan-flag { background: var(--stu); }
+  .com .plan-flag { background: var(--com); }
+  .plan-top { padding: 1.6rem 1.6rem 1.2rem; }
+  .plan-name { font-size: .7rem; font-weight: 700; letter-spacing: .14em; color: var(--muted); text-transform: uppercase; margin-bottom: .6rem; }
+  .price { font-family: 'Sora', sans-serif; font-size: 2.6rem; font-weight: 800; letter-spacing: -.04em; line-height: 1; }
+  .price sup { font-size: 1.05rem; vertical-align: super; font-weight: 600; margin-right: 2px; }
+  .price-for { color: var(--text); font-size: .9rem; font-weight: 600; margin-top: .45rem; }
+  .then { margin-top: 1rem; padding: .7rem .85rem; border-radius: 10px; background: var(--card2); border: 1px dashed var(--border); font-size: .86rem; line-height: 1.45; }
+  .then .lbl { display: block; font-size: .66rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: .15rem; }
+  .then b { font-size: 1rem; }
+  .plan-feats { padding: 0 1.6rem 1.2rem; display: flex; flex-direction: column; gap: .5rem; flex: 1; }
+  .plan-feats div { display: flex; gap: .6rem; font-size: .86rem; color: var(--muted); line-height: 1.4; }
+  .plan-feats div::before { content: '✓'; color: var(--green); font-weight: 700; flex-shrink: 0; }
+  .plan-cta { padding: 0 1.6rem 1.6rem; }
 
   .buy-btn {
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    color: #fff;
-    border: none;
-    border-radius: 10px;
-    padding: .9rem;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .5rem;
-    text-decoration: none;
-    transition: opacity .15s, transform .1s;
-    font-family: inherit;
+    border: none; border-radius: 10px; padding: .85rem; font-size: .95rem; font-weight: 700; cursor: pointer;
+    width: 100%; display: flex; align-items: center; justify-content: center; gap: .5rem; text-decoration: none;
+    transition: opacity .15s, transform .1s; font-family: inherit; color: #000;
   }
   .buy-btn:hover  { opacity: .9; }
   .buy-btn:active { transform: scale(.98); }
-  .buy-btn.yearly { background: linear-gradient(135deg, var(--gold), #f97316); color: #000; }
-  .buy-icon { font-size: 1.1rem; }
-  .trust-note {
-    text-align: center;
-    color: var(--muted);
-    font-size: .75rem;
-    margin-top: .25rem;
-  }
-  .trust-note a { color: var(--accent); text-decoration: none; }
+  .stu .buy-btn { background: var(--stu); }
+  .com .buy-btn { background: var(--com); }
+  .buy-btn.ghost { background: transparent !important; color: var(--text); border: 1px solid var(--border); }
+  .cta-note { text-align: center; color: var(--muted); font-size: .72rem; margin-top: .55rem; }
 
-  /* -- What you get -- */
-  .whatyouget {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 1.5rem 4rem;
-  }
-  .wyg-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: .9rem;
-  }
-  @media (max-width: 600px) { .wyg-grid { grid-template-columns: 1fr; } }
-  .wyg-item {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1rem 1.2rem;
-    font-size: .85rem;
-    line-height: 1.5;
-    color: var(--muted);
-  }
-  .wyg-item b { color: var(--text); display: block; margin-bottom: .2rem; }
+  /* summary table */
+  .summary { margin-top: 1.75rem; }
+  .summary h3 { font-size: 1rem; margin-bottom: .75rem; }
+  .tbl-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border); }
+  table { width: 100%; border-collapse: collapse; font-size: .88rem; min-width: 560px; }
+  th { text-align: left; padding: .7rem 1rem; background: var(--card2); color: var(--muted); font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+  td { padding: .7rem 1rem; border-top: 1px solid var(--border); background: var(--card); }
+  td.num { font-family: 'Sora', sans-serif; font-weight: 700; white-space: nowrap; }
+  td.eff { color: var(--muted); white-space: nowrap; }
+  .tbl-foot { color: var(--muted); font-size: .75rem; margin-top: .55rem; }
 
-  /* -- How it works -- */
-  .steps-section {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 1.5rem 5rem;
-  }
-  .section-title {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 2rem;
-    letter-spacing: -.02em;
-  }
-  .steps { display: flex; flex-direction: column; gap: 1rem; }
-  .step  {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-  .step-num {
-    width: 32px; height: 32px;
-    background: linear-gradient(135deg, var(--accent), var(--accent2));
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: .8rem;
-    font-weight: 800;
-    flex-shrink: 0;
-    color: #fff;
-  }
-  .step-body h3 { font-size: .95rem; font-weight: 600; margin-bottom: .2rem; }
-  .step-body p  { font-size: .83rem; color: var(--muted); line-height: 1.5; }
+  /* info boxes */
+  .info-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 1.1rem; margin-top: 1.75rem; }
+  .info { background: var(--card); border: 1px solid var(--border); border-radius: 14px; padding: 1.35rem 1.5rem; }
+  .info h3 { font-size: .98rem; margin-bottom: .6rem; display: flex; align-items: center; gap: .5rem; }
+  .info p, .info li { color: var(--muted); font-size: .87rem; line-height: 1.6; }
+  .info ul { margin: .4rem 0 0 1.1rem; }
+  .info li { margin-bottom: .25rem; }
+  .info strong { color: var(--text); }
+  .info.req { border-left: 3px solid var(--stu); }
+  .info.collab { border-left: 3px solid var(--accent); }
+  .info.ent { border-left: 3px solid var(--com); }
 
-  /* -- FAQ -- */
-  .faq-section {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 0 1.5rem 6rem;
-  }
-  .faq-item  { border-top: 1px solid var(--border); padding: 1.1rem 0; }
-  .faq-q     { font-weight: 600; font-size: .9rem; cursor: pointer; display: flex; justify-content: space-between; }
-  .faq-a     { color: var(--muted); font-size: .85rem; line-height: 1.6; margin-top: .6rem; display: none; }
+  .flow { display: grid; grid-template-columns: repeat(3, 1fr); gap: .9rem; margin-top: 1.1rem; }
+  .flow-step { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.1rem; font-size: .84rem; color: var(--muted); line-height: 1.5; }
+  .flow-step b { display: block; color: var(--text); font-size: .9rem; margin-bottom: .2rem; }
+  .flow-n { display: inline-flex; width: 24px; height: 24px; border-radius: 50%; align-items: center; justify-content: center; font-size: .72rem; font-weight: 800; color: #000; margin-bottom: .5rem; }
+  .stu .flow-n { background: var(--stu); }
+  .com .flow-n { background: var(--com); }
+
+  /* ── Included / FAQ ── */
+  .block { max-width: 760px; margin: 0 auto; padding: 0 1.5rem 4rem; }
+  .section-title { text-align: center; font-size: 1.45rem; font-weight: 700; margin-bottom: 1.6rem; letter-spacing: -.02em; }
+  .incl { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem 1.5rem; }
+  .incl div { display: flex; gap: .6rem; font-size: .9rem; }
+  .incl div::before { content: '✓'; color: var(--green); font-weight: 700; }
+  .faq-item  { border-top: 1px solid var(--border); padding: 1.05rem 0; }
+  .faq-q     { font-weight: 600; font-size: .92rem; cursor: pointer; display: flex; justify-content: space-between; gap: 1rem; background: none; border: none; color: inherit; font-family: inherit; width: 100%; text-align: left; }
+  .faq-a     { color: var(--muted); font-size: .86rem; line-height: 1.65; margin-top: .6rem; display: none; }
   .faq-a.open{ display: block; }
+  .faq-a a   { color: var(--accent); }
 
-  footer {
-    text-align: center;
-    color: var(--muted);
-    font-size: .78rem;
-    padding: 1.5rem;
-    border-top: 1px solid var(--border);
+  footer { text-align: center; color: var(--muted); font-size: .8rem; padding: 1.75rem 1.5rem; border-top: 1px solid var(--border); line-height: 1.9; }
+  footer a { color: var(--accent); text-decoration: none; }
+
+  @media (max-width: 860px) {
+    .plans.three, .info-grid, .flow { grid-template-columns: 1fr; }
   }
+  @media (max-width: 640px) {
+    .chooser, .plans.two, .incl { grid-template-columns: 1fr; }
+    .lic-frame { padding: 1.75rem 1.1rem 1.25rem; }
+  }
+  /* EPCalibration: teal brand */
+  .wm .wm-b.teal, h1 .wm .wm-b.teal { color: var(--stu) !important; }
+  .badge-pill.teal { border-color: var(--stu-line); color: var(--stu); background: var(--stu-bg); }
 </style>
 </head>
 <body>
 
+<!-- ── TOP BAR ── -->
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="top-brand" href="./" aria-label="EPCalibration by ArchOpt Technologies">
+      <span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="co">Technologies</span>
+    </a>
+    <nav class="topnav">
+      <a href="EPCalibration">EPCalibration</a>
+      <a class="hide-sm" href="epcalibration-download.html">Download</a>
+      <a class="hide-sm" href="#plans">Plans</a>
+      <a class="hide-sm" href="mailto:architecture.optimization@gmail.com">Contact</a>
+    </nav>
+  </div>
+</div>
+
 <!-- ── HERO ── -->
-<div class="hero">
-  <div class="badge-pill">🔑 License EPCalibration v1.0</div>
-  <h1>Get <span>EPCalibration</span><br/>Calibration for EnergyPlus Models</h1>
+<header class="hero">
+  <div class="badge-pill teal">🔑 EPCalibration License</div>
+  <h1>Get <span class="wm"><span class="wm-a">EP</span><span class="wm-b teal">Calibration</span></span><span class="sub">Calibration for EnergyPlus models</span></h1>
   <p class="subtitle">
-    Automatic calibration of EnergyPlus building models against measured data
-    - HA-NSGA-II multi-objective optimization, ASHRAE Guideline 14 metrics
-    (RMSE, NMBE, CV(RMSE)) and interactive Pareto exploration.
-    Monthly for flexibility, yearly to save $40. Each license activates on
-    one machine. Cancel anytime.
+    Automatic calibration of EnergyPlus building models against measured data, with HA-NSGA-II multi-objective
+    optimization, ASHRAE Guideline 14 metrics (RMSE, NMBE, CV(RMSE)) and interactive Pareto exploration.
+    Choose <strong>Monthly</strong> for flexibility or <strong>Yearly</strong> to save $40. All prices are in USD,
+    and each license activates on one machine.
   </p>
-</div>
+</header>
 
-<!-- ── PRICING CARDS ── -->
-<div class="pricing-wrap">
+<!-- ══════════════ PLANS ══════════════ -->
+<section class="lic stu" id="plans">
+  <div class="lic-frame">
+    <div class="lic-head">
+      <div>
+        <div class="lic-num">EPCalibration · License plans</div>
+        <h2>Choose your plan</h2>
+      </div>
+      <p>Both plans include the full application. Cancel anytime; your key works until the end of the paid period.</p>
+    </div>
 
-  <!-- MONTHLY -->
-  <div class="pricing-card">
-    <div class="pricing-top">
-      <div class="plan-name">Monthly Plan</div>
-      <div class="price"><sup>$</sup>20<sub>/mo</sub></div>
-      <div class="price-note">Billed monthly · Cancel anytime</div>
+    <div class="plans two">
+      <div class="plan">
+        <div class="plan-top">
+          <div class="plan-name">Monthly</div>
+          <div class="price"><sup>$</sup>20<span style="font-size:1rem;font-weight:600;letter-spacing:0;margin-left:.3rem;color:var(--muted)">/month</span></div>
+          <div class="price-for">billed monthly</div>
+          <div class="then"><span class="lbl">Flexibility</span>Cancel anytime</div>
+        </div>
+        <div class="plan-feats">
+          <div>Full access to all EPCalibration features</div>
+          <div>Free updates while subscribed</div>
+          <div>Email support included</div>
+        </div>
+        <div class="plan-cta">
+          <a class="buy-btn" href="#" data-checkout="monthly">Buy EPCalibration Monthly</a>
+          <p class="cta-note">Secure checkout · License key by email</p>
+        </div>
+      </div>
+
+      <div class="plan best">
+        <div class="plan-flag">Best value</div>
+        <div class="plan-top">
+          <div class="plan-name">Yearly</div>
+          <div class="price"><sup>$</sup>200<span style="font-size:1rem;font-weight:600;letter-spacing:0;margin-left:.3rem;color:var(--muted)">/year</span></div>
+          <div class="price-for">one payment for 12 months</div>
+          <div class="then"><span class="lbl">You save</span><b>$40</b> compared with 12 monthly payments</div>
+        </div>
+        <div class="plan-feats">
+          <div>Full access to all EPCalibration features</div>
+          <div>Free updates for the full year</div>
+          <div>Priority email support</div>
+        </div>
+        <div class="plan-cta">
+          <a class="buy-btn" href="#" data-checkout="yearly">Buy EPCalibration Yearly</a>
+          <p class="cta-note">Secure checkout · License key by email</p>
+        </div>
+      </div>
     </div>
-    <hr class="divider"/>
-    <div class="features">
-      <div class="feature"><span class="check">✓</span><span>Full access to all EPCalibration features</span></div>
-      <div class="feature"><span class="check">✓</span><span>1 machine activation</span></div>
-      <div class="feature"><span class="check">✓</span><span>License key delivered by email</span></div>
-      <div class="feature"><span class="check">✓</span><span>Free updates while subscribed</span></div>
-      <div class="feature"><span class="check">✓</span><span>Email support included</span></div>
+
+    <div class="summary">
+      <h3>Price summary</h3>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Plan</th><th>Billing</th><th>Price</th><th>Equivalent per month</th></tr>
+          <tr><td>Monthly</td><td>Every month</td><td class="num">$20 / month</td><td class="eff">$20.00</td></tr>
+          <tr><td>Yearly</td><td>Once per year</td><td class="num">$200 / year</td><td class="eff">≈ $16.67</td></tr>
+        </table>
+      </div>
+      <p class="tbl-foot">Monthly figures are shown for comparison only.</p>
     </div>
-    <div class="cta-wrap">
-      <a href="https://archioptimize.gumroad.com/l/dpsnps"
-         class="buy-btn" target="_blank" rel="noopener">
-        <span class="buy-icon">🔒</span> Subscribe Monthly - $20
-      </a>
-      <p class="trust-note">
-        Secured by Gumroad · License key emailed after payment ·
-        <a href="mailto:architecture.optimization@gmail.com">need help?</a>
-      </p>
+
+    <div class="info-grid">
+      <div class="info">
+        <h3>🧪 What EPCalibration does</h3>
+        <p>HA-NSGA-II calibration with Halton seeding and evaluation caching, ASHRAE Guideline 14 metrics with a
+        time-period filter, one-click IDF tagging, an interactive Pareto explorer, single- or multi-zone calibration,
+        and optional two-stage refinement.</p>
+      </div>
+      <div class="info">
+        <h3>🏢 Multi-seat or invoice payment</h3>
+        <p>Need several machines, a purchase order, or an invoice? Email
+        <a href="mailto:architecture.optimization@gmail.com?subject=EPCalibration%20-%20Multi-seat%20or%20invoice%20request" style="color:var(--stu)">architecture.optimization@gmail.com</a>
+        with the number of seats and the plan you need, and we will prepare a quotation.</p>
+      </div>
+    </div>
+
+    <div class="flow">
+      <div class="flow-step"><span class="flow-n">1</span><b>Choose a plan</b>Click "Buy EPCalibration Monthly" or "Buy EPCalibration Yearly" and pay securely through Gumroad.</div>
+      <div class="flow-step"><span class="flow-n">2</span><b>Receive your key</b>Your license key is emailed to the address used at checkout, normally right after payment.</div>
+      <div class="flow-step"><span class="flow-n">3</span><b>Activate</b>Enter the key once on first run. It activates on that machine for the length of your plan.</div>
     </div>
   </div>
+</section>
 
-  <!-- YEARLY - POPULAR -->
-  <div class="pricing-card popular">
-    <div class="popular-badge">Best Value</div>
-    <div class="pricing-top">
-      <div class="plan-name">Yearly Plan</div>
-      <div class="price"><sup>$</sup>200<sub>/yr</sub></div>
-      <div class="price-note">Billed once per year</div>
-      <div class="save-pill">Save $40 vs monthly</div>
-    </div>
-    <hr class="divider"/>
-    <div class="features">
-      <div class="feature"><span class="check">✓</span><span>Full access to all EPCalibration features</span></div>
-      <div class="feature"><span class="check">✓</span><span>1 machine activation</span></div>
-      <div class="feature"><span class="check">✓</span><span>License key delivered by email</span></div>
-      <div class="feature"><span class="check">✓</span><span>Free updates for the full year</span></div>
-      <div class="feature"><span class="check">✓</span><span>Priority email support</span></div>
-      <div class="feature"><span class="check">✓</span><span>12 months access - best price</span></div>
-    </div>
-    <div class="cta-wrap">
-      <a href="https://archioptimize.gumroad.com/l/saajr"
-         class="buy-btn yearly" target="_blank" rel="noopener">
-        <span class="buy-icon">🔒</span> Subscribe Yearly - $200
-      </a>
-      <p class="trust-note">
-        Secured by Gumroad · License key emailed after payment ·
-        <a href="mailto:architecture.optimization@gmail.com">need help?</a>
-      </p>
-    </div>
-  </div>
-
-</div>
-
-<!-- ── WHAT YOU GET ── -->
-<div class="whatyouget">
-  <div class="section-title">What's inside EPCalibration</div>
-  <div class="wyg-grid">
-    <div class="wyg-item"><b>HA-NSGA-II calibration</b>
-      Multi-objective search over your model parameters with Halton-seeded
-      initial population, step grids and evaluation caching.</div>
-    <div class="wyg-item"><b>Guideline 14 metrics</b>
-      RMSE, NMBE, CV(RMSE), max difference and % of hours above 1&deg;C,
-      with a time-period filter to match your measured data.</div>
-    <div class="wyg-item"><b>Automatic IDF tagging</b>
-      One-click tag injection for insulation, thermal mass, windows,
-      infiltration, occupancy, lighting and equipment - plus a built-in
-      IDF editor for custom parameters.</div>
-    <div class="wyg-item"><b>Interactive Pareto explorer</b>
-      Browse and animate generations, pick the balanced solution, click any
-      point to see its parameters, export plots and CSV.</div>
-    <div class="wyg-item"><b>Single or multi-objective</b>
-      Calibrate several zones at once, or a single dataset (e.g. monthly
-      energy bills) with RMSE and |NMBE| minimized together.</div>
-    <div class="wyg-item"><b>Two-stage refinement</b>
-      Optional second run that narrows parameter ranges around the best
-      solution or re-runs seeded with the elite Pareto front.</div>
-  </div>
-</div>
-
-<!-- ── HOW IT WORKS ── -->
-<div class="steps-section">
-  <div class="section-title">How it works</div>
-  <div class="steps">
-    <div class="step">
-      <div class="step-num">1</div>
-      <div class="step-body">
-        <h3>Choose your plan &amp; pay via Gumroad</h3>
-        <p>Click your preferred plan above and pay securely with any card, Apple Pay, or Google Pay through Gumroad.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">2</div>
-      <div class="step-body">
-        <h3>Receive your license key by email</h3>
-        <p>Your license key is sent to the email you used at checkout. If you don't see it within a few hours, contact <a href="mailto:architecture.optimization@gmail.com" style="color:var(--accent)">architecture.optimization@gmail.com</a>.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">3</div>
-      <div class="step-body">
-        <h3>Activate EPCalibration on your machine</h3>
-        <p>Launch EPCalibration - enter your key once on first run. It activates permanently on that machine for the duration of your plan.</p>
-      </div>
-    </div>
-    <div class="step">
-      <div class="step-num">4</div>
-      <div class="step-body">
-        <h3>Renew to keep access</h3>
-        <p>Monthly plan: renew each month. Yearly plan: renew once a year. We'll email you a reminder before expiry.</p>
-      </div>
-    </div>
+<!-- ── INCLUDED IN EVERY LICENSE ── -->
+<div class="block">
+  <div class="section-title">Included in every EPCalibration license</div>
+  <div class="incl">
+    <div>Full application: HA-NSGA-II calibration and Guideline 14 metrics</div>
+    <div>1 machine activation per license</div>
+    <div>License key delivered by email</div>
+    <div>Updates during the license period</div>
+    <div>Email support</div>
+    <div>Free installer to test before buying</div>
   </div>
 </div>
 
 <!-- ── FAQ ── -->
-<div class="faq-section">
+<div class="block" style="padding-bottom:5rem">
   <div class="section-title">Common questions</div>
 
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">
-      What do I need to run EPCalibration? <span>+</span>
-    </div>
-    <div class="faq-a">
-      A Windows PC and an EnergyPlus installation (free from energyplus.net).
-      EPCalibration works with your existing IDF models and weather files -
-      no coding required.
-    </div>
+    <button class="faq-q" onclick="toggleFaq(this)">What do I need to run EPCalibration? <span>+</span></button>
+    <div class="faq-a">A Windows PC and an EnergyPlus installation (free from energyplus.net). EPCalibration works with your existing IDF models and weather files, no coding required.</div>
   </div>
-
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">
-      What happens when my plan expires? <span>+</span>
-    </div>
-    <div class="faq-a">
-      EPCalibration will show a renewal screen when your license expires. Simply renew your plan and email us - we'll send a new key to reactivate.
-    </div>
+    <button class="faq-q" onclick="toggleFaq(this)">What happens when my plan expires? <span>+</span></button>
+    <div class="faq-a">EPCalibration shows a renewal screen when your license expires. Renew your plan and email us, and we will send a new key to reactivate.</div>
   </div>
-
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">
-      Can I switch from monthly to yearly? <span>+</span>
-    </div>
-    <div class="faq-a">
-      Yes - cancel your monthly subscription on Gumroad, then subscribe to the yearly plan. Email us if you'd like help moving your key over.
-    </div>
+    <button class="faq-q" onclick="toggleFaq(this)">Can I switch from monthly to yearly? <span>+</span></button>
+    <div class="faq-a">Yes. Cancel your monthly subscription on Gumroad, then subscribe to the yearly plan. Email us if you would like help moving your key over.</div>
   </div>
-
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">
-      Can I use the license on more than one computer? <span>+</span>
-    </div>
-    <div class="faq-a">
-      Each license is bound to a single machine. If you change computers, contact us and we'll reset your license for free.
-    </div>
+    <button class="faq-q" onclick="toggleFaq(this)">Can I use the license on more than one computer? <span>+</span></button>
+    <div class="faq-a">Each license is bound to a single machine. If you change computers, contact us and we will reset your license for free. For several machines, ask us for a multi-seat quotation.</div>
   </div>
-
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">
-      How quickly will I receive my key? <span>+</span>
-    </div>
-    <div class="faq-a">
-      Your key is emailed right after your payment is confirmed by Gumroad. In rare cases it may take a few hours - if so, just email us and we'll send it manually.
-    </div>
+    <button class="faq-q" onclick="toggleFaq(this)">How quickly will I receive my key? <span>+</span></button>
+    <div class="faq-a">Your key is emailed right after Gumroad confirms your payment. In rare cases it may take a few hours; if so, email us and we will send it manually.</div>
   </div>
-
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">
-      Do I need PareVia to use EPCalibration? <span>+</span>
-    </div>
-    <div class="faq-a">
-      No - EPCalibration is a standalone tool with its own license. PareVia
-      optimizes building designs; EPCalibration calibrates EnergyPlus models
-      against measured data. They work great together, but each runs on its own.
-    </div>
+    <button class="faq-q" onclick="toggleFaq(this)">Do I need PareVia to use EPCalibration? <span>+</span></button>
+    <div class="faq-a">No. EPCalibration is a standalone tool with its own license. EnergyFront builds the model, EPCalibration calibrates it against measured data, and PareVia optimizes the design. They work well together, but each runs on its own.</div>
   </div>
-
   <div class="faq-item">
-    <div class="faq-q" onclick="toggleFaq(this)">
-      Can I get a refund? <span>+</span>
-    </div>
-    <div class="faq-a">
-      We offer a 7-day refund if EPCalibration does not work on your machine and we are unable to fix it. Contact us by email within 7 days of purchase.
-    </div>
+    <button class="faq-q" onclick="toggleFaq(this)">Can I get a refund? <span>+</span></button>
+    <div class="faq-a">We offer a 7-day refund if EPCalibration does not work on your machine and we are unable to fix it. Contact us by email within 7 days of purchase. Please download the free installer and confirm it runs on your machine before buying.</div>
   </div>
 </div>
 
 <footer>
-  &copy; 2026 ArchOpt Technologies · EPCalibration, calibration for EnergyPlus models ·
-  <a href="mailto:architecture.optimization@gmail.com" style="color:var(--accent);text-decoration:none">architecture.optimization@gmail.com</a>
+  &copy; 2026 <span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies ·
+  <span class="wm"><span class="wm-a">EP</span><span class="wm-b teal">Calibration</span></span> Calibration for EnergyPlus models<br/>
+  <a href="EPCalibration">EPCalibration product page</a> ·
+  <a href="epcalibration-download.html">Download</a> ·
+  <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>
   <p style="font-size:.74rem;line-height:1.55;opacity:.6;max-width:760px;margin:.6rem auto 0">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, EPCalibration and PareVia are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p>
 </footer>
 
 <script>
+/* CHECKOUT LINKS (Gumroad) - edit here only.
+   If a value is left empty, the button opens a pre-filled order email instead. */
+const CHECKOUT = {
+  monthly: "https://archioptimize.gumroad.com/l/dpsnps",   // $20 / month
+  yearly:  "https://archioptimize.gumroad.com/l/saajr"     // $200 / year
+};
+const SALES_EMAIL = "architecture.optimization@gmail.com";
+
+function mailto(subject, body) {
+  return "mailto:" + SALES_EMAIL + "?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(body);
+}
+
+document.querySelectorAll("[data-checkout]").forEach(function (btn) {
+  const key = btn.getAttribute("data-checkout");
+  const label = btn.textContent.trim();
+  const url = (CHECKOUT[key] || "").trim();
+  if (url) {
+    btn.href = url;
+    btn.target = "_blank";
+    btn.rel = "noopener";
+  } else {
+    btn.href = mailto("EPCalibration License order - " + label,
+      "Hello,\n\nI would like to purchase an EPCalibration license.\n\nSelected plan: " + label +
+      "\nFull name: \nCompany / organisation / university: \nCountry: \nNumber of machines: 1\n\nThank you.");
+    const note = btn.parentElement.querySelector(".cta-note");
+    if (note) note.textContent = "Opens an order email. We reply with a secure payment link or invoice.";
+  }
+});
+
 function toggleFaq(el) {
   const ans    = el.nextElementSibling;
   const isOpen = ans.classList.contains("open");

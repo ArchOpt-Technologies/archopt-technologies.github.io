@@ -52,7 +52,7 @@ initShots('epcal-shots','epcal-cap',4200);
 
 /* old addresses such as /#archopt or /#pricing now have their own pages */
 (function(){
-  var old={archopt:'PareVia',epcal:'EPCalibration',pricing:'Pricing',terms:'Terms',privacy:'Privacy',refund:'Refund',energyfront:'EnergyFront'};
+  var old={archopt:'PareVia',epcal:'EPCalibration',terms:'Terms',privacy:'Privacy',refund:'Refund',energyfront:'EnergyFront'};
   var h=window.location.hash.replace('#','');
   if(h==='contact'){openContact();return;}
   if(old[h]&&document.body.getAttribute('data-page')==='home')window.location.replace(old[h]);

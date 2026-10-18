@@ -8,7 +8,7 @@
 <script>
 /* send addresses typed with different letter case, a trailing slash or .html to the right page */
 (function(){
-  var pages={energyfront:'/EnergyFront',parevia:'/PareVia',epcalibration:'/EPCalibration',pricing:'/Pricing',terms:'/Terms',privacy:'/Privacy',refund:'/Refund',overview:'/',suite:'/',home:'/',index:'/'};
+  var pages={energyfront:'/EnergyFront',parevia:'/PareVia',epcalibration:'/EPCalibration',terms:'/Terms',privacy:'/Privacy',refund:'/Refund',overview:'/',suite:'/',home:'/',index:'/'};
   var p=window.location.pathname.toLowerCase().replace(/\/+$/,'').replace(/\.html$/,'').replace(/^\//,'');
   if(pages[p]&&pages[p]!==window.location.pathname)window.location.replace(pages[p]+window.location.search+window.location.hash);
 })();
@@ -22,7 +22,7 @@
   <h1 style="margin-top:1rem">Page not found</h1>
   <p style="margin-top:.8rem">The address may be mistyped, or the page may have moved.</p>
   <p style="margin-top:1.6rem"><a class="btn btn-primary" href="/">Go to the Overview →</a></p>
-  <p style="margin-top:1.4rem"><a href="/EnergyFront">EnergyFront</a> · <a href="/PareVia">PareVia</a> · <a href="/EPCalibration">EPCalibration</a> · <a href="/Pricing">Pricing</a></p>
+  <p style="margin-top:1.4rem"><a href="/EnergyFront">EnergyFront</a> · <a href="/PareVia">PareVia</a> · <a href="/EPCalibration">EPCalibration</a></p>
 </div>
 </body>
 </html>

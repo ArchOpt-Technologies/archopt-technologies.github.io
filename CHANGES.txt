@@ -1,0 +1,13 @@
+Website update (copy these files over the repository root, then commit)
+
+Changed:
+  EnergyFront.html          Buy EnergyFront (orange) first, then downloads; next step = EPCalibration
+  EPCalibration.html        Added "Next step: optimize in PareVia"
+  buy_epcalibration.html    Redesigned in the same style as buy.html (Monthly $20 / Yearly $200, same Gumroad links)
+  buy_energyfront.html      Gumroad checkout opens in a new tab
+  all pages                 Links to buy pages open in a new tab; "Pricing" removed from the menu
+  index.html                "See pricing" button removed
+  404.html, site.js, sitemap.xml   Pricing references removed
+
+Delete from the repository:
+  Pricing.html

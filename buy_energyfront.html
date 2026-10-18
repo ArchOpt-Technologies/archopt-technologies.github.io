@@ -472,6 +472,8 @@ document.querySelectorAll("[data-checkout]").forEach(function (btn) {
   btn.href = CHECKOUT[btn.getAttribute("data-checkout")];
   btn.target = "_blank";
   btn.rel = "noopener";
+  btn.target = "_blank";
+  btn.rel = "noopener";
 });
 function toggleFaq(el) {
   const a = el.nextElementSibling;
