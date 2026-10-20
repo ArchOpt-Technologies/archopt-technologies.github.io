@@ -315,32 +315,22 @@ footer{background:var(--ink);color:rgba(255,255,255,0.45);padding:2rem;border-to
 <div class="modal-back" id="termsModal">
   <div class="modal">
     <div class="modal-head">
-      <h3>License Terms &amp; Conditions</h3>
+      <h3>Licence Agreement</h3>
       <button class="modal-close" onclick="closeTerms()">&#10005;</button>
     </div>
     <div class="modal-body">
-      <p>By downloading, installing, purchasing, or using EPCalibration, you agree to these terms. Please read before downloading.</p>
-      <h4>1. Copyright &amp; ownership</h4>
-      <p>EPCalibration, including all software, code, algorithms, documentation, design, and content on this page, is &copy; 2026 ArchOpt Technologies. EPCalibration is a product of ArchOpt Technologies. All rights reserved. The software is licensed, not sold. Purchasing a license key grants you a limited right to use the software - it does not transfer ownership of the software or any intellectual property rights to you.</p>
-      <h4>2. License grant &amp; restrictions</h4>
-      <p>Each license key permits installation and activation of EPCalibration on <b>one (1) machine</b> for a period of <b>one (1) year</b> from activation. The license is personal and non-transferable. You may <b>not</b>: (a) share, resell, rent, lease, or redistribute the software or your license key; (b) reverse engineer, decompile, disassemble, or attempt to extract the source code; (c) modify, adapt, or create derivative works of the software; (d) circumvent, disable, or interfere with the license activation system; or (e) use the software to provide it as a service to third parties. Violation of these restrictions terminates your license immediately and without refund.</p>
-      <h4>3. No warranty - software provided "as is"</h4>
-      <p>EPCALIBRATION IS PROVIDED "AS IS" AND "AS AVAILABLE", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, RELIABILITY, OR NON-INFRINGEMENT. We do not warrant that the software will be error-free, uninterrupted, compatible with your system, or that defects will be corrected. You assume the entire risk arising from the download, installation, and use of the software.</p>
-      <h4>4. Results are estimates - professional responsibility</h4>
-      <p>EPCalibration produces simulation-based estimates and optimization results that depend on user inputs, third-party tools (including EnergyPlus), measured-data quality, assumptions, and statistical models. Outputs are decision-support information only - they are not engineering advice, not a certification, and not a guarantee of real-world building performance. You are solely responsible for independently verifying all results and for any design, retrofit, financial, or regulatory decision made using the software.</p>
-      <h4>5. Limitation of liability</h4>
-      <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL EPCALIBRATION OR ITS DEVELOPER BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY, OR PUNITIVE DAMAGES ARISING OUT OF OR RELATED TO THE USE OF, OR INABILITY TO USE, THE SOFTWARE. IN ALL CASES, TOTAL AGGREGATE LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID FOR YOUR LICENSE KEY.</p>
-      <h4>6. Refund policy - all sales final</h4>
-      <p>Because the installer is free to download and test before purchase, and because license keys are digital goods delivered immediately, all sales are final and non-refundable once a license key has been issued. If a valid key fails to activate on a compatible system and our support cannot resolve it, a replacement key or - at our sole discretion - a refund may be provided.</p>
-      <h4>7. Activation, license server &amp; termination</h4>
-      <p>Activation requires a brief internet connection, and the software may periodically re-verify the license. We may suspend or revoke keys obtained fraudulently, charged back, shared, or used in breach of these terms, without refund. We may update or discontinue the software at any time; these terms apply to all versions and updates.</p>
-      <h4>8. Third-party software</h4>
-      <p>EPCalibration interoperates with third-party tools such as EnergyPlus, which are governed by their own licenses. We are not responsible for the availability, accuracy, or behavior of third-party software.</p>
-      <h4>9. Governing law &amp; changes</h4>
-      <p>These terms are governed by the laws of the United Arab Emirates. We may update these terms at any time; the version published on this page at the time of your purchase applies. Last updated: July 2026 &middot; Questions: architecture.optimization@gmail.com</p>
+      <p>By downloading, installing, purchasing or using EPCalibration, you accept the <a href="Terms" target="_blank" rel="noopener" style="font-weight:700">Licence Agreement (EULA)</a>. The full text is binding; in short:</p>
+    <ul style="margin:.6rem 0 1rem 1.2rem;line-height:1.7">
+      <li>Each licence key activates the software on one computer for the period you paid for.</li>
+      <li>Fees are not refunded, except where the law requires it.</li>
+      <li>Results are estimates for decision support. They must be checked by a qualified professional before they are relied on; you remain responsible for your design decisions.</li>
+      <li>The software is provided "as is"; liability is limited to the fees paid in the last 12 months.</li>
+      <li>Sharing keys, bypassing the licence check or reverse-engineering is not allowed.</li>
+    </ul>
+    <p style="font-size:.85rem">The same agreement is shown by the installer. Questions: <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a></p>
     </div>
     <div class="modal-foot">
-      <label><input type="checkbox" id="agreeChk" onchange="document.getElementById('agreeBtn').classList.toggle('disabled', !this.checked)"> I have read and agree to the License Terms &amp; Conditions</label>
+      <label><input type="checkbox" id="agreeChk" onchange="document.getElementById('agreeBtn').classList.toggle('disabled', !this.checked)"> I have read and agree to the Licence Agreement (EULA)</label>
       <div class="modal-actions">
         <button class="btn btn-ghost" onclick="closeTerms()">Cancel</button>
         <a class="btn btn-blue disabled" id="agreeBtn" href="#" onclick="return agreeAndDownload();">Agree &amp; Download</a>

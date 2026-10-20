@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Refund Policy | ArchOpt Technologies</title>
-<meta name="description" content="Refund Policy for software licenses sold by ArchOpt Technologies.">
+<meta name="description" content="Refund Policy for EnergyFront, PareVia and EPCalibration licences sold by ArchOpt Technologies.">
 <meta name="author" content="ArchOpt Technologies">
 <meta property="og:title" content="Refund Policy | ArchOpt Technologies">
-<meta property="og:description" content="Refund Policy for software licenses sold by ArchOpt Technologies.">
+<meta property="og:description" content="Refund Policy for EnergyFront, PareVia and EPCalibration licences sold by ArchOpt Technologies.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ArchOpt Technologies">
 <meta property="og:url" content="https://archopt-technologies.github.io/Refund">
@@ -20,6 +20,36 @@
 <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="site.css">
+<style>
+/* licence and validation pages (added October 2026) */
+.legal-page.wide{max-width:900px}
+.eula-n{font-weight:700;color:var(--ink);margin-right:.25rem}
+.eula-caps{font-size:.93rem!important;letter-spacing:.005em}
+.eula-list{list-style:none;margin-left:.2rem!important}
+.eula-list li{padding-left:1.9rem;text-indent:-1.9rem}
+.legal-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:0 0 1.5rem}
+.legal-actions .btn{padding:10px 18px;font-size:.88rem}
+.legal-page .pricing-table{font-size:.9rem;margin:1rem 0 1.6rem}
+.legal-page .pricing-table td,.legal-page .pricing-table th{padding:9px 12px;vertical-align:top}
+.legal-page .pricing-table td:first-child{white-space:nowrap}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok{color:#0a7f5a;font-weight:700}
+.note{color:#b4560d;font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.4rem 0 1.8rem}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
+.kpi b{display:block;font-family:'Sora',sans-serif;font-size:1.45rem;color:var(--ink);line-height:1.2}
+.kpi span{font-size:.85rem;color:var(--ink2)}
+.legal-page h3{font-size:.98rem;font-weight:700;margin:1.4rem 0 .4rem}
+.legal-page a.btn{font-weight:700}
+.legal-page a.btn-front{color:#fff}
+.legal-page a.btn-line{color:var(--ink)}
+.page-badge{display:block;margin-bottom:.2rem}
+.legal-page ol{margin:.5rem 0 1rem 1.3rem}
+.legal-page ol li{color:var(--ink2);line-height:1.7;margin-bottom:.3rem}
+.legal-page code{font-size:.88em;background:var(--bg2);padding:1px 5px;border-radius:5px}
+@media(max-width:700px){.kpis{grid-template-columns:1fr}.legal-page .pricing-table{display:block;overflow-x:auto}}
+@media print{nav,footer,.legal-back,.legal-actions,.contact-overlay{display:none!important}.legal-page{padding:0;max-width:none}.page{animation:none}body{background:#fff}}
+</style>
 </head>
 <body data-page="refund">
 
@@ -75,20 +105,30 @@
 
 <div class="page" id="page-refund">
   <div class="legal-page">
-    <button class="legal-back" onclick="go('./')">← Back</button>
+    <button class="legal-back" onclick="go('./')">&larr; Back</button>
     <h1>Refund Policy</h1>
-    <div class="legal-meta">Effective date: 1 May 2026 · ArchOpt Technologies</div>
-    <div class="legal-highlight"><p>All refund requests must be submitted within 7 days of purchase to <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>, including your PayPal transaction ID, the email used at purchase, and a description of the issue.</p></div>
-    <p>All sales are final once a license key has been delivered; requests are reviewed case by case. Software is provided as-is - results must be independently verified before use in any real project. If the Terms of Service are breached (sharing a key, multi-device activation, tampering), the license is revoked immediately and refund eligibility is at our discretion.</p>
+    <div class="legal-meta">Effective 20 October 2026 &middot; EnergyFront, PareVia and EPCalibration &middot; ArchOpt Technologies</div>
+    <div class="legal-highlight"><p><strong>All sales are final.</strong> Licence fees are non-refundable, in whole or in part, including for unused time or features, except where a refund is required by law that cannot be excluded by agreement (Licence Agreement, Section 4).</p></div>
+    <h2>1. Try before you buy</h2>
+    <p>Please confirm that the software runs on your computer before you buy: EnergyFront V2 is free, and the installers of PareVia and EPCalibration can be downloaded before purchase. Questions before buying are welcome by e-mail.</p>
+    <h2>2. Cancelling a subscription</h2>
+    <p>Monthly and yearly plans renew until you cancel them with the payment provider (Gumroad or PayPal). Cancelling stops future payments; the period already paid stays active until it ends. No refund is given for the remaining part of a period.</p>
+    <h2>3. Billing errors</h2>
+    <p>If you were charged twice for the same licence, or paid but did not receive a licence key, e-mail us within 14 days with the e-mail address used at checkout and the order or transaction number. We will send the key or correct the duplicate charge. This is a correction of a billing error, not a refund of a licence.</p>
+    <h2>4. Breach of the Licence Agreement</h2>
+    <p>A licence that is shared, used on more than one computer, obtained fraudulently, charged back or used in breach of the Licence Agreement may be deactivated without refund.</p>
+    <h2>5. Contact</h2>
+    <p><a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a></p>
   </div>
 
   <footer>
     <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
     <span class="footer-copy">© 2026 ArchOpt Technologies </span>
     <div class="footer-legal">
-      <button onclick="go('Terms')">Terms of Service</button>
+      <button onclick="go('Terms')">Licence Agreement</button>
       <button onclick="go('Privacy')">Privacy Policy</button>
       <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="go('Licenses')">Third-party licences</button>
       <button onclick="openContact()">Contact</button>
     </div>
     <p class="footer-tm">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, EPCalibration and PareVia are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p>

@@ -1,0 +1,298 @@
+END-USER LICENCE AGREEMENT
+EnergyFront, PareVia and EPCalibration
+==========================================
+
+Version 2.0 - October 2026
+
+READ THIS AGREEMENT CAREFULLY. IT LIMITS THE LICENSOR'S LIABILITY (SECTIONS 11
+AND 12), MAKES YOU RESPONSIBLE FOR CHECKING ALL RESULTS (SECTION 9) AND ASKS YOU
+TO INDEMNIFY THE LICENSOR (SECTION 13).
+
+By clicking "I accept" during purchase or installation, or by installing,
+activating or using the Software, you accept this agreement. If you do not
+accept it, do not install, activate or use the Software. If you accept on
+behalf of an organisation, you confirm that you may bind it; "you" then means
+that organisation.
+
+
+1. THE PARTIES AND THE SOFTWARE
+   1.1 "Licensor" means the individual who owns and operates the business
+       trading as "ArchOpt Technologies". ArchOpt Technologies is a trade name,
+       not a registered company. The Licensor's legal name appears on your
+       invoice and is given on request.
+       Contact: architecture.optimization@gmail.com
+   1.2 "Software" means the program you obtain under this agreement:
+       EnergyFront, PareVia or EPCalibration, in any version, including
+       updates, example files and documentation.
+   1.3 "Results" means any model, IDF file, tagged file, schedule, script,
+       chart, table, calibrated parameter, optimised design, report or other
+       output that you produce with the Software.
+
+2. LICENCE
+   2.1 The Software is licensed, not sold. The Licensor keeps all rights,
+       title and intellectual property in the Software. You receive only the
+       rights stated in this agreement.
+   2.2 Each licence key gives you a personal, non-exclusive, non-transferable,
+       revocable right to install and use one product on ONE computer, for
+       the subscription period you paid for, for your own professional,
+       research or teaching work.
+   2.3 A key is activated online and bound to that computer by a machine
+       identifier. If you replace the computer, contact the Licensor, who may
+       move the licence once it is deactivated on the old computer.
+
+3. SUBSCRIPTION, TRIAL AND ACADEMIC LICENCES
+   3.1 Licences are sold for the period stated at purchase, for example one
+       month, one year or a multi-year term. Monthly and yearly plans are
+       subscriptions handled by the payment provider: they renew at the end of
+       each period at the price shown at purchase until you cancel them with
+       the provider. Cancelling stops future payments; the period already paid
+       stays active until it ends. Introductory prices apply only for the
+       period stated on the website.
+   3.2 The Software checks the licence with the Licensor's licence server.
+       It may work without an internet connection for a limited period (at
+       most 7 days), then needs a connection to start. When the period ends without renewal, the Software
+       stops starting. Your files stay on your computer and remain yours.
+   3.3 Academic and student licences, offered at a reduced price to students
+       and staff of accredited universities and research institutes, may be
+       used only for teaching and non-commercial research, never for paid
+       work. The Licensor may ask for proof of academic or student status and
+       cancel a licence that does not qualify.
+   3.4 Trial, evaluation, beta and free versions, and any feature marked
+       "beta" or "experimental", are provided for testing only, AS IS, and
+       Sections 10 to 12 apply to them with a liability cap of zero.
+
+4. FEES, PAYMENT AND NO REFUND
+   4.1 Fees are paid in advance for the whole subscription period, through
+       the payment provider shown on the website. The Licensor does not
+       receive or store your card details.
+   4.2 Fees are non-refundable, in whole or in part, including for unused
+       time or features, except where a refund is required by law that cannot
+       be excluded by agreement.
+   4.3 You are responsible for any taxes, duties and bank charges in your
+       country.
+   4.4 If a payment is reversed or charged back, the licence may be
+       deactivated until the amount is paid.
+   4.5 Prices and offers may change for future periods. A change does not
+       affect a period already paid.
+
+5. WHAT YOU MAY NOT DO
+   You may not, and may not allow anyone else to:
+   (a) share, lend, rent, sell, sublicense or publish a licence key, or use
+       one key on more than one computer;
+   (b) copy the Software, except as needed to install it under this
+       agreement and to keep one backup copy of the installer;
+   (c) decompile, disassemble or reverse-engineer the Software, except to the
+       extent that law, or a third-party licence listed in Section 8,
+       expressly allows it;
+   (d) modify, patch or work around the licence check or the machine binding;
+   (e) remove or change copyright, trademark or licence notices;
+   (f) use the Software, or knowledge gained from its internal workings, to
+       build a competing product, or offer the Software to others as a hosted
+       or remote service;
+   (g) use the Software in breach of any law, including export-control and
+       sanctions laws (Section 15).
+
+6. YOUR WORK AND FEEDBACK
+   6.1 Your input files and your Results belong to you. The Licensor claims no
+       rights in them.
+   6.2 If you send suggestions or bug reports, the Licensor may use them
+       freely to improve the Software, without obligation to you.
+
+7. YOUR RESPONSIBILITIES
+   You are solely responsible for:
+   (a) the correctness and suitability of your inputs, including geometry,
+       constructions, materials, schedules, internal loads, HVAC settings,
+       measured data, variable ranges and weather files;
+   (b) obtaining your own licences for EnergyPlus, weather files, standards,
+       material databases and any other data or software you use with the
+       Software;
+   (c) keeping backups of your projects and files;
+   (d) any script, code, prompt or text that you write, import, or obtain
+       from an AI service or another person and run through the Software
+       (including the Scripts and Control pages and AI prompt tools). Such
+       scripts run with your own Python installation, under your control and
+       at your own risk;
+   (e) the security of your computer and of your licence key.
+
+8. THIRD-PARTY COMPONENTS
+   8.1 The Software contains open-source components of other authors, listed
+       with their licences in THIRD-PARTY-LICENSES.txt in the program folder;
+       the GNU licence texts are in the LICENSES folder.
+   8.2 Those components are licensed to you under their own licences, not
+       under this agreement. Nothing in this agreement limits the rights those
+       licences give you, including the right under the GNU Lesser General
+       Public License to replace the Qt for Python (PySide6) libraries and
+       other LGPL libraries with modified versions and to reverse-engineer the
+       Software to the extent needed to debug such modifications.
+   8.3 To the extent permitted by those licences, Sections 10 to 12 also apply
+       to the third-party components as delivered with the Software.
+
+9. RESULTS, PROFESSIONAL RESPONSIBILITY AND PERMITTED USE
+   9.1 The Software is an engineering and research decision-support tool.
+       Results are estimates produced by numerical models. They depend on your
+       inputs, assumptions, weather data, EnergyPlus and the methods used, and
+       may differ materially from real building performance, energy use, cost,
+       carbon, comfort or overheating.
+   9.2 The Software and its Results are not professional engineering,
+       architectural, legal or financial advice. The Licensor is not your
+       consultant, designer, engineer of record or adviser, and owes you no
+       professional duty of care through the Software.
+   9.3 You must have all Results reviewed and verified by a suitably qualified
+       professional before relying on them for any design, specification,
+       construction, procurement, investment, certification or compliance
+       decision. You remain fully responsible for those decisions and for
+       work you deliver to your own clients.
+   9.4 The Licensor does not represent that the Software or its Results
+       satisfy any building code, energy regulation, rating system or
+       standard (for example Estidama, LEED, BREEAM, ASHRAE 90.1, ASHRAE 140,
+       ASHRAE Guideline 14 or EN 16798), or that they will be accepted by any
+       authority, assessor or client. Any validation or comparison results
+       published by the Licensor, for example for ASHRAE Standard 140 test
+       cases, describe only the stated version, test cases and conditions.
+       They are information, not a warranty that the Results for your
+       buildings are accurate.
+   9.5 The Software is not designed for, and you must not use it for, the
+       real-time control or monitoring of real buildings, HVAC equipment or
+       safety systems, or any use in which a failure could cause death,
+       personal injury, or physical or environmental damage. Control scripts
+       and EnergyPlus API features are for simulation only.
+
+10. NO WARRANTY
+    TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SOFTWARE, THE RESULTS, THE
+    LICENCE SERVER AND ANY SUPPORT ARE PROVIDED "AS IS" AND "AS AVAILABLE",
+    WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED
+    OR STATUTORY, INCLUDING WARRANTIES OF MERCHANTABILITY, SATISFACTORY
+    QUALITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, COMPLETENESS OF
+    RESULTS, COMPATIBILITY WITH ANY ENERGYPLUS VERSION OR OTHER SOFTWARE,
+    UNINTERRUPTED OR ERROR-FREE OPERATION, AND NON-INFRINGEMENT. NO ADVICE OR
+    INFORMATION, ORAL OR WRITTEN, CREATES ANY WARRANTY NOT STATED HERE.
+
+11. EXCLUSION OF LOSSES
+    TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR IS NOT LIABLE, IN
+    CONTRACT, TORT (INCLUDING NEGLIGENCE), BREACH OF STATUTORY DUTY OR
+    OTHERWISE, FOR:
+    (a) ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR
+        PUNITIVE LOSS OR DAMAGE;
+    (b) LOSS OF PROFIT, REVENUE, BUSINESS, CONTRACTS, ANTICIPATED SAVINGS,
+        GOODWILL OR REPUTATION;
+    (c) LOSS, CORRUPTION OR INACCURACY OF DATA, FILES OR RESULTS, OR THE COST
+        OF RE-RUNNING SIMULATIONS OR RECREATING WORK;
+    (d) ANY LOSS ARISING FROM DESIGNS, SPECIFICATIONS, CONSTRUCTION,
+        EQUIPMENT SELECTION, CERTIFICATION, COMPLIANCE OR OTHER DECISIONS
+        BASED IN WHOLE OR IN PART ON THE RESULTS;
+    (e) ANY CLAIM BY YOUR CLIENTS OR OTHER THIRD PARTIES AGAINST YOU;
+    (f) INTERRUPTION OR UNAVAILABILITY OF THE LICENCE SERVER, THE INTERNET OR
+        THIRD-PARTY SERVICES;
+    EVEN IF THE LICENSOR WAS ADVISED THAT SUCH LOSS WAS POSSIBLE.
+
+12. LIABILITY CAP AND TIME LIMIT
+    12.1 TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR'S TOTAL
+         AGGREGATE LIABILITY FOR ALL CLAIMS ARISING FROM OR CONNECTED WITH
+         THIS AGREEMENT, THE SOFTWARE OR THE RESULTS SHALL NOT EXCEED THE
+         FEES YOU ACTUALLY PAID FOR THE LICENCE CONCERNED IN THE 12 MONTHS
+         BEFORE THE EVENT GIVING RISE TO THE FIRST CLAIM. FOR TRIAL, BETA AND
+         FREE USE THE CAP IS ZERO.
+    12.2 TO THE EXTENT PERMITTED BY LAW, ANY CLAIM MUST BE NOTIFIED TO THE
+         LICENSOR IN WRITING, AND ANY PROCEEDINGS STARTED, WITHIN ONE (1) YEAR
+         AFTER YOU BECAME AWARE, OR SHOULD REASONABLY HAVE BECOME AWARE, OF
+         THE FACTS GIVING RISE TO IT; OTHERWISE THE CLAIM IS WAIVED.
+    12.3 Before starting proceedings, you agree to notify the Licensor of the
+         problem in writing and to allow 30 days to fix it or resolve the
+         matter amicably.
+    12.4 These limits reflect the price of the licence. The fees would be
+         substantially higher without them. Each exclusion and limit is
+         separate and applies even if another is held unenforceable or a
+         remedy fails of its essential purpose.
+    12.5 Nothing in this agreement excludes or limits liability that cannot
+         be excluded or limited by applicable law, such as liability for
+         fraud or for death or personal injury caused by negligence.
+
+13. YOUR INDEMNITY
+    You will defend, indemnify and hold harmless the Licensor against all
+    claims, losses, damages, liabilities, penalties, costs and expenses
+    (including reasonable legal fees) brought by any third party, including
+    your clients, employers, partners and authorities, that arise from:
+    (a) your use of the Software or the Results, including any work,
+        design, report or advice you provide to others;
+    (b) your inputs, data, scripts or content;
+    (c) your breach of this agreement or of any law; or
+    (d) use of your licence key by anyone else.
+    The Licensor will tell you promptly of any such claim and may take part in
+    its defence with its own counsel.
+
+14. DATA SENT BY THE SOFTWARE
+    14.1 To check the licence, the Software sends to the licence server the
+         licence key, the product name and version, and a machine identifier
+         (a code derived from the computer's hardware, used only to bind the
+         licence to that computer). The server also sees the internet address
+         of each request, as any web server does. The website and payment
+         provider process your name, e-mail address and billing details to
+         sell and deliver the licence.
+    14.2 This data is used only to sell, issue, check, support and manage
+         licences, and to prevent misuse. It is not sold. It may be stored
+         with hosting providers outside your country.
+    14.3 The Software does not send your projects, models, Results or files
+         to the Licensor.
+
+15. EXPORT AND SANCTIONS
+    You confirm that you are not located in, ordinarily resident in, or acting
+    for a person or entity in a country or territory subject to comprehensive
+    sanctions, and that you are not named on any applicable sanctions list.
+    You will not export or use the Software in breach of export-control or
+    sanctions laws that apply to you or to the Licensor. The Licensor may
+    refuse or cancel a licence where it reasonably believes this section is
+    breached.
+
+16. TERMINATION AND SUSPENSION
+    16.1 This agreement ends automatically, without notice, if you breach
+         Sections 3.3, 4.4, 5 or 15, or otherwise materially breach it. The
+         Licensor may then deactivate the licence key without refund.
+    16.2 The Licensor may suspend a licence key while investigating suspected
+         fraud, misuse or sharing.
+    16.3 When the agreement ends you must stop using the Software, uninstall
+         it and destroy all copies.
+    16.4 Sections 4.2, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16.4 and 17 survive
+         termination.
+
+17. GENERAL
+    17.1 Updates and support. During a paid period the Licensor may provide
+         updates and reasonable support by e-mail, but is not obliged to. The
+         Licensor may change, replace or discontinue features, products or
+         the licence server in later versions.
+    17.2 Changes. The Licensor may update this agreement for new versions and
+         renewals. The version you accepted applies to the period already paid
+         for; renewal or installation of a new version means acceptance of the
+         version then shown.
+    17.3 Assignment. You may not assign or transfer this agreement or a
+         licence without the Licensor's written consent. The Licensor may
+         assign this agreement, including to a company that it establishes or
+         controls, or to a buyer of its business, by notice on the website or
+         by e-mail.
+    17.4 Force majeure. The Licensor is not liable for any delay or failure
+         caused by events outside its reasonable control, including internet,
+         hosting or payment-provider failures.
+    17.5 Severability. If a provision is held invalid or unenforceable, it is
+         modified to the minimum extent needed to make it enforceable, and the
+         rest of the agreement remains in force.
+    17.6 No waiver. A failure or delay in enforcing a right is not a waiver of
+         it.
+    17.7 Independent parties. Nothing in this agreement creates a partnership,
+         agency, employment or joint venture.
+    17.8 Entire agreement. This agreement, with your order or invoice, is the
+         entire agreement about the Software and replaces any earlier
+         statements, including on the website. If it is translated, the
+         English version prevails.
+    17.9 Notices. Notices to the Licensor must be sent by e-mail to
+         architecture.optimization@gmail.com. Notices to you may be sent to
+         the e-mail address used for your purchase.
+    17.10 Governing law and courts. This agreement and any dispute arising
+         from it are governed by the laws of the Emirate of Dubai and the
+         federal laws of the United Arab Emirates. The courts of Dubai have
+         exclusive jurisdiction. The United Nations Convention on Contracts
+         for the International Sale of Goods does not apply.
+
+Copyright (C) 2026 ArchOpt Technologies. All rights reserved.
+EnergyFront, PareVia and EPCalibration are product names of ArchOpt
+Technologies. EnergyPlus is a trademark of the US Department of Energy; the
+Software is not affiliated with, sponsored by or endorsed by the US Department
+of Energy, NREL or the EnergyPlus developers.

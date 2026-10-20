@@ -8,7 +8,7 @@
 <script>
 /* send addresses typed with different letter case, a trailing slash or .html to the right page */
 (function(){
-  var pages={energyfront:'/EnergyFront',parevia:'/PareVia',epcalibration:'/EPCalibration',terms:'/Terms',privacy:'/Privacy',refund:'/Refund',overview:'/',suite:'/',home:'/',index:'/'};
+  var pages={energyfront:'/EnergyFront',parevia:'/PareVia',epcalibration:'/EPCalibration',terms:'/Terms',privacy:'/Privacy',refund:'/Refund',licenses:'/Licenses',licences:'/Licenses',validation:'/Validation',eula:'/Terms',overview:'/',suite:'/',home:'/',index:'/'};
   var p=window.location.pathname.toLowerCase().replace(/\/+$/,'').replace(/\.html$/,'').replace(/^\//,'');
   if(pages[p]&&pages[p]!==window.location.pathname)window.location.replace(pages[p]+window.location.search+window.location.hash);
 })();

@@ -50,21 +50,33 @@
     </url>
     <url>
         <loc>https://archopt-technologies.github.io/Terms</loc>
-        <lastmod>2026-10-04</lastmod>
+        <lastmod>2026-10-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://archopt-technologies.github.io/Privacy</loc>
-        <lastmod>2026-10-04</lastmod>
+        <lastmod>2026-10-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://archopt-technologies.github.io/Refund</loc>
-        <lastmod>2026-10-04</lastmod>
+        <lastmod>2026-10-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.3</priority>
     </url>
   <url><loc>https://archopt-technologies.github.io/buy_energyfront.html</loc><lastmod>2026-10-11</lastmod></url>
+    <url>
+        <loc>https://archopt-technologies.github.io/Validation</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://archopt-technologies.github.io/Licenses</loc>
+        <lastmod>2026-10-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
 </urlset>

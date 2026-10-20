@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Third-party licences | ArchOpt Technologies</title>
+<meta name="description" content="Open-source components and licences in EnergyFront, PareVia and EPCalibration by ArchOpt Technologies.">
+<meta name="author" content="ArchOpt Technologies">
+<meta property="og:title" content="Third-party licences | ArchOpt Technologies">
+<meta property="og:description" content="Open-source components and licences in EnergyFront, PareVia and EPCalibration by ArchOpt Technologies.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArchOpt Technologies">
+<meta property="og:url" content="https://archopt-technologies.github.io/Licenses">
+<link rel="canonical" href="https://archopt-technologies.github.io/Licenses">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
+<style>
+/* licence and validation pages (added October 2026) */
+.legal-page.wide{max-width:900px}
+.eula-n{font-weight:700;color:var(--ink);margin-right:.25rem}
+.eula-caps{font-size:.93rem!important;letter-spacing:.005em}
+.eula-list{list-style:none;margin-left:.2rem!important}
+.eula-list li{padding-left:1.9rem;text-indent:-1.9rem}
+.legal-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:0 0 1.5rem}
+.legal-actions .btn{padding:10px 18px;font-size:.88rem}
+.legal-page .pricing-table{font-size:.9rem;margin:1rem 0 1.6rem}
+.legal-page .pricing-table td,.legal-page .pricing-table th{padding:9px 12px;vertical-align:top}
+.legal-page .pricing-table td:first-child{white-space:nowrap}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok{color:#0a7f5a;font-weight:700}
+.note{color:#b4560d;font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.4rem 0 1.8rem}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
+.kpi b{display:block;font-family:'Sora',sans-serif;font-size:1.45rem;color:var(--ink);line-height:1.2}
+.kpi span{font-size:.85rem;color:var(--ink2)}
+.legal-page h3{font-size:.98rem;font-weight:700;margin:1.4rem 0 .4rem}
+.legal-page a.btn{font-weight:700}
+.legal-page a.btn-front{color:#fff}
+.legal-page a.btn-line{color:var(--ink)}
+.page-badge{display:block;margin-bottom:.2rem}
+.legal-page ol{margin:.5rem 0 1rem 1.3rem}
+.legal-page ol li{color:var(--ink2);line-height:1.7;margin-bottom:.3rem}
+.legal-page code{font-size:.88em;background:var(--bg2);padding:1px 5px;border-radius:5px}
+@media(max-width:700px){.kpis{grid-template-columns:1fr}.legal-page .pricing-table{display:block;overflow-x:auto}}
+@media print{nav,footer,.legal-back,.legal-actions,.contact-overlay{display:none!important}.legal-page{padding:0;max-width:none}.page{animation:none}body{background:#fff}}
+</style>
+</head>
+<body data-page="licenses">
+
+<!-- CONTACT MODAL -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-modal">
+    <button class="contact-close" onclick="closeContact()">✕</button>
+    <div id="contactForm">
+      <span class="badge">GET IN TOUCH</span>
+      <h2 style="margin-top:.8rem">Talk to us about a license</h2>
+      <p class="lead">Questions before purchasing, bulk or enterprise licensing, or support - we reply within 24 hours.</p>
+      <div class="form-two">
+        <div class="form-row"><label>Name</label><input type="text" id="f-name" placeholder="Your name"></div>
+        <div class="form-row"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+      </div>
+      <div class="form-row">
+        <label>Regarding</label>
+        <select id="f-type">
+          <option value="">Select…</option>
+          <option>EnergyFront</option>
+          <option>PareVia license</option>
+          <option>EPCalibration license</option>
+          <option>Enterprise / multi-seat</option>
+          <option>Technical question before purchase</option>
+          <option>Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Organisation</label><input type="text" id="f-org" placeholder="Company or university"></div>
+      <div class="form-row"><label>Message</label><textarea id="f-msg" placeholder="What do you need?"></textarea></div>
+      <button class="btn btn-primary form-submit" onclick="submitForm()">Send message →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <h3>Message received 🎉</h3>
+      <p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="./">
+    <span class="brand-name"><span class="wm-chip"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="t">Technologies</span></span><span class="sub">Building performance software</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="./">Overview</a></li>
+    <li><a href="EnergyFront">EnergyFront</a></li>
+    <li><a href="EPCalibration">EPCalibration</a></li>
+    <li><a href="PareVia">PareVia</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openContact()">Contact</button>
+</nav>
+
+<div class="page" id="page-licenses">
+  <div class="legal-page">
+    <button class="legal-back" onclick="go('./')">&larr; Back</button>
+    <h1>Third-party licences</h1>
+    <div class="legal-meta">Updated 20 October 2026 &middot; EnergyFront, PareVia and EPCalibration &middot; ArchOpt Technologies</div>
+    <p>EnergyFront, PareVia and EPCalibration are proprietary software of ArchOpt Technologies, licensed under the <a href="Terms">Licence Agreement</a>. They are built with open-source components of other authors. Each component is provided under its own licence, and nothing in the Licence Agreement limits the rights that those licences give you.</p>
+    <h2>1. Notices for each program</h2>
+    <p>Every installer places a file <code>THIRD-PARTY-LICENSES.txt</code> and a <code>LICENSES</code> folder in the program folder. The file is generated automatically for each release from the components that are actually packaged, and lists each one with its version, licence and full licence text. The same files are published here.</p>
+    <table class="pricing-table">
+      <tr><th>Program</th><th>Release</th><th>Notices</th></tr>
+      <tr><td>EnergyFront</td><td>V3.5</td><td><a href="legal/EnergyFront-THIRD-PARTY-LICENSES.txt">EnergyFront-THIRD-PARTY-LICENSES.txt</a></td></tr>
+      <tr><td>PareVia</td><td>V3.5</td><td><a href="legal/PareVia-THIRD-PARTY-LICENSES.txt">PareVia-THIRD-PARTY-LICENSES.txt</a></td></tr>
+      <tr><td>EPCalibration</td><td>V3.5</td><td><a href="legal/EPCalibration-THIRD-PARTY-LICENSES.txt">EPCalibration-THIRD-PARTY-LICENSES.txt</a></td></tr>
+    </table>
+    <h2>2. Qt and Qt for Python (PySide6) under the LGPL</h2>
+    <p>The user interface of the three programs is built with Qt 6 and Qt for Python (PySide6, Shiboken6), Copyright &copy; The Qt Company Ltd. and other contributors, used under the GNU Lesser General Public License version 3. Some programs also contain other LGPL libraries (for example moocore, under LGPL-2.1), named in their notices file.</p>
+    <ul>
+      <li>These libraries are shipped as separate dynamic libraries in the program folder (<code>Qt6*.dll</code> and the <code>PySide6</code> and <code>shiboken6</code> folders) and are loaded at run time.</li>
+      <li>You may replace them with modified versions that keep the same interface, and reverse-engineer the program to the extent needed to debug such modifications.</li>
+      <li>Their source code is available from <a href="https://code.qt.io" rel="noopener">code.qt.io</a> and <a href="https://download.qt.io/official_releases/QtForPython/" rel="noopener">download.qt.io</a>, and on request from <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a> for at least three years after you received the program.</li>
+    </ul>
+    <p>Licence texts: <a href="legal/LICENSES/LGPL-3.0.txt">LGPL-3.0</a> &middot; <a href="legal/LICENSES/GPL-3.0.txt">GPL-3.0</a> (which LGPL-3.0 builds on) &middot; <a href="legal/LICENSES/LGPL-2.1.txt">LGPL-2.1</a></p>
+    <h2>3. Python and Nuitka</h2>
+    <p>The programs contain the Python runtime, Copyright &copy; Python Software Foundation, under the Python Software Foundation License Version 2. They are compiled with <a href="https://nuitka.net" rel="noopener">Nuitka</a>; the Nuitka runtime code linked into the programs is covered by the Nuitka Runtime Library Exception, reproduced in each notices file.</p>
+    <h2>4. Not part of the programs</h2>
+    <ul>
+      <li><strong>EnergyPlus</strong> is installed separately under its own licence and is not part of the programs. EnergyPlus is a trademark of the US Department of Energy; the programs are not affiliated with, sponsored by or endorsed by the US Department of Energy.</li>
+      <li><strong>Your own Python installation</strong>, used by the Scripts and Control pages of EnergyFront, and the libraries you install in it are not part of the programs.</li>
+      <li><strong>Weather files</strong> and other data you use are subject to the terms of their own providers.</li>
+    </ul>
+    <h2>5. Questions</h2>
+    <p>If you believe a notice is missing or incorrect, please write to <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a> and it will be corrected in the next release.</p>
+  </div>
+
+  <footer>
+    <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
+    <span class="footer-copy">© 2026 ArchOpt Technologies </span>
+    <div class="footer-legal">
+      <button onclick="go('Terms')">Licence Agreement</button>
+      <button onclick="go('Privacy')">Privacy Policy</button>
+      <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="go('Licenses')">Third-party licences</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+    <p class="footer-tm">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, EPCalibration and PareVia are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p>
+  </footer>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>

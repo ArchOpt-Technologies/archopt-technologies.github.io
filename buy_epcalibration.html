@@ -201,6 +201,14 @@
   /* EPCalibration: teal brand */
   .wm .wm-b.teal, h1 .wm .wm-b.teal { color: var(--stu) !important; }
   .badge-pill.teal { border-color: var(--stu-line); color: var(--stu); background: var(--stu-bg); }
+  /* licence agreement gate (October 2026) */
+  .eula-gate { max-width: 880px; margin: 0 auto 1.6rem; padding: .95rem 1.15rem; border: 1px solid var(--border); border-radius: 12px; font-size: .92rem; line-height: 1.55; color: var(--text); background: rgba(255,255,255,.03); }
+  .eula-gate label { display: flex; gap: .7rem; align-items: flex-start; cursor: pointer; }
+  .eula-gate input { margin-top: .25rem; width: 18px; height: 18px; flex-shrink: 0; cursor: pointer; }
+  .eula-gate a { color: inherit; font-weight: 700; }
+  .eula-gate.need { border-color: #f87171; box-shadow: 0 0 0 3px rgba(248,113,113,.25); }
+  .eula-gate .eula-msg { display: none; color: #f87171; font-weight: 600; margin: .5rem 0 0 1.75rem; }
+  .eula-gate.need .eula-msg { display: block; }
 </style>
 </head>
 <body>
@@ -241,6 +249,11 @@
         <h2>Choose your plan</h2>
       </div>
       <p>Both plans include the full application. Cancel anytime; your key works until the end of the paid period.</p>
+    </div>
+
+    <div class="eula-gate" id="eulaGate">
+      <label><input type="checkbox" id="eula-accept"> <span>I have read and accept the <a href="Terms" target="_blank" rel="noopener">Licence Agreement (EULA)</a>, including the no-refund policy, and I understand that all results must be checked by a qualified professional before they are relied on.</span></label>
+      <div class="eula-msg">Please tick the box to accept the Licence Agreement before you continue to checkout.</div>
     </div>
 
     <div class="plans two">
@@ -360,7 +373,7 @@
   </div>
   <div class="faq-item">
     <button class="faq-q" onclick="toggleFaq(this)">Can I get a refund? <span>+</span></button>
-    <div class="faq-a">We offer a 7-day refund if EPCalibration does not work on your machine and we are unable to fix it. Contact us by email within 7 days of purchase. Please download the free installer and confirm it runs on your machine before buying.</div>
+    <div class="faq-a">No. All sales are final and fees are not refunded, except where the law requires it (see the <a href="Refund">Refund Policy</a>). Please confirm that the program runs on your computer before buying: download the free installer and confirm it runs on your machine before buying.</div>
   </div>
 </div>
 
@@ -369,6 +382,9 @@
   <span class="wm"><span class="wm-a">EP</span><span class="wm-b teal">Calibration</span></span> Calibration for EnergyPlus models<br/>
   <a href="EPCalibration">EPCalibration product page</a> ·
   <a href="epcalibration-download.html">Download</a> ·
+  <a href="Terms">Licence Agreement</a> ·
+  <a href="Refund">Refunds</a> ·
+  <a href="Licenses">Third-party licences</a> ·
   <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>
   <p style="font-size:.74rem;line-height:1.55;opacity:.6;max-width:760px;margin:.6rem auto 0">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, EPCalibration and PareVia are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p>
 </footer>
@@ -413,6 +429,21 @@ function toggleFaq(el) {
     el.querySelector("span").textContent = "−";
   }
 }
+</script>
+<script>
+/* checkout opens only after the Licence Agreement is accepted (October 2026) */
+document.addEventListener("click", function (e) {
+  var b = e.target.closest ? e.target.closest("[data-checkout]") : null;
+  if (!b) return;
+  var c = document.getElementById("eula-accept"), g = document.getElementById("eulaGate");
+  if (c && !c.checked) {
+    e.preventDefault(); e.stopImmediatePropagation();
+    g.classList.add("need"); g.scrollIntoView({ behavior: "smooth", block: "center" }); c.focus();
+  }
+}, true);
+document.addEventListener("change", function (e) {
+  if (e.target && e.target.id === "eula-accept" && e.target.checked) document.getElementById("eulaGate").classList.remove("need");
+});
 </script>
 </body>
 </html>

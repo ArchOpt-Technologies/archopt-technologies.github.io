@@ -1,13 +1,30 @@
-Website update (copy these files over the repository root, then commit)
+Website update - licence agreement, third-party licences and ASHRAE 140 report (20 October 2026)
+Copy these files over the repository root, then commit. Nothing outside licensing/validation was changed.
 
-Changed:
-  EnergyFront.html          Buy EnergyFront (orange) first, then downloads; next step = EPCalibration
-  EPCalibration.html        Added "Next step: optimize in PareVia"
-  buy_epcalibration.html    Redesigned in the same style as buy.html (Monthly $20 / Yearly $200, same Gumroad links)
-  buy_energyfront.html      Gumroad checkout opens in a new tab
-  all pages                 Links to buy pages open in a new tab; "Pricing" removed from the menu
-  index.html                "See pricing" button removed
-  404.html, site.js, sitemap.xml   Pricing references removed
+NEW
+  Validation.html        EnergyFront ASHRAE Standard 140 report (cases 600, 900, 600FF, 900FF)
+  docs/EnergyFront-ASHRAE140-Validation-Report.pdf   the same report as a PDF
+  Licenses.html          Third-party licences page (LGPL notice, links to each program's notices)
+  legal/EULA.txt         Licence Agreement v2.0 as plain text (same file as in the installers)
+  legal/LICENSES/        LGPL-3.0.txt, GPL-3.0.txt, LGPL-2.1.txt
 
-Delete from the repository:
-  Pricing.html
+CHANGED
+  Terms.html             now shows the full Licence Agreement (EULA) v2.0 for all three programs
+  Refund.html            aligned with the EULA: no refunds except where required by law;
+                         subscription cancellation; billing errors corrected
+  Privacy.html           Gumroad or PayPal; licence-server data incl. IP address; hosting; fonts/checkout cookies
+  buy.html, buy_energyfront.html, buy_epcalibration.html
+                         - "I accept the Licence Agreement" box: checkout opens only after it is ticked
+                         - FAQ "Can I get a refund?" now matches the no-refund policy
+                         - footer links: Licence Agreement, Refunds, Third-party licences
+  archopt.html, epcalibration-download.html
+                         the old "License Terms" text in the download pop-up is replaced by a short
+                         summary and a link to the Licence Agreement (one binding text only)
+  EnergyFront.html       new "Tested with ASHRAE Standard 140" section with links to the report
+  index, EnergyFront, PareVia, EPCalibration, Privacy pages: footer "Licence Agreement" + "Third-party licences"
+  404.html, sitemap.xml  new pages added
+
+TO DO AFTER EACH RELEASE BUILD
+  Copy OUTPUT\legal\<Product>-THIRD-PARTY-LICENSES.txt of each program into the repository folder legal/
+  (EnergyFront-, PareVia-, EPCalibration-THIRD-PARTY-LICENSES.txt). Until then the three links on
+  Licenses.html show "page not found".

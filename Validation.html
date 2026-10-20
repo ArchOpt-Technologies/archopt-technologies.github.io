@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EnergyFront ASHRAE 140 validation | ArchOpt Technologies</title>
+<meta name="description" content="EnergyFront 3.5 tested with the ASHRAE Standard 140 building envelope cases 600, 900, 600FF and 900FF.">
+<meta name="author" content="ArchOpt Technologies">
+<meta property="og:title" content="EnergyFront ASHRAE 140 validation | ArchOpt Technologies">
+<meta property="og:description" content="EnergyFront 3.5 tested with the ASHRAE Standard 140 building envelope cases 600, 900, 600FF and 900FF.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ArchOpt Technologies">
+<meta property="og:url" content="https://archopt-technologies.github.io/Validation">
+<link rel="canonical" href="https://archopt-technologies.github.io/Validation">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-48.png" type="image/png" sizes="48x48">
+<link rel="icon" href="/favicon-96.png" type="image/png" sizes="96x96">
+<link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="site.css">
+<style>
+/* licence and validation pages (added October 2026) */
+.legal-page.wide{max-width:900px}
+.eula-n{font-weight:700;color:var(--ink);margin-right:.25rem}
+.eula-caps{font-size:.93rem!important;letter-spacing:.005em}
+.eula-list{list-style:none;margin-left:.2rem!important}
+.eula-list li{padding-left:1.9rem;text-indent:-1.9rem}
+.legal-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:0 0 1.5rem}
+.legal-actions .btn{padding:10px 18px;font-size:.88rem}
+.legal-page .pricing-table{font-size:.9rem;margin:1rem 0 1.6rem}
+.legal-page .pricing-table td,.legal-page .pricing-table th{padding:9px 12px;vertical-align:top}
+.legal-page .pricing-table td:first-child{white-space:nowrap}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok{color:#0a7f5a;font-weight:700}
+.note{color:#b4560d;font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.4rem 0 1.8rem}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
+.kpi b{display:block;font-family:'Sora',sans-serif;font-size:1.45rem;color:var(--ink);line-height:1.2}
+.kpi span{font-size:.85rem;color:var(--ink2)}
+.legal-page h3{font-size:.98rem;font-weight:700;margin:1.4rem 0 .4rem}
+.legal-page a.btn{font-weight:700}
+.legal-page a.btn-front{color:#fff}
+.legal-page a.btn-line{color:var(--ink)}
+.page-badge{display:block;margin-bottom:.2rem}
+.legal-page ol{margin:.5rem 0 1rem 1.3rem}
+.legal-page ol li{color:var(--ink2);line-height:1.7;margin-bottom:.3rem}
+.legal-page code{font-size:.88em;background:var(--bg2);padding:1px 5px;border-radius:5px}
+@media(max-width:700px){.kpis{grid-template-columns:1fr}.legal-page .pricing-table{display:block;overflow-x:auto}}
+@media print{nav,footer,.legal-back,.legal-actions,.contact-overlay{display:none!important}.legal-page{padding:0;max-width:none}.page{animation:none}body{background:#fff}}
+</style>
+</head>
+<body data-page="validation">
+
+<!-- CONTACT MODAL -->
+<div class="contact-overlay" id="contactOverlay">
+  <div class="contact-modal">
+    <button class="contact-close" onclick="closeContact()">✕</button>
+    <div id="contactForm">
+      <span class="badge">GET IN TOUCH</span>
+      <h2 style="margin-top:.8rem">Talk to us about a license</h2>
+      <p class="lead">Questions before purchasing, bulk or enterprise licensing, or support - we reply within 24 hours.</p>
+      <div class="form-two">
+        <div class="form-row"><label>Name</label><input type="text" id="f-name" placeholder="Your name"></div>
+        <div class="form-row"><label>Email</label><input type="email" id="f-email" placeholder="you@email.com"></div>
+      </div>
+      <div class="form-row">
+        <label>Regarding</label>
+        <select id="f-type">
+          <option value="">Select…</option>
+          <option>EnergyFront</option>
+          <option>PareVia license</option>
+          <option>EPCalibration license</option>
+          <option>Enterprise / multi-seat</option>
+          <option>Technical question before purchase</option>
+          <option>Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-row"><label>Organisation</label><input type="text" id="f-org" placeholder="Company or university"></div>
+      <div class="form-row"><label>Message</label><textarea id="f-msg" placeholder="What do you need?"></textarea></div>
+      <button class="btn btn-primary form-submit" onclick="submitForm()">Send message →</button>
+    </div>
+    <div class="form-success" id="formSuccess">
+      <h3>Message received 🎉</h3>
+      <p>We'll get back to you within 24 hours.</p>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="brand" href="./">
+    <span class="brand-name"><span class="wm-chip"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span><span class="t">Technologies</span></span><span class="sub">Building performance software</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="./">Overview</a></li>
+    <li><a href="EnergyFront">EnergyFront</a></li>
+    <li><a href="EPCalibration">EPCalibration</a></li>
+    <li><a href="PareVia">PareVia</a></li>
+  </ul>
+  <button class="nav-cta" onclick="openContact()">Contact</button>
+</nav>
+
+<div class="page" id="page-validation">
+  <div class="legal-page wide">
+    <button class="legal-back" onclick="go('./')">&larr; Back</button>
+    <div class="page-badge"><span class="badge front"><span class="dot"></span>VALIDATION REPORT</span></div>
+    <h1 style="margin-top:.8rem">EnergyFront and ASHRAE Standard 140</h1>
+    <div class="legal-meta">Report version 1.0 &middot; 20 October 2026 &middot; EnergyFront 3.5 &middot; EnergyPlus 9.4.0 &middot; ArchOpt Technologies</div>
+    <div class="legal-actions">
+      <a class="btn btn-front" href="docs/EnergyFront-ASHRAE140-Validation-Report.pdf" download>Download this report (PDF)</a>
+      <a class="btn btn-line" href="EnergyFront">EnergyFront</a>
+    </div>
+    <div class="legal-highlight"><p><strong>Summary.</strong> EnergyFront rebuilt the building envelope test cases 600, 900, 600FF and 900FF of ANSI/ASHRAE Standard 140 and reproduced the results of the reference EnergyPlus models within 0.02 % for annual and peak loads and within 0.01 K for free-floating temperatures. 12 of 14 results lie within the range of the example results of the standard; the remaining two, the annual and peak sensible cooling of case 600, lie about 2 % above that range, and the reference model run directly in EnergyPlus gives the same values.</p></div>
+    <div class="kpis">
+      <div class="kpi"><b>&le; 0.02 %</b><span>largest difference from the reference EnergyPlus model (loads)</span></div>
+      <div class="kpi"><b>&lt; 0.01 K</b><span>largest difference in free-floating zone temperatures</span></div>
+      <div class="kpi"><b>12 of 14</b><span>results within the range of the example results of Standard 140</span></div>
+    </div>
+
+    <h2>1. Purpose</h2>
+    <p>EnergyFront writes the EnergyPlus input file (IDF) from the inputs of its interface; EnergyPlus performs the simulation. The simulation engine itself is tested by its developers with Standard 140. This report tests the part EnergyFront adds: that the model it generates from its own inputs is the model the user describes, and that it gives the same results as an independently written reference model.</p>
+
+    <h2>2. Test cases</h2>
+    <p>The cases are the basic building thermal envelope and fabric load tests of ANSI/ASHRAE Standard 140. All four use one single-zone building with south-facing windows, a constant internal gain, constant infiltration and the Denver weather file of the standard.</p>
+    <table class="pricing-table">
+      <tr><th>Case</th><th>Construction</th><th>Space conditioning</th><th>Results compared</th></tr>
+      <tr><td>600</td><td>Lightweight</td><td>Heating below 20 &deg;C, cooling above 27 &deg;C, ideal loads</td><td>Annual heating and sensible cooling, peak heating and sensible cooling</td></tr>
+      <tr><td>900</td><td>Heavyweight (high thermal mass)</td><td>As case 600</td><td>As case 600</td></tr>
+      <tr><td>600FF</td><td>Lightweight</td><td>None (free-floating)</td><td>Maximum, minimum and mean hourly zone temperature</td></tr>
+      <tr><td>900FF</td><td>Heavyweight</td><td>None (free-floating)</td><td>As case 600FF</td></tr>
+    </table>
+
+    <h2>3. Method</h2>
+    <ol>
+      <li><strong>Reference models.</strong> Case 600 is <code>case_en_600.idf</code> of NREL BESTEST-GSR (integration testing), with the version set to 9.4 and 6 time steps per hour. Case 900 uses the heavyweight wall and floor constructions (HWWALL, HWFLOOR) of the BESTEST-GSR construction sets. The free-floating cases are the same models without the thermostat and the ideal loads.</li>
+      <li><strong>EnergyFront models.</strong> Each reference IDF was opened in EnergyFront with <em>File &gt; Open IDF 9.4</em>, which converts it into an EnergyFront project. EnergyFront then generated a new IDF from that project.</li>
+      <li><strong>Simulation.</strong> Both IDFs were run with EnergyPlus 9.4.0 and the weather file <code>725650TYCST.epw</code> (Denver) of Standard 140-2020.</li>
+      <li><strong>Results.</strong> Annual loads are the sum of the hourly <em>Zone Air System Sensible Heating Energy</em> and <em>Zone Air System Sensible Cooling Energy</em>; peaks are the largest hourly values. Free-floating results use the hourly <em>Zone Mean Air Temperature</em>.</li>
+      <li><strong>Comparison.</strong> EnergyFront was compared with the reference model (code-to-code) and with the range of the example results of the standard (RESULTS5-2A, informative Annex B8). The example results are not acceptance criteria.</li>
+    </ol>
+
+    <h2>4. Results: heating and cooling loads</h2>
+    <table class="pricing-table">
+      <tr><th>Case</th><th>Quantity</th><th>EnergyPlus, reference IDF</th><th>EnergyFront</th><th>Difference</th><th>Example results of Standard 140</th><th>Within range</th></tr>
+      <tr><td>600</td><td>Annual heating (MWh)</td><td class="num">4.243</td><td class="num">4.243</td><td class="num">0.01 %</td><td class="num">3.99 to 4.50</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>600</td><td>Annual sensible cooling (MWh)</td><td class="num">6.283</td><td class="num">6.283</td><td class="num">0.00 %</td><td class="num">5.43 to 6.16</td><td><span class="note">2.0 % above</span></td></tr>
+      <tr><td>600</td><td>Peak heating (kW)</td><td class="num">3.150</td><td class="num">3.150</td><td class="num">0.01 %</td><td class="num">3.02 to 3.36</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>600</td><td>Peak sensible cooling (kW)</td><td class="num">6.614</td><td class="num">6.614</td><td class="num">0.00 %</td><td class="num">5.42 to 6.48</td><td><span class="note">2.1 % above</span></td></tr>
+      <tr><td>900</td><td>Annual heating (MWh)</td><td class="num">1.535</td><td class="num">1.535</td><td class="num">0.02 %</td><td class="num">1.38 to 1.81</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>900</td><td>Annual sensible cooling (MWh)</td><td class="num">2.614</td><td class="num">2.613</td><td class="num">0.00 %</td><td class="num">2.27 to 2.71</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>900</td><td>Peak heating (kW)</td><td class="num">2.628</td><td class="num">2.628</td><td class="num">0.02 %</td><td class="num">2.44 to 2.78</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>900</td><td>Peak sensible cooling (kW)</td><td class="num">3.131</td><td class="num">3.131</td><td class="num">0.00 %</td><td class="num">2.56 to 3.38</td><td><span class="ok">Yes</span></td></tr>
+    </table>
+
+    <h2>5. Results: free-floating temperatures</h2>
+    <table class="pricing-table">
+      <tr><th>Case</th><th>Quantity</th><th>EnergyPlus, reference IDF</th><th>EnergyFront</th><th>Difference</th><th>Example results of Standard 140</th><th>Within range</th></tr>
+      <tr><td>600FF</td><td>Maximum zone temperature (&deg;C)</td><td class="num">65.02</td><td class="num">65.02</td><td class="num">&lt; 0.01 K</td><td class="num">62.4 to 68.4</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>600FF</td><td>Minimum zone temperature (&deg;C)</td><td class="num">-12.01</td><td class="num">-12.01</td><td class="num">&lt; 0.01 K</td><td class="num">-13.8 to -9.9</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>600FF</td><td>Mean zone temperature (&deg;C)</td><td class="num">25.34</td><td class="num">25.34</td><td class="num">&lt; 0.01 K</td><td class="num">24.3 to 26.1</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>900FF</td><td>Maximum zone temperature (&deg;C)</td><td class="num">44.64</td><td class="num">44.64</td><td class="num">&lt; 0.01 K</td><td class="num">43.3 to 46.0</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>900FF</td><td>Minimum zone temperature (&deg;C)</td><td class="num">1.89</td><td class="num">1.89</td><td class="num">&lt; 0.01 K</td><td class="num">0.6 to 2.2</td><td><span class="ok">Yes</span></td></tr>
+      <tr><td>900FF</td><td>Mean zone temperature (&deg;C)</td><td class="num">25.56</td><td class="num">25.56</td><td class="num">&lt; 0.01 K</td><td class="num">24.5 to 25.7</td><td><span class="ok">Yes</span></td></tr>
+    </table>
+
+    <h2>6. Discussion</h2>
+    <p>EnergyFront reproduces the reference model in every case: the largest difference is 0.02 % for loads and below 0.01 K for temperatures, which is within the rounding of the outputs. This shows that the inputs EnergyFront holds (geometry, layered constructions, glazing defined layer by layer, internal gains with their radiant fraction, infiltration, thermostat and ideal loads) are written to the IDF without loss.</p>
+    <p>The annual sensible cooling and the peak sensible cooling of case 600 lie about 2 % above the range of the example results. The reference IDF run directly in EnergyPlus 9.4 gives the same values, so the difference belongs to the reference model and the EnergyPlus version, not to the model EnergyFront writes. Annex B8 of the standard states that the example results are informative and are not acceptance criteria.</p>
+    <p>As an additional check, the case 600 model of the 2011 edition of the standard (prepared by GARD Analytics, with a raised floor exposed to outdoor air) gave the same heating and cooling loads in EnergyFront as the original IDF within 0.01 %, both with the Denver weather file and with an Abu Dhabi weather file.</p>
+
+    <h2>7. Scope and limitations</h2>
+    <ul>
+      <li>This is an inter-model (code-to-code) comparison and a comparison with the example results of the standard. It is not an empirical validation against measured data.</li>
+      <li>The tests cover the building thermal envelope with ideal loads. They do not cover the HVAC system templates, natural ventilation, the AirflowNetwork model, daylighting controls, shading devices other than those of the test cases, or multi-zone buildings, which are not part of these cases.</li>
+      <li>The results apply to EnergyFront 3.5 with EnergyPlus 9.4.0. Other versions, and models with other inputs, may give different results.</li>
+      <li>Standard 140 is a method of test, not a certification. This report does not state that EnergyFront is certified or approved by ASHRAE.</li>
+    </ul>
+
+    <h2>8. References</h2>
+    <ol>
+      <li>ANSI/ASHRAE Standard 140-2020, <em>Standard Method of Test for the Evaluation of Building Energy Analysis Computer Programs</em>. ASHRAE, Atlanta.</li>
+      <li>NREL, BESTEST-GSR: Building Energy Simulation Test Generation, Simulation and Reporting. <a href="https://github.com/NREL/BESTEST-GSR" rel="noopener">github.com/NREL/BESTEST-GSR</a></li>
+      <li>US Department of Energy, EnergyPlus version 9.4.0. <a href="https://energyplus.net" rel="noopener">energyplus.net</a></li>
+    </ol>
+    <p style="margin-top:2rem;font-size:.9rem">This report describes the stated version, test cases and conditions only. It is information, not a warranty that the results for your buildings are accurate (<a href="Terms#s9">Licence Agreement, Section 9</a>). EnergyPlus is a trademark of the US Department of Energy; EnergyFront is not affiliated with, sponsored by or endorsed by the US Department of Energy or ASHRAE.</p>
+  </div>
+
+  <footer>
+    <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
+    <span class="footer-copy">© 2026 ArchOpt Technologies </span>
+    <div class="footer-legal">
+      <button onclick="go('Terms')">Licence Agreement</button>
+      <button onclick="go('Privacy')">Privacy Policy</button>
+      <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="go('Licenses')">Third-party licences</button>
+      <button onclick="openContact()">Contact</button>
+    </div>
+    <p class="footer-tm">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, EPCalibration and PareVia are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p>
+  </footer>
+</div>
+
+<script src="site.js"></script>
+</body>
+</html>

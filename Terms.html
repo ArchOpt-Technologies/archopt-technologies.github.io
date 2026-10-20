@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Terms of Service | ArchOpt Technologies</title>
-<meta name="description" content="Terms of Service for PareVia and EPCalibration software by ArchOpt Technologies.">
+<title>Licence Agreement (EULA) | ArchOpt Technologies</title>
+<meta name="description" content="End-User Licence Agreement for EnergyFront, PareVia and EPCalibration by ArchOpt Technologies.">
 <meta name="author" content="ArchOpt Technologies">
-<meta property="og:title" content="Terms of Service | ArchOpt Technologies">
-<meta property="og:description" content="Terms of Service for PareVia and EPCalibration software by ArchOpt Technologies.">
+<meta property="og:title" content="Licence Agreement (EULA) | ArchOpt Technologies">
+<meta property="og:description" content="End-User Licence Agreement for EnergyFront, PareVia and EPCalibration by ArchOpt Technologies.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ArchOpt Technologies">
 <meta property="og:url" content="https://archopt-technologies.github.io/Terms">
@@ -20,6 +20,36 @@
 <link rel="icon" href="/favicon-192.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="stylesheet" href="site.css">
+<style>
+/* licence and validation pages (added October 2026) */
+.legal-page.wide{max-width:900px}
+.eula-n{font-weight:700;color:var(--ink);margin-right:.25rem}
+.eula-caps{font-size:.93rem!important;letter-spacing:.005em}
+.eula-list{list-style:none;margin-left:.2rem!important}
+.eula-list li{padding-left:1.9rem;text-indent:-1.9rem}
+.legal-actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:0 0 1.5rem}
+.legal-actions .btn{padding:10px 18px;font-size:.88rem}
+.legal-page .pricing-table{font-size:.9rem;margin:1rem 0 1.6rem}
+.legal-page .pricing-table td,.legal-page .pricing-table th{padding:9px 12px;vertical-align:top}
+.legal-page .pricing-table td:first-child{white-space:nowrap}
+.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.ok{color:#0a7f5a;font-weight:700}
+.note{color:#b4560d;font-weight:700}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin:1.4rem 0 1.8rem}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:1rem 1.1rem}
+.kpi b{display:block;font-family:'Sora',sans-serif;font-size:1.45rem;color:var(--ink);line-height:1.2}
+.kpi span{font-size:.85rem;color:var(--ink2)}
+.legal-page h3{font-size:.98rem;font-weight:700;margin:1.4rem 0 .4rem}
+.legal-page a.btn{font-weight:700}
+.legal-page a.btn-front{color:#fff}
+.legal-page a.btn-line{color:var(--ink)}
+.page-badge{display:block;margin-bottom:.2rem}
+.legal-page ol{margin:.5rem 0 1rem 1.3rem}
+.legal-page ol li{color:var(--ink2);line-height:1.7;margin-bottom:.3rem}
+.legal-page code{font-size:.88em;background:var(--bg2);padding:1px 5px;border-radius:5px}
+@media(max-width:700px){.kpis{grid-template-columns:1fr}.legal-page .pricing-table{display:block;overflow-x:auto}}
+@media print{nav,footer,.legal-back,.legal-actions,.contact-overlay{display:none!important}.legal-page{padding:0;max-width:none}.page{animation:none}body{background:#fff}}
+</style>
 </head>
 <body data-page="terms">
 
@@ -74,47 +104,129 @@
 </nav>
 
 <div class="page" id="page-terms">
-  <div class="legal-page">
-    <button class="legal-back" onclick="go('./')">← Back</button>
-    <h1>Terms of Service</h1>
-    <div class="legal-meta">Effective date: 1 May 2026 · PareVia v2.0 &amp; EPCalibration · ArchOpt Technologies</div>
-    <div class="legal-highlight"><p><strong>Important:</strong> by purchasing, downloading, or using PareVia or EPCalibration, you agree to these terms in full.</p></div>
-    <h2>1. License grant</h2>
-    <p>Subject to full payment, you are granted a non-exclusive, non-transferable, revocable license to install and use the purchased software on <strong>one (1) computer</strong> for the <strong>license period purchased</strong> (for example 3 months, 1 month, 1 year, or 10 years) from the date of purchase.</p>
-    <h2>2. Permitted use</h2>
-    <ul>
-      <li><strong>Student / Academic license:</strong> non-commercial academic and research use only, by students who have provided proof of current student status.</li>
-      <li><strong>Commercial / Professional license:</strong> commercial use within your own organisation.</li>
-      <li><strong>Enterprise license:</strong> as defined in a separate written agreement.</li>
+  <div class="legal-page wide">
+    <button class="legal-back" onclick="go('./')">&larr; Back</button>
+    <h1>Licence Agreement (EULA)</h1>
+    <div class="legal-meta">Version 2.0 &middot; Effective 20 October 2026 &middot; EnergyFront, PareVia and EPCalibration &middot; ArchOpt Technologies</div>
+    <div class="legal-actions">
+      <a class="btn btn-line" href="legal/EULA.txt" download>Download as text (EULA.txt)</a>
+      <a class="btn btn-line" href="Licenses">Third-party licences</a>
+      <a class="btn btn-line" href="Refund">Refund policy</a>
+    </div>
+    <div class="legal-highlight"><p><strong>Please read before you buy or install.</strong> This agreement limits the Licensor's liability (Sections 11 and 12), makes you responsible for checking all results (Section 9) and asks you to indemnify the Licensor (Section 13). By clicking "I accept" during purchase or installation, or by installing, activating or using the Software, you accept it. If you accept on behalf of an organisation, you confirm that you may bind it.</p></div>
+    <h2 id="s1">1. The parties and the software</h2>
+    <p><span class="eula-n">1.1</span> &quot;Licensor&quot; means the individual who owns and operates the business trading as &quot;ArchOpt Technologies&quot;. ArchOpt Technologies is a trade name, not a registered company. The Licensor&#x27;s legal name appears on your invoice and is given on request. Contact: <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a></p>
+    <p><span class="eula-n">1.2</span> &quot;Software&quot; means the program you obtain under this agreement: EnergyFront, PareVia or EPCalibration, in any version, including updates, example files and documentation.</p>
+    <p><span class="eula-n">1.3</span> &quot;Results&quot; means any model, IDF file, tagged file, schedule, script, chart, table, calibrated parameter, optimised design, report or other output that you produce with the Software.</p>
+    <h2 id="s2">2. Licence</h2>
+    <p><span class="eula-n">2.1</span> The Software is licensed, not sold. The Licensor keeps all rights, title and intellectual property in the Software. You receive only the rights stated in this agreement.</p>
+    <p><span class="eula-n">2.2</span> Each licence key gives you a personal, non-exclusive, non-transferable, revocable right to install and use one product on ONE computer, for the subscription period you paid for, for your own professional, research or teaching work.</p>
+    <p><span class="eula-n">2.3</span> A key is activated online and bound to that computer by a machine identifier. If you replace the computer, contact the Licensor, who may move the licence once it is deactivated on the old computer.</p>
+    <h2 id="s3">3. Subscription, trial and academic licences</h2>
+    <p><span class="eula-n">3.1</span> Licences are sold for the period stated at purchase, for example one month, one year or a multi-year term. Monthly and yearly plans are subscriptions handled by the payment provider: they renew at the end of each period at the price shown at purchase until you cancel them with the provider. Cancelling stops future payments; the period already paid stays active until it ends. Introductory prices apply only for the period stated on the website.</p>
+    <p><span class="eula-n">3.2</span> The Software checks the licence with the Licensor&#x27;s licence server. It may work without an internet connection for a limited period (at most 7 days), then needs a connection to start. When the period ends without renewal, the Software stops starting. Your files stay on your computer and remain yours.</p>
+    <p><span class="eula-n">3.3</span> Academic and student licences, offered at a reduced price to students and staff of accredited universities and research institutes, may be used only for teaching and non-commercial research, never for paid work. The Licensor may ask for proof of academic or student status and cancel a licence that does not qualify.</p>
+    <p><span class="eula-n">3.4</span> Trial, evaluation, beta and free versions, and any feature marked &quot;beta&quot; or &quot;experimental&quot;, are provided for testing only, AS IS, and Sections 10 to 12 apply to them with a liability cap of zero.</p>
+    <h2 id="s4">4. Fees, payment and no refund</h2>
+    <p><span class="eula-n">4.1</span> Fees are paid in advance for the whole subscription period, through the payment provider shown on the website. The Licensor does not receive or store your card details.</p>
+    <p><span class="eula-n">4.2</span> Fees are non-refundable, in whole or in part, including for unused time or features, except where a refund is required by law that cannot be excluded by agreement.</p>
+    <p><span class="eula-n">4.3</span> You are responsible for any taxes, duties and bank charges in your country.</p>
+    <p><span class="eula-n">4.4</span> If a payment is reversed or charged back, the licence may be deactivated until the amount is paid.</p>
+    <p><span class="eula-n">4.5</span> Prices and offers may change for future periods. A change does not affect a period already paid.</p>
+    <h2 id="s5">5. What you may not do</h2>
+    <p>You may not, and may not allow anyone else to:</p>
+    <ul class="eula-list">
+      <li><span class="eula-n">(a)</span> share, lend, rent, sell, sublicense or publish a licence key, or use one key on more than one computer;</li>
+      <li><span class="eula-n">(b)</span> copy the Software, except as needed to install it under this agreement and to keep one backup copy of the installer;</li>
+      <li><span class="eula-n">(c)</span> decompile, disassemble or reverse-engineer the Software, except to the extent that law, or a third-party licence listed in Section 8, expressly allows it;</li>
+      <li><span class="eula-n">(d)</span> modify, patch or work around the licence check or the machine binding;</li>
+      <li><span class="eula-n">(e)</span> remove or change copyright, trademark or licence notices;</li>
+      <li><span class="eula-n">(f)</span> use the Software, or knowledge gained from its internal workings, to build a competing product, or offer the Software to others as a hosted or remote service;</li>
+      <li><span class="eula-n">(g)</span> use the Software in breach of any law, including export-control and sanctions laws (Section 15).</li>
     </ul>
-    <h2>3. Restrictions</h2>
-    <ul>
-      <li>No copying, sharing, reselling, or transferring the software or license key.</li>
-      <li>No activation on more than one computer at a time.</li>
-      <li>No reverse-engineering, decompiling, or extracting source code.</li>
-      <li>No use of an Academic license for commercial purposes.</li>
-      <li>No circumventing license verification or machine binding.</li>
+    <h2 id="s6">6. Your work and feedback</h2>
+    <p><span class="eula-n">6.1</span> Your input files and your Results belong to you. The Licensor claims no rights in them.</p>
+    <p><span class="eula-n">6.2</span> If you send suggestions or bug reports, the Licensor may use them freely to improve the Software, without obligation to you.</p>
+    <h2 id="s7">7. Your responsibilities</h2>
+    <p>You are solely responsible for:</p>
+    <ul class="eula-list">
+      <li><span class="eula-n">(a)</span> the correctness and suitability of your inputs, including geometry, constructions, materials, schedules, internal loads, HVAC settings, measured data, variable ranges and weather files;</li>
+      <li><span class="eula-n">(b)</span> obtaining your own licences for EnergyPlus, weather files, standards, material databases and any other data or software you use with the Software;</li>
+      <li><span class="eula-n">(c)</span> keeping backups of your projects and files;</li>
+      <li><span class="eula-n">(d)</span> any script, code, prompt or text that you write, import, or obtain from an AI service or another person and run through the Software (including the Scripts and Control pages and AI prompt tools). Such scripts run with your own Python installation, under your control and at your own risk;</li>
+      <li><span class="eula-n">(e)</span> the security of your computer and of your licence key.</li>
     </ul>
-    <p>Violation results in immediate termination with no refund.</p>
-    <h2>4. Software provided "as is" - no warranty</h2>
-    <p>THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. Results from PareVia or EPCalibration are for research and decision-support only and must be independently verified by a qualified professional engineer before use in any real building design, construction, calibration submission, or policy decision.</p>
-    <h2>5. No liability</h2>
-    <p>To the maximum extent permitted by law, ArchOpt Technologies are not liable for any loss, damage, or expense arising from use of the software, including engineering errors or decisions made based on its outputs.</p>
-    <h2>6. No refunds</h2>
-    <p>All sales are final once a license key has been delivered.</p>
-    <h2>7. Governing law</h2>
-    <p>These terms are governed by the laws of the United Arab Emirates; disputes fall under the exclusive jurisdiction of the courts of Dubai, UAE.</p>
-    <h2>8. Contact</h2>
-    <p><a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a></p>
+    <h2 id="s8">8. Third-party components</h2>
+    <p><span class="eula-n">8.1</span> The Software contains open-source components of other authors, listed with their licences in <a href="Licenses">THIRD-PARTY-LICENSES.txt</a> in the program folder; the GNU licence texts are in the LICENSES folder.</p>
+    <p><span class="eula-n">8.2</span> Those components are licensed to you under their own licences, not under this agreement. Nothing in this agreement limits the rights those licences give you, including the right under the GNU Lesser General Public License to replace the Qt for Python (PySide6) libraries and other LGPL libraries with modified versions and to reverse-engineer the Software to the extent needed to debug such modifications.</p>
+    <p><span class="eula-n">8.3</span> To the extent permitted by those licences, Sections 10 to 12 also apply to the third-party components as delivered with the Software.</p>
+    <h2 id="s9">9. Results, professional responsibility and permitted use</h2>
+    <p><span class="eula-n">9.1</span> The Software is an engineering and research decision-support tool. Results are estimates produced by numerical models. They depend on your inputs, assumptions, weather data, EnergyPlus and the methods used, and may differ materially from real building performance, energy use, cost, carbon, comfort or overheating.</p>
+    <p><span class="eula-n">9.2</span> The Software and its Results are not professional engineering, architectural, legal or financial advice. The Licensor is not your consultant, designer, engineer of record or adviser, and owes you no professional duty of care through the Software.</p>
+    <p><span class="eula-n">9.3</span> You must have all Results reviewed and verified by a suitably qualified professional before relying on them for any design, specification, construction, procurement, investment, certification or compliance decision. You remain fully responsible for those decisions and for work you deliver to your own clients.</p>
+    <p><span class="eula-n">9.4</span> The Licensor does not represent that the Software or its Results satisfy any building code, energy regulation, rating system or standard (for example Estidama, LEED, BREEAM, ASHRAE 90.1, ASHRAE 140, ASHRAE Guideline 14 or EN 16798), or that they will be accepted by any authority, assessor or client. Any validation or comparison results published by the Licensor, for example for ASHRAE Standard 140 test cases, describe only the stated version, test cases and conditions. They are information, not a warranty that the Results for your buildings are accurate.</p>
+    <p><span class="eula-n">9.5</span> The Software is not designed for, and you must not use it for, the real-time control or monitoring of real buildings, HVAC equipment or safety systems, or any use in which a failure could cause death, personal injury, or physical or environmental damage. Control scripts and EnergyPlus API features are for simulation only.</p>
+    <h2 id="s10">10. No warranty</h2>
+    <p class="eula-caps">TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE SOFTWARE, THE RESULTS, THE LICENCE SERVER AND ANY SUPPORT ARE PROVIDED &quot;AS IS&quot; AND &quot;AS AVAILABLE&quot;, WITH ALL FAULTS AND WITHOUT WARRANTY OF ANY KIND, WHETHER EXPRESS, IMPLIED OR STATUTORY, INCLUDING WARRANTIES OF MERCHANTABILITY, SATISFACTORY QUALITY, FITNESS FOR A PARTICULAR PURPOSE, ACCURACY, COMPLETENESS OF RESULTS, COMPATIBILITY WITH ANY ENERGYPLUS VERSION OR OTHER SOFTWARE, UNINTERRUPTED OR ERROR-FREE OPERATION, AND NON-INFRINGEMENT. NO ADVICE OR INFORMATION, ORAL OR WRITTEN, CREATES ANY WARRANTY NOT STATED HERE.</p>
+    <h2 id="s11">11. Exclusion of losses</h2>
+    <p class="eula-caps">TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR IS NOT LIABLE, IN CONTRACT, TORT (INCLUDING NEGLIGENCE), BREACH OF STATUTORY DUTY OR OTHERWISE, FOR:</p>
+    <ul class="eula-list">
+      <li><span class="eula-n">(a)</span> ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, EXEMPLARY OR PUNITIVE LOSS OR DAMAGE;</li>
+      <li><span class="eula-n">(b)</span> LOSS OF PROFIT, REVENUE, BUSINESS, CONTRACTS, ANTICIPATED SAVINGS, GOODWILL OR REPUTATION;</li>
+      <li><span class="eula-n">(c)</span> LOSS, CORRUPTION OR INACCURACY OF DATA, FILES OR RESULTS, OR THE COST OF RE-RUNNING SIMULATIONS OR RECREATING WORK;</li>
+      <li><span class="eula-n">(d)</span> ANY LOSS ARISING FROM DESIGNS, SPECIFICATIONS, CONSTRUCTION, EQUIPMENT SELECTION, CERTIFICATION, COMPLIANCE OR OTHER DECISIONS BASED IN WHOLE OR IN PART ON THE RESULTS;</li>
+      <li><span class="eula-n">(e)</span> ANY CLAIM BY YOUR CLIENTS OR OTHER THIRD PARTIES AGAINST YOU;</li>
+      <li><span class="eula-n">(f)</span> INTERRUPTION OR UNAVAILABILITY OF THE LICENCE SERVER, THE INTERNET OR THIRD-PARTY SERVICES;</li>
+    </ul>
+    <p class="eula-caps">EVEN IF THE LICENSOR WAS ADVISED THAT SUCH LOSS WAS POSSIBLE.</p>
+    <h2 id="s12">12. Liability cap and time limit</h2>
+    <p class="eula-caps"><span class="eula-n">12.1</span> TO THE MAXIMUM EXTENT PERMITTED BY LAW, THE LICENSOR&#x27;S TOTAL AGGREGATE LIABILITY FOR ALL CLAIMS ARISING FROM OR CONNECTED WITH THIS AGREEMENT, THE SOFTWARE OR THE RESULTS SHALL NOT EXCEED THE FEES YOU ACTUALLY PAID FOR THE LICENCE CONCERNED IN THE 12 MONTHS BEFORE THE EVENT GIVING RISE TO THE FIRST CLAIM. FOR TRIAL, BETA AND FREE USE THE CAP IS ZERO.</p>
+    <p class="eula-caps"><span class="eula-n">12.2</span> TO THE EXTENT PERMITTED BY LAW, ANY CLAIM MUST BE NOTIFIED TO THE LICENSOR IN WRITING, AND ANY PROCEEDINGS STARTED, WITHIN ONE (1) YEAR AFTER YOU BECAME AWARE, OR SHOULD REASONABLY HAVE BECOME AWARE, OF THE FACTS GIVING RISE TO IT; OTHERWISE THE CLAIM IS WAIVED.</p>
+    <p><span class="eula-n">12.3</span> Before starting proceedings, you agree to notify the Licensor of the problem in writing and to allow 30 days to fix it or resolve the matter amicably.</p>
+    <p><span class="eula-n">12.4</span> These limits reflect the price of the licence. The fees would be substantially higher without them. Each exclusion and limit is separate and applies even if another is held unenforceable or a remedy fails of its essential purpose.</p>
+    <p><span class="eula-n">12.5</span> Nothing in this agreement excludes or limits liability that cannot be excluded or limited by applicable law, such as liability for fraud or for death or personal injury caused by negligence.</p>
+    <h2 id="s13">13. Your indemnity</h2>
+    <p>You will defend, indemnify and hold harmless the Licensor against all claims, losses, damages, liabilities, penalties, costs and expenses (including reasonable legal fees) brought by any third party, including your clients, employers, partners and authorities, that arise from:</p>
+    <ul class="eula-list">
+      <li><span class="eula-n">(a)</span> your use of the Software or the Results, including any work, design, report or advice you provide to others;</li>
+      <li><span class="eula-n">(b)</span> your inputs, data, scripts or content;</li>
+      <li><span class="eula-n">(c)</span> your breach of this agreement or of any law; or</li>
+      <li><span class="eula-n">(d)</span> use of your licence key by anyone else.</li>
+    </ul>
+    <p>The Licensor will tell you promptly of any such claim and may take part in its defence with its own counsel.</p>
+    <h2 id="s14">14. Data sent by the software</h2>
+    <p><span class="eula-n">14.1</span> To check the licence, the Software sends to the licence server the licence key, the product name and version, and a machine identifier (a code derived from the computer&#x27;s hardware, used only to bind the licence to that computer). The server also sees the internet address of each request, as any web server does. The website and payment provider process your name, e-mail address and billing details to sell and deliver the licence.</p>
+    <p><span class="eula-n">14.2</span> This data is used only to sell, issue, check, support and manage licences, and to prevent misuse. It is not sold. It may be stored with hosting providers outside your country.</p>
+    <p><span class="eula-n">14.3</span> The Software does not send your projects, models, Results or files to the Licensor.</p>
+    <h2 id="s15">15. Export and sanctions</h2>
+    <p>You confirm that you are not located in, ordinarily resident in, or acting for a person or entity in a country or territory subject to comprehensive sanctions, and that you are not named on any applicable sanctions list. You will not export or use the Software in breach of export-control or sanctions laws that apply to you or to the Licensor. The Licensor may refuse or cancel a licence where it reasonably believes this section is breached.</p>
+    <h2 id="s16">16. Termination and suspension</h2>
+    <p><span class="eula-n">16.1</span> This agreement ends automatically, without notice, if you breach Sections 3.3, 4.4, 5 or 15, or otherwise materially breach it. The Licensor may then deactivate the licence key without refund.</p>
+    <p><span class="eula-n">16.2</span> The Licensor may suspend a licence key while investigating suspected fraud, misuse or sharing.</p>
+    <p><span class="eula-n">16.3</span> When the agreement ends you must stop using the Software, uninstall it and destroy all copies.</p>
+    <p><span class="eula-n">16.4</span> Sections 4.2, 6, 7, 8, 9, 10, 11, 12, 13, 14, 16.4 and 17 survive termination.</p>
+    <h2 id="s17">17. General</h2>
+    <p><span class="eula-n">17.1</span> Updates and support. During a paid period the Licensor may provide updates and reasonable support by e-mail, but is not obliged to. The Licensor may change, replace or discontinue features, products or the licence server in later versions.</p>
+    <p><span class="eula-n">17.2</span> Changes. The Licensor may update this agreement for new versions and renewals. The version you accepted applies to the period already paid for; renewal or installation of a new version means acceptance of the version then shown.</p>
+    <p><span class="eula-n">17.3</span> Assignment. You may not assign or transfer this agreement or a licence without the Licensor&#x27;s written consent. The Licensor may assign this agreement, including to a company that it establishes or controls, or to a buyer of its business, by notice on the website or by e-mail.</p>
+    <p><span class="eula-n">17.4</span> Force majeure. The Licensor is not liable for any delay or failure caused by events outside its reasonable control, including internet, hosting or payment-provider failures.</p>
+    <p><span class="eula-n">17.5</span> Severability. If a provision is held invalid or unenforceable, it is modified to the minimum extent needed to make it enforceable, and the rest of the agreement remains in force.</p>
+    <p><span class="eula-n">17.6</span> No waiver. A failure or delay in enforcing a right is not a waiver of it.</p>
+    <p><span class="eula-n">17.7</span> Independent parties. Nothing in this agreement creates a partnership, agency, employment or joint venture.</p>
+    <p><span class="eula-n">17.8</span> Entire agreement. This agreement, with your order or invoice, is the entire agreement about the Software and replaces any earlier statements, including on the website. If it is translated, the English version prevails.</p>
+    <p><span class="eula-n">17.9</span> Notices. Notices to the Licensor must be sent by e-mail to <a href="mailto:architecture.optimization@gmail.com">architecture.optimization@gmail.com</a>. Notices to you may be sent to the e-mail address used for your purchase.</p>
+    <p><span class="eula-n">17.10</span> Governing law and courts. This agreement and any dispute arising from it are governed by the laws of the Emirate of Dubai and the federal laws of the United Arab Emirates. The courts of Dubai have exclusive jurisdiction. The United Nations Convention on Contracts for the International Sale of Goods does not apply.</p>
+    <p style="margin-top:2.4rem;font-size:.9rem">Copyright &copy; 2026 ArchOpt Technologies. All rights reserved. EnergyFront, PareVia and EPCalibration are product names of ArchOpt Technologies. EnergyPlus is a trademark of the US Department of Energy; the Software is not affiliated with, sponsored by or endorsed by the US Department of Energy, NREL or the EnergyPlus developers. The same agreement is shown by the installer of each program and is installed as EULA.txt in the program folder.</p>
   </div>
 
   <footer>
     <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
     <span class="footer-copy">© 2026 ArchOpt Technologies </span>
     <div class="footer-legal">
-      <button onclick="go('Terms')">Terms of Service</button>
+      <button onclick="go('Terms')">Licence Agreement</button>
       <button onclick="go('Privacy')">Privacy Policy</button>
       <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="go('Licenses')">Third-party licences</button>
       <button onclick="openContact()">Contact</button>
     </div>
     <p class="footer-tm">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, EPCalibration and PareVia are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p>

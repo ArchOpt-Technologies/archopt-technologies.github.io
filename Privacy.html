@@ -77,16 +77,18 @@
   <div class="legal-page">
     <button class="legal-back" onclick="go('./')">← Back</button>
     <h1>Privacy Policy</h1>
-    <div class="legal-meta">Effective date: 1 May 2026 · ArchOpt Technologies</div>
+    <div class="legal-meta">Effective date: 20 October 2026 · ArchOpt Technologies</div>
     <h2>1. Payment data</h2>
-    <p>Payments are processed by <strong>PayPal</strong>, which collects your name, email, and payment details to deliver your receipt and license key. We never see your card or account details.</p>
+    <p>Payments are processed by <strong>Gumroad</strong> or <strong>PayPal</strong>, which collect your name, e-mail address and payment details to take the payment and send your receipt. We receive your name, e-mail address and order details to deliver and manage your licence key. We never see your card or bank details.</p>
     <h2>2. Data collected by the software</h2>
     <ul>
       <li>A hashed hardware fingerprint (SHA-256) used solely to bind your license to your machine - raw identifiers are never stored or transmitted.</li>
       <li>License activation status and date, cached locally at <code>%APPDATA%</code>.</li>
+      <li>When the software checks its licence, it sends the licence key, the product name and version, and the hashed hardware fingerprint to our licence server. The server also sees the internet (IP) address of each request, as any web server does.</li>
     </ul>
+    <p>This data is used only to sell, issue, check, support and manage licences and to prevent misuse. The licence server and its database are run by cloud hosting providers, which may store the data outside your country.</p>
     <h2>3. What we do not collect</h2>
-    <p>We do not access your project files, simulation inputs, IDF files, or results. No usage analytics, no cookies on this site, no data sold to third parties.</p>
+    <p>We do not access your project files, simulation inputs, IDF files, or results. We use no usage analytics and set no cookies of our own, and we sell no data to third parties. Pages of this site load fonts from Google Fonts, and the checkout pages load Gumroad or PayPal, which may process your internet address and set their own cookies under their own privacy policies.</p>
     <h2>4. Retention</h2>
     <p>License activation data is retained for the license period plus 90 days.</p>
     <h2>5. Contact</h2>
@@ -97,9 +99,10 @@
     <a class="footer-brand" href="./"><span class="wm"><span class="wm-a">Arch</span><span class="wm-b">Opt</span></span> Technologies</a>
     <span class="footer-copy">© 2026 ArchOpt Technologies </span>
     <div class="footer-legal">
-      <button onclick="go('Terms')">Terms of Service</button>
+      <button onclick="go('Terms')">Licence Agreement</button>
       <button onclick="go('Privacy')">Privacy Policy</button>
       <button onclick="go('Refund')">Refund Policy</button>
+      <button onclick="go('Licenses')">Third-party licences</button>
       <button onclick="openContact()">Contact</button>
     </div>
     <p class="footer-tm">EnergyPlus™ is a trademark of the U.S. Department of Energy. EnergyFront, EPCalibration and PareVia are independent products of ArchOpt Technologies and are not affiliated with, sponsored by, or endorsed by the U.S. Department of Energy.</p>
