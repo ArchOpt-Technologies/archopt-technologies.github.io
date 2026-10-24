@@ -108,7 +108,7 @@
     <button class="legal-back" onclick="go('./')">&larr; Back</button>
     <div class="page-badge"><span class="badge front"><span class="dot"></span>VALIDATION AND TESTING</span></div>
     <h1 style="margin-top:.8rem">EnergyFront V3.5 Validation and Testing Report</h1>
-    <div class="legal-meta">Report date 23 October 2026 &middot; EnergyFront V3.5 &middot; EnergyPlus 9.4.0 (unmodified) &middot; ArchOpt Technologies</div>
+    <div class="legal-meta">Report date 23 October 2026, revised 24 October 2026 &middot; EnergyFront V3.5 &middot; EnergyPlus 9.4.0 (unmodified) &middot; ArchOpt Technologies</div>
     <div class="legal-actions">
       <a class="btn btn-front" href="EnergyFront-V3.5-Validation-and-Testing-Report.pdf" download>Download the report (PDF)</a>
       <a class="btn btn-line" href="EnergyFront-V3.5-Public-Validation-Package.zip" download>Download the public validation package (ZIP)</a>
@@ -184,7 +184,18 @@
       <tr><td>950FF</td><td>Max / min / mean temperature (C)</td><td class="num">36.91 / -12.71 / 14.91</td><td class="num">36.91 / -12.71 / 14.91</td><td class="num">0.00 K</td><td class="num">36.13 to 37.10 / -13.36 to -12.50 / 14.35 to 15.00</td><td><span class="ok">Within</span></td></tr>
     </table>
     </div>
-    <p style="font-size:.9rem">* 13 of 48 results lie outside the range of the example results of the Standard. In every such row the reference IDF run directly in EnergyPlus 9.4 gives the same value, so the departure belongs to the reference model with EnergyPlus 9.4 and not to the translation by EnergyFront. It has not yet been investigated further.</p>
+    <p style="font-size:.9rem">* 13 of 48 results lie outside the range of the example results of the Standard. In every such row the reference IDF run directly in EnergyPlus 9.4 gives the same value, so the departure belongs to the reference model with EnergyPlus 9.4 and not to the translation by EnergyFront. The heating of cases 640 and 940 is explained below; the other departures have not yet been investigated further.</p>
+    <p><strong>Cases 640 and 940, heating.</strong> In the reference IDF of these two cases the heating setback ends as a step: 10 &deg;C until 07:00 and 20 &deg;C from 07:00. ASHRAE Standard 140-2020 specifies a linear recovery from 10 &deg;C at 07:00 to 20 &deg;C at 08:00. With an ideal heating system of unlimited capacity, the step puts the whole recovery into the first time step after 07:00, which raises the hourly peak and the annual heating. The reference IDF was run again with the recovery of the Standard (steps of 1.67 K every 10 minutes from 07:00 to 08:00), all other inputs unchanged:</p>
+    <div style="overflow-x:auto">
+    <table class="pricing-table">
+      <tr><th>Case</th><th>Quantity</th><th>Setback as a step (reference IDF and EnergyFront)</th><th>Recovery of the Standard, 07:00 to 08:00 (reference IDF only)</th><th>Example results of the Standard (range)</th></tr>
+      <tr><td>640</td><td>Annual heating (MWh)</td><td class="num">2.716</td><td class="num">2.582</td><td class="num">2.40 to 2.68</td></tr>
+      <tr><td>640</td><td>Peak heating (kW)</td><td class="num">5.495</td><td class="num">4.502</td><td class="num">4.04 to 4.66</td></tr>
+      <tr><td>940</td><td>Annual heating (MWh)</td><td class="num">1.052</td><td class="num">0.974</td><td class="num">0.86 to 1.39</td></tr>
+      <tr><td>940</td><td>Peak heating (kW)</td><td class="num">4.300</td><td class="num">3.084</td><td class="num">3.05 to 3.88</td></tr>
+    </table>
+    </div>
+    <p>With the recovery of the Standard both cases lie within the example ranges, so the departure comes from the setback input, not from EnergyPlus 9.4 or from EnergyFront. The schedules of EnergyFront have hourly values, so a recovery within the hour cannot be entered: EnergyFront models these two cases with the step, as the reference IDF in the table above.</p>
     <p><strong>Result.</strong> In all 48 comparisons the EnergyFront model gives the same annual and peak loads as the reference IDF within 0.02 %, and the same free-floating temperatures (0.00 K). This shows that the interface inputs of EnergyFront can express these cases completely and that EnergyFront writes them as the reference does. It does not by itself show that EnergyPlus is within the ranges of the Standard.</p>
 
     <h2>3. HVAC BESTEST and Furnace BESTEST (Method B)</h2>
@@ -228,7 +239,7 @@
       <li><strong>Engine:</strong> EnergyPlus 9.4.0 only; its physics, numerical methods and known issues apply.</li>
       <li><strong>Geometry:</strong> flat roofs only; plenums and attics are not zones; a floor mixing zones with different multipliers is modelled once; zones taller than one storey get one storey; imported IDFs must use detailed surfaces.</li>
       <li><strong>Constructions and ground:</strong> Window5 data-file glazing, complex fenestration (BSDF), C-factor / F-factor constructions, fixed convection coefficients, two-dimensional ground models and skylights are not converted on import.</li>
-      <li><strong>Loads and schedules:</strong> holidays of an imported IDF are not kept; gas equipment, refrigeration and exterior lighting are not converted.</li>
+      <li><strong>Loads and schedules:</strong> schedules have hourly values, so a setpoint change within the hour (such as the 1-hour setback recovery of ASHRAE 140 cases 640 and 940) cannot be entered; holidays of an imported IDF are not kept; gas equipment, refrigeration and exterior lighting are not converted.</li>
       <li><strong>HVAC:</strong> EnergyFront writes its own systems; components, curves, loops and controls of an imported IDF are not kept; equipment energy can differ substantially; HVAC equipment models are not validated against the HVAC BESTEST performance cases (CE300 and above).</li>
       <li><strong>Results:</strong> zone variables are not multiplied by zone or floor multipliers; central HVAC energy cannot be split by floor; Ideal loads report thermal energy converted with a constant COP on the Results page only.</li>
       <li><strong>Process:</strong> the report was prepared by the developer and has not yet been reviewed independently; no empirical validation against a measured building has been done yet.</li>

@@ -1,10 +1,14 @@
-Website and EULA update - EnergyFront V3.5 validation (24 October 2026)
+Website and EULA update - EnergyFront V3.5 validation (24 October 2026, revision 2)
+Revision 2: uses the validation package revised 24 October 2026 (ASHRAE 140 cases 640 and 940:
+setback recovery of the Standard). Validation.html shows the new 640/940 note and table and the
+hourly-schedule limitation; the PDF and the public ZIP are the revised ones. EULA.txt unchanged
+from revision 1 (v2.2).
 Basis: website repository (archopt-technologies.github.io-main) and EULA v2.1.
 Copy the files of this zip over the repository root, then commit.
 
 NEW FILES (repository root)
   EnergyFront-V3.5-Validation-and-Testing-Report.pdf
-      The V3.5 report (23 October 2026), same file as 01_Report of the package.
+      The V3.5 report (23 October 2026, revised 24 October 2026), same file as 01_Report.
   EnergyFront-V3.5-Public-Validation-Package.zip
       Public package for download: README, report (PDF only), ASHRAE 140 results CSV,
       the 16 EnergyFront case projects (*.json), HVAC/Furnace BESTEST and example-file
@@ -56,6 +60,10 @@ NOT CHANGED
   PareVia / EPCalibration pages, buy.html, buy_epcalibration.html, Privacy, Refund, Licenses,
   sitemap.xml, 404.html (already has /Validation).
 
-TO DO IN THE PROGRAM (next EnergyFront build)
-  - Installer: ship EULA.txt v2.2.
-  - Help > Validation and testing report: open the V3.5 PDF (or the Validation page).
+TO DO IN THE PROGRAM (next EnergyFront build) - not part of the website
+  - modelbuilder/EULA.txt: replace the v2.1 file with EULA.txt v2.2 (also in PareVia and EPCalibration).
+    EnergyFront will ask every user to accept the agreement again at the next start (hash changes).
+  - modelbuilder/"EnergyFront Validation and Testing Report.pdf": replace with the revised PDF of
+    24 October 2026. Keep this exact file name (ui_eula.REPORT_FILE); the package file is named
+    "EnergyFront V3.5 Validation and Testing Report.pdf", so rename it when copying.
+  - Run test_eula and app.py --self-test after the replacement.
