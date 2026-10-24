@@ -1,0 +1,61 @@
+Website and EULA update - EnergyFront V3.5 validation (24 October 2026)
+Basis: website repository (archopt-technologies.github.io-main) and EULA v2.1.
+Copy the files of this zip over the repository root, then commit.
+
+NEW FILES (repository root)
+  EnergyFront-V3.5-Validation-and-Testing-Report.pdf
+      The V3.5 report (23 October 2026), same file as 01_Report of the package.
+  EnergyFront-V3.5-Public-Validation-Package.zip
+      Public package for download: README, report (PDF only), ASHRAE 140 results CSV,
+      the 16 EnergyFront case projects (*.json), HVAC/Furnace BESTEST and example-file
+      CSVs, EnergyPlus licence notice.
+      Removed from the public package: the Word (.docx) copy of the report (editable;
+      only the PDF should be published).
+      README.txt: "(PDF and Word)" -> "(PDF)"; added the link to EULA Section 9.5 and the
+      "not a warranty / checked by a qualified professional" sentence.
+
+DELETE FROM THE REPOSITORY
+  EnergyFront-ASHRAE140-Validation-Report.pdf   (old 4-case report v1.0; no page links to it now)
+
+CHANGED FILES
+  EULA.txt            v2.1 -> v2.2 (also use this file in the EnergyFront, PareVia and
+                      EPCalibration installers, so the website and the installers carry the
+                      same text)
+                      - Heading: names Section 9.5 (validation scope and limitations).
+                      - New 1.4 "Validation Documents" (report + public package, Help menu and
+                        website link).
+                      - 9.4 shortened (validation text moved to 9.5).
+                      - New 9.5 "Validation Documents of EnergyFront", items (a) to (g):
+                        what the tests show and do not show; not certified by ASHRAE/DOE/NREL;
+                        scope and known limitations are part of the agreement, results are
+                        information and not a warranty; untested uses at the user's risk;
+                        user's duty of further checks; user must not claim "certified /
+                        approved / validated by ASHRAE" or "complies with ASHRAE 140";
+                        version that applies. PareVia and EPCalibration: no validation documents.
+                      - Old 9.5 (no real-time control) renumbered 9.6.
+                      - 17.8 Entire agreement: includes the parts referred to in 9.5(c).
+  Terms.html          Body regenerated from EULA.txt v2.2 (the page was still v2.0: now also
+                      has 4.2, 12.2, 12.5 sole remedy, 12.6, 14.1, 14.4, 17.11 of v2.1).
+                      Anchors added to every numbered clause (e.g. Terms#s9-5).
+                      New button "EnergyFront validation".
+  Validation.html     Rewritten for the V3.5 report: all 48 ASHRAE 140 comparisons
+                      (16 cases), HVAC/Furnace BESTEST, example-file classes, software tests,
+                      known limitations, user responsibility, downloads (PDF + ZIP).
+  EnergyFront.html    Validation section: new text (16 cases, 48 comparisons, BESTEST,
+                      47 example files, "not a certification"), links to the new PDF and ZIP.
+                      Download note: "By downloading, you agree to the Licence Agreement, which
+                      includes the tested scope and known limitations set out in the EnergyFront
+                      Validation and Testing Report (Section 9.5). You remain responsible for
+                      checking all results before relying on them."
+  buy_energyfront.html
+                      Download note: same sentence as EnergyFront.html.
+                      Checkout acceptance box: also names the tested scope and known limitations
+                      of the Validation and Testing Report (Section 9.5).
+
+NOT CHANGED
+  PareVia / EPCalibration pages, buy.html, buy_epcalibration.html, Privacy, Refund, Licenses,
+  sitemap.xml, 404.html (already has /Validation).
+
+TO DO IN THE PROGRAM (next EnergyFront build)
+  - Installer: ship EULA.txt v2.2.
+  - Help > Validation and testing report: open the V3.5 PDF (or the Validation page).

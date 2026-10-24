@@ -2,11 +2,13 @@ END-USER LICENCE AGREEMENT
 EnergyFront, PareVia and EPCalibration
 ==========================================
 
-Version 2.0 - October 2026
+Version 2.2 - October 2026
 
 READ THIS AGREEMENT CAREFULLY. IT LIMITS THE LICENSOR'S LIABILITY (SECTIONS 11
-AND 12), MAKES YOU RESPONSIBLE FOR CHECKING ALL RESULTS (SECTION 9) AND ASKS YOU
-TO INDEMNIFY THE LICENSOR (SECTION 13).
+AND 12), MAKES YOU RESPONSIBLE FOR CHECKING ALL RESULTS (SECTION 9), SETS THE
+TESTED SCOPE AND KNOWN LIMITATIONS OF ENERGYFRONT BY REFERENCE TO ITS
+VALIDATION DOCUMENTS (SECTION 9.5) AND ASKS YOU TO INDEMNIFY THE LICENSOR
+(SECTION 13).
 
 By clicking "I accept" during purchase or installation, or by installing,
 activating or using the Software, you accept this agreement. If you do not
@@ -27,6 +29,13 @@ that organisation.
    1.3 "Results" means any model, IDF file, tagged file, schedule, script,
        chart, table, calibrated parameter, optimised design, report or other
        output that you produce with the Software.
+   1.4 "Validation Documents" means the Validation and Testing Report of
+       EnergyFront and the public validation package that accompanies it,
+       for the version of EnergyFront concerned. For EnergyFront V3.5 these
+       are the "EnergyFront V3.5 Validation and Testing Report" (October
+       2026) and the "EnergyFront V3.5 Public Validation Package", available
+       in the program (Help > Validation and testing report) and at
+       https://archopt-technologies.github.io/Validation
 
 2. LICENCE
    2.1 The Software is licensed, not sold. The Licensor keeps all rights,
@@ -50,8 +59,9 @@ that organisation.
        period stated on the website.
    3.2 The Software checks the licence with the Licensor's licence server.
        It may work without an internet connection for a limited period (at
-       most 7 days), then needs a connection to start. When the period ends without renewal, the Software
-       stops starting. Your files stay on your computer and remain yours.
+       most 7 days), then needs a connection to start. When the period ends
+       without renewal, the Software stops starting. Your files stay on your
+       computer and remain yours.
    3.3 Academic and student licences, offered at a reduced price to students
        and staff of accredited universities and research institutes, may be
        used only for teaching and non-commercial research, never for paid
@@ -66,8 +76,8 @@ that organisation.
        the payment provider shown on the website. The Licensor does not
        receive or store your card details.
    4.2 Fees are non-refundable, in whole or in part, including for unused
-       time or features, except where a refund is required by law that cannot
-       be excluded by agreement.
+       time or features, except as set out in Section 12.5 or where a refund
+       is required by law that cannot be excluded by agreement.
    4.3 You are responsible for any taxes, duties and bank charges in your
        country.
    4.4 If a payment is reversed or charged back, the licence may be
@@ -147,11 +157,58 @@ that organisation.
        standard (for example Estidama, LEED, BREEAM, ASHRAE 90.1, ASHRAE 140,
        ASHRAE Guideline 14 or EN 16798), or that they will be accepted by any
        authority, assessor or client. Any validation or comparison results
-       published by the Licensor, for example for ASHRAE Standard 140 test
-       cases, describe only the stated version, test cases and conditions.
-       They are information, not a warranty that the Results for your
-       buildings are accurate.
-   9.5 The Software is not designed for, and you must not use it for, the
+       published by the Licensor describe only the stated version, test cases
+       and conditions. They are information, not a warranty that the Results
+       for your buildings are accurate.
+   9.5 Validation Documents of EnergyFront. EnergyFront has been tested by
+       the Licensor as described in its Validation Documents, including
+       comparative tests that follow the method of test of ANSI/ASHRAE
+       Standard 140-2020 (building envelope cases 600 to 650 and 900 to 950
+       and the free-floating cases), HVAC BESTEST and Furnace BESTEST cases,
+       and example files of EnergyPlus 9.4. By accepting this agreement you
+       confirm that you have been given the opportunity to read the
+       Validation Documents, and you agree that:
+       (a) the tests show only that, for the listed cases and conditions,
+           the input files written by EnergyFront give the same EnergyPlus
+           results as the reference input files, within the differences
+           stated. They do not show that EnergyPlus, the Software or your
+           Results are accurate for your building. Some results of
+           EnergyPlus 9.4 with the reference inputs lie outside the example
+           ranges of the Standard, as stated in the Validation Documents;
+       (b) the Software has not been certified, approved or endorsed by
+           ASHRAE, the U.S. Department of Energy, NREL or any authority or
+           rating body. ASHRAE Standard 140 is a method of test and does not
+           certify software;
+       (c) the statements of scope and the known limitations set out in the
+           Validation Documents form part of this agreement and define the
+           tested scope of EnergyFront. The test results, figures and other
+           descriptions in the Validation Documents are information about
+           the stated version, cases and conditions only, and are not a
+           warranty, representation or condition of this agreement
+           (Section 10);
+       (d) any feature, building type, HVAC system, climate, weather file,
+           EnergyPlus version or other use that is not covered by the tests,
+           and every use listed among the known limitations, is used entirely
+           at your own risk. A feature or use that is not listed among the
+           limitations is not thereby validated;
+       (e) before you rely on any Results, you are responsible for further
+           checks appropriate to your project, for example: reviewing the
+           verification report of each run (Results > Verification), the
+           EnergyPlus error file (eplusout.err) and the import report of an
+           opened IDF; comparing the Results with hand calculations,
+           benchmarks, measured data or another simulation program; and the
+           professional review required by Section 9.3;
+       (f) you will not state or imply to any client, authority or other
+           person that the Software or your Results are certified, approved
+           or validated by ASHRAE, or that they comply with ASHRAE Standard
+           140 or any other standard. You may refer to the Validation
+           Documents by their title and link;
+       (g) the Validation Documents that apply are those of the version of
+           EnergyFront that produced the Results. The Licensor may publish
+           new Validation Documents for later versions.
+       No Validation Documents are published for PareVia or EPCalibration.
+       Their Results are subject to Sections 9.1 to 9.4 and 9.6.
+   9.6 The Software is not designed for, and you must not use it for, the
        real-time control or monitoring of real buildings, HVAC equipment or
        safety systems, or any use in which a failure could cause death,
        personal injury, or physical or environmental damage. Control scripts
@@ -194,8 +251,15 @@ that organisation.
          FREE USE THE CAP IS ZERO.
     12.2 TO THE EXTENT PERMITTED BY LAW, ANY CLAIM MUST BE NOTIFIED TO THE
          LICENSOR IN WRITING, AND ANY PROCEEDINGS STARTED, WITHIN ONE (1) YEAR
-         AFTER YOU BECAME AWARE, OR SHOULD REASONABLY HAVE BECOME AWARE, OF
-         THE FACTS GIVING RISE TO IT; OTHERWISE THE CLAIM IS WAIVED.
+         AFTER THE EARLIER OF: (A) FOR A CLAIM ABOUT RESULTS, THE DATE ON WHICH
+         THE RESULTS CONCERNED WERE PRODUCED BY THE SOFTWARE (THE DATE OF THE
+         SIMULATION, OPTIMISATION OR CALIBRATION RUN); AND (B) THE DATE YOU
+         BECAME AWARE, OR SHOULD REASONABLY HAVE BECOME AWARE, OF THE FACTS
+         GIVING RISE TO IT. AFTER THAT PERIOD THE CLAIM IS WAIVED, AND NO CLAIM
+         OF ANY KIND CAN BE MADE ABOUT THOSE RESULTS. WITH THE NOTICE YOU
+         PROVIDE THE PROJECT FILE, THE INPUT FILES (FOR EXAMPLE THE IDF), THE
+         WEATHER FILE, THE RESULTS CONCERNED AND THE VERSION OF THE SOFTWARE
+         USED. RESULTS ARE EXAMINED ONLY FOR THE VERSION THAT PRODUCED THEM.
     12.3 Before starting proceedings, you agree to notify the Licensor of the
          problem in writing and to allow 30 days to fix it or resolve the
          matter amicably.
@@ -203,7 +267,14 @@ that organisation.
          substantially higher without them. Each exclusion and limit is
          separate and applies even if another is held unenforceable or a
          remedy fails of its essential purpose.
-    12.5 Nothing in this agreement excludes or limits liability that cannot
+    12.5 SOLE REMEDY FOR RESULTS. IF, WITHIN THE PERIOD OF SECTION 12.2,
+         RESULTS ARE SHOWN TO BE WRONG BECAUSE OF A DEFECT OF THE SOFTWARE,
+         YOUR ONLY REMEDIES ARE, AT THE LICENSOR'S CHOICE: (A) CORRECTION OF
+         THE DEFECT IN AN UPDATE OF THE SOFTWARE; OR (B) REFUND OF THE FEE YOU
+         PAID FOR THE LICENCE PERIOD UNDER WHICH THE RESULTS WERE PRODUCED. TO
+         THE MAXIMUM EXTENT PERMITTED BY LAW, NO OTHER COMPENSATION OF ANY KIND
+         CAN BE CLAIMED ABOUT THE ACCURACY OF RESULTS.
+    12.6 Nothing in this agreement excludes or limits liability that cannot
          be excluded or limited by applicable law, such as liability for
          fraud or for death or personal injury caused by negligence.
 
@@ -223,8 +294,9 @@ that organisation.
 14. DATA SENT BY THE SOFTWARE
     14.1 To check the licence, the Software sends to the licence server the
          licence key, the product name and version, and a machine identifier
-         (a code derived from the computer's hardware, used only to bind the
-         licence to that computer). The server also sees the internet address
+         (a code derived from the computer, such as its hardware or its
+         Windows installation identifier, used only to bind the licence to
+         that computer). The server also sees the internet address
          of each request, as any web server does. The website and payment
          provider process your name, e-mail address and billing details to
          sell and deliver the licence.
@@ -233,6 +305,9 @@ that organisation.
          with hosting providers outside your country.
     14.3 The Software does not send your projects, models, Results or files
          to the Licensor.
+    14.4 You may ask about this data, or ask for its deletion after your
+         licence has ended, at the address in Section 17.9, subject to records
+         the Licensor must keep by law.
 
 15. EXPORT AND SANCTIONS
     You confirm that you are not located in, ordinarily resident in, or acting
@@ -278,8 +353,9 @@ that organisation.
          it.
     17.7 Independent parties. Nothing in this agreement creates a partnership,
          agency, employment or joint venture.
-    17.8 Entire agreement. This agreement, with your order or invoice, is the
-         entire agreement about the Software and replaces any earlier
+    17.8 Entire agreement. This agreement, with your order or invoice and
+         the parts of the Validation Documents referred to in Section 9.5(c),
+         is the entire agreement about the Software and replaces any earlier
          statements, including on the website. If it is translated, the
          English version prevails.
     17.9 Notices. Notices to the Licensor must be sent by e-mail to
@@ -290,6 +366,10 @@ that organisation.
          federal laws of the United Arab Emirates. The courts of Dubai have
          exclusive jurisdiction. The United Nations Convention on Contracts
          for the International Sale of Goods does not apply.
+    17.11 Mandatory rights. The Software is sold worldwide. Nothing in this
+         agreement excludes or limits rights that the law of your country
+         gives you and that cannot be excluded or limited by agreement; each
+         limit in this agreement applies to the extent that law allows.
 
 Copyright (C) 2026 ArchOpt Technologies. All rights reserved.
 EnergyFront, PareVia and EPCalibration are product names of ArchOpt

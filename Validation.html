@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EnergyFront ASHRAE 140 validation | ArchOpt Technologies</title>
-<meta name="description" content="EnergyFront 3.5 tested with the ASHRAE Standard 140 building envelope cases 600, 900, 600FF and 900FF.">
+<title>EnergyFront validation and testing | ArchOpt Technologies</title>
+<meta name="description" content="EnergyFront V3.5 Validation and Testing Report: ASHRAE Standard 140 envelope cases, HVAC and Furnace BESTEST, EnergyPlus 9.4 example files, known limitations.">
 <meta name="author" content="ArchOpt Technologies">
-<meta property="og:title" content="EnergyFront ASHRAE 140 validation | ArchOpt Technologies">
-<meta property="og:description" content="EnergyFront 3.5 tested with the ASHRAE Standard 140 building envelope cases 600, 900, 600FF and 900FF.">
+<meta property="og:title" content="EnergyFront validation and testing | ArchOpt Technologies">
+<meta property="og:description" content="EnergyFront V3.5 Validation and Testing Report: ASHRAE Standard 140 envelope cases, HVAC and Furnace BESTEST, EnergyPlus 9.4 example files, known limitations.">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ArchOpt Technologies">
 <meta property="og:url" content="https://archopt-technologies.github.io/Validation">
@@ -106,86 +106,147 @@
 <div class="page" id="page-validation">
   <div class="legal-page wide">
     <button class="legal-back" onclick="go('./')">&larr; Back</button>
-    <div class="page-badge"><span class="badge front"><span class="dot"></span>VALIDATION REPORT</span></div>
-    <h1 style="margin-top:.8rem">EnergyFront and ASHRAE Standard 140</h1>
-    <div class="legal-meta">Report version 1.0 &middot; 20 October 2026 &middot; EnergyFront 3.5 &middot; EnergyPlus 9.4.0 &middot; ArchOpt Technologies</div>
+    <div class="page-badge"><span class="badge front"><span class="dot"></span>VALIDATION AND TESTING</span></div>
+    <h1 style="margin-top:.8rem">EnergyFront V3.5 Validation and Testing Report</h1>
+    <div class="legal-meta">Report date 23 October 2026 &middot; EnergyFront V3.5 &middot; EnergyPlus 9.4.0 (unmodified) &middot; ArchOpt Technologies</div>
     <div class="legal-actions">
-      <a class="btn btn-front" href="EnergyFront-ASHRAE140-Validation-Report.pdf" download>Download this report (PDF)</a>
-      <a class="btn btn-line" href="EnergyFront">EnergyFront</a>
+      <a class="btn btn-front" href="EnergyFront-V3.5-Validation-and-Testing-Report.pdf" download>Download the report (PDF)</a>
+      <a class="btn btn-line" href="EnergyFront-V3.5-Public-Validation-Package.zip" download>Download the public validation package (ZIP)</a>
+      <a class="btn btn-line" href="Terms#s9-5">Licence Agreement, Section 9.5</a>
     </div>
-    <div class="legal-highlight"><p><strong>Summary.</strong> EnergyFront rebuilt the building envelope test cases 600, 900, 600FF and 900FF of ANSI/ASHRAE Standard 140 and reproduced the results of the reference EnergyPlus models within 0.02 % for annual and peak loads and within 0.01 K for free-floating temperatures. 12 of 14 results lie within the range of the example results of the standard; the remaining two, the annual and peak sensible cooling of case 600, lie about 2 % above that range, and the reference model run directly in EnergyPlus gives the same values.</p></div>
+    <div class="legal-highlight"><p><strong>Read this first.</strong> This report is a technical record of the tests run by the developer. It is not a certification, accreditation or approval by ASHRAE, the U.S. Department of Energy, NREL or any rating authority. ASHRAE Standard 140 is a method of test; it does not certify software. The tests do not cover every use of EnergyFront: a feature or use that is not listed among the limitations is not thereby validated, and any use outside the tested scope is at the user's responsibility. The scope and known limitations of this report form part of the <a href="Terms#s9-5">Licence Agreement (Section 9.5)</a>; the results are information, not a warranty that the results for your buildings are accurate.</p></div>
     <div class="kpis">
-      <div class="kpi"><b>&le; 0.02 %</b><span>largest difference from the reference EnergyPlus model (loads)</span></div>
-      <div class="kpi"><b>&lt; 0.01 K</b><span>largest difference in free-floating zone temperatures</span></div>
-      <div class="kpi"><b>12 of 14</b><span>results within the range of the example results of Standard 140</span></div>
+      <div class="kpi"><b>&le; 0.02 %</b><span>largest load difference from the reference EnergyPlus models, 48 comparisons in 16 Standard 140 cases</span></div>
+      <div class="kpi"><b>0.00 K</b><span>difference in maximum, minimum and mean free-floating zone temperatures</span></div>
+      <div class="kpi"><b>47</b><span>EnergyPlus 9.4 example files opened, rewritten and run, each difference traced to its cause</span></div>
     </div>
 
-    <h2>1. Purpose</h2>
-    <p>EnergyFront writes the EnergyPlus input file (IDF) from the inputs of its interface; EnergyPlus performs the simulation. The simulation engine itself is tested by its developers with Standard 140. This report tests the part EnergyFront adds: that the model it generates from its own inputs is the model the user describes, and that it gives the same results as an independently written reference model.</p>
-
-    <h2>2. Test cases</h2>
-    <p>The cases are the basic building thermal envelope and fabric load tests of ANSI/ASHRAE Standard 140. All four use one single-zone building with south-facing windows, a constant internal gain, constant infiltration and the Denver weather file of the standard.</p>
-    <table class="pricing-table">
-      <tr><th>Case</th><th>Construction</th><th>Space conditioning</th><th>Results compared</th></tr>
-      <tr><td>600</td><td>Lightweight</td><td>Heating below 20 &deg;C, cooling above 27 &deg;C, ideal loads</td><td>Annual heating and sensible cooling, peak heating and sensible cooling</td></tr>
-      <tr><td>900</td><td>Heavyweight (high thermal mass)</td><td>As case 600</td><td>As case 600</td></tr>
-      <tr><td>600FF</td><td>Lightweight</td><td>None (free-floating)</td><td>Maximum, minimum and mean hourly zone temperature</td></tr>
-      <tr><td>900FF</td><td>Heavyweight</td><td>None (free-floating)</td><td>As case 600FF</td></tr>
-    </table>
-
-    <h2>3. Method</h2>
-    <ol>
-      <li><strong>Reference models.</strong> Case 600 is <code>case_en_600.idf</code> of NREL BESTEST-GSR (integration testing), with the version set to 9.4 and 6 time steps per hour. Case 900 uses the heavyweight wall and floor constructions (HWWALL, HWFLOOR) of the BESTEST-GSR construction sets. The free-floating cases are the same models without the thermostat and the ideal loads.</li>
-      <li><strong>EnergyFront models.</strong> Each reference IDF was opened in EnergyFront with <em>File &gt; Open IDF 9.4</em>, which converts it into an EnergyFront project. EnergyFront then generated a new IDF from that project.</li>
-      <li><strong>Simulation.</strong> Both IDFs were run with EnergyPlus 9.4.0 and the weather file <code>725650TYCST.epw</code> (Denver) of Standard 140-2020.</li>
-      <li><strong>Results.</strong> Annual loads are the sum of the hourly <em>Zone Air System Sensible Heating Energy</em> and <em>Zone Air System Sensible Cooling Energy</em>; peaks are the largest hourly values. Free-floating results use the hourly <em>Zone Mean Air Temperature</em>.</li>
-      <li><strong>Comparison.</strong> EnergyFront was compared with the reference model (code-to-code) and with the range of the example results of the standard (RESULTS5-2A, informative Annex B8). The example results are not acceptance criteria.</li>
-    </ol>
-
-    <h2>4. Results: heating and cooling loads</h2>
-    <table class="pricing-table">
-      <tr><th>Case</th><th>Quantity</th><th>EnergyPlus, reference IDF</th><th>EnergyFront</th><th>Difference</th><th>Within range</th></tr>
-      <tr><td>600</td><td>Annual heating (MWh)</td><td class="num">4.243</td><td class="num">4.243</td><td class="num">0.01 %</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>600</td><td>Annual sensible cooling (MWh)</td><td class="num">6.283</td><td class="num">6.283</td><td class="num">0.00 %</td><td><span class="note">2.0 % above</span></td></tr>
-      <tr><td>600</td><td>Peak heating (kW)</td><td class="num">3.150</td><td class="num">3.150</td><td class="num">0.01 %</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>600</td><td>Peak sensible cooling (kW)</td><td class="num">6.614</td><td class="num">6.614</td><td class="num">0.00 %</td><td><span class="note">2.1 % above</span></td></tr>
-      <tr><td>900</td><td>Annual heating (MWh)</td><td class="num">1.535</td><td class="num">1.535</td><td class="num">0.02 %</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>900</td><td>Annual sensible cooling (MWh)</td><td class="num">2.614</td><td class="num">2.613</td><td class="num">0.00 %</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>900</td><td>Peak heating (kW)</td><td class="num">2.628</td><td class="num">2.628</td><td class="num">0.02 %</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>900</td><td>Peak sensible cooling (kW)</td><td class="num">3.131</td><td class="num">3.131</td><td class="num">0.00 %</td><td><span class="ok">Yes</span></td></tr>
-    </table>
-
-    <h2>5. Results: free-floating temperatures</h2>
-    <table class="pricing-table">
-      <tr><th>Case</th><th>Quantity</th><th>EnergyPlus, reference IDF</th><th>EnergyFront</th><th>Difference</th><th>Within range</th></tr>
-      <tr><td>600FF</td><td>Maximum zone temperature (&deg;C)</td><td class="num">65.02</td><td class="num">65.02</td><td class="num">&lt; 0.01 K</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>600FF</td><td>Minimum zone temperature (&deg;C)</td><td class="num">-12.01</td><td class="num">-12.01</td><td class="num">&lt; 0.01 K</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>600FF</td><td>Mean zone temperature (&deg;C)</td><td class="num">25.34</td><td class="num">25.34</td><td class="num">&lt; 0.01 K</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>900FF</td><td>Maximum zone temperature (&deg;C)</td><td class="num">44.64</td><td class="num">44.64</td><td class="num">&lt; 0.01 K</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>900FF</td><td>Minimum zone temperature (&deg;C)</td><td class="num">1.89</td><td class="num">1.89</td><td class="num">&lt; 0.01 K</td><td><span class="ok">Yes</span></td></tr>
-      <tr><td>900FF</td><td>Mean zone temperature (&deg;C)</td><td class="num">25.56</td><td class="num">25.56</td><td class="num">&lt; 0.01 K</td><td><span class="ok">Yes</span></td></tr>
-    </table>
-
-    <h2>6. Discussion</h2>
-    <p>EnergyFront reproduces the reference model in every case: the largest difference is 0.02 % for loads and below 0.01 K for temperatures, which is within the rounding of the outputs. This shows that the inputs EnergyFront holds (geometry, layered constructions, glazing defined layer by layer, internal gains with their radiant fraction, infiltration, thermostat and ideal loads) are written to the IDF without loss.</p>
-    <p>The annual sensible cooling and the peak sensible cooling of case 600 lie about 2 % above the range of the example results. The reference IDF run directly in EnergyPlus 9.4 gives the same values, so the difference belongs to the reference model and the EnergyPlus version, not to the model EnergyFront writes. Annex B8 of the standard states that the example results are informative and are not acceptance criteria.</p>
-    <p>As an additional check, the case 600 model of the 2011 edition of the standard (prepared by GARD Analytics, with a raised floor exposed to outdoor air) gave the same heating and cooling loads in EnergyFront as the original IDF within 0.01 %, both with the Denver weather file and with an Abu Dhabi weather file.</p>
-
-    <h2>7. Scope and limitations</h2>
+    <h2>1. What EnergyFront does and what was tested</h2>
+    <p>EnergyFront does not compute building physics itself. It writes an EnergyPlus input file (IDF) from the inputs of its interface, runs EnergyPlus 9.4 and reads back the results. The tests therefore answer three questions: (1) does EnergyFront write the same model as a reference IDF, so that EnergyPlus gives the same results; (2) when an existing IDF is opened in EnergyFront, what is kept, what is approximated and what is lost, and is every loss reported to the user; (3) do the inputs of the interface reach the IDF as intended. The accuracy of the physics itself is that of EnergyPlus 9.4 and is documented by its developers.</p>
     <ul>
-      <li>This is an inter-model (code-to-code) comparison and a comparison with the example results of the standard. It is not an empirical validation against measured data.</li>
-      <li>The tests cover the building thermal envelope with ideal loads. They do not cover the HVAC system templates, natural ventilation, the AirflowNetwork model, daylighting controls, shading devices other than those of the test cases, or multi-zone buildings, which are not part of these cases.</li>
-      <li>The results apply to EnergyFront 3.5 with EnergyPlus 9.4.0. Other versions, and models with other inputs, may give different results.</li>
-      <li>Standard 140 is a method of test, not a certification. This report does not state that EnergyFront is certified or approved by ASHRAE.</li>
+      <li><strong>Method A, generation fidelity:</strong> ASHRAE Standard 140-2020 envelope cases entered in EnergyFront; the EnergyFront IDF and the reference IDF run with the same weather file and compared.</li>
+      <li><strong>Method B, round trip of an IDF:</strong> HVAC BESTEST, Furnace BESTEST and EnergyPlus 9.4 example files opened with <em>File &gt; Open IDF 9.4</em>, written again by EnergyFront and run.</li>
+      <li><strong>Method C, software tests:</strong> automated tests of inputs, rules, units, interface, tagging for PareVia and EPCalibration, and traceability of every input to the IDF objects it changes.</li>
     </ul>
 
-    <h2>8. References</h2>
+    <h2>2. ASHRAE Standard 140-2020 envelope cases (Method A)</h2>
+    <p>Cases 600 and 900 (low and high mass, south windows), their variants 610 to 650 and 910 to 950 (overhang, east and west windows, shading fins, thermostat setback, night ventilation) and the free-floating cases 600FF, 650FF, 900FF and 950FF. Weather file 725650TYCST.epw (Denver) of the Standard. The example results of the Standard (informative Annex B8) are ranges of other programs, not pass/fail criteria.</p>
+    <div style="overflow-x:auto">
+    <table class="pricing-table">
+      <tr><th>Case</th><th>Quantity</th><th>EnergyPlus, reference IDF</th><th>EnergyFront</th><th>Difference</th><th>Example results of the Standard (range)</th><th>Range</th></tr>
+      <tr><td>600</td><td>Annual heating (MWh)</td><td class="num">4.243</td><td class="num">4.243</td><td class="num">+0.01 %</td><td class="num">3.99 to 4.50</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>600</td><td>Annual sensible cooling (MWh)</td><td class="num">6.283</td><td class="num">6.283</td><td class="num">+0.00 %</td><td class="num">5.43 to 6.16</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>600</td><td>Peak heating (kW)</td><td class="num">3.150</td><td class="num">3.150</td><td class="num">+0.01 %</td><td class="num">3.02 to 3.36</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>600</td><td>Peak sensible cooling (kW)</td><td class="num">6.614</td><td class="num">6.614</td><td class="num">+0.00 %</td><td class="num">5.42 to 6.48</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>610</td><td>Annual heating (MWh)</td><td class="num">4.293</td><td class="num">4.293</td><td class="num">+0.01 %</td><td class="num">4.07 to 4.59</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>610</td><td>Annual sensible cooling (MWh)</td><td class="num">4.522</td><td class="num">4.522</td><td class="num">+0.00 %</td><td class="num">4.12 to 4.38</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>610</td><td>Peak heating (kW)</td><td class="num">3.137</td><td class="num">3.138</td><td class="num">+0.01 %</td><td class="num">3.02 to 3.36</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>610</td><td>Peak sensible cooling (kW)</td><td class="num">6.343</td><td class="num">6.344</td><td class="num">+0.00 %</td><td class="num">5.33 to 6.43</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>620</td><td>Annual heating (MWh)</td><td class="num">4.386</td><td class="num">4.386</td><td class="num">+0.01 %</td><td class="num">4.09 to 4.72</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>620</td><td>Annual sensible cooling (MWh)</td><td class="num">4.183</td><td class="num">4.183</td><td class="num">+0.00 %</td><td class="num">3.84 to 4.40</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>620</td><td>Peak heating (kW)</td><td class="num">3.177</td><td class="num">3.177</td><td class="num">+0.01 %</td><td class="num">3.04 to 3.38</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>620</td><td>Peak sensible cooling (kW)</td><td class="num">4.844</td><td class="num">4.844</td><td class="num">+0.00 %</td><td class="num">3.96 to 4.80</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>630</td><td>Annual heating (MWh)</td><td class="num">4.681</td><td class="num">4.682</td><td class="num">+0.01 %</td><td class="num">4.36 to 5.14</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>630</td><td>Annual sensible cooling (MWh)</td><td class="num">2.895</td><td class="num">2.896</td><td class="num">+0.00 %</td><td class="num">2.57 to 3.07</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>630</td><td>Peak heating (kW)</td><td class="num">3.155</td><td class="num">3.155</td><td class="num">+0.01 %</td><td class="num">3.04 to 3.39</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>630</td><td>Peak sensible cooling (kW)</td><td class="num">4.235</td><td class="num">4.235</td><td class="num">+0.01 %</td><td class="num">3.53 to 4.21</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>640</td><td>Annual heating (MWh)</td><td class="num">2.716</td><td class="num">2.715</td><td class="num">-0.01 %</td><td class="num">2.40 to 2.68</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>640</td><td>Annual sensible cooling (MWh)</td><td class="num">6.077</td><td class="num">6.077</td><td class="num">+0.00 %</td><td class="num">5.24 to 5.89</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>640</td><td>Peak heating (kW)</td><td class="num">5.495</td><td class="num">5.495</td><td class="num">+0.01 %</td><td class="num">4.04 to 4.66</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>640</td><td>Peak sensible cooling (kW)</td><td class="num">6.577</td><td class="num">6.578</td><td class="num">+0.00 %</td><td class="num">5.37 to 6.43</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>650</td><td>Annual sensible cooling (MWh)</td><td class="num">5.055</td><td class="num">5.056</td><td class="num">+0.00 %</td><td class="num">4.19 to 4.95</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>650</td><td>Peak sensible cooling (kW)</td><td class="num">6.337</td><td class="num">6.337</td><td class="num">+0.00 %</td><td class="num">5.04 to 6.29</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>900</td><td>Annual heating (MWh)</td><td class="num">1.535</td><td class="num">1.535</td><td class="num">+0.02 %</td><td class="num">1.38 to 1.81</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>900</td><td>Annual sensible cooling (MWh)</td><td class="num">2.614</td><td class="num">2.613</td><td class="num">-0.00 %</td><td class="num">2.27 to 2.71</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>900</td><td>Peak heating (kW)</td><td class="num">2.628</td><td class="num">2.628</td><td class="num">+0.02 %</td><td class="num">2.44 to 2.78</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>900</td><td>Peak sensible cooling (kW)</td><td class="num">3.131</td><td class="num">3.131</td><td class="num">+0.00 %</td><td class="num">2.56 to 3.38</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>910</td><td>Annual heating (MWh)</td><td class="num">1.818</td><td class="num">1.818</td><td class="num">+0.02 %</td><td class="num">1.65 to 2.16</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>910</td><td>Annual sensible cooling (MWh)</td><td class="num">1.443</td><td class="num">1.443</td><td class="num">-0.01 %</td><td class="num">1.19 to 1.49</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>910</td><td>Peak heating (kW)</td><td class="num">2.641</td><td class="num">2.641</td><td class="num">+0.02 %</td><td class="num">2.47 to 2.80</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>910</td><td>Peak sensible cooling (kW)</td><td class="num">2.350</td><td class="num">2.350</td><td class="num">+0.00 %</td><td class="num">2.08 to 2.72</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>920</td><td>Annual heating (MWh)</td><td class="num">3.197</td><td class="num">3.197</td><td class="num">+0.02 %</td><td class="num">2.96 to 3.61</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>920</td><td>Annual sensible cooling (MWh)</td><td class="num">2.793</td><td class="num">2.793</td><td class="num">-0.00 %</td><td class="num">2.55 to 3.13</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>920</td><td>Peak heating (kW)</td><td class="num">2.717</td><td class="num">2.718</td><td class="num">+0.02 %</td><td class="num">2.51 to 2.90</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>920</td><td>Peak sensible cooling (kW)</td><td class="num">3.293</td><td class="num">3.293</td><td class="num">+0.00 %</td><td class="num">2.71 to 3.48</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>930</td><td>Annual heating (MWh)</td><td class="num">3.866</td><td class="num">3.867</td><td class="num">+0.01 %</td><td class="num">3.52 to 4.38</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>930</td><td>Annual sensible cooling (MWh)</td><td class="num">1.945</td><td class="num">1.945</td><td class="num">-0.00 %</td><td class="num">1.65 to 2.16</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>930</td><td>Peak heating (kW)</td><td class="num">2.734</td><td class="num">2.735</td><td class="num">+0.01 %</td><td class="num">2.54 to 2.97</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>930</td><td>Peak sensible cooling (kW)</td><td class="num">2.793</td><td class="num">2.793</td><td class="num">+0.01 %</td><td class="num">2.33 to 3.05</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>940</td><td>Annual heating (MWh)</td><td class="num">1.052</td><td class="num">1.052</td><td class="num">+0.02 %</td><td class="num">0.86 to 1.39</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>940</td><td>Annual sensible cooling (MWh)</td><td class="num">2.553</td><td class="num">2.553</td><td class="num">-0.00 %</td><td class="num">2.20 to 2.61</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>940</td><td>Peak heating (kW)</td><td class="num">4.300</td><td class="num">4.300</td><td class="num">+0.00 %</td><td class="num">3.05 to 3.88</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>940</td><td>Peak sensible cooling (kW)</td><td class="num">3.131</td><td class="num">3.131</td><td class="num">+0.00 %</td><td class="num">2.56 to 3.38</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>950</td><td>Annual sensible cooling (MWh)</td><td class="num">0.708</td><td class="num">0.708</td><td class="num">-0.00 %</td><td class="num">0.59 to 0.71</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>950</td><td>Peak sensible cooling (kW)</td><td class="num">2.428</td><td class="num">2.428</td><td class="num">+0.01 %</td><td class="num">2.05 to 2.39</td><td><span class="note">Outside *</span></td></tr>
+      <tr><td>600FF</td><td>Max / min / mean temperature (C)</td><td class="num">65.02 / -12.01 / 25.34</td><td class="num">65.02 / -12.01 / 25.34</td><td class="num">0.00 K</td><td class="num">62.37 to 68.36 / -13.84 to -9.90 / 24.26 to 26.10</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>900FF</td><td>Max / min / mean temperature (C)</td><td class="num">44.64 / 1.89 / 25.56</td><td class="num">44.64 / 1.89 / 25.56</td><td class="num">0.00 K</td><td class="num">43.25 to 46.00 / 0.60 to 2.16 / 24.46 to 25.69</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>650FF</td><td>Max / min / mean temperature (C)</td><td class="num">63.67 / -16.99 / 18.66</td><td class="num">63.67 / -16.99 / 18.66</td><td class="num">0.00 K</td><td class="num">61.13 to 66.85 / -17.76 to -16.70 / 17.60 to 18.93</td><td><span class="ok">Within</span></td></tr>
+      <tr><td>950FF</td><td>Max / min / mean temperature (C)</td><td class="num">36.91 / -12.71 / 14.91</td><td class="num">36.91 / -12.71 / 14.91</td><td class="num">0.00 K</td><td class="num">36.13 to 37.10 / -13.36 to -12.50 / 14.35 to 15.00</td><td><span class="ok">Within</span></td></tr>
+    </table>
+    </div>
+    <p style="font-size:.9rem">* 13 of 48 results lie outside the range of the example results of the Standard. In every such row the reference IDF run directly in EnergyPlus 9.4 gives the same value, so the departure belongs to the reference model with EnergyPlus 9.4 and not to the translation by EnergyFront. It has not yet been investigated further.</p>
+    <p><strong>Result.</strong> In all 48 comparisons the EnergyFront model gives the same annual and peak loads as the reference IDF within 0.02 %, and the same free-floating temperatures (0.00 K). This shows that the interface inputs of EnergyFront can express these cases completely and that EnergyFront writes them as the reference does. It does not by itself show that EnergyPlus is within the ranges of the Standard.</p>
+
+    <h2>3. HVAC BESTEST and Furnace BESTEST (Method B)</h2>
+    <div style="overflow-x:auto">
+    <table class="pricing-table">
+      <tr><th>Case</th><th>Quantity</th><th>EnergyPlus (reference IDF)</th><th>EnergyFront</th><th>Difference</th><th>Cause</th></tr>
+      <tr><td>CE100</td><td>Zone sensible cooling (kWh)</td><td class="num">11743</td><td class="num">11745</td><td class="num">+0.02 %</td><td>Loads, envelope and setpoint kept</td></tr>
+      <tr><td>CE100</td><td>Mean zone temperature (C)</td><td class="num">22.20</td><td class="num">22.20</td><td class="num">0.00 K</td><td></td></tr>
+      <tr><td>CE100</td><td>Cooling electricity (kWh)</td><td class="num">4428</td><td class="num">4080</td><td class="num">-7.8 %</td><td>EnergyFront writes its own PTAC, not the DX performance curves of the test (reported)</td></tr>
+      <tr><td>CE100</td><td>Fan electricity (kWh)</td><td class="num">462</td><td class="num">107</td><td class="num">-77 %</td><td>EnergyFront fan, not the 271 Pa / 0.5 efficiency fan of the test (reported)</td></tr>
+      <tr><td>CE200</td><td>Zone sensible cooling (kWh)</td><td class="num">13243</td><td class="num">13245</td><td class="num">+0.02 %</td><td>Latent gain 1817 W kept</td></tr>
+      <tr><td>CE200</td><td>Mean zone temperature (C)</td><td class="num">26.66</td><td class="num">26.66</td><td class="num">0.00 K</td><td></td></tr>
+      <tr><td>CE200</td><td>Cooling electricity (kWh)</td><td class="num">4219</td><td class="num">4204</td><td class="num">-0.4 %</td><td></td></tr>
+      <tr><td>HE100</td><td>Zone heating (kWh)</td><td class="num">21600</td><td class="num">8438</td><td class="num">-61 %</td><td>Fixed convection coefficients of the test (reported); without them EnergyPlus gives 8368 kWh: EnergyFront +0.8 %</td></tr>
+      <tr><td>HE230</td><td>Zone heating (kWh)</td><td class="num">9951</td><td class="num">5456</td><td class="num">-45 %</td><td>Convection coefficients and NoSun/NoWind (reported); with both removed EnergyPlus gives 5069 kWh: EnergyFront +7.6 % (baseboard instead of a cycling furnace)</td></tr>
+    </table>
+    </div>
+    <p><strong>Result.</strong> The thermal loads of the zone are reproduced within 0.02 %. HVAC equipment energy is not the same, because EnergyFront writes its own HVAC systems and does not keep the component curves of an imported IDF. The HVAC equipment models of EnergyFront have not been validated against the HVAC BESTEST performance cases.</p>
+
+    <h2>4. EnergyPlus 9.4 example files (Method B)</h2>
+    <p>47 example files of EnergyPlus 9.4, including the 16 DOE commercial reference buildings, were opened in EnergyFront, written again and run (annual, Chicago TMY3). The purpose is to check the importer: a difference is acceptable only when the import report names its cause. The per-file results and causes are in the report and in the package.</p>
+    <table class="pricing-table">
+      <tr><th>Class</th><th>Meaning</th><th>Files</th></tr>
+      <tr><td>A match</td><td>Areas, lighting and equipment within 3 %, zone loads within 5 %, mean temperature within 0.5 K</td><td class="num">3</td></tr>
+      <tr><td>B explained</td><td>Every difference is named in the import report of EnergyFront (approximated or not converted)</td><td class="num">41</td></tr>
+      <tr><td>B test artifact</td><td>Artificial test geometry (an open zone) that EnergyFront closes; not reported</td><td class="num">1</td></tr>
+      <tr><td>C not imported</td><td>Not imported, with a clear message (simple surface objects)</td><td class="num">2</td></tr>
+    </table>
+
+    <h2>5. Automated software tests (Method C)</h2>
+    <ul>
+      <li>Inputs and rules: 170 checks passed. Units and generator: 514 checks passed. Interface: 488 checks passed. Tagged IDF and CSV for PareVia and EPCalibration: 47 checks passed.</li>
+      <li>Traceability: 307 inputs in 30 buildings; each change must change the IDF objects listed in the traceability matrix.</li>
+      <li>Verification report: one known open item (ground temperature of an imported layered construction).</li>
+      <li>Every run of EnergyFront writes a verification report (<em>Results &gt; Verification</em>) that lists the inputs next to what EnergyPlus reports back. It is a check of each model, not of the tool in general.</li>
+    </ul>
+
+    <h2>6. Known limitations (summary)</h2>
+    <p>The full list is in Section 8 of the report and is part of the <a href="Terms#s9-5">Licence Agreement</a>. Results in these areas need independent checking.</p>
+    <ul>
+      <li><strong>Engine:</strong> EnergyPlus 9.4.0 only; its physics, numerical methods and known issues apply.</li>
+      <li><strong>Geometry:</strong> flat roofs only; plenums and attics are not zones; a floor mixing zones with different multipliers is modelled once; zones taller than one storey get one storey; imported IDFs must use detailed surfaces.</li>
+      <li><strong>Constructions and ground:</strong> Window5 data-file glazing, complex fenestration (BSDF), C-factor / F-factor constructions, fixed convection coefficients, two-dimensional ground models and skylights are not converted on import.</li>
+      <li><strong>Loads and schedules:</strong> holidays of an imported IDF are not kept; gas equipment, refrigeration and exterior lighting are not converted.</li>
+      <li><strong>HVAC:</strong> EnergyFront writes its own systems; components, curves, loops and controls of an imported IDF are not kept; equipment energy can differ substantially; HVAC equipment models are not validated against the HVAC BESTEST performance cases (CE300 and above).</li>
+      <li><strong>Results:</strong> zone variables are not multiplied by zone or floor multipliers; central HVAC energy cannot be split by floor; Ideal loads report thermal energy converted with a constant COP on the Results page only.</li>
+      <li><strong>Process:</strong> the report was prepared by the developer and has not yet been reviewed independently; no empirical validation against a measured building has been done yet.</li>
+    </ul>
+
+    <h2>7. Your responsibility</h2>
+    <p>Before relying on any result, check it for your project: review the verification report of the run, the EnergyPlus error file (eplusout.err) and, for an opened IDF, the import report; compare with hand calculations, benchmarks, measured data or another simulation program; and have the results reviewed by a suitably qualified professional (<a href="Terms#s9">Licence Agreement, Section 9</a>). Do not describe EnergyFront or your results as certified, approved or validated by ASHRAE, or as compliant with ASHRAE Standard 140.</p>
+
+    <h2>8. Public validation package</h2>
+    <p>The <a href="EnergyFront-V3.5-Public-Validation-Package.zip" download>public validation package (ZIP)</a> lets you repeat the tests: the report (PDF), the results tables (CSV) of the Standard 140 cases, HVAC BESTEST, Furnace BESTEST and the example files, and the EnergyFront projects (*.json) of the Standard 140 cases. Open a project in EnergyFront, choose the weather file of the Standard (725650TYCST.epw, not included) and run it. The Standard, its weather file and the reference input files are not included.</p>
+
+    <h2>9. References</h2>
     <ol>
       <li>ANSI/ASHRAE Standard 140-2020, <em>Standard Method of Test for the Evaluation of Building Energy Analysis Computer Programs</em>. ASHRAE, Atlanta.</li>
       <li>NREL, BESTEST-GSR: Building Energy Simulation Test Generation, Simulation and Reporting. <a href="https://github.com/NREL/BESTEST-GSR" rel="noopener">github.com/NREL/BESTEST-GSR</a></li>
       <li>US Department of Energy, EnergyPlus version 9.4.0. <a href="https://energyplus.net" rel="noopener">energyplus.net</a></li>
     </ol>
-    <p style="margin-top:2rem;font-size:.9rem">This report describes the stated version, test cases and conditions only. It is information, not a warranty that the results for your buildings are accurate (<a href="Terms#s9">Licence Agreement, Section 9</a>). EnergyPlus is a trademark of the US Department of Energy; EnergyFront is not affiliated with, sponsored by or endorsed by the US Department of Energy or ASHRAE.</p>
+    <p style="margin-top:2rem;font-size:.9rem">This page summarises the EnergyFront V3.5 Validation and Testing Report; if they differ, the PDF report prevails. It describes the stated version, test cases and conditions only. EnergyPlus is a trademark of the US Department of Energy. ASHRAE Standard 140 is referred to by name only. EnergyFront is not affiliated with, sponsored by or endorsed by the US Department of Energy, NREL or ASHRAE.</p>
   </div>
 
   <footer>
