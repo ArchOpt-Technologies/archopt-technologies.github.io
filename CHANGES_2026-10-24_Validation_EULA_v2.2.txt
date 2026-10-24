@@ -1,7 +1,10 @@
 Website and EULA update - EnergyFront V3.5 validation (24 October 2026, revision 2)
 Revision 2: uses the validation package revised 24 October 2026 (ASHRAE 140 cases 640 and 940:
 setback recovery of the Standard). Validation.html shows the new 640/940 note and table and the
-hourly-schedule limitation; the PDF and the public ZIP are the revised ones. EULA.txt unchanged
+hourly-schedule limitation; the PDF and the public ZIP are the revised ones. EnergyFront.html:
+download note also under the buttons at the top of the page (Buy / Download / Next step).
+Installer links: EnergyFront.V3.5.2.Setup.exe -> EnergyFront.V3.5.3.Setup.exe
+(EnergyFront.html, 2 links; buy_energyfront.html, the v3 link in the script). EULA.txt unchanged
 from revision 1 (v2.2).
 Basis: website repository (archopt-technologies.github.io-main) and EULA v2.1.
 Copy the files of this zip over the repository root, then commit.
