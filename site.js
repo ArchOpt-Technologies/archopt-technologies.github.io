@@ -10,6 +10,34 @@ function closeContact(){document.getElementById('contactOverlay').classList.remo
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&o)closeContact();});
 })();
 
+/* Contact form: sent through FormSubmit (https://formsubmit.co), because a GitHub Pages site cannot send e-mail
+   itself. "Message received" is shown only when the service confirms; otherwise the visitor is told and offered
+   the e-mail app as a fallback. The first message after publishing triggers a one-time activation e-mail from
+   FormSubmit to CONTACT_TO: open it and click "Activate Form"; until then messages are not delivered. */
+var CONTACT_TO='architecture.optimization@gmail.com';
+var CONTACT_ENDPOINT='https://formsubmit.co/ajax/'+CONTACT_TO;
+
+function contactNote(text, mailtoHref){
+  var btn=document.querySelector('#contactForm .form-submit');
+  var box=document.getElementById('contactNote');
+  if(!box){
+    box=document.createElement('div');
+    box.id='contactNote';
+    box.setAttribute('role','alert');
+    box.style.cssText='margin-top:.8rem;padding:.75rem .9rem;border-radius:10px;font-size:.88rem;line-height:1.5;background:#fef2f2;color:#991b1b;border:1px solid #fecaca';
+    btn.parentNode.insertBefore(box, btn.nextSibling);
+  }
+  box.textContent=text+' ';
+  if(mailtoHref){
+    var a=document.createElement('a');
+    a.href=mailtoHref; a.textContent='Send it with your e-mail app instead';
+    a.style.cssText='color:#991b1b;font-weight:700';
+    box.appendChild(a);
+    box.appendChild(document.createTextNode(' or write to '+CONTACT_TO+'.'));
+  }
+  box.style.display='block';
+}
+
 async function submitForm(){
   const name=document.getElementById('f-name').value.trim();
   const email=document.getElementById('f-email').value.trim();
@@ -17,11 +45,36 @@ async function submitForm(){
   const org=document.getElementById('f-org').value.trim();
   const msg=document.getElementById('f-msg').value.trim();
   if(!name||!email||!msg){alert('Please fill in your name, email, and message.');return;}
-  const subject=encodeURIComponent('ArchOpt Technologies Enquiry - '+type+' - '+name);
-  const body=encodeURIComponent('Name: '+name+'\nEmail: '+email+'\nOrganisation: '+(org||'Not provided')+'\nRegarding: '+type+'\n\nMessage:\n'+msg);
-  window.location.href='mailto:architecture.optimization@gmail.com?subject='+subject+'&body='+body;
-  document.getElementById('contactForm').style.display='none';
-  document.getElementById('formSuccess').style.display='block';
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Please enter a valid email address.');return;}
+  const subjectText='ArchOpt Technologies Enquiry - '+(type||'General')+' - '+name;
+  const bodyText='Name: '+name+'\nEmail: '+email+'\nOrganisation: '+(org||'Not provided')+'\nRegarding: '+(type||'Not selected')+'\n\nMessage:\n'+msg;
+  const mailto='mailto:'+CONTACT_TO+'?subject='+encodeURIComponent(subjectText)+'&body='+encodeURIComponent(bodyText);
+
+  const btn=document.querySelector('#contactForm .form-submit');
+  const label=btn.innerHTML;
+  btn.disabled=true; btn.innerHTML='Sending...';
+  const old=document.getElementById('contactNote'); if(old) old.style.display='none';
+  try{
+    const res=await fetch(CONTACT_ENDPOINT,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify({
+        name:name, email:email, organisation:org||'Not provided', regarding:type||'Not selected', message:msg,
+        _subject:subjectText, _replyto:email, _template:'table', _captcha:'false', _honey:''
+      })
+    });
+    const data=await res.json().catch(function(){return {};});
+    if(res.ok && (data.success===true || data.success==='true')){
+      document.getElementById('contactForm').style.display='none';
+      document.getElementById('formSuccess').style.display='block';
+      return;
+    }
+    contactNote('Your message could not be sent'+(data.message?' ('+data.message+')':'')+'.', mailto);
+  }catch(e){
+    contactNote('Your message could not be sent (no connection to the form service).', mailto);
+  }finally{
+    btn.disabled=false; btn.innerHTML=label;
+  }
 }
 
 /* screenshot carousels (only on the pages that have them) */
