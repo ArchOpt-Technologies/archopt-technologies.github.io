@@ -14,8 +14,8 @@ function closeContact(){document.getElementById('contactOverlay').classList.remo
    itself. "Message received" is shown only when the service confirms; otherwise the visitor is told and offered
    the e-mail app as a fallback. The first message after publishing triggers a one-time activation e-mail from
    FormSubmit to CONTACT_TO: open it and click "Activate Form"; until then messages are not delivered. */
-var CONTACT_TO='architecture.optimization@gmail.com';
-var CONTACT_ENDPOINT='https://formsubmit.co/ajax/'+CONTACT_TO;
+var CONTACT_TO='support@archoptech.com';
+var CONTACT_ENDPOINT='https://formsubmit.co/ajax/'+CONTACT_TO;  // new address: FormSubmit asks support@ to activate once
 
 function contactNote(text, mailtoHref){
   var btn=document.querySelector('#contactForm .form-submit');

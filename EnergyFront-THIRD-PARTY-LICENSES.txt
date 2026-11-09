@@ -27,7 +27,7 @@ you may replace them with modified, interface-compatible versions, and reverse-e
 the program to the extent needed to debug such modifications. The licence texts are in
 LICENSES\LGPL-3.0.txt, LICENSES\GPL-3.0.txt (which LGPL-3.0 builds on) and
 LICENSES\LGPL-2.1.txt. The source code of these libraries is available from their
-projects, and on request from architecture.optimization@gmail.com for at least three years after you
+projects, and on request from support@archoptech.com for at least three years after you
 received this program.
 
 NOT PART OF THIS PROGRAM
@@ -424,13 +424,20 @@ PySide6 6.11.2
 Licence: LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
 Project: https://pyside.org
 ------------------------------------------------------------------------------
-Licensees holding valid commercial Qt licenses may use this software in
-accordance with the the terms contained in a written agreement between
-you and The Qt Company. Alternatively, the terms and conditions that were
-accepted by the licensee when buying and/or downloading the
-software do apply.
-
-For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+Licensees holding valid commercial Qt licenses may use this software in
+
+accordance with the the terms contained in a written agreement between
+
+you and The Qt Company. Alternatively, the terms and conditions that were
+
+accepted by the licensee when buying and/or downloading the
+
+software do apply.
+
+
+
+For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+
 For further information use the contact form at https://www.qt.io/contact-us.
 
 ==============================================================================
@@ -438,13 +445,20 @@ PySide6_Addons 6.11.2
 Licence: LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
 Project: https://pyside.org
 ------------------------------------------------------------------------------
-Licensees holding valid commercial Qt licenses may use this software in
-accordance with the the terms contained in a written agreement between
-you and The Qt Company. Alternatively, the terms and conditions that were
-accepted by the licensee when buying and/or downloading the
-software do apply.
-
-For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+Licensees holding valid commercial Qt licenses may use this software in
+
+accordance with the the terms contained in a written agreement between
+
+you and The Qt Company. Alternatively, the terms and conditions that were
+
+accepted by the licensee when buying and/or downloading the
+
+software do apply.
+
+
+
+For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+
 For further information use the contact form at https://www.qt.io/contact-us.
 
 ==============================================================================
@@ -452,13 +466,20 @@ PySide6_Essentials 6.11.2
 Licence: LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
 Project: https://pyside.org
 ------------------------------------------------------------------------------
-Licensees holding valid commercial Qt licenses may use this software in
-accordance with the the terms contained in a written agreement between
-you and The Qt Company. Alternatively, the terms and conditions that were
-accepted by the licensee when buying and/or downloading the
-software do apply.
-
-For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+Licensees holding valid commercial Qt licenses may use this software in
+
+accordance with the the terms contained in a written agreement between
+
+you and The Qt Company. Alternatively, the terms and conditions that were
+
+accepted by the licensee when buying and/or downloading the
+
+software do apply.
+
+
+
+For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+
 For further information use the contact form at https://www.qt.io/contact-us.
 
 ==============================================================================
@@ -466,13 +487,20 @@ shiboken6 6.11.2
 Licence: LGPL-3.0-only OR GPL-2.0-only OR GPL-3.0-only
 Project: https://pyside.org
 ------------------------------------------------------------------------------
-Licensees holding valid commercial Qt licenses may use this software in
-accordance with the the terms contained in a written agreement between
-you and The Qt Company. Alternatively, the terms and conditions that were
-accepted by the licensee when buying and/or downloading the
-software do apply.
-
-For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+Licensees holding valid commercial Qt licenses may use this software in
+
+accordance with the the terms contained in a written agreement between
+
+you and The Qt Company. Alternatively, the terms and conditions that were
+
+accepted by the licensee when buying and/or downloading the
+
+software do apply.
+
+
+
+For the latest licensing terms and conditions, see https://www.qt.io/terms-conditions.
+
 For further information use the contact form at https://www.qt.io/contact-us.
 
 ==============================================================================

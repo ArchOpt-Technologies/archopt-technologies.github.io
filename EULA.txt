@@ -2,7 +2,7 @@ END-USER LICENCE AGREEMENT
 EnergyFront, PareVia and EPCalibration
 ==========================================
 
-Version 2.2 - October 2026
+Version 2.3 - November 2026
 
 READ THIS AGREEMENT CAREFULLY. IT LIMITS THE LICENSOR'S LIABILITY (SECTIONS 11
 AND 12), MAKES YOU RESPONSIBLE FOR CHECKING ALL RESULTS (SECTION 9), SETS THE
@@ -18,11 +18,14 @@ that organisation.
 
 
 1. THE PARTIES AND THE SOFTWARE
-   1.1 "Licensor" means the individual who owns and operates the business
-       trading as "ArchOpt Technologies". ArchOpt Technologies is a trade name,
-       not a registered company. The Licensor's legal name appears on your
-       invoice and is given on request.
-       Contact: architecture.optimization@gmail.com
+   1.1 "Licensor" means Archopt Technologies Inc., a corporation incorporated
+       under the laws of the Province of Ontario, Canada, which carries on
+       business as "ArchOpt Technologies".
+       Contact: support@archoptech.com.
+       Licences granted before this version by the individual who previously
+       carried on this business as "ArchOpt Technologies" have been assigned
+       to the Licensor under Section 17.3; the Licensor is now the licensor
+       of those licences, on the terms the licensee accepted.
    1.2 "Software" means the program you obtain under this agreement:
        EnergyFront, PareVia or EPCalibration, in any version, including
        updates, example files and documentation.
@@ -35,7 +38,7 @@ that organisation.
        are the "EnergyFront V3.5 Validation and Testing Report" (October
        2026) and the "EnergyFront V3.5 Public Validation Package", available
        in the program (Help > Validation and testing report) and at
-       https://archopt-technologies.github.io/Validation
+       https://www.archoptech.com/Validation
 
 2. LICENCE
    2.1 The Software is licensed, not sold. The Licensor keeps all rights,
@@ -359,20 +362,20 @@ that organisation.
          statements, including on the website. If it is translated, the
          English version prevails.
     17.9 Notices. Notices to the Licensor must be sent by e-mail to
-         architecture.optimization@gmail.com. Notices to you may be sent to
+         support@archoptech.com. Notices to you may be sent to
          the e-mail address used for your purchase.
     17.10 Governing law and courts. This agreement and any dispute arising
-         from it are governed by the laws of the Emirate of Dubai and the
-         federal laws of the United Arab Emirates. The courts of Dubai have
-         exclusive jurisdiction. The United Nations Convention on Contracts
-         for the International Sale of Goods does not apply.
+         from it are governed by the laws of the Province of Ontario and the
+         federal laws of Canada that apply in it. The courts of the Province
+         of Ontario have exclusive jurisdiction. The United Nations Convention
+         on Contracts for the International Sale of Goods does not apply.
     17.11 Mandatory rights. The Software is sold worldwide. Nothing in this
          agreement excludes or limits rights that the law of your country
          gives you and that cannot be excluded or limited by agreement; each
          limit in this agreement applies to the extent that law allows.
 
-Copyright (C) 2026 ArchOpt Technologies. All rights reserved.
-EnergyFront, PareVia and EPCalibration are product names of ArchOpt
-Technologies. EnergyPlus is a trademark of the US Department of Energy; the
+Copyright (C) 2026 Archopt Technologies Inc. All rights reserved.
+EnergyFront, PareVia and EPCalibration are product names of Archopt
+Technologies Inc. EnergyPlus is a trademark of the US Department of Energy; the
 Software is not affiliated with, sponsored by or endorsed by the US Department
 of Energy, NREL or the EnergyPlus developers.
